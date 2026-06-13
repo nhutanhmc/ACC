@@ -1,0 +1,2722 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Dịch vụ làm báo cáo thuế trọn gói tại ACC: kê khai thuế GTGT, TNCN, TNDN, báo cáo tài chính, nộp hồ sơ đúng hạn và hỗ trợ giải trình.">
+  <title>Dịch vụ làm Báo Cáo Thuế — Công ty Luật ACC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <template id="__bundler_thumbnail" data-bg-color="#7a2828">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#3e1010" />
+          <stop offset="100%" stop-color="#9e3535" />
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bg)" />
+      <text x="100" y="160" font-family="Roboto" font-size="80" font-weight="900" fill="white">Báo Cáo Thuế</text>
+      <text x="100" y="230" font-family="Roboto" font-size="48" font-weight="700" fill="#e8d590">Đúng Hạn — Chính
+        Xác</text>
+      <rect x="100" y="262" width="120" height="4" rx="2" fill="#c9a84c" />
+      <rect x="100" y="320" width="260" height="130" rx="14" fill="white" opacity="0.08" />
+      <rect x="380" y="320" width="260" height="130" rx="14" fill="white" opacity="0.08" />
+      <rect x="660" y="320" width="260" height="130" rx="14" fill="white" opacity="0.08" />
+      <rect x="940" y="320" width="220" height="130" rx="14" fill="white" opacity="0.08" />
+      <rect x="100" y="490" width="460" height="52" rx="10" fill="white" opacity="0.06" />
+      <rect x="100" y="558" width="360" height="52" rx="10" fill="white" opacity="0.06" />
+      <rect x="100" y="626" width="410" height="52" rx="10" fill="white" opacity="0.06" />
+      <circle cx="1100" cy="120" r="60" fill="#c9a84c" opacity="0.15" />
+      <circle cx="1100" cy="120" r="34" fill="#c9a84c" opacity="0.25" />
+    </svg>
+  </template>
+  <style>
+    /* ── Reset & Base ── */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --p: #7a2828;
+      --p-dark: #5c1d1d;
+      --p-deep: #3e1010;
+      --p-mid: #9e3535;
+      --p-light: #c25050;
+      --p-tint: #fef9f9;
+      --p-tint2: #faf3f3;
+      --gold: #c5a059;
+      --gold-lt: #ebdcae;
+      --gold-dk: #99732f;
+      --bg: #ffffff;
+      --bg-warm: #faf9f8;
+      --white: #ffffff;
+      --text: #2c2525;
+      --text-2: #4a3e3e;
+      --text-m: #736262;
+      --text-f: #a69595;
+      --border: #ebe4e4;
+      --border-2: #dbcfcf;
+      --shadow-sm: 0 2px 8px rgba(122, 40, 40, .04);
+      --shadow: 0 8px 30px rgba(122, 40, 40, .08);
+      --shadow-lg: 0 16px 48px rgba(122, 40, 40, .12);
+      --shadow-gold: 0 4px 20px rgba(197, 160, 89, .15);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Container ── */
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── Section commons ── */
+    .section {
+      padding: 84px 0;
+    }
+
+    .section-alt {
+      background: var(--bg-warm);
+    }
+
+    .section-dark {
+      background: var(--p-dark);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--p);
+      margin-bottom: 12px;
+      background: none;
+      border: none;
+      padding: 0;
+      box-shadow: none;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 1.5px;
+      background: var(--p);
+      border-radius: 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 3.8vw, 2.15rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--p-dark);
+      margin-bottom: 22px;
+      letter-spacing: -.015em;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .title-num {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      font-weight: 300;
+      color: var(--p);
+      margin-right: 16px;
+      display: inline-flex;
+      align-items: center;
+      border-right: 1.5px solid rgba(122, 40, 40, 0.25);
+      padding-right: 16px;
+      line-height: 1;
+      height: 1.2em;
+    }
+
+    .section-title-light {
+      color: #fff;
+    }
+
+    .section-desc {
+      max-width: 660px;
+      color: var(--text-m);
+      line-height: 1.8;
+      margin-bottom: 42px;
+      font-size: .98rem;
+    }
+
+    /* ── Hero banner ── */
+    .hero {
+      background: linear-gradient(135deg, #5c1c1c 0%, #230606 100%);
+      padding: 56px 0 64px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 -1px 0 rgba(255, 255, 255, .05);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(197, 160, 89, 0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      overflow: visible;
+      padding: 0 32px;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(197, 160, 89, 0.12);
+      border: 1px solid rgba(197, 160, 89, 0.28);
+      border-radius: 9999px;
+      padding: 6px 12px;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 14px;
+    }
+
+    .hero-tag .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4.2vw, 2.75rem);
+      font-weight: 900;
+      line-height: 1.12;
+      color: #fff;
+      letter-spacing: -.02em;
+      margin-bottom: 12px;
+    }
+
+    .hero-title .glossy-text {
+      font-weight: inherit;
+    }
+
+    .glossy-text {
+      background: linear-gradient(
+        120deg,
+        var(--gold-lt) 0%,
+        var(--gold) 25%,
+        #fff 50%,
+        var(--gold) 75%,
+        var(--gold-dk) 100%
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textShine 3s linear infinite;
+      font-weight: 700;
+      display: inline-block;
+    }
+
+    @keyframes textShine {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    .hero-tag .glossy-text {
+      font-weight: inherit;
+      letter-spacing: inherit;
+    }
+
+    .hero-title .glossy-text {
+      font-weight: inherit;
+    }
+
+    .hero-sub {
+      font-size: clamp(.96rem, 1.6vw, 1.05rem);
+      color: rgba(255, 255, 255, .82);
+      max-width: 660px;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .hero-sub strong {
+      color: var(--gold-lt);
+      font-weight: 700;
+    }
+
+    .hero-question-box {
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 16px 16px 0;
+      padding: 14px 18px;
+      max-width: 660px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-left: 3px solid var(--gold);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .hero-question-box .q-title {
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-question-box .q-desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .hero-stats {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 24px;
+      padding: 36px 32px;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3), 
+                  0 0 40px rgba(255, 255, 255, 0.04), 
+                  inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+    .hero-stats:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.35);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35), 
+                  0 0 50px rgba(255, 255, 255, 0.08), 
+                  inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    .hero-stats .card-tag {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      background: rgba(197, 160, 89, 0.15);
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      color: var(--gold-lt);
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 5px 12px;
+      border-radius: 9999px;
+    }
+
+    .hero-stats .card-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-stats .card-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-stats .card-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
+    }
+
+    .hero-stats .card-list li strong {
+      color: var(--gold-lt);
+      font-weight: 700;
+    }
+
+    .hero-stats .check-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(197, 160, 89, 0.2);
+      border: 1px solid rgba(197, 160, 89, 0.4);
+      color: var(--gold-lt);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .hero-stats .card-footer {
+      margin-top: 6px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.52);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 500;
+    }
+
+    .hero-stats .lock-icon {
+      width: 14px;
+      height: 14px;
+      fill: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ── What is + Tax types ── */
+    .intro-lead {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px 40px;
+      border-left: 4px solid var(--gold);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+
+    .intro-lead::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      right: 24px;
+      font-size: 7rem;
+      font-weight: 900;
+      color: var(--p-tint);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .intro-lead p {
+      color: var(--text-2);
+      line-height: 1.9;
+      font-size: 1rem;
+      position: relative;
+      max-width: 780px;
+    }
+
+    .tax-types {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .tax-type {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: box-shadow .25s, transform .25s, border-color .25s;
+    }
+
+    .tax-type:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-3px);
+      border-color: var(--gold);
+    }
+
+    .tax-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      background: rgba(122, 40, 40, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tax-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--p);
+    }
+
+    .tax-type strong {
+      font-weight: 700;
+      font-size: .85rem;
+      color: var(--text);
+      display: block;
+    }
+
+    .tax-badge {
+      font-size: .7rem;
+      font-weight: 600;
+      background: var(--p-tint2);
+      color: var(--p);
+      border-radius: 9999px;
+      padding: 3px 10px;
+      white-space: nowrap;
+      border: 1px solid rgba(122, 40, 40, 0.15);
+    }
+
+    /* ── Services grid ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 32px 26px;
+      box-shadow: var(--shadow-sm);
+      transition: all .25s;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--p-dark), var(--p-mid));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+      border-color: transparent;
+    }
+
+    .service-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .service-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(122, 40, 40, 0.06);
+      border: 1px solid rgba(122, 40, 40, 0.12);
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: .04em;
+      color: var(--p);
+      margin-bottom: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .service-card h3 {
+      font-size: .95rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .service-card p {
+      font-size: .84rem;
+      color: var(--text-m);
+      line-height: 1.8;
+    }
+
+    /* ── Process ── */
+    .process-track {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .process-track::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(10% + 14px);
+      right: calc(10% + 14px);
+      height: 1.5px;
+      background: rgba(197, 160, 89, 0.25);
+      z-index: 0;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 0 8px;
+      position: relative;
+    }
+
+    .process-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--p-dark), var(--p-light));
+      color: #fff;
+      font-size: .9rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px rgba(0, 0, 0, .06);
+      transition: transform .2s;
+    }
+
+    .process-step:hover .process-num {
+      transform: scale(1.1);
+    }
+
+    .process-num-gold {
+      background: linear-gradient(135deg, var(--p-dark), var(--p-mid));
+      box-shadow: 0 0 0 4px var(--bg), var(--shadow-sm);
+    }
+
+    .process-step h3 {
+      font-size: .95rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--p-dark);
+    }
+
+    .process-step p {
+      font-size: .82rem;
+      color: var(--text-m);
+      line-height: 1.6;
+    }
+
+    /* ── Tables ── */
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+      min-width: 560px;
+    }
+
+    .data-table thead tr {
+      background: linear-gradient(90deg, #5c1c1c 0%, #3a1010 100%);
+    }
+
+    .data-table thead th {
+      padding: 15px 20px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: .82rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      text-align: left;
+      border-bottom: 2px solid var(--p-mid);
+    }
+
+    .data-table thead th:first-child {
+      border-radius: 14px 0 0 0;
+    }
+
+    .data-table thead th:last-child {
+      border-radius: 0 14px 0 0;
+    }
+
+    .data-table tbody td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      vertical-align: middle;
+    }
+
+    .data-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table tbody tr:last-child td:first-child {
+      border-radius: 0 0 0 14px;
+    }
+
+    .data-table tbody tr:last-child td:last-child {
+      border-radius: 0 0 14px 0;
+    }
+
+    .data-table tbody tr:hover td {
+      background: var(--p-tint);
+    }
+
+    /* severity dots */
+    .sev {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      margin-right: 9px;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    .sev-1 {
+      background: #d4b84a;
+    }
+
+    .sev-2 {
+      background: #c97a3a;
+    }
+
+    .sev-3 {
+      background: #b84a2e;
+    }
+
+    .sev-4 {
+      background: #9e2828;
+    }
+
+    .sev-5 {
+      background: #6e1414;
+    }
+
+    .fine-cell {
+      font-weight: 700;
+      color: var(--text-2);
+    }
+
+    /* ── Audience ── */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .audience-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 28px 28px 28px 26px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: box-shadow .2s, border-color .2s;
+    }
+
+    .audience-card:hover {
+      box-shadow: var(--shadow);
+      border-color: var(--border-2);
+    }
+
+    .audience-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--p-dark), var(--p-mid));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .audience-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+    }
+
+    .audience-card h3 {
+      font-size: .92rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: var(--text);
+    }
+
+    .audience-card p {
+      font-size: .82rem;
+      color: var(--text-m);
+      line-height: 1.75;
+    }
+
+    /* ── Benefits ── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .benefit-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow .2s, transform .2s;
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 8px 14px;
+      align-items: center;
+    }
+
+    .benefit-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-3px);
+    }
+
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--p-dark), var(--p-mid));
+    }
+
+    .benefit-check {
+      width: 36px;
+      height: 36px;
+      border-radius: 9999px;
+      margin-bottom: 0;
+      background: rgba(122, 40, 40, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      grid-row: 1;
+      align-self: center;
+    }
+
+    .benefit-check svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--p);
+    }
+
+    .benefit-card h3 {
+      grid-column: 2;
+      font-size: .9rem;
+      font-weight: 800;
+      margin-bottom: 0;
+      color: var(--text);
+      align-self: center;
+    }
+
+    .benefit-card p {
+      grid-column: 1 / -1;
+      font-size: .82rem;
+      color: var(--text-m);
+      line-height: 1.8;
+    }
+
+    /* ── FAQ ── */
+    .faq-section {
+      background: linear-gradient(180deg, var(--bg) 0%, #fff 100%);
+    }
+
+    .faq-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 42px;
+    }
+
+    .faq-head .eyebrow {
+      justify-content: center;
+      width: fit-content;
+      margin: 0 auto 12px;
+      padding: 0;
+      border: none;
+      background: none;
+      color: var(--gold-dk);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      box-shadow: none;
+    }
+
+    .faq-head .eyebrow::before {
+      display: none;
+    }
+
+    .faq-head .section-title {
+      margin-bottom: 16px;
+      font-size: clamp(1.9rem, 4.4vw, 2.6rem);
+    }
+
+    .faq-head .section-desc {
+      margin: 0 auto;
+      max-width: 700px;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-m);
+    }
+
+    .faq-list {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 14px;
+      background: rgba(255, 255, 255, .76);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .faq-item {
+      border: 1px solid transparent;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: background .2s, border-color .2s, box-shadow .2s;
+    }
+
+    .faq-item+.faq-item {
+      margin-top: 8px;
+    }
+
+    .faq-item:hover {
+      background: var(--p-tint);
+      border-color: var(--border);
+    }
+
+    .faq-item.open {
+      background: #fff;
+      border-color: rgba(197, 160, 89, .22);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 24px 28px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.03rem;
+      font-weight: 800;
+      color: var(--text);
+      text-align: left;
+      line-height: 1.45;
+      transition: color .2s;
+    }
+
+    .faq-q:hover {
+      color: var(--gold-dk);
+    }
+
+    .faq-chevron {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: var(--white);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-sm);
+      transition: background .2s, transform .3s, border-color .2s;
+    }
+
+    .faq-chevron svg {
+      width: 13px;
+      height: 13px;
+      stroke: var(--gold);
+      stroke-width: 2.6;
+      fill: none;
+      transition: transform .3s;
+    }
+
+    .faq-item.open .faq-q {
+      color: var(--gold-dk);
+    }
+
+    .faq-item.open .faq-chevron {
+      background: var(--gold);
+      border-color: var(--gold);
+      transform: none;
+    }
+
+    .faq-item.open .faq-chevron svg {
+      stroke: #fff;
+      transform: rotate(180deg);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 28px;
+      transition: max-height .35s ease, padding .35s ease;
+      font-size: .94rem;
+      color: var(--text-m);
+      line-height: 1.85;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding: 0 28px 24px;
+    }
+
+    /* ── Divider between sections ── */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ── CTA strip ── */
+    .cta-strip {
+      background: linear-gradient(180deg, var(--white) 0%, var(--bg) 100%);
+      padding: 38px 0 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 34px;
+      align-items: center;
+      padding: 42px 46px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #5c1c1c 0%, #230606 100%);
+      border: 1px solid rgba(197, 160, 89, 0.2);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .35);
+    }
+
+    .cta-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 12% 20%, rgba(197, 160, 89, .05) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .cta-inner::after {
+      content: '';
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      right: -58px;
+      bottom: -76px;
+      border: 1px solid rgba(197, 160, 89, 0.15);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .cta-content,
+    .cta-actions {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      color: var(--gold-lt);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .cta-kicker::before {
+      content: '';
+      width: 22px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 9999px;
+    }
+
+    .cta-title {
+      font-size: clamp(1.45rem, 3.2vw, 2.2rem);
+      font-weight: 900;
+      line-height: 1.16;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .cta-sub {
+      font-size: .96rem;
+      color: rgba(255, 255, 255, .76);
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 22px;
+    }
+
+    .cta-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 12px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .85);
+      font-size: .76rem;
+      font-weight: 700;
+    }
+
+    .cta-badge::before {
+      content: '✓';
+      color: var(--gold-lt);
+      font-weight: 900;
+    }
+
+    .cta-actions {
+      display: grid;
+      gap: 12px;
+      justify-self: stretch;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 22px;
+      border-radius: 16px;
+      font-family: 'Roboto', sans-serif;
+      font-size: .92rem;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .25s ease;
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-cta::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 80%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: skewX(-25deg);
+      transition: left 0.75s ease;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .btn-cta:hover::after {
+      left: 150%;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold-lt), var(--gold));
+      color: var(--p-deep);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), var(--shadow-gold);
+      border: 1px solid rgba(197, 160, 89, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 10px 34px rgba(197, 160, 89, .45);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, .04);
+      color: #fff;
+      border: 1.5px solid rgba(255, 255, 255, .24);
+      backdrop-filter: blur(8px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, .1);
+      border-color: rgba(255, 255, 255, .45);
+      transform: translateY(-2px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    }
+
+    /* ── Entrance & scroll animations ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
+      transition-delay: var(--delay, 0ms);
+      will-change: opacity, transform;
+    }
+
+    .reveal-left {
+      transform: translateX(-28px);
+    }
+
+    .reveal-right {
+      transform: translateX(28px);
+    }
+
+    .reveal-scale {
+      transform: translateY(24px) scale(.96);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+    }
+
+    .hero .hero-tag,
+    .hero .hero-title,
+    .hero .hero-sub,
+    .hero .btn-cta,
+    .hero .hero-stats {
+      animation: heroFadeUp .75s ease both;
+    }
+
+    .hero .hero-tag {
+      animation-delay: .08s;
+    }
+
+    .hero .hero-title {
+      animation-delay: .18s;
+    }
+
+    .hero .hero-sub {
+      animation-delay: .28s;
+    }
+
+    .hero .btn-cta:nth-child(1) {
+      animation-delay: .38s;
+    }
+
+    .hero .btn-cta:nth-child(2) {
+      animation-delay: .46s;
+    }
+
+    .hero .hero-stats {
+      animation-delay: .5s;
+    }
+
+    @keyframes heroFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .process-track {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-left: 52px;
+      }
+
+      .process-track::before {
+        top: 28px;
+        left: 26px;
+        right: auto;
+        bottom: 28px;
+        width: 2px;
+        height: auto;
+      }
+
+      .process-step {
+        text-align: left;
+        padding: 0;
+      }
+
+      .process-num {
+        margin: 0;
+        position: absolute;
+        left: -52px;
+        top: 0;
+      }
+
+      .process-step {
+        position: relative;
+        padding-left: 0;
+      }
+
+      .cta-inner {
+        grid-template-columns: 1fr;
+        padding: 34px 30px;
+      }
+
+      .cta-actions {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 56px 0;
+      }
+
+      .hero {
+        padding: 52px 0 58px;
+      }
+
+      .hero-inner {
+        padding: 0 24px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .tax-types {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .audience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-strip {
+        padding: 22px 0 10px;
+      }
+
+      .cta-inner {
+        border-radius: 22px;
+        padding: 30px 24px;
+      }
+
+      .cta-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-head {
+        text-align: left;
+      }
+
+      .faq-head .eyebrow {
+        justify-content: flex-start;
+      }
+
+      .faq-list {
+        border-radius: 18px;
+        padding: 6px;
+      }
+
+      .faq-q {
+        padding: 18px 16px;
+        font-size: .92rem;
+      }
+
+      .faq-a {
+        padding: 0 16px;
+      }
+
+      .faq-item.open .faq-a {
+        padding: 0 16px 18px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 0 20px;
+      }
+
+      .section {
+        padding: 48px 0;
+      }
+
+      .section-title {
+        font-size: clamp(1.55rem, 8vw, 2rem);
+      }
+
+      .section-desc {
+        font-size: .95rem;
+        margin-bottom: 30px;
+      }
+
+      .eyebrow {
+        font-size: .72rem;
+        letter-spacing: .1em;
+        padding: 7px 12px;
+      }
+
+      .hero {
+        padding: 42px 0 48px;
+      }
+
+      .hero-inner {
+        padding: 0 20px;
+      }
+
+      .hero-title {
+        font-size: clamp(2rem, 11vw, 2.55rem);
+      }
+
+      .hero-sub {
+        font-size: .96rem;
+        margin-bottom: 26px;
+      }
+
+      .hero-tag {
+        font-size: .68rem;
+        line-height: 1.4;
+      }
+
+      .hero .btn-cta {
+        width: 100%;
+      }
+
+      .hero-stats {
+        padding: 24px 20px;
+        gap: 14px;
+      }
+
+      .hero-stats .card-list {
+        gap: 12px;
+      }
+
+      .intro-lead {
+        padding: 26px 24px;
+      }
+
+      .tax-types {
+        grid-template-columns: 1fr;
+      }
+
+      .tax-type {
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      .services-grid,
+      .audience-grid,
+      .benefits-grid {
+        gap: 14px;
+      }
+
+      .service-card,
+      .audience-card,
+      .benefit-card {
+        padding: 24px 20px;
+      }
+
+      .service-card {
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: 8px 14px;
+        align-items: center;
+      }
+
+      .service-num {
+        grid-row: 1;
+        margin-bottom: 0;
+      }
+
+      .service-card h3 {
+        grid-column: 2;
+        margin-bottom: 0;
+        align-self: center;
+      }
+
+      .service-card p {
+        grid-column: 1 / -1;
+      }
+
+      .benefit-card {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: 8px 14px;
+        align-items: center;
+      }
+
+      .benefit-check {
+        grid-row: 1 / span 2;
+        align-self: center;
+        margin-bottom: 0;
+      }
+
+      .benefit-card h3 {
+        grid-column: 2;
+        margin-bottom: 0;
+        align-self: end;
+      }
+
+      .benefit-card p {
+        grid-column: 2;
+        align-self: start;
+      }
+
+      .process-track {
+        display: block;
+        padding-left: 0;
+      }
+
+      .process-track::before {
+        display: none;
+      }
+
+      .process-step {
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: 8px 16px;
+        text-align: left;
+        padding: 0;
+        margin-bottom: 22px;
+        align-items: start;
+      }
+
+      .process-num {
+        grid-row: 1 / span 2;
+        position: static;
+        width: 48px;
+        height: 48px;
+        margin: 0;
+        font-size: .88rem;
+        box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px rgba(122, 40, 40, .16);
+      }
+
+      .process-step h3 {
+        grid-column: 2;
+        font-size: .95rem;
+        margin-bottom: 0;
+      }
+
+      .process-step p {
+        grid-column: 2;
+        font-size: .84rem;
+        line-height: 1.7;
+      }
+
+      .table-wrap {
+        overflow: visible;
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .data-table {
+        min-width: 0;
+        font-size: .92rem;
+      }
+
+      .data-table thead {
+        display: none;
+      }
+
+      .data-table,
+      .data-table tbody,
+      .data-table tr,
+      .data-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .data-table tbody tr {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        margin-bottom: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .data-table tbody td {
+        display: grid;
+        grid-template-columns: 92px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border);
+        background: var(--white);
+        word-break: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .data-table tbody td::before {
+        display: block;
+        font-size: .72rem;
+        font-weight: 800;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: var(--p);
+        line-height: 1.4;
+      }
+
+      #thoi-han .data-table tbody td:nth-child(1)::before {
+        content: 'Loại kê khai thuế';
+      }
+
+      #thoi-han .data-table tbody td:nth-child(2)::before {
+        content: 'Thời hạn nộp hồ sơ';
+      }
+
+      #xu-phat .data-table tbody td:nth-child(1)::before {
+        content: 'Thời gian chậm nộp';
+      }
+
+      #xu-phat .data-table tbody td:nth-child(2)::before {
+        content: 'Mức phạt tổ chức';
+      }
+
+      #xu-phat .data-table tbody td:nth-child(3)::before {
+        content: 'Mức phạt cá nhân';
+      }
+
+      .data-table tbody tr:last-child td,
+      .data-table tbody tr:last-child td:first-child,
+      .data-table tbody tr:last-child td:last-child,
+      .data-table tbody td:last-child {
+        border-bottom: none;
+        border-radius: 0;
+      }
+
+      #xu-phat .sev {
+        display: none;
+      }
+
+      .cta-inner {
+        padding: 28px 20px;
+      }
+
+      .cta-title {
+        font-size: clamp(1.35rem, 7vw, 1.8rem);
+      }
+
+      .cta-badges {
+        gap: 8px;
+      }
+
+      .cta-badge {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .btn-cta {
+        width: 100%;
+      }
+
+      .faq-head {
+        text-align: center;
+      }
+
+      .faq-head .eyebrow {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .faq-list {
+        max-width: 100%;
+        padding: 6px;
+      }
+
+      .faq-q {
+        padding: 17px 14px;
+        gap: 12px;
+        font-size: .92rem;
+      }
+
+      .faq-chevron {
+        width: 34px;
+        height: 34px;
+      }
+
+      .faq-a {
+        padding: 0 14px;
+        font-size: .88rem;
+      }
+
+      .faq-item.open .faq-a {
+        padding: 0 14px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .hero-inner {
+        padding: 0 16px;
+      }
+
+      .hero-title {
+        font-size: clamp(1.85rem, 11vw, 2.25rem);
+      }
+
+      .audience-card {
+        display: block;
+      }
+
+      .audience-icon {
+        margin-bottom: 14px;
+      }
+    }
+
+    /* ── Floating Contact Buttons ── */
+    .floating-contact {
+      position: fixed;
+      bottom: 28px;
+      left: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 999;
+    }
+
+    .float-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .float-btn:hover {
+      transform: scale(1.1) translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .float-zalo {
+      background: #0084FF;
+    }
+
+    .float-zalo img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .float-phone {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dk));
+      color: #fff;
+    }
+
+    .float-phone svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .float-phone::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: pulseFloat 2s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes pulseFloat {
+      0% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: scale(1.3);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .floating-contact {
+        bottom: 20px;
+        left: 20px;
+        gap: 10px;
+      }
+
+      .float-btn {
+        width: 48px;
+        height: 48px;
+      }
+
+      .float-zalo img {
+        width: 26px;
+        height: 26px;
+      }
+
+      .float-phone svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-tag">
+            <span class="dot"></span>
+            <span class="glossy-text">CÔNG TY LUẬT ACC</span>
+          </div>
+          <h1 class="hero-title">Dịch Vụ Làm<br><span class="glossy-text">Báo Cáo Thuế</span></h1>
+          <p class="hero-sub">Báo cáo thuế tưởng chừng chỉ là thủ tục định kỳ nhưng lại là <span style="color: var(--gold-lt);"><strong>"điểm nghẽn"</strong> khiến nhiều doanh nghiệp phát sinh chi phí và rủi ro pháp lý.</span> Chỉ một sai sót nhỏ trong kê khai <span style="color: var(--gold-lt);">cũng có thể dẫn đến bị truy thu hoặc xử phạt.</span></p>
+          <div class="hero-question-box">
+            <div class="q-title">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;flex-shrink:0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+              Vậy làm sao để lập báo cáo thuế đúng quy định, tối ưu chi phí & tiết kiệm thời gian?
+            </div>
+            <div class="q-desc">
+              Dịch vụ làm báo cáo thuế của <span class="glossy-text">ACC</span> chính là giải pháp giúp doanh nghiệp vận hành an toàn và hiệu quả hơn.
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px;">
+            <a href="tel:19003330" class="btn-cta btn-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px">
+                <path
+                  d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+              </svg>
+              Gọi 1900 3330
+            </a>
+            <a href="https://zalo.me/2171133625094125529" target="_blank" rel="noopener noreferrer"
+              class="btn-cta btn-outline">
+              Nhận tư vấn miễn phí →
+            </a>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="card-tag">Vì sao chọn <span class="glossy-text">ACC</span></div>
+          <h3 class="card-title">Cam kết dịch vụ trọn gói</h3>
+          <ul class="card-list">
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Hoàn thành <strong>chỉ trong 3–5 ngày</strong> làm việc, đúng hạn.</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Chi phí <strong>trọn gói, minh bạch</strong> – không phát sinh phí ẩn.</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span><strong>Bảo mật tuyệt đối</strong> thông tin tài chính của doanh nghiệp.</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>Đại diện <strong>làm việc với cơ quan thuế</strong> khi cần giải trình.</span>
+            </li>
+          </ul>
+          <div class="card-footer">
+            <svg class="lock-icon" viewBox="0 0 24 24">
+              <path
+                d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+            </svg>
+            Tư vấn miễn phí — phản hồi trong 5 phút
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TỔNG QUAN ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="eyebrow">Định nghĩa</div>
+      <div class="section-title"><span class="title-num">01</span>Báo cáo thuế là gì?</div>
+      <div class="intro-lead">
+        <p>Báo cáo thuế là việc doanh nghiệp thực hiện kê khai, tổng hợp và nộp các loại thuế phát sinh trong quá trình
+          hoạt động kinh doanh cho cơ quan thuế theo quy định. Đây là nghĩa vụ bắt buộc nhằm đảm bảo tính minh bạch tài
+          chính và tuân thủ pháp luật.</p>
+      </div>
+
+      <div class="eyebrow" style="margin-top: 16px;">Các loại thuế</div>
+      <div class="section-title"><span class="title-num">02</span>Các loại báo cáo thuế doanh nghiệp phải nộp</div>
+      <p class="section-desc">Doanh nghiệp cần thực hiện nhiều loại báo cáo thuế khác nhau, bao gồm:</p>
+      <div class="tax-types">
+        <div class="tax-type">
+          <div class="tax-icon"><svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zm-1 13.5H8v-2h4v2zm3-4H8v-2h7v2z" />
+            </svg></div>
+          <strong>Thuế GTGT</strong>
+          <span class="tax-badge">Kê khai theo Tháng (NĐ 126/2020)</span>
+        </div>
+        <div class="tax-type">
+          <div class="tax-icon"><svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+            </svg></div>
+          <strong>Thuế TNCN</strong>
+          <span class="tax-badge">Khi có trả thu nhập</span>
+        </div>
+        <div class="tax-type">
+          <div class="tax-icon"><svg viewBox="0 0 24 24">
+              <path
+                d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z" />
+            </svg></div>
+          <strong>Thuế TNDN tạm tính</strong>
+          <span class="tax-badge">Thực hiện theo quý</span>
+        </div>
+        <div class="tax-type">
+          <div class="tax-icon"><svg viewBox="0 0 24 24">
+              <path
+                d="M19.5 3.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2 7.5 3.5 6 2 4.5 3.5 3 2v20l1.5-1.5L6 22l1.5-1.5L9 22l1.5-1.5L12 22l1.5-1.5L15 22l1.5-1.5L18 22l1.5-1.5L21 22V2l-1.5 1.5zM19 19.09H5V4.91h14v14.18zM6 15h12v2H6zm0-4h12v2H6zm0-4h12v2H6z" />
+            </svg></div>
+          <strong>Sử dụng hóa đơn</strong>
+          <span class="tax-badge">Báo cáo theo quý</span>
+        </div>
+        <div class="tax-type">
+          <div class="tax-icon"><svg viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
+            </svg></div>
+          <strong>Báo cáo tài chính năm</strong>
+          <span class="tax-badge">Tổng hợp hoạt động năm</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DỊCH VỤ ══ -->
+  <section class="section section-alt" id="dich-vu">
+    <div class="container">
+      <div class="eyebrow">Phạm vi công việc</div>
+      <div class="section-title"><span class="title-num">03</span>Dịch vụ làm Báo Cáo Thuế của Công ty Luật ACC thực hiện những công việc gì?</div>
+      <p class="section-desc">Dịch vụ làm báo cáo thuế tại ACC được triển khai trọn gói, thay thế vai trò kế toán thuế
+        nội bộ, giúp doanh nghiệp đảm bảo tuân thủ đúng quy định và hạn chế tối đa rủi ro sai sót. Cụ thể, ACC sẽ thực
+        hiện các công việc sau:</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-num">01</div>
+          <h3>Tiếp nhận và xử lý chứng từ</h3>
+          <p>Thu thập toàn bộ hóa đơn, chứng từ phát sinh; kiểm tra tính hợp lệ, hợp pháp và phân loại dữ liệu trước khi
+            nhập vào hệ thống kế toán.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-num">02</div>
+          <h3>Hạch toán và tính thuế</h3>
+          <p>Ghi nhận các nghiệp vụ kinh tế phát sinh, xác định chính xác các khoản thuế phải nộp như thuế GTGT, TNDN,
+            TNCN… và điều chỉnh số liệu khi cần thiết để đảm bảo phù hợp quy định.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-num">03</div>
+          <h3>Lập và nộp báo cáo thuế</h3>
+          <p>Soạn thảo tờ khai thuế theo đúng biểu mẫu, rà soát kỹ số liệu trước khi nộp và đại diện doanh nghiệp nộp hồ
+            sơ đúng thời hạn.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-num">04</div>
+          <h3>Tư vấn và hỗ trợ về thuế</h3>
+          <p>Giải đáp các vấn đề liên quan đến chính sách thuế, đồng thời đề xuất giải pháp tối ưu chi phí thuế hợp pháp
+            cho doanh nghiệp.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-num">05</div>
+          <h3>Lưu trữ và bảo mật hồ sơ</h3>
+          <p>Sắp xếp, lưu giữ chứng từ và báo cáo thuế khoa học, đảm bảo bảo mật tuyệt đối thông tin tài chính.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-num">06</div>
+          <h3>Hỗ trợ làm việc với cơ quan thuế</h3>
+          <p>Đồng hành khi có thanh tra, kiểm tra thuế và cập nhật kịp thời các quy định mới để áp dụng vào thực tế.</p>
+        </div>
+      </div>
+
+      <div class="cta-callout"
+        style="background: var(--p-tint2); border-left: 4px solid var(--p); padding: 22px 26px; border-radius: 12px; margin-top: 32px; font-size: 0.95rem; color: var(--text-2); line-height: 1.75; box-shadow: var(--shadow-sm);">
+        <p style="margin: 0;"><strong style="color: var(--p); font-weight: 700;">Bạn đang gặp khó khăn trong việc kê
+            khai, lập và nộp báo cáo thuế?</strong> Liên hệ ngay Công ty Luật ACC để được tư vấn miễn phí và sử dụng
+          dịch vụ báo cáo thuế trọn gói, nhanh chóng - chính xác - đúng hạn.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ QUY TRÌNH ══ -->
+  <section class="section" id="quy-trinh">
+    <div class="container">
+      <div class="eyebrow">Quy trình</div>
+      <div class="section-title"><span class="title-num">04</span>Quy trình dịch vụ làm báo cáo thuế tại Công ty Luật ACC</div>
+      <p class="section-desc">Dịch vụ làm báo cáo thuế tại ACC được triển khai theo quy trình bài bản, rõ ràng từng bước
+        nhằm đảm bảo tính chính xác, đúng thời hạn và tối ưu cho doanh nghiệp. Cụ thể bao gồm các bước như sau:</p>
+      <div class="process-track">
+        <div class="process-step">
+          <div class="process-num">1</div>
+          <h3>Bước 1: Tiếp nhận yêu cầu</h3>
+          <p>ACC tiếp nhận yêu cầu, khảo sát thực trạng sổ sách và tư vấn gói dịch vụ phù hợp nhất.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">2</div>
+          <h3>Bước 2: Tư vấn chuyên sâu</h3>
+          <p>Phân tích hồ sơ, chứng từ hóa đơn hiện tại và định hướng tối ưu chi phí thuế.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">3</div>
+          <h3>Bước 3: Ký kết hợp đồng</h3>
+          <p>Thống nhất phương án xử lý, ký hợp đồng dịch vụ và bàn giao hồ sơ kế toán.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num">4</div>
+          <h3>Bước 4: Lập & hoàn thiện</h3>
+          <p>Thực hiện hạch toán sổ sách, lập tờ khai thuế và gửi khách hàng phê duyệt trước khi nộp.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num process-num-gold">5</div>
+          <h3>Bước 5: Nộp & giải trình</h3>
+          <p>ACC đại diện nộp báo cáo đúng hạn và hỗ trợ giải trình trực tiếp với cơ quan thuế.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ HỒ SƠ CẦN CUNG CẤP ══ -->
+  <section class="section section-alt" id="ho-so">
+    <div class="container">
+      <div class="eyebrow">Hồ sơ cần thiết</div>
+      <div class="section-title"><span class="title-num">05</span>Hồ sơ khách hàng cần cung cấp khi sử dụng dịch vụ tại ACC</div>
+      <p class="section-desc">Để quá trình thực hiện báo cáo thuế diễn ra nhanh chóng, chính xác và đúng quy định, khách
+        hàng cần chuẩn bị và cung cấp cho ACC các tài liệu cơ bản sau:</p>
+
+      <div class="audience-grid">
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z" />
+            </svg>
+          </div>
+          <div>
+            <h3>Hóa đơn đầu vào, đầu ra</h3>
+            <p>Bao gồm toàn bộ hóa đơn mua hàng, bán hàng, cung cấp dịch vụ phát sinh trong kỳ. Đây là căn cứ quan trọng
+              để xác định doanh thu, chi phí và tính thuế phải nộp.</p>
+          </div>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z" />
+            </svg>
+          </div>
+          <div>
+            <h3>Sổ sách kế toán và dữ liệu liên quan</h3>
+            <p>Cung cấp sổ cái, sổ chi tiết, bảng cân đối phát sinh hoặc các báo cáo tài chính (nếu có). Trường hợp chưa
+              có sổ sách, ACC sẽ hỗ trợ kiểm tra và xử lý lại dữ liệu kế toán.</p>
+          </div>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" />
+            </svg>
+          </div>
+          <div>
+            <h3>Tờ khai và bảng kê thuế (nếu đã thực hiện trước đó)</h3>
+            <p>Bao gồm các tờ khai thuế GTGT, TNDN, TNCN hoặc các loại thuế khác đã nộp. Điều này giúp ACC đối chiếu số
+              liệu và đảm bảo tính liên tục của hồ sơ thuế.</p>
+          </div>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+            </svg>
+          </div>
+          <div>
+            <h3>Hợp đồng và chứng từ thanh toán</h3>
+            <p>Các hợp đồng kinh tế, biên bản nghiệm thu, phiếu thu – chi, sao kê ngân hàng… nhằm chứng minh tính hợp
+              pháp của các giao dịch phát sinh.</p>
+          </div>
+        </div>
+
+        <div class="audience-card" style="grid-column: 1 / -1;">
+          <div class="audience-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm0-4h-2V7h2v6z" />
+            </svg>
+          </div>
+          <div>
+            <h3>Tài liệu liên quan đến thu nhập và chi phí</h3>
+            <p>Bao gồm bảng lương, chi phí vận hành, các khoản giảm trừ thuế và chứng từ liên quan khác để đảm bảo việc
+              kê khai đầy đủ, hợp lý và đúng quy định.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CHI PHÍ DỊCH VỤ ══ -->
+  <section class="section" id="chi-phi">
+    <div class="container">
+      <div class="eyebrow">Bảng giá tham khảo</div>
+      <div class="section-title"><span class="title-num">06</span>Chi phí dịch vụ làm báo cáo thuế tại Công ty Luật ACC</div>
+      <p class="section-desc">Chi phí dịch vụ làm báo cáo thuế không cố định mà sẽ phụ thuộc vào nhiều yếu tố cụ thể của
+        từng doanh nghiệp. Một số yếu tố ảnh hưởng đến chi phí dịch vụ làm báo cáo thuế có thể kể đến như sau:</p>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-check">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+            </svg>
+          </div>
+          <h3>Quy mô doanh nghiệp</h3>
+          <p>Doanh nghiệp càng lớn, khối lượng chứng từ và nghiệp vụ phát sinh càng nhiều thì chi phí sẽ cao hơn.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-check">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+            </svg>
+          </div>
+          <h3>Số lượng hóa đơn, chứng từ</h3>
+          <p>Đây là yếu tố quan trọng quyết định khối lượng công việc kế toán cần xử lý mỗi tháng.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-check">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+            </svg>
+          </div>
+          <h3>Ngành nghề kinh doanh</h3>
+          <p>Một số lĩnh vực đặc thù (xây dựng, sản xuất, xuất nhập khẩu…) có yêu cầu kế toán phức tạp hơn.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-check">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+            </svg>
+          </div>
+          <h3>Tình trạng sổ sách hiện tại</h3>
+          <p>Nếu sổ sách chưa hoàn chỉnh hoặc sai lệch, cần xử lý lại sẽ phát sinh thêm chi phí.</p>
+        </div>
+
+        <div class="benefit-card" style="grid-column: span 2;">
+          <div class="benefit-check">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+            </svg>
+          </div>
+          <h3>Phạm vi dịch vụ</h3>
+          <p>Gói dịch vụ chỉ lập báo cáo thuế sẽ có chi phí thấp hơn so với gói trọn gói bao gồm tư vấn, quyết toán,
+            giải trình thuế.</p>
+        </div>
+      </div>
+
+      <div class="cta-callout"
+        style="background: var(--p-tint2); border-left: 4px solid var(--p); padding: 22px 26px; border-radius: 12px; margin-top: 32px; font-size: 0.95rem; color: var(--text-2); line-height: 1.75; box-shadow: var(--shadow-sm);">
+        <p style="margin: 0;"><strong style="color: var(--p); font-weight: 700;">Liên hệ ngay ACC để được tư vấn miễn
+            phí - báo giá nhanh trong 5 phút - cam kết chi phí minh bạch, không phát sinh.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ĐỐI TƯỢNG ══ -->
+  <section class="section section-alt" id="doi-tuong">
+    <div class="container">
+      <div class="eyebrow">Đối tượng</div>
+      <div class="section-title"><span class="title-num">07</span>Doanh nghiệp nào cần làm báo cáo thuế?</div>
+      <p class="section-desc">Theo quy định tại Điều 2 Luật Quản lý thuế năm 2019, hầu hết các tổ chức, cá nhân kinh
+        doanh đều có nghĩa vụ thực hiện báo cáo thuế, cụ thể:</p>
+      <div class="audience-grid">
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <div>
+            <h3>Doanh nghiệp mới thành lập</h3>
+            <p>Dù chưa phát sinh doanh thu vẫn phải kê khai thuế định kỳ (kê khai "0 đồng").</p>
+          </div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z" />
+            </svg>
+          </div>
+          <div>
+            <h3>Doanh nghiệp đang hoạt động</h3>
+            <p>Phải thực hiện báo cáo theo tháng, quý và năm định kỳ đầy đủ.</p>
+          </div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+            </svg>
+          </div>
+          <div>
+            <h3>Hộ kinh doanh</h3>
+            <p>Theo quy định tại Điều 3 và Điều 4 Nghị định 68/2026/NĐ-CP hộ kinh doanh có doanh thu từ trên 01 tỷ
+              đồng/năm sẽ thuộc trường hợp phải kê khai và nộp thuế GTGT và thuế TNCN theo quy định.</p>
+          </div>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+            </svg>
+          </div>
+          <div>
+            <h3>DN tạm ngừng hoạt động</h3>
+            <p>Vẫn phải thông báo và thực hiện nghĩa vụ thuế theo quy định.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ THỜI HẠN ══ -->
+  <section class="section" id="thoi-han">
+    <div class="container">
+      <div class="eyebrow">Thời hạn</div>
+      <div class="section-title"><span class="title-num">08</span>Thời hạn nộp báo cáo thuế</div>
+      <p class="section-desc" style="margin-bottom:28px;">Căn cứ theo quy định tại Điều 44 Luật Quản lý thuế năm 2019,
+        thời hạn nộp báo cáo thuế được quy định chi tiết như sau:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Loại kê khai thuế</th>
+              <th>Thời hạn nộp hồ sơ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Khai thuế theo tháng</td>
+              <td>Chậm nhất ngày 20 của tháng tiếp theo. Ví dụ, các khoản thuế phát sinh trong tháng 1 phải được báo cáo
+                và nộp trước ngày 20/2.</td>
+            </tr>
+            <tr>
+              <td>Khai thuế theo quý</td>
+              <td>Chậm nhất ngày cuối cùng của tháng đầu quý sau. Ví dụ, báo cáo thuế quý 1 (tháng 1-3) phải được hoàn
+                thành trước ngày 30/4.</td>
+            </tr>
+            <tr>
+              <td>Quyết toán thuế năm (doanh nghiệp)</td>
+              <td>Chậm nhất ngày cuối cùng của tháng thứ 3 kể từ khi kết thúc năm tài chính tức 31/3 với năm tài chính
+                kết thúc ngày 31/12.</td>
+            </tr>
+            <tr>
+              <td>Khai thuế năm</td>
+              <td>Chậm nhất ngày cuối cùng của tháng đầu tiên của năm.</td>
+            </tr>
+            <tr>
+              <td>Quyết toán thuế TNCN (cá nhân)</td>
+              <td>Chậm nhất ngày cuối cùng của tháng thứ 4 kể từ khi kết thúc năm.</td>
+            </tr>
+            <tr>
+              <td>Thuế khoán (hộ kinh doanh)</td>
+              <td>Chậm nhất ngày 15/12 của năm trước; trường hợp mới kinh doanh: 10 ngày từ khi bắt đầu.</td>
+            </tr>
+            <tr>
+              <td>Khai thuế theo từng lần phát sinh</td>
+              <td>Chậm nhất 10 ngày kể từ ngày phát sinh nghĩa vụ thuế.</td>
+            </tr>
+            <tr>
+              <td>Chấm dứt hoạt động/doanh nghiệp</td>
+              <td>Chậm nhất 45 ngày kể từ ngày phát sinh sự kiện.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MỨC XỬ PHẠT ══ -->
+  <section class="section section-alt" id="xu-phat">
+    <div class="container">
+      <div class="eyebrow">Mức xử phạt</div>
+      <div class="section-title"><span class="title-num">09</span>Chậm nộp báo cáo thuế bị xử phạt như thế nào?</div>
+      <p class="section-desc" style="margin-bottom:28px;">Căn cứ theo quy định tại Điều 13 Nghị định 125/2020/NĐ-CP được
+        sửa đổi bởi điểm a khoản 10 Điều 1 Nghị định 310/2025/NĐ-CP, việc chậm nộp báo cáo thuế có thể bị xử phạt hành
+        chính với những mức phạt cụ thể như sau:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Thời gian chậm nộp</th>
+              <th>Mức xử phạt đối với tổ chức</th>
+              <th>Mức xử phạt đối với cá nhân</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="sev sev-1"></span>Từ 01 – 05 ngày (có tình tiết giảm nhẹ)</td>
+              <td>Cảnh cáo</td>
+              <td>Cảnh cáo</td>
+            </tr>
+            <tr>
+              <td><span class="sev sev-2"></span>Từ 01 – 30 ngày (trừ trường hợp cảnh cáo)</td>
+              <td class="fine-cell">2.000.000 – 5.000.000 đồng</td>
+              <td class="fine-cell">1.000.000 – 2.500.000 đồng</td>
+            </tr>
+            <tr>
+              <td><span class="sev sev-3"></span>Từ 31 – 60 ngày</td>
+              <td class="fine-cell">5.000.000 – 8.000.000 đồng</td>
+              <td class="fine-cell">2.500.000 – 4.000.000 đồng</td>
+            </tr>
+            <tr>
+              <td><span class="sev sev-4"></span>Từ 61 – 90 ngày</td>
+              <td class="fine-cell">8.000.000 – 15.000.000 đồng</td>
+              <td class="fine-cell">4.000.000 – 7.500.000 đồng</td>
+            </tr>
+            <tr>
+              <td><span class="sev sev-5"></span>Trên 90 ngày (đã nộp đủ thuế trước khi kiểm tra)</td>
+              <td class="fine-cell" style="color:var(--p);">15.000.000 – 25.000.000 đồng</td>
+              <td class="fine-cell" style="color:var(--p);">7.500.000 – 12.500.000 đồng</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-note"
+        style="margin-top: 22px; font-size: 0.9rem; color: var(--text-m); line-height: 1.75; background: #fff; padding: 20px 24px; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+        <p style="margin: 0;"><strong style="color: var(--p);">Biện pháp khắc phục hậu quả:</strong> Ngoài hình thức xử
+          phạt chính, doanh nghiệp chậm nộp báo cáo thuế còn bị áp dụng biện pháp khắc phục hậu quả bao gồm: buộc nộp hồ
+          sơ khai thuế, phụ lục kèm theo hồ sơ khai thuế, buộc nộp đủ số tiền chậm nộp tiền thuế vào ngân sách nhà nước.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LỢI ÍCH ══ -->
+  <section class="section" id="loi-ich">
+    <div class="container">
+      <div class="eyebrow">Tại sao chọn ACC?</div>
+      <div class="section-title"><span class="title-num">10</span>Lợi ích khi sử dụng dịch vụ làm báo cáo thuế của Công ty Luật ACC</div>
+      <p class="section-desc">Sử dụng dịch vụ làm báo cáo thuế tại ACC không chỉ giúp doanh nghiệp tiết kiệm thời gian
+        mà còn đảm bảo tính chính xác và an toàn pháp lý. Dịch vụ làm báo cáo thuế của ACC có những điểm nổi bật sau
+        đây:</p>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-check">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+            </svg>
+          </div>
+          <h3>Xử lý nhanh, đúng hạn</h3>
+          <p>Hoàn thành báo cáo chỉ từ 3–5 ngày, bảo đảm hồ sơ được đầy đủ chính xác, hạn chế tối đa việc chỉnh sửa.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-check">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+            </svg>
+          </div>
+          <h3>Chi phí minh bạch, trọn gói</h3>
+          <p>Báo giá rõ ràng ngay từ đầu, cam kết không phát sinh phí ẩn, giúp doanh nghiệp chủ động ngân sách.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-check">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+            </svg>
+          </div>
+          <h3>Tư vấn chuyên sâu, cập nhật liên tục</h3>
+          <p>Đội ngũ chuyên viên luôn nắm bắt quy định mới, đưa ra giải pháp phù hợp với từng loại hình doanh nghiệp.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-check">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+            </svg>
+          </div>
+          <h3>Hỗ trợ hồ sơ đầy đủ</h3>
+          <p>ACC hướng dẫn và chuẩn bị hồ sơ đúng chuẩn, giúp rút ngắn thời gian xử lý và tránh sai sót.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-check">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+            </svg>
+          </div>
+          <h3>Bảo mật thông tin tuyệt đối</h3>
+          <p>Toàn bộ dữ liệu tài chính và thông tin khách hàng được bảo vệ nghiêm ngặt trong suốt quá trình làm việc.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-check">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+            </svg>
+          </div>
+          <h3>Đảm bảo tuân thủ pháp luật</h3>
+          <p>Quy trình thực hiện được kiểm soát chặt chẽ, giúp doanh nghiệp hạn chế rủi ro và yên tâm về mặt pháp lý.
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-check">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+            </svg>
+          </div>
+          <h3>Không cần đi lại</h3>
+          <p>ACC đại diện nộp hồ sơ, nhận và trả kết quả, giúp khách hàng tiết kiệm thời gian và công sức.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-check">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+            </svg>
+          </div>
+          <h3>Hỗ trợ 24/7</h3>
+          <p>Đội ngũ chăm sóc khách hàng luôn sẵn sàng giải đáp mọi thắc mắc nhanh chóng, kịp thời.</p>
+        </div>
+
+        <div class="benefit-card" style="grid-column: span 3;">
+          <div class="benefit-check">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-4-4 1.41-1.41L10 13.17l6.59-6.59L18 8l-8 8z" />
+            </svg>
+          </div>
+          <h3>Đồng hành lâu dài</h3>
+          <p>ACC không chỉ hỗ trợ trong quá trình thực hiện mà còn tiếp tục tư vấn, xử lý các vấn đề phát sinh sau đó.
+          </p>
+        </div>
+      </div>
+
+      <div class="cta-callout"
+        style="background: var(--p-tint2); border-left: 4px solid var(--p); padding: 22px 26px; border-radius: 12px; margin-top: 32px; font-size: 0.95rem; color: var(--text-2); line-height: 1.75; box-shadow: var(--shadow-sm);">
+        <p style="margin: 0;"><strong style="color: var(--p); font-weight: 700;">Liên hệ ngay:</strong> Liên hệ Công ty
+          Luật ACC ngay hôm nay để được tư vấn chi tiết và trải nghiệm dịch vụ báo cáo thuế chuyên nghiệp, hiệu quả và
+          đúng quy định pháp luật.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA STRIP ══ -->
+  <section class="cta-strip">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-content">
+          <div class="cta-kicker">Nhận báo giá chi tiết</div>
+          <div class="cta-title">Liên hệ <span class="glossy-text">ACC</span> để được tư vấn & báo giá rõ ràng</div>
+          <p class="cta-sub">Gửi thông tin doanh nghiệp, <span class="glossy-text">ACC</span> sẽ kiểm tra tình trạng chứng từ, <span style="color: var(--gold-lt);">tư vấn gói dịch vụ phù hợp và báo giá chi tiết trước khi triển khai.</span></p>
+          <div class="cta-badges">
+            <span class="cta-badge">Báo giá chi tiết</span>
+            <span class="cta-badge">Tư vấn gói phù hợp</span>
+            <span class="cta-badge">Không phí ẩn</span>
+          </div>
+        </div>
+        <div class="cta-actions">
+          <a href="tel:19003330" class="btn-cta btn-primary">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px">
+              <path
+                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+            </svg>
+            Liên hệ tư vấn
+          </a>
+          <a href="https://zalo.me/2171133625094125529" target="_blank" rel="noopener noreferrer"
+            class="btn-cta btn-outline">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+            </svg>
+            Nhận tư vấn qua Zalo
+          </a>
+          <a href="mailto:info@congtyluatacc.vn" class="btn-cta btn-outline">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px">
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+            Nhận báo giá qua Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ══ -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="faq-head">
+        <div class="eyebrow">Hỏi đáp</div>
+        <div class="section-title"><span class="title-num">11</span>Câu hỏi thường gặp</div>
+        <p class="section-desc">Một số câu hỏi doanh nghiệp thường gặp khi chuẩn bị và nộp báo cáo thuế định kỳ.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-1" id="faq-q-1">
+            Doanh nghiệp không phát sinh doanh thu có phải nộp báo cáo thuế không?
+            <span class="faq-chevron"><svg viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9" />
+              </svg></span>
+          </button>
+          <div class="faq-a" id="faq-a-1" role="region" aria-labelledby="faq-q-1" aria-hidden="true">Có. Dù không phát
+            sinh doanh thu, doanh nghiệp vẫn phải nộp tờ khai thuế theo đúng kỳ hạn, thường là kê khai “0 đồng”.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-2" id="faq-q-2">
+            Làm sai báo cáo thuế có được điều chỉnh lại không?
+            <span class="faq-chevron"><svg viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9" />
+              </svg></span>
+          </button>
+          <div class="faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2" aria-hidden="true">Có thể. Doanh
+            nghiệp được phép nộp tờ khai bổ sung để điều chỉnh sai sót, nhưng có thể bị xử phạt nếu việc sai sót làm
+            thiếu số thuế phải nộp hoặc nộp chậm.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-3" id="faq-q-3">
+            Báo cáo thuế và báo cáo tài chính khác nhau như thế nào?
+            <span class="faq-chevron"><svg viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9" />
+              </svg></span>
+          </button>
+          <div class="faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3" aria-hidden="true">Báo cáo thuế là các
+            tờ khai nộp định kỳ theo tháng/quý, còn báo cáo tài chính là bộ báo cáo tổng hợp kết quả kinh doanh cả năm
+            và nộp vào cuối kỳ kế toán.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-4" id="faq-q-4">
+            Nếu doanh nghiệp tạm ngừng kinh doanh thì có phải nộp báo cáo thuế không?
+            <span class="faq-chevron"><svg viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9" />
+              </svg></span>
+          </button>
+          <div class="faq-a" id="faq-a-4" role="region" aria-labelledby="faq-q-4" aria-hidden="true">Nếu đã thông báo
+            tạm ngừng hợp lệ với cơ quan thuế, doanh nghiệp có thể được miễn nộp một số tờ khai trong thời gian tạm
+            ngừng, nhưng vẫn cần theo dõi các nghĩa vụ còn tồn đọng trước đó.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-5" id="faq-q-5">
+            Có thể nộp báo cáo thuế online không?
+            <span class="faq-chevron"><svg viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9" />
+              </svg></span>
+          </button>
+          <div class="faq-a" id="faq-a-5" role="region" aria-labelledby="faq-q-5" aria-hidden="true">Có. Hiện nay doanh
+            nghiệp có thể nộp báo cáo thuế điện tử thông qua cổng Thuế điện tử của Tổng cục Thuế bằng chữ ký số.</div>
+        </div>
+      </div>
+
+      <div class="cta-callout"
+        style="background: var(--p-tint2); border-left: 4px solid var(--p); padding: 26px 28px; border-radius: 16px; margin-top: 48px; font-size: 0.98rem; color: var(--text-2); line-height: 1.8; box-shadow: var(--shadow); max-width: 1040px; margin-left: auto; margin-right: auto;">
+        <p style="margin: 0;">Báo cáo thuế là nghĩa vụ bắt buộc và có ảnh hưởng trực tiếp đến tính tuân thủ pháp luật
+          của doanh nghiệp. Việc thực hiện đúng và kịp thời giúp doanh nghiệp hạn chế rủi ro xử phạt và yên tâm trong
+          quá trình hoạt động kinh doanh. Nếu bạn đang cần hỗ trợ thực hiện báo cáo thuế nhanh chóng, chính xác và đúng
+          quy định, hãy liên hệ ngay với Công ty Luật ACC để được tư vấn và hỗ trợ trọn gói.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    // Scroll reveal animations
+    (function () {
+      var revealSelectors = [
+        '.section .eyebrow',
+        '.section .section-title',
+        '.section .section-desc',
+        '.intro-lead',
+        '.tax-type',
+        '.service-card',
+        '.process-step',
+        '.table-wrap',
+        '.audience-card',
+        '.benefit-card',
+        '.cta-inner',
+        '.faq-item'
+      ];
+
+      var items = Array.prototype.slice.call(document.querySelectorAll(revealSelectors.join(',')));
+
+      items.forEach(function (el) {
+        el.classList.add('reveal');
+
+        if (el.classList.contains('table-wrap') || el.classList.contains('cta-inner')) {
+          el.classList.add('reveal-scale');
+        }
+
+        if (el.classList.contains('audience-card') || el.classList.contains('process-step')) {
+          el.classList.add('reveal-left');
+        }
+      });
+
+      ['.tax-types', '.services-grid', '.process-track', '.audience-grid', '.benefits-grid', '.faq-list'].forEach(function (groupSelector) {
+        document.querySelectorAll(groupSelector).forEach(function (group) {
+          Array.prototype.slice.call(group.children).forEach(function (child, index) {
+            child.style.setProperty('--delay', Math.min(index * 90, 450) + 'ms');
+          });
+        });
+      });
+
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+
+      items.forEach(function (el) { observer.observe(el); });
+    })();
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item').forEach(function (i) {
+          i.classList.remove('open');
+          var question = i.querySelector('.faq-q');
+          var answer = i.querySelector('.faq-a');
+          if (question) question.setAttribute('aria-expanded', 'false');
+          if (answer) answer.setAttribute('aria-hidden', 'true');
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          var activeAnswer = item.querySelector('.faq-a');
+          if (activeAnswer) activeAnswer.setAttribute('aria-hidden', 'false');
+        }
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

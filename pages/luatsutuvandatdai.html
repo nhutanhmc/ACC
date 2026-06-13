@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luật Sư Tư Vấn Luật Đất Đai Chuyên Sâu | ACC Law Firm</title>
+<meta name="description" content="Dịch vụ luật sư tư vấn đất đai chuyên nghiệp tại ACC Law Firm. Giải quyết tranh chấp, thủ tục sổ đỏ, quy hoạch và giao dịch bất động sản."/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --primary: #8B1C1C;
+    --primary-dark: #5c1114;
+    --accent: #D4AF37;
+    --accent-light: #F5D87C;
+    --gold: #C9963B;
+  }
+
+  * { box-sizing: border-box; }
+  body { font-family: 'Roboto', sans-serif; background: #fafafa; color: #1a1a1a; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #f1f1f1; }
+  ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+  /* ===== HERO ===== */
+  .hero-overlay {
+    background: linear-gradient(160deg, rgba(10,2,2,0.88) 0%, rgba(70,14,16,0.84) 45%, rgba(20,5,5,0.75) 100%);
+  }
+  .hero-grid {
+    background-image: linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);
+    background-size: 64px 64px;
+  }
+  .shimmer {
+    background: linear-gradient(135deg,#F5D87C,#D4AF37,#F5D87C);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    background-size: 200% auto; animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer { 0%{background-position:0% center}100%{background-position:200% center} }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 18px; border: 1px solid rgba(212,175,55,0.4); border-radius: 100px;
+    background: rgba(212,175,55,0.08); color: var(--accent-light);
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .bdot { width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2s ease-in-out infinite; }
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+  /* Buttons */
+  .btn-gold {
+    display:inline-flex;align-items:center;gap:10px;padding:14px 34px;
+    background:linear-gradient(135deg,var(--accent),#B8960A);color:#1a0404;
+    font-weight:700;font-size:0.9rem;border-radius:100px;text-decoration:none;
+    transition:all 0.3s;box-shadow:0 8px 28px rgba(212,175,55,0.38);
+    position:relative;overflow:hidden;
+  }
+  .btn-gold::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:left 0.5s;}
+  .btn-gold:hover::before{left:100%;}
+  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(212,175,55,0.5);}
+  .btn-outline-w {
+    display:inline-flex;align-items:center;gap:10px;padding:14px 34px;
+    border:2px solid rgba(255,255,255,0.28);color:white;font-weight:600;font-size:0.9rem;
+    border-radius:100px;background:rgba(255,255,255,0.05);backdrop-filter:blur(8px);
+    text-decoration:none;transition:all 0.3s;
+  }
+  .btn-outline-w:hover{border-color:rgba(255,255,255,0.65);background:rgba(255,255,255,0.12);transform:translateY(-3px);}
+
+  /* Float badge */
+  .fbadge {
+    background:rgba(255,255,255,0.96);border-radius:16px;padding:12px 18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.18);display:flex;align-items:center;gap:10px;
+    animation:float 3s ease-in-out infinite;
+  }
+  .fbadge.d{animation-delay:1.5s;}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+  /* Stats */
+  .hstat{border-left:1px solid rgba(255,255,255,0.12);padding-left:22px;}
+  .hstat:first-child{border-left:none;padding-left:0;}
+  .snum{font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#F5D87C,#D4AF37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+  /* ===== SECTION HELPERS ===== */
+  .slabel {
+    display:inline-flex;align-items:center;gap:8px;padding:4px 14px;border-radius:100px;
+    background:rgba(139,28,28,0.07);color:var(--primary);
+    font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;
+  }
+  .stitle {
+    font-family:'Roboto',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);
+    font-weight:700;color:#1a0404;line-height:1.2;
+  }
+  .stitle span{color:var(--primary);}
+  .sline{width:56px;height:4px;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:2px;margin-top:14px;}
+  .sline.c{margin-left:auto;margin-right:auto;}
+
+  .bg-mesh{background-color:#fafafa;background-image:radial-gradient(at 10% 20%,rgba(139,28,28,0.03) 0,transparent 55%),radial-gradient(at 90% 80%,rgba(212,175,55,0.03) 0,transparent 55%);}
+
+  /* ===== CARDS ===== */
+  .card{background:white;border-radius:20px;border:1px solid rgba(139,28,28,0.06);box-shadow:0 2px 16px rgba(0,0,0,0.04);transition:all 0.35s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;}
+  .card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
+  .card:hover::before{transform:scaleX(1);}
+  .card:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(139,28,28,0.1);border-color:rgba(139,28,28,0.12);}
+  .ibox{width:52px;height:52px;border-radius:15px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;transition:all 0.3s;}
+  .card:hover .ibox{background:linear-gradient(135deg,var(--primary),var(--primary-dark));transform:rotate(5deg) scale(1.1);}
+  .card:hover .ibox .material-symbols-outlined{color:white!important;}
+
+  /* ===== SCENARIO CARDS ===== */
+  .scard{background:white;border-radius:18px;border:1px solid rgba(139,28,28,0.06);padding:28px;transition:all 0.35s;position:relative;overflow:hidden;}
+  .scard::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));transition:width 0.4s;border-radius:2px 2px 0 0;}
+  .scard:hover::after{width:60%;}
+  .scard:hover{transform:translateY(-5px);box-shadow:0 14px 38px rgba(139,28,28,0.1);}
+
+  /* ===== CHECKLIST DARK ===== */
+  .dark-panel{background:linear-gradient(135deg,#1a0202 0%,#5c1114 50%,#2d0707 100%);border-radius:22px;overflow:hidden;position:relative;}
+  .dark-panel::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,0.08),transparent 70%);pointer-events:none;}
+  .check-row-light{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .check-row-light:last-child{border-bottom:none;}
+
+  /* ===== SERVICES LIST ===== */
+  .svc-row{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(139,28,28,0.06);font-size:0.875rem;color:#444;line-height:1.6;}
+  .svc-row:last-child{border-bottom:none;}
+  .svc-dot{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+
+  /* ===== PROCESS DARK ===== */
+  .process-bg{background:linear-gradient(160deg,#1a0202 0%,#4a0d0d 40%,#2d0707 100%);position:relative;overflow:hidden;}
+  .tl-dot{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:white;box-shadow:0 4px 16px rgba(139,28,28,0.3);flex-shrink:0;position:relative;z-index:2;transition:transform 0.3s;}
+  .tl-dot:hover{transform:scale(1.12);}
+  .tl-card{background:rgba(255,255,255,0.06);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:20px 24px;flex:1;transition:all 0.3s;}
+  .tl-card:hover{background:rgba(255,255,255,0.1);border-color:rgba(212,175,55,0.2);}
+
+  /* ===== DOCS CHECKLIST ===== */
+  .doc-item{display:flex;align-items:center;gap:14px;padding:14px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:14px;transition:all 0.3s;}
+  .doc-item:hover{background:rgba(255,255,255,0.1);border-color:rgba(212,175,55,0.25);}
+  .doc-icon{width:38px;height:38px;border-radius:11px;background:rgba(212,175,55,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+  /* ===== PRICING TABLE ===== */
+  .price-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(139,28,28,0.07);}
+  .price-row:last-child{border-bottom:none;}
+
+  /* ===== WHY CHOOSE ===== */
+  .stat-box{background:white;border-radius:18px;border:1px solid rgba(139,28,28,0.07);padding:24px;text-align:center;transition:all 0.3s;}
+  .stat-box:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(139,28,28,0.1);border-color:rgba(139,28,28,0.14);}
+
+  /* ===== BENEFIT CARDS ===== */
+  .benefit-card{background:white;border-radius:18px;border:1px solid rgba(139,28,28,0.06);padding:26px;transition:all 0.35s;position:relative;overflow:hidden;}
+  .benefit-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
+  .benefit-card:hover::before{transform:scaleX(1);}
+  .benefit-card:hover{transform:translateY(-5px);box-shadow:0 14px 38px rgba(139,28,28,0.1);}
+
+  /* ===== CRITERIA ===== */
+  .criteria-item{display:flex;gap:16px;align-items:flex-start;padding:18px;background:white;border-radius:16px;border:1px solid rgba(139,28,28,0.06);transition:all 0.3s;}
+  .criteria-item:hover{border-color:rgba(139,28,28,0.18);box-shadow:0 8px 24px rgba(139,28,28,0.07);}
+  .cnum{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:white;flex-shrink:0;}
+
+  /* ===== FAQ ===== */
+  .faq-item{background:white;border:1px solid rgba(139,28,28,0.08);border-radius:16px;overflow:hidden;transition:border-color 0.3s;}
+  .faq-item:hover{border-color:rgba(139,28,28,0.18);}
+  .faq-sum{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 24px;cursor:pointer;font-weight:600;color:#1a0404;gap:16px;transition:all 0.3s;}
+  .faq-item[open] .faq-sum{background:rgba(139,28,28,0.03);color:var(--primary);border-bottom:1px solid rgba(139,28,28,0.07);}
+  .faq-sum::-webkit-details-marker{display:none;}
+  .fchev{transition:transform 0.3s;flex-shrink:0;color:var(--primary);}
+  .faq-item[open] .fchev{transform:rotate(180deg);}
+  .faq-body{padding:18px 24px;color:#555;line-height:1.75;font-size:0.9rem;}
+
+  /* ===== CTA ===== */
+  .cta-bg{background:linear-gradient(155deg,#1a0202 0%,#5c1114 45%,#2d0505 100%);position:relative;overflow:hidden;}
+  .cta-orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;}
+
+  /* ===== REVEAL ===== */
+  .reveal{opacity:0;transform:translateY(28px);transition:all 0.7s cubic-bezier(.4,0,.2,1);}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  .reveal-l{opacity:0;transform:translateX(-28px);transition:all 0.7s cubic-bezier(.4,0,.2,1);}
+  .reveal-l.visible{opacity:1;transform:translateX(0);}
+  .reveal-r{opacity:0;transform:translateX(28px);transition:all 0.7s cubic-bezier(.4,0,.2,1);}
+  .reveal-r.visible{opacity:1;transform:translateX(0);}
+
+  .material-symbols-outlined{font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="relative min-h-screen flex items-center overflow-hidden">
+  <img
+    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsjkqmpmpYWe8oesHYgOYIKJbatFv6PWuF2Y2tISS0mQeb4QvJX6OxRVJH2x88iPiWjXgULDctgK0ka4KS9-33jkxSyAJf4iw5sjrER9QhZjQ-2ZCPuHZanitLHhQaNZg_REhxIj6d0Glb2BOV9MiJITirJyu9a5JZmJowXU3Vr1kHMfvIS2wme7XiOzof2j9QXAzvvwG4aGEdQ7bWXYvCGwb4kVjb_SOtJekS3KdG_rI7fZjmQ3RXkEwxLXWPTkNCM03HBF_Dv9qC"
+    alt="Hero background đất đai"
+    class="absolute inset-0 w-full h-full object-cover" style="z-index:0;"
+  />
+  <div class="hero-overlay absolute inset-0" style="z-index:1;"></div>
+  <div class="hero-grid absolute inset-0" style="z-index:2;pointer-events:none;"></div>
+  <!-- Orbs -->
+  <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(139,28,28,0.2);top:-100px;right:-100px;filter:blur(90px);z-index:2;pointer-events:none;"></div>
+  <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(212,175,55,0.06);bottom:-60px;left:-60px;filter:blur(70px);z-index:2;pointer-events:none;"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+      <!-- Left -->
+      <div class="space-y-8">
+        <div class="hero-badge">
+          <span class="bdot"></span>
+          ACC Law Firm &nbsp;·&nbsp; Tư vấn Đất đai
+        </div>
+        <h1 style="font-family:'Roboto',sans-serif;font-size:clamp(2.1rem,4vw,3.5rem);font-weight:700;color:white;line-height:1.12;">
+          Luật Sư <span class="shimmer">Đất Đai</span><br/>Chuyên Sâu
+        </h1>
+        <p style="color:rgba(255,255,255,0.68);line-height:1.75;font-size:1rem;max-width:510px;">
+          Giải pháp an toàn, bảo vệ quyền lợi tối đa trong mọi giao dịch bất động sản với đội ngũ luật sư <strong style="color:rgba(255,255,255,0.9);">hàng đầu tại ACC Law Firm</strong>. Hàng tỷ đồng tài sản được bảo vệ mỗi năm.
+        </p>
+        <div style="padding:20px 24px;background:rgba(255,255,255,0.06);backdrop-filter:blur(12px);border:1px solid rgba(212,175,55,0.25);border-left:3px solid var(--accent);border-radius:14px;">
+          <p style="color:rgba(255,255,255,0.75);font-style:italic;font-size:0.92rem;line-height:1.65;">"Trong thị trường bất động sản phức tạp, sự hiện diện của một luật sư chuyên sâu là rào chắn an toàn nhất cho tương lai tài chính của bạn."</p>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <a href="tel:19003330" class="btn-gold">
+            <span class="material-symbols-outlined" style="font-size:18px;">call</span>
+            Gọi 1900 3330
+          </a>
+          <a href="#services" class="btn-outline-w">
+            <span class="material-symbols-outlined" style="font-size:18px;">arrow_downward</span>
+            Khám phá dịch vụ
+          </a>
+        </div>
+        <!-- Stats -->
+        <div class="flex flex-wrap gap-0 pt-2">
+          <div class="hstat">
+            <div class="snum">15+</div>
+            <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:2px;">Năm kinh nghiệm</div>
+          </div>
+          <div class="hstat" style="margin-left:22px;">
+            <div class="snum">1000+</div>
+            <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:2px;">Hồ sơ thành công</div>
+          </div>
+          <div class="hstat" style="margin-left:22px;">
+            <div class="snum">Toàn quốc</div>
+            <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:2px;">Phủ sóng dịch vụ</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right image card -->
+      <div class="hidden lg:block relative">
+        <div style="background:rgba(255,255,255,0.05);backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:12px;transition:transform 0.4s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+          <img
+            src="https://lh3.googleusercontent.com/aida/AP1WRLsdyBf6vv0FRwM7D_CQK4oaRgnb65wD7wKxZ9YsGusa62EaMt2gJjRucysfvrGYY1lIyHp3RNCjUuyDToKPebCECSlFJhOVG2iPj16YPc6MdFeZ1tVPBKJUVCa3n_KAjPAXnn6c-4CE3DB668d8sTpaFy4fbSDkhGbP4tKzpygEBINdW3jMC5iLe3HebHK3iBXR1Bj2JpVGREj_2qwwNfWdoO0WMbUjvK_CqEmqPbgBxK2tpy-e1X4vMRe4"
+            alt="Dịch vụ pháp lý đất đai ACC"
+            class="w-full rounded-2xl object-cover" style="height:340px;"
+          />
+        </div>
+        <div class="fbadge" style="position:absolute;bottom:-18px;left:20px;z-index:10;">
+          <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined" style="color:white;font-size:17px;">verified</span>
+          </div>
+          <div>
+            <div style="font-weight:700;font-size:0.82rem;color:#1a0404;">Pháp lý đảm bảo</div>
+            <div style="font-size:0.7rem;color:#888;">Cam kết toàn diện</div>
+          </div>
+        </div>
+        <div class="fbadge d" style="position:absolute;top:20px;right:-18px;z-index:10;">
+          <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#D4AF37,#B8960A);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined" style="color:white;font-size:17px;">shield</span>
+          </div>
+          <div>
+            <div style="font-weight:700;font-size:0.82rem;color:#1a0404;">Bảo mật tuyệt đối</div>
+            <div style="font-size:0.7rem;color:#888;">Thông tin khách hàng</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave -->
+  <div style="position:absolute;bottom:0;left:0;right:0;z-index:5;">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:80px;">
+      <path d="M0 80 L0 40 Q360 0 720 40 Q1080 80 1440 40 L1440 80 Z" fill="#fafafa"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== INTRO: LUẬT SƯ ĐẤT ĐAI LÀ AI ===== -->
+<section class="py-24 bg-mesh">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div class="reveal-l">
+        <div class="slabel">Giới thiệu</div>
+        <h2 class="stitle">Luật Sư Đất Đai <span>Là Ai?</span></h2>
+        <div class="sline"></div>
+        <div class="space-y-4 mt-6">
+          <p style="color:#555;line-height:1.8;font-size:0.95rem;">Luật sư đất đai là những chuyên gia pháp lý chuyên sâu về các quy định liên quan đến quyền sở hữu, sử dụng và giao dịch tài sản gắn liền với đất.</p>
+          <p style="color:#666;line-height:1.8;font-size:0.9rem;">Tại ACC Law Firm, vai trò của chúng tôi không chỉ dừng lại ở việc tư vấn văn bản. Chúng tôi là người đồng hành, đảm bảo tính minh bạch pháp lý và ngăn ngừa rủi ro cho hàng tỷ đồng tài sản của khách hàng.</p>
+        </div>
+        <a href="#services" style="display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-weight:600;font-size:0.875rem;margin-top:20px;text-decoration:none;">
+          Xem chi tiết dịch vụ
+          <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
+        </a>
+      </div>
+      <div class="reveal-r relative">
+        <img
+          src="https://lh3.googleusercontent.com/aida/AP1WRLsdyBf6vv0FRwM7D_CQK4oaRgnb65wD7wKxZ9YsGusa62EaMt2gJjRucysfvrGYY1lIyHp3RNCjUuyDToKPebCECSlFJhOVG2iPj16YPc6MdFeZ1tVPBKJUVCa3n_KAjPAXnn6c-4CE3DB668d8sTpaFy4fbSDkhGbP4tKzpygEBINdW3jMC5iLe3HebHK3iBXR1Bj2JpVGREj_2qwwNfWdoO0WMbUjvK_CqEmqPbgBxK2tpy-e1X4vMRe4"
+          alt="Luật sư đất đai ACC"
+          class="w-full rounded-2xl shadow-2xl object-cover" style="height:380px;"
+        />
+        <div style="position:absolute;bottom:-18px;left:24px;background:white;border-radius:16px;padding:16px 22px;box-shadow:0 8px 28px rgba(0,0,0,0.12);display:flex;align-items:center;gap:14px;">
+          <div style="font-family:'Roboto',sans-serif;font-size:2.2rem;font-weight:700;color:var(--primary);line-height:1;">15+</div>
+          <div>
+            <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Năm kinh nghiệm</div>
+            <div style="font-size:0.72rem;color:#888;">Luật đất đai chuyên sâu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCENARIOS: KHI NÀO CẦN LUẬT SƯ ===== -->
+<section class="py-24" style="background:white;" id="scenarios">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="slabel" style="justify-content:center;">Tình huống pháp lý</div>
+      <h2 class="stitle">Khi Nào Bạn <span>Cần Luật Sư?</span></h2>
+      <div class="sline c"></div>
+      <p style="color:#777;font-size:0.9rem;max-width:480px;margin:14px auto 0;">Các tình huống pháp lý phổ biến mà chúng tôi xử lý hàng ngày.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
+      <div class="scard reveal" style="transition-delay:0s;">
+        <div style="width:50px;height:50px;border-radius:15px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <span class="material-symbols-outlined" style="color:var(--primary);font-size:24px;">gavel</span>
+        </div>
+        <h3 style="font-weight:700;font-size:1.05rem;color:var(--primary);margin-bottom:10px;">Tranh Chấp Đất Đai</h3>
+        <p style="color:#666;font-size:0.875rem;line-height:1.7;">Tranh chấp ranh giới, thừa kế, hoặc quyền sử dụng đất giữa các cá nhân, tổ chức.</p>
+      </div>
+      <div class="scard reveal" style="transition-delay:0.07s;">
+        <div style="width:50px;height:50px;border-radius:15px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <span class="material-symbols-outlined" style="color:var(--primary);font-size:24px;">description</span>
+        </div>
+        <h3 style="font-weight:700;font-size:1.05rem;color:var(--primary);margin-bottom:10px;">Thủ Tục Sổ Đỏ</h3>
+        <p style="color:#666;font-size:0.875rem;line-height:1.7;">Cấp mới, sang tên, đính chính thông tin trên Giấy chứng nhận quyền sử dụng đất.</p>
+      </div>
+      <div class="scard reveal" style="transition-delay:0.14s;">
+        <div style="width:50px;height:50px;border-radius:15px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <span class="material-symbols-outlined" style="color:var(--primary);font-size:24px;">apartment</span>
+        </div>
+        <h3 style="font-weight:700;font-size:1.05rem;color:var(--primary);margin-bottom:10px;">Mua Bán / Chuyển Nhượng</h3>
+        <p style="color:#666;font-size:0.875rem;line-height:1.7;">Kiểm tra pháp lý dự án, rà soát hợp đồng đặt cọc và chuyển nhượng chính thức.</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="scard md:col-span-2 reveal" style="transition-delay:0.21s;display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+          <div style="width:50px;height:50px;border-radius:15px;background:rgba(212,175,55,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+            <span class="material-symbols-outlined" style="color:var(--accent);font-size:24px;">map</span>
+          </div>
+          <h3 style="font-weight:700;font-size:1.05rem;color:var(--primary);margin-bottom:10px;">Quy Hoạch &amp; Đền Bù</h3>
+          <p style="color:#666;font-size:0.875rem;line-height:1.7;">Tư vấn về diện tích đất nằm trong quy hoạch, giá đền bù giải phóng mặt bằng và tái định cư.</p>
+        </div>
+        <img
+          src="https://lh3.googleusercontent.com/aida/AP1WRLvmmm77fNqz-YyXNBeHZ1SD9rxHtue0kVX1caLD5Zg92l1BkC8LFPrXTIcFGedy1Jro9xuKtZ01X7vvzmYrncyuZ2Wlg6RsiOkiZbns53KtLadFyE9rdThcAic9wYQTA9y862cquwPTjLLIlBCZBWvVgu6qLRaNRjmpMWR2ILDJ2GXTzadTLumkODhiIYYzwCgIbtyemgQdk6k9gJxSKctgL2aBIFFZt_bqGQZNcYvjEGJyObliEgfq4FCH"
+          alt="Quy hoạch bản đồ"
+          class="rounded-xl object-cover grayscale hover:grayscale-0 transition-all duration-700"
+          style="width:180px;height:130px;flex-shrink:0;"
+        />
+      </div>
+      <div class="scard reveal" style="transition-delay:0.28s;">
+        <div style="width:50px;height:50px;border-radius:15px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+          <span class="material-symbols-outlined" style="color:var(--primary);font-size:24px;">family_history</span>
+        </div>
+        <h3 style="font-weight:700;font-size:1.05rem;color:var(--primary);margin-bottom:10px;">Thừa Kế &amp; Tặng Cho</h3>
+        <p style="color:#666;font-size:0.875rem;line-height:1.7;">Xác lập di chúc, phân chia di sản thừa kế là bất động sản đúng pháp luật.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 12 TRƯỜNG HỢP ===== -->
+<section class="py-24 bg-mesh">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="slabel" style="justify-content:center;">12 tình huống</div>
+      <h2 class="stitle">Khi Nào Cần Sử Dụng <span>Dịch Vụ Luật Sư?</span></h2>
+      <div class="sline c"></div>
+      <p style="color:#777;font-size:0.9rem;max-width:550px;margin:14px auto 0;">Không chỉ khi xảy ra tranh chấp, việc có luật sư tư vấn từ sớm trong các trường hợp sau sẽ giúp bạn hạn chế sai sót và bảo vệ quyền lợi tốt hơn.</p>
+    </div>
+    <div class="dark-panel p-10 reveal">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+        <div class="check-row-light"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;flex-shrink:0;margin-top:1px;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.875rem;line-height:1.6;">Khi xảy ra tranh chấp về ranh giới, quyền sử dụng hoặc lấn chiếm đất</span></div>
+        <div class="check-row-light"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;flex-shrink:0;margin-top:1px;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.875rem;line-height:1.6;">Khi thực hiện mua bán, chuyển nhượng nhưng chưa rõ pháp lý</span></div>
+        <div class="check-row-light"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;flex-shrink:0;margin-top:1px;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.875rem;line-height:1.6;">Khi làm sổ đỏ, sang tên hoặc hợp thức hóa đất</span></div>
+        <div class="check-row-light"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;flex-shrink:0;margin-top:1px;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.875rem;line-height:1.6;">Khi đất thuộc diện quy hoạch, thu hồi hoặc bồi thường</span></div>
+        <div class="check-row-light"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;flex-shrink:0;margin-top:1px;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.875rem;line-height:1.6;">Khi cần kiểm tra pháp lý trước khi đầu tư hoặc giao dịch</span></div>
+        <div class="check-row-light"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;flex-shrink:0;margin-top:1px;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.875rem;line-height:1.6;">Khi đất có nhiều người đồng sở hữu, cần phân chia hoặc thỏa thuận</span></div>
+        <div class="check-row-light"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;flex-shrink:0;margin-top:1px;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.875rem;line-height:1.6;">Khi nhận thừa kế đất đai nhưng chưa rõ thủ tục hoặc có tranh chấp</span></div>
+        <div class="check-row-light"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;flex-shrink:0;margin-top:1px;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.875rem;line-height:1.6;">Khi bị từ chối cấp sổ đỏ hoặc hồ sơ bị trả nhiều lần</span></div>
+        <div class="check-row-light"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;flex-shrink:0;margin-top:1px;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.875rem;line-height:1.6;">Khi cần làm việc, khiếu nại hoặc giải trình với cơ quan nhà nước</span></div>
+        <div class="check-row-light"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;flex-shrink:0;margin-top:1px;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.875rem;line-height:1.6;">Khi muốn ủy quyền cho người khác thực hiện thủ tục liên quan</span></div>
+        <div class="check-row-light"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;flex-shrink:0;margin-top:1px;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.875rem;line-height:1.6;">Khi cần rà soát hợp đồng, giấy tờ để tránh rủi ro pháp lý trước khi ký</span></div>
+        <div class="check-row-light"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;flex-shrink:0;margin-top:1px;">check_circle</span><span style="color:rgba(255,255,255,0.85);font-size:0.875rem;line-height:1.6;">Khi đất có yếu tố phức tạp như đất giấy tay, chưa chuyển mục đích</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES LIST ===== -->
+<section class="py-24" style="background:white;" id="services">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="slabel" style="justify-content:center;">Dịch vụ ACC</div>
+      <h2 class="stitle">Dịch Vụ Tư Vấn <span>Chuyên Sâu</span></h2>
+      <div class="sline c"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card p-8 reveal" style="transition-delay:0s;">
+        <div style="margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(139,28,28,0.07);display:flex;align-items:center;gap:10px;">
+          <div class="ibox"><span class="material-symbols-outlined" style="color:var(--primary);">folder_open</span></div>
+          <h3 style="font-weight:700;font-size:0.95rem;color:var(--primary);">Sổ đỏ &amp; Đăng ký</h3>
+        </div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hướng dẫn quy định pháp luật và hỗ trợ chuẩn bị hồ sơ đăng ký quyền sử dụng đất</div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tư vấn trình tự, thủ tục xin cấp Giấy chứng nhận quyền sử dụng đất (sổ đỏ)</div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hỗ trợ cấp sổ đỏ lần đầu, xử lý đất khó: đất quy hoạch, đất chưa đủ giấy tờ</div>
+      </div>
+      <div class="card p-8 reveal" style="transition-delay:0.08s;">
+        <div style="margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(139,28,28,0.07);display:flex;align-items:center;gap:10px;">
+          <div class="ibox"><span class="material-symbols-outlined" style="color:var(--primary);">gavel</span></div>
+          <h3 style="font-weight:700;font-size:0.95rem;color:var(--primary);">Tranh chấp &amp; Thừa kế</h3>
+        </div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tư vấn, giải quyết tranh chấp đất đai: quyền sử dụng, hợp đồng, thừa kế, tài sản ly hôn</div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tư vấn thủ tục thừa kế nhà đất, lập di chúc, khai nhận và phân chia di sản</div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hỗ trợ thủ tục khởi kiện, khiếu nại và tham gia giải quyết tranh chấp</div>
+      </div>
+      <div class="card p-8 reveal" style="transition-delay:0.16s;">
+        <div style="margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(139,28,28,0.07);display:flex;align-items:center;gap:10px;">
+          <div class="ibox"><span class="material-symbols-outlined" style="color:var(--primary);">edit_document</span></div>
+          <h3 style="font-weight:700;font-size:0.95rem;color:var(--primary);">Giao dịch &amp; Hợp đồng</h3>
+        </div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hỗ trợ soạn thảo hợp đồng, văn bản liên quan và hướng dẫn công chứng, chứng thực</div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Thực hiện thủ tục: sang tên, chuyển nhượng, xóa nợ thuế, cấp đổi sổ đỏ</div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hướng dẫn giao dịch nhà đất (mua bán, tặng cho, cho thuê) đúng quy định</div>
+      </div>
+      <!-- Row 2 -->
+      <div class="card p-8 reveal" style="transition-delay:0.24s;">
+        <div style="margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(139,28,28,0.07);display:flex;align-items:center;gap:10px;">
+          <div class="ibox"><span class="material-symbols-outlined" style="color:var(--primary);">location_city</span></div>
+          <h3 style="font-weight:700;font-size:0.95rem;color:var(--primary);">Thu hồi &amp; Đền bù</h3>
+        </div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tư vấn bồi thường, hỗ trợ tái định cư khi Nhà nước thu hồi đất</div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Phân tích điều kiện, mức bồi thường và quyền lợi khi bị thu hồi đất</div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tư vấn về các hành vi vi phạm pháp luật liên quan đến đất đai</div>
+      </div>
+      <div class="card p-8 reveal" style="transition-delay:0.32s;">
+        <div style="margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(139,28,28,0.07);display:flex;align-items:center;gap:10px;">
+          <div class="ibox"><span class="material-symbols-outlined" style="color:var(--primary);">balance</span></div>
+          <h3 style="font-weight:700;font-size:0.95rem;color:var(--primary);">Hòa giải &amp; Tố tụng</h3>
+        </div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tư vấn phương án giải quyết tranh chấp qua thương lượng, hòa giải</div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Cung cấp thông tin pháp lý, văn bản luật đất đai liên quan cho khách hàng</div>
+        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Giúp khách hàng hiểu rõ quyền và nghĩa vụ trong từng tình huống cụ thể</div>
+      </div>
+      <!-- Full width highlight -->
+      <div class="card p-8 reveal" style="transition-delay:0.4s;background:linear-gradient(135deg,rgba(139,28,28,0.03),rgba(212,175,55,0.02));">
+        <div style="margin-bottom:18px;display:flex;align-items:center;gap:10px;">
+          <div style="width:52px;height:52px;border-radius:15px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined" style="color:white;font-size:24px;">workspace_premium</span>
+          </div>
+          <h3 style="font-weight:700;font-size:0.95rem;color:var(--primary);">Hỗ trợ toàn diện A-Z</h3>
+        </div>
+        <p style="color:#555;font-size:0.875rem;line-height:1.7;">Từ tư vấn ban đầu, soạn hồ sơ, làm việc với cơ quan nhà nước, đến bàn giao kết quả — ACC đồng hành trọn gói để giảm thiểu thời gian và rủi ro cho khách hàng.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6-STEP PROCESS ===== -->
+<section class="process-bg py-24" id="process">
+  <div style="position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,0.07),transparent 70%);pointer-events:none;"></div>
+  <div class="max-w-4xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-14 reveal">
+      <div class="hero-badge" style="justify-content:center;margin:0 auto 14px;display:inline-flex;">Quy trình</div>
+      <h2 style="font-family:'Roboto',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:white;line-height:1.2;">Quy Trình 6 Bước <span style="color:var(--accent-light);">Chuyên Nghiệp</span></h2>
+    </div>
+    <div class="space-y-5">
+      <div class="flex gap-5 items-start reveal" style="transition-delay:0s;">
+        <div class="tl-dot" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));">
+          <span class="material-symbols-outlined" style="font-size:20px;">inbox</span>
+        </div>
+        <div class="tl-card">
+          <h4 style="font-weight:700;font-size:0.95rem;color:var(--accent-light);margin-bottom:6px;">01. Tiếp nhận yêu cầu &amp; tư vấn ban đầu</h4>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.85rem;line-height:1.65;">Khách hàng cung cấp thông tin qua điện thoại, email hoặc trực tiếp tại văn phòng. ACC lắng nghe, ghi nhận nội dung, trao đổi sơ bộ để xác định nhu cầu thực tế và phân công luật sư phù hợp.</p>
+        </div>
+      </div>
+      <div class="flex gap-5 items-start reveal" style="transition-delay:0.07s;">
+        <div class="tl-dot" style="background:linear-gradient(135deg,#D4AF37,#B8960A);">
+          <span class="material-symbols-outlined" style="font-size:20px;">forum</span>
+        </div>
+        <div class="tl-card">
+          <h4 style="font-weight:700;font-size:0.95rem;color:var(--accent-light);margin-bottom:6px;">02. Trao đổi chuyên sâu với luật sư</h4>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.85rem;line-height:1.65;">ACC sắp xếp lịch làm việc giữa khách hàng và luật sư. Luật sư xem xét hồ sơ, phân tích tình trạng pháp lý, chỉ ra các rủi ro có thể phát sinh và đề xuất phương án xử lý, lộ trình, thời gian dự kiến.</p>
+        </div>
+      </div>
+      <div class="flex gap-5 items-start reveal" style="transition-delay:0.14s;">
+        <div class="tl-dot" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));">
+          <span class="material-symbols-outlined" style="font-size:20px;">handshake</span>
+        </div>
+        <div class="tl-card">
+          <h4 style="font-weight:700;font-size:0.95rem;color:var(--accent-light);margin-bottom:6px;">03. Ký kết hợp đồng &amp; tiếp nhận hồ sơ</h4>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.85rem;line-height:1.65;">Khi khách hàng đồng ý phương án, hai bên ký hợp đồng dịch vụ pháp lý. Chi phí, phạm vi công việc và thời gian thực hiện được thể hiện rõ ràng trong hợp đồng.</p>
+        </div>
+      </div>
+      <div class="flex gap-5 items-start reveal" style="transition-delay:0.21s;">
+        <div class="tl-dot" style="background:linear-gradient(135deg,#D4AF37,#B8960A);">
+          <span class="material-symbols-outlined" style="font-size:20px;">history_edu</span>
+        </div>
+        <div class="tl-card">
+          <h4 style="font-weight:700;font-size:0.95rem;color:var(--accent-light);margin-bottom:6px;">04. Thực hiện công việc</h4>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.85rem;line-height:1.65;">Luật sư trực tiếp thực hiện: soạn thảo văn bản, hoàn thiện hồ sơ, đại diện làm việc với cơ quan nhà nước, hỗ trợ thương lượng. Khách hàng được cập nhật tiến độ thường xuyên.</p>
+        </div>
+      </div>
+      <div class="flex gap-5 items-start reveal" style="transition-delay:0.28s;">
+        <div class="tl-dot" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));">
+          <span class="material-symbols-outlined" style="font-size:20px;">assignment_ind</span>
+        </div>
+        <div class="tl-card">
+          <h4 style="font-weight:700;font-size:0.95rem;color:var(--accent-light);margin-bottom:6px;">05. Đại diện giải quyết tranh chấp (nếu có)</h4>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.85rem;line-height:1.65;">Khi vụ việc phát sinh tranh chấp cần giải quyết tại tòa án, luật sư đại diện hoặc tham gia tố tụng để bảo vệ quyền và lợi ích hợp pháp, hỗ trợ chuẩn bị hồ sơ, chứng cứ.</p>
+        </div>
+      </div>
+      <div class="flex gap-5 items-start reveal" style="transition-delay:0.35s;">
+        <div class="tl-dot" style="background:linear-gradient(135deg,#D4AF37,#B8960A);">
+          <span class="material-symbols-outlined" style="font-size:20px;">verified</span>
+        </div>
+        <div class="tl-card" style="border-color:rgba(212,175,55,0.2);">
+          <h4 style="font-weight:700;font-size:0.95rem;color:var(--accent-light);margin-bottom:6px;">06. Hoàn tất &amp; bàn giao kết quả</h4>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.85rem;line-height:1.65;">Sau khi vụ việc được giải quyết, ACC bàn giao kết quả, hồ sơ và hướng dẫn các bước tiếp theo (nếu cần), đồng thời tiếp tục hỗ trợ tư vấn phát sinh để bảo vệ quyền lợi lâu dài.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HỒ SƠ CẦN CHUẨN BỊ ===== -->
+<section class="py-24 bg-mesh" id="documents">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="dark-panel p-10 reveal">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10">
+        <div>
+          <div class="hero-badge" style="margin-bottom:16px;display:inline-flex;">Hồ sơ cần chuẩn bị</div>
+          <h2 style="font-family:'Roboto',sans-serif;font-size:1.8rem;font-weight:700;color:white;margin-bottom:10px;">Chuẩn bị hồ sơ <span style="color:var(--accent-light);">đơn giản</span></h2>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.875rem;margin-bottom:22px;line-height:1.7;">Để quá trình tư vấn diễn ra nhanh chóng, quý khách vui lòng chuẩn bị các giấy tờ cơ bản sau (bản photo):</p>
+          <div class="grid grid-cols-1 gap-3">
+            <div class="doc-item"><div class="doc-icon"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">article</span></div><span style="color:rgba(255,255,255,0.82);font-size:0.85rem;">Giấy chứng nhận quyền sử dụng đất (Sổ đỏ/Sổ hồng)</span></div>
+            <div class="doc-item"><div class="doc-icon"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">badge</span></div><span style="color:rgba(255,255,255,0.82);font-size:0.85rem;">CCCD/Hộ chiếu của người đứng tên đất</span></div>
+            <div class="doc-item"><div class="doc-icon"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">contract</span></div><span style="color:rgba(255,255,255,0.82);font-size:0.85rem;">Hợp đồng mua bán, chuyển nhượng (nếu có)</span></div>
+            <div class="doc-item"><div class="doc-icon"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">history_edu</span></div><span style="color:rgba(255,255,255,0.82);font-size:0.85rem;">Giấy tờ về nguồn gốc đất: quyết định giao đất, cho thuê, chuyển mục đích...</span></div>
+            <div class="doc-item"><div class="doc-icon"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">map</span></div><span style="color:rgba(255,255,255,0.82);font-size:0.85rem;">Bản đồ địa chính hoặc trích lục thửa đất</span></div>
+            <div class="doc-item"><div class="doc-icon"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">fact_check</span></div><span style="color:rgba(255,255,255,0.82);font-size:0.85rem;">Giấy tờ xác nhận hiện trạng sử dụng đất (nếu có)</span></div>
+            <div class="doc-item"><div class="doc-icon"><span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">receipt_long</span></div><span style="color:rgba(255,255,255,0.82);font-size:0.85rem;">Chứng từ hoàn thành nghĩa vụ tài chính (thuế, lệ phí...)</span></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:32px;background:rgba(255,255,255,0.05);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.1);border-radius:20px;">
+          <div style="width:72px;height:72px;border-radius:20px;background:rgba(212,175,55,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+            <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:34px;">help</span>
+          </div>
+          <h3 style="font-size:1.5rem;font-weight:700;color:white;margin-bottom:12px;">Bạn chưa rõ hồ sơ?</h3>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.875rem;line-height:1.7;margin-bottom:28px;">Chụp ảnh hồ sơ hiện có và gửi qua Zalo để luật sư kiểm tra <strong style="color:rgba(255,255,255,0.85);">miễn phí trong 10 phút</strong>.</p>
+          <a href="https://zalo.me/2171133625094125529" target="_blank" class="btn-gold">
+            <span class="material-symbols-outlined" style="font-size:18px;">chat</span>
+            Gửi Qua Zalo Ngay
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CRITERIA + PRICING ===== -->
+<section class="py-24" style="background:white;" id="costs">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
+      <!-- Cách chọn luật sư -->
+      <div class="reveal-l">
+        <div class="slabel">Tiêu chí lựa chọn</div>
+        <h2 class="stitle">Cách Chọn <span>Luật Sư Uy Tín</span></h2>
+        <div class="sline"></div>
+        <div class="space-y-3 mt-6">
+          <div class="criteria-item">
+            <div class="cnum">1</div>
+            <div>
+              <h4 style="font-weight:700;font-size:0.9rem;margin-bottom:5px;">Kinh nghiệm và chuyên môn thực tế</h4>
+              <p style="color:#666;font-size:0.82rem;line-height:1.6;">Ưu tiên luật sư đã có nhiều năm hành nghề trong lĩnh vực đất đai, từng xử lý các hồ sơ phức tạp.</p>
+            </div>
+          </div>
+          <div class="criteria-item">
+            <div class="cnum" style="background:linear-gradient(135deg,#D4AF37,#B8960A);">2</div>
+            <div>
+              <h4 style="font-weight:700;font-size:0.9rem;margin-bottom:5px;">Phản hồi từ khách hàng trước đó</h4>
+              <p style="color:#666;font-size:0.82rem;line-height:1.6;">Tìm hiểu đánh giá từ những người đã từng sử dụng dịch vụ để có cái nhìn khách quan.</p>
+            </div>
+          </div>
+          <div class="criteria-item">
+            <div class="cnum">3</div>
+            <div>
+              <h4 style="font-weight:700;font-size:0.9rem;margin-bottom:5px;">Tinh thần trách nhiệm và sự tận tâm</h4>
+              <p style="color:#666;font-size:0.82rem;line-height:1.6;">Luật sư uy tín không chỉ có chuyên môn mà còn tư vấn rõ ràng và đặt quyền lợi khách hàng lên hàng đầu.</p>
+            </div>
+          </div>
+          <div class="criteria-item">
+            <div class="cnum" style="background:linear-gradient(135deg,#D4AF37,#B8960A);">4</div>
+            <div>
+              <h4 style="font-weight:700;font-size:0.9rem;margin-bottom:5px;">Uy tín của tổ chức hành nghề luật sư</h4>
+              <p style="color:#666;font-size:0.82rem;line-height:1.6;">Kiểm tra kỹ thông tin về công ty luật trước khi ký hợp đồng, tránh các đơn vị không đủ điều kiện hành nghề.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chi phí -->
+      <div class="reveal-r">
+        <div class="slabel">Minh bạch tài chính</div>
+        <h2 class="stitle">Chi Phí <span>Tư Vấn</span></h2>
+        <div class="sline"></div>
+        <div style="background:white;border-radius:20px;border:1px solid rgba(139,28,28,0.08);padding:28px;margin-top:20px;box-shadow:0 4px 20px rgba(0,0,0,0.04);">
+          <p style="color:#666;font-size:0.875rem;margin-bottom:16px;line-height:1.7;">Phí dịch vụ luật sư đất đai tại ACC được tính dựa trên các yếu tố:</p>
+          <div>
+            <div class="price-row">
+              <span style="font-size:0.875rem;color:#444;">Tính chất và độ phức tạp của vụ việc</span>
+              <span style="font-weight:700;color:var(--primary);font-size:0.82rem;white-space:nowrap;">Tùy biến</span>
+            </div>
+            <div class="price-row">
+              <span style="font-size:0.875rem;color:#444;">Thời gian và khối lượng công việc</span>
+              <span style="font-weight:700;color:var(--primary);font-size:0.82rem;white-space:nowrap;">Theo giờ/vụ</span>
+            </div>
+            <div class="price-row">
+              <span style="font-size:0.875rem;color:#444;">Kinh nghiệm và năng lực của luật sư</span>
+              <span style="font-weight:700;color:var(--primary);font-size:0.82rem;white-space:nowrap;">Theo cấp bậc</span>
+            </div>
+            <div class="price-row">
+              <span style="font-size:0.875rem;color:#444;">Phạm vi và yêu cầu của khách hàng</span>
+              <span style="font-weight:700;color:var(--primary);font-size:0.82rem;white-space:nowrap;">Theo yêu cầu</span>
+            </div>
+          </div>
+          <div style="margin-top:18px;padding:12px 16px;background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.2);border-radius:12px;display:flex;align-items:center;gap:10px;">
+            <span class="material-symbols-outlined" style="color:var(--accent);font-size:18px;">info</span>
+            <span style="color:#666;font-size:0.8rem;font-style:italic;">Luôn miễn phí tư vấn sơ bộ qua hotline. Báo giá rõ ràng trước khi thực hiện.</span>
+          </div>
+          <a href="tel:19003330" class="btn-gold" style="display:flex;justify-content:center;margin-top:18px;">
+            <span class="material-symbols-outlined" style="font-size:18px;">call</span>
+            Nhận Báo Giá Ngay
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY ACC — STATS ===== -->
+<section class="py-24 bg-mesh">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="slabel" style="justify-content:center;">Tại sao chọn ACC</div>
+      <h2 class="stitle">Tại Sao Nên Chọn <span>ACC Law Firm?</span></h2>
+      <div class="sline c"></div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-14">
+      <div class="stat-box reveal" style="transition-delay:0s;">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <span class="material-symbols-outlined" style="color:var(--primary);font-size:26px;">groups</span>
+        </div>
+        <div style="font-family:'Roboto',sans-serif;font-size:1.8rem;font-weight:700;color:var(--primary);">1000+</div>
+        <div style="font-size:0.72rem;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-top:4px;">Vụ việc thành công</div>
+      </div>
+      <div class="stat-box reveal" style="transition-delay:0.07s;">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <span class="material-symbols-outlined" style="color:var(--primary);font-size:26px;">verified_user</span>
+        </div>
+        <div style="font-family:'Roboto',sans-serif;font-size:1.8rem;font-weight:700;color:var(--primary);">Chuyên Sâu</div>
+        <div style="font-size:0.72rem;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-top:4px;">Đội ngũ am hiểu luật</div>
+      </div>
+      <div class="stat-box reveal" style="transition-delay:0.14s;">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <span class="material-symbols-outlined" style="color:var(--primary);font-size:26px;">speed</span>
+        </div>
+        <div style="font-family:'Roboto',sans-serif;font-size:1.8rem;font-weight:700;color:var(--primary);">Nhanh Chóng</div>
+        <div style="font-size:0.72rem;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-top:4px;">Xử lý hồ sơ thần tốc</div>
+      </div>
+      <div class="stat-box reveal" style="transition-delay:0.21s;">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <span class="material-symbols-outlined" style="color:var(--primary);font-size:26px;">support_agent</span>
+        </div>
+        <div style="font-family:'Roboto',sans-serif;font-size:1.8rem;font-weight:700;color:var(--primary);">24/7</div>
+        <div style="font-size:0.72rem;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-top:4px;">Hỗ trợ mọi lúc</div>
+      </div>
+      <div class="stat-box md:col-span-1 reveal" style="transition-delay:0.28s;">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">
+          <span class="material-symbols-outlined" style="color:var(--primary);font-size:26px;">security</span>
+        </div>
+        <div style="font-family:'Roboto',sans-serif;font-size:1.8rem;font-weight:700;color:var(--primary);">Bảo Mật</div>
+        <div style="font-size:0.72rem;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-top:4px;">Thông tin khách hàng</div>
+      </div>
+    </div>
+
+    <!-- Benefit cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="benefit-card reveal" style="transition-delay:0s;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:14px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">workspace_premium</span>
+          </div>
+          <h3 style="font-weight:700;font-size:1rem;color:var(--primary);">Kinh Nghiệm Thực Tế 1.000+ Hồ Sơ</h3>
+        </div>
+        <p style="color:#666;font-size:0.875rem;line-height:1.7;">Luật sư ACC có nhiều năm kinh nghiệm thực tế, đã tham gia xử lý hơn 1.000+ hồ sơ từ tư vấn đến tranh chấp phức tạp trong lĩnh vực đất đai.</p>
+      </div>
+      <div class="benefit-card reveal" style="transition-delay:0.08s;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:14px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">track_changes</span>
+          </div>
+          <h3 style="font-weight:700;font-size:1rem;color:var(--primary);">Giải Quyết Đúng Hướng Từ Đầu</h3>
+        </div>
+        <p style="color:#666;font-size:0.875rem;line-height:1.7;">Đạt tỷ lệ giải quyết hồ sơ đúng hướng ngay từ đầu cao, hạn chế tối đa việc bị trả hồ sơ và kéo dài thời gian xử lý.</p>
+      </div>
+      <div class="benefit-card reveal" style="transition-delay:0.16s;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:14px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">savings</span>
+          </div>
+          <h3 style="font-weight:700;font-size:1rem;color:var(--primary);">Tiết Kiệm Thời Gian &amp; Chi Phí</h3>
+        </div>
+        <p style="color:#666;font-size:0.875rem;line-height:1.7;">Phân tích cụ thể từng vấn đề, đưa ra phương án xử lý phù hợp với từng tình huống, giúp tiết kiệm đáng kể thời gian và chi phí.</p>
+      </div>
+      <div class="benefit-card reveal" style="transition-delay:0.24s;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:14px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">all_inclusive</span>
+          </div>
+          <h3 style="font-weight:700;font-size:1rem;color:var(--primary);">Hỗ Trợ Toàn Diện Từ A-Z</h3>
+        </div>
+        <p style="color:#666;font-size:0.875rem;line-height:1.7;">Từ tư vấn, soạn hồ sơ đến làm việc với cơ quan nhà nước, ACC hỗ trợ toàn diện, giúp rút ngắn thời gian xử lý so với tự thực hiện.</p>
+      </div>
+      <div class="benefit-card reveal" style="transition-delay:0.32s;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:14px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">gavel</span>
+          </div>
+          <h3 style="font-weight:700;font-size:1rem;color:var(--primary);">Đại Diện Đàm Phán &amp; Tố Tụng</h3>
+        </div>
+        <p style="color:#666;font-size:0.875rem;line-height:1.7;">Luật sư có thể thay mặt khách hàng đàm phán, ký kết hợp đồng, làm việc với cơ quan chức năng hoặc tham gia tố tụng để bảo vệ quyền lợi tối đa.</p>
+      </div>
+      <div class="benefit-card reveal" style="transition-delay:0.4s;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:14px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">lock</span>
+          </div>
+          <h3 style="font-weight:700;font-size:1rem;color:var(--primary);">Bảo Mật Thông Tin Tuyệt Đối</h3>
+        </div>
+        <p style="color:#666;font-size:0.875rem;line-height:1.7;">Toàn bộ thông tin, hồ sơ khách hàng được bảo mật theo quy định nghề nghiệp luật sư, đảm bảo an toàn pháp lý.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="py-24" style="background:white;" id="faq">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="slabel" style="justify-content:center;">Giải đáp</div>
+      <h2 class="stitle">Câu Hỏi <span>Thường Gặp</span></h2>
+      <div class="sline c"></div>
+    </div>
+    <div class="space-y-3 reveal">
+      <details class="faq-item" open>
+        <summary class="faq-sum">
+          Thời gian giải quyết một vụ tranh chấp đất đai mất bao lâu?
+          <span class="material-symbols-outlined fchev" style="font-size:20px;">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          Thời gian phụ thuộc vào tính chất phức tạp của vụ việc. Thông thường, một vụ việc tại Tòa án cấp sơ thẩm kéo dài từ <strong>6–12 tháng</strong>. Với hình thức hòa giải hoặc tư vấn ngoài tòa, thời gian có thể rút ngắn còn <strong>1–3 tháng</strong>.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-sum">
+          Tôi có thể tư vấn online mà không cần đến văn phòng không?
+          <span class="material-symbols-outlined fchev" style="font-size:20px;">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          Hoàn toàn được. ACC cung cấp dịch vụ tư vấn qua <strong>Zalo, Video Call hoặc Email</strong>. Chúng tôi hỗ trợ giao nhận hồ sơ tận nơi qua bưu điện hoặc nhân viên chuyển phát riêng để tiết kiệm thời gian cho quý khách.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-sum">
+          Luật sư có thay mặt tôi ra Tòa được không?
+          <span class="material-symbols-outlined fchev" style="font-size:20px;">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          Có. Thông qua hợp đồng ủy quyền, luật sư của ACC có thể thay mặt khách hàng <strong>tham gia làm việc với cơ quan nhà nước</strong> và tranh tụng tại Tòa án mà không nhất thiết khách hàng phải có mặt trong mọi buổi làm việc.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-sum">
+          Tranh chấp đất đai có bắt buộc phải ra tòa không?
+          <span class="material-symbols-outlined fchev" style="font-size:20px;">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          <strong>Không bắt buộc.</strong> Nhiều trường hợp có thể giải quyết thông qua hòa giải hoặc thương lượng trước khi khởi kiện, tiết kiệm thời gian và chi phí hơn đáng kể.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-sum">
+          Nếu vụ việc phát sinh tranh chấp, ACC có tiếp tục hỗ trợ không?
+          <span class="material-symbols-outlined fchev" style="font-size:20px;">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          Có. ACC sẽ tiếp tục đồng hành, hỗ trợ thương lượng hoặc <strong>đại diện khách hàng tham gia giải quyết tranh chấp tại tòa án</strong> nếu cần, đảm bảo quyền lợi được bảo vệ đến cùng.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-bg py-28 text-center">
+  <div class="cta-orb" style="width:380px;height:380px;background:rgba(212,175,55,0.07);top:-100px;left:-80px;"></div>
+  <div class="cta-orb" style="width:320px;height:320px;background:rgba(139,28,28,0.15);bottom:-60px;right:-60px;"></div>
+  <div class="max-w-3xl mx-auto px-6 relative z-10 reveal">
+    <div class="hero-badge" style="justify-content:center;margin:0 auto 24px;display:inline-flex;">
+      <span class="bdot"></span>
+      Bảo vệ tài sản của bạn ngay hôm nay
+    </div>
+    <h2 style="font-family:'Roboto',sans-serif;font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700;color:white;line-height:1.2;margin-bottom:16px;">
+      Bảo Vệ Tài Sản Của Bạn
+    </h2>
+    <p style="color:rgba(255,255,255,0.6);font-size:1rem;max-width:460px;margin:0 auto 40px;line-height:1.75;">
+      Đừng để những rủi ro pháp lý làm mất đi giá trị tài sản bạn đã nỗ lực gây dựng. Hãy để <strong style="color:rgba(255,255,255,0.85);">chuyên gia ACC</strong> đồng hành cùng bạn.
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 flex-wrap">
+      <a href="tel:19003330" class="btn-gold" style="font-size:1rem;padding:16px 40px;">
+        <span class="material-symbols-outlined" style="font-size:20px;">call</span>
+        Gọi 1900 3330
+      </a>
+      <a href="https://zalo.me/2171133625094125529" target="_blank" class="btn-outline-w" style="font-size:1rem;padding:16px 40px;">
+        <span class="material-symbols-outlined" style="font-size:20px;">chat</span>
+        Zalo Tư Vấn
+      </a>
+      <a href="mailto:info@congtyluatacc.vn" class="btn-outline-w" style="font-size:1rem;padding:16px 40px;">
+        <span class="material-symbols-outlined" style="font-size:20px;">mail</span>
+        Gửi Email
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const els = document.querySelectorAll('.reveal, .reveal-l, .reveal-r');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const d = parseFloat(e.target.style.transitionDelay || '0') * 1000;
+        setTimeout(() => e.target.classList.add('visible'), d);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+  els.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
