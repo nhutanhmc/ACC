@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dịch vụ Ly hôn nhanh, Trọn gói | ACC Law Firm</title>
+<meta name="description" content="ACC Law Firm cung cấp dịch vụ ly hôn nhanh, trọn gói uy tín, chuyên nghiệp. Hỗ trợ giải quyết thủ tục ly hôn thuận tình, đơn phương nhanh chóng, đúng luật, tối ưu quyền lợi."/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#8B1C1C',
+          'primary-dark': '#5c1114',
+          'primary-light': '#b44040',
+          accent: '#c5a059',
+          'accent-light': '#ebdcae',
+          surface: '#fafafa',
+          'surface-dark': '#f0f0f0',
+        },
+        fontFamily: {
+          sans: ['Roboto', 'sans-serif'],
+          display: ['Roboto', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  :root {
+    --primary: #8B1C1C;
+    --primary-dark: #5c1114;
+    --primary-light: #b44040;
+    --accent: #c5a059;
+    --accent-light: #ebdcae;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    overflow-x: hidden;
+  }
+
+  /* ============ SCROLLBAR ============ */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f1f1f1; }
+  ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+  /* ============ HERO ============ */
+  .hero-section {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hero-gradient {
+    background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 35%, #5c1114 65%, #1a0404 100%);
+  }
+  .hero-particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .particle {
+    position: absolute;
+    bottom: -50px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(235, 220, 174, 0.45) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(197, 160, 89, 0.35) 100%);
+    border: 1px solid rgba(235, 220, 174, 0.45);
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.25), inset 0 0 6px rgba(255, 255, 255, 0.25);
+    animation: float-particle linear infinite;
+    opacity: 0;
+  }
+  @keyframes float-particle {
+    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+    15% { opacity: var(--p-opacity, 0.6); }
+    85% { opacity: var(--p-opacity, 0.6); }
+    100% { transform: translateY(-115vh) translateX(var(--drift, 20px)) rotate(360deg); opacity: 0; }
+  }
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197,160,89,0.08) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse-glow 4s ease-in-out infinite;
+    z-index: 1;
+  }
+  @keyframes pulse-glow {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border: 1px solid rgba(197,160,89,0.5);
+    border-radius: 100px;
+    background: rgba(197,160,89,0.1);
+    backdrop-filter: blur(10px);
+    color: var(--accent-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: fadeInDown 0.8s ease forwards;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: blink 2s ease-in-out infinite;
+  }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .hero-title {
+    animation: fadeInUp 0.9s ease 0.2s both;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.1;
+  }
+  .hero-title span {
+    background: linear-gradient(135deg, #ebdcae, #c5a059, #ebdcae);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+  .hero-desc {
+    animation: fadeInUp 0.9s ease 0.4s both;
+  }
+  .hero-cta {
+    animation: fadeInUp 0.9s ease 0.6s both;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+    color: #1a0404;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(197,160,89,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+  }
+  .btn-primary:hover::before { left: 100%; }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(197,160,89,0.5); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    border: 2px solid rgba(255,255,255,0.3);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .btn-outline:hover {
+    border-color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-3px);
+  }
+
+  /* Hero Stats */
+  .hero-stats {
+    animation: fadeInUp 0.9s ease 0.8s both;
+  }
+  .stat-item {
+    border-left: 1px solid rgba(255,255,255,0.15);
+    padding-left: 20px;
+  }
+  .stat-item:first-child { border-left: none; padding-left: 0; }
+
+  /* Hero Card */
+  .hero-card {
+    animation: fadeInRight 0.9s ease 0.5s both;
+  }
+  .passport-card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.4s ease;
+  }
+  .passport-card:hover { transform: translateY(-8px) rotate(-1deg); }
+  .passport-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(197,160,89,0.05), transparent, rgba(139,28,28,0.05));
+    pointer-events: none;
+  }
+
+  /* Floating badge on hero image */
+  .float-badge {
+    position: absolute;
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    padding: 12px 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* ============ SECTION HEADERS ============ */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 14px;
+    border-radius: 100px;
+    background: rgba(139,28,28,0.08);
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: #1a0404;
+    line-height: 1.2;
+  }
+  .section-title span {
+    color: var(--primary);
+  }
+  .section-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 2px;
+    margin: 16px auto 0;
+  }
+  .section-line.left {
+    margin: 16px 0 0;
+  }
+
+  /* ============ CARDS ============ */
+  .premium-card {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid rgba(139,28,28,0.06);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .premium-card:hover::before { transform: scaleX(1); }
+  .premium-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(139,28,28,0.12);
+    border-color: rgba(139,28,28,0.15);
+  }
+
+  .icon-circle {
+    width: 64px; height: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(139,28,28,0.04));
+    transition: all 0.3s ease;
+  }
+  .premium-card:hover .icon-circle {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    transform: rotate(5deg) scale(1.1);
+  }
+  .premium-card:hover .icon-circle .material-symbols-outlined {
+    color: white !important;
+  }
+
+  /* ============ CHECK LISTS ============ */
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.06);
+    color: #444;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .check-item:last-child { border-bottom: none; }
+  .check-icon-box {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 2px;
+  }
+
+  /* ============ TIMELINE ============ */
+  .timeline-dot {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; color: white; font-size: 1.05rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(139,28,28,0.25);
+  }
+  .timeline-card {
+    background: white;
+    border: 1px solid rgba(139,28,28,0.06);
+    border-radius: 18px;
+    padding: 20px 24px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+  }
+  .timeline-card:hover {
+    transform: translateX(6px);
+    border-color: rgba(139,28,28,0.12);
+    box-shadow: 0 8px 25px rgba(139,28,28,0.06);
+  }
+
+  /* ============ TABLE STYLE ============ */
+  .custom-table-container {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid rgba(139,28,28,0.08);
+    overflow: hidden;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.03);
+  }
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.92rem;
+  }
+  .custom-table th {
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    padding: 18px 24px;
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+  }
+  .custom-table td {
+    padding: 18px 24px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    color: #444;
+  }
+  .custom-table tr:last-child td { border-bottom: none; }
+  .custom-table tr:nth-child(even) td { background: rgba(139,28,28,0.01); }
+
+  /* ============ FAQ ACCORDIONS ============ */
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .faq-item {
+    background: white;
+    border: 1px solid rgba(139,28,28,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .faq-item:hover {
+    border-color: rgba(139,28,28,0.18);
+  }
+  .faq-summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #1a0404;
+    gap: 16px;
+    transition: all 0.3s ease;
+  }
+  .faq-item[open] .faq-summary {
+    background: rgba(139,28,28,0.03);
+    color: var(--primary);
+    border-bottom: 1px solid rgba(139,28,28,0.07);
+  }
+  .faq-summary::-webkit-details-marker { display: none; }
+  .faq-icon {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    color: var(--primary);
+  }
+  .faq-item[open] .faq-icon {
+    transform: rotate(180deg);
+  }
+  .faq-body {
+    padding: 20px 24px;
+    color: #555;
+    line-height: 1.8;
+    font-size: 0.92rem;
+  }
+
+  /* ============ CTA SECTION ============ */
+  .cta-section {
+    background: linear-gradient(155deg, #1a0202 0%, #5c1114 45%, #2d0505 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(75px);
+    pointer-events: none;
+  }
+
+  /* Floating Zalo/Phone buttons */
+  .float-zalo, .float-phone {
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+  .float-zalo { background: #0068ff; }
+  .float-zalo:hover { transform: scale(1.1); background: #0056d6; }
+  .float-phone { background: var(--accent); }
+  .float-phone:hover { transform: scale(1.1); background: #b08d4a; }
+
+  /* ============ SCROLL REVEAL ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal.visible, .reveal-left.visible, .reveal-right.visible {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO SECTION ============ -->
+<section class="hero-section hero-gradient">
+  <!-- Particles -->
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-glow"></div>
+
+  <!-- Grid overlay -->
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;z-index:1;pointer-events:none;"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-20 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
+      <!-- Left Info -->
+      <div class="space-y-8 text-left">
+        <div class="hero-badge">
+          ACC Law Firm &nbsp;·&nbsp; Uy tín chuyên nghiệp
+        </div>
+
+        <h1 class="hero-title text-white" style="font-size:clamp(2.2rem,4.5vw,3.8rem);">
+          Dịch Vụ Ly Hôn Nhanh <span>Trọn Gói A-Z</span>
+          <br/>Bảo Mật &amp; Tận Tâm
+        </h1>
+
+        <p class="hero-desc text-white/70 leading-relaxed" style="font-size:1.05rem;max-width:540px;">
+          Không phải lúc nào ly hôn cũng là một quyết định đơn giản, bởi phía sau đó thường là những vướng mắc về thủ tục pháp lý, tranh chấp quyền lợi và thời gian giải quyết kéo dài hơn nhiều người nghĩ. Dịch vụ ly hôn nhanh, trọn gói của Công ty Luật ACC chính là giải pháp hỗ trợ bạn xử lý toàn bộ thủ tục một cách đơn giản và hiệu quả nhất.
+        </p>
+
+        <div class="hero-cta flex flex-wrap gap-4">
+          <a href="tel:19003330" class="btn-primary">
+            <span class="material-symbols-outlined" style="font-size:20px;">call</span>
+            Gọi 1900 3330
+          </a>
+          <a href="https://zalo.me/2171133625094125529" target="_blank" class="btn-outline">
+            <span class="material-symbols-outlined" style="font-size:20px;">chat</span>
+            Zalo Nhận Báo Giá
+          </a>
+        </div>
+
+        <!-- Mini stats banner -->
+        <div class="hero-stats flex flex-wrap gap-x-8 gap-y-4 pt-4">
+          <div class="stat-item">
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">15+</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Năm kinh nghiệm</div>
+          </div>
+          <div class="stat-item">
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">99%</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Tỉ lệ giải quyết nhanh</div>
+          </div>
+          <div class="stat-item">
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">100%</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Bảo mật thông tin</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Card / Image -->
+      <div class="block lg:mt-0 mt-8 hero-card">
+        <div class="relative max-w-md mx-auto lg:max-w-none">
+          <div class="passport-card p-3 shadow-2xl">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD-KBKFiZg6AfZ6XyY9U7Lw1v4BC0gF3AHCosX89bXxTlrtOp7Lkaj6MY9wOn2QQNLmh5R8sR4THYVHyqUm3iuxBcNLJLaNjpYtYmGTWlWbYSiPm1uK83mdg9rYE8taxWIZPPrGJYoWRUeUFsiPPnTG7JUa9CwMAyJlJjh6VHpziROs_OjzsMTgX0P3OFWuAB8-4walyhbKNjSxzCD11L8iEj5yxUz8ijj5rXQ8LjTgj9dG3woksGyKC80uU4YQh4_vbcWIwexi5f-"
+              alt="Dịch vụ ly hôn ACC Law Firm"
+              class="w-full rounded-2xl object-cover h-[280px] sm:h-[380px]"
+            />
+          </div>
+          <!-- Floating badges -->
+          <div class="float-badge sm:flex hidden" style="bottom:-20px;left:20px;z-index:10;">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:white;font-size:18px;">gavel</span>
+            </div>
+            <div>
+              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Tư vấn tận tâm</div>
+              <div style="font-size:0.72rem;color:#888;">Đúng luật - Kín đáo</div>
+            </div>
+          </div>
+          <div class="float-badge sm:flex hidden" style="top:20px;right:-20px;z-index:10;animation-delay:1.5s;">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#c5a059,#99732f);display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:white;font-size:18px;">verified</span>
+            </div>
+            <div>
+              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Thủ tục gọn lẹ</div>
+              <div style="font-size:0.72rem;color:#888;">Hạn chế đi lại</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. LY HÔN LÀ GÌ? ============ -->
+<section class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 space-y-6 reveal-left">
+        <div class="section-label">Khái niệm pháp lý</div>
+        <h2 class="section-title" style="text-align:left; margin:0;">Ly hôn là gì?</h2>
+        <div class="section-line left"></div>
+        <p class="text-gray-600 leading-relaxed" style="font-size:1.02rem;">
+          Căn cứ theo <strong>khoản 14 Điều 3 Luật Hôn nhân và Gia đình 2014</strong>, ly hôn là việc chấm dứt quan hệ vợ chồng theo bản án, quyết định có hiệu lực pháp luật của Tòa án.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Đây là một quá trình pháp lý được thực hiện khi cả hai bên hoặc một bên trong mối quan hệ hôn nhân không thể duy trì cuộc sống chung và có nguyện vọng chấm dứt mối quan hệ này. Pháp luật hiện hành công nhận 02 hình thức ly hôn bao gồm: <strong>Ly hôn thuận tình</strong> và <strong>Ly hôn đơn phương</strong>.
+        </p>
+      </div>
+      <div class="lg:col-span-5 reveal-right">
+        <div class="premium-card p-8 bg-gradient-to-br from-primary/5 to-accent/5">
+          <h3 class="font-bold text-lg text-primary mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined">balance</span>
+            2 Hình Thức Ly Hôn
+          </h3>
+          <div class="space-y-4">
+            <div class="p-4 bg-white rounded-xl border border-primary/10">
+              <h4 class="font-bold text-gray-900 mb-1">Ly hôn thuận tình</h4>
+              <p class="text-sm text-gray-500">Cả hai vợ chồng tự nguyện đồng ý ly hôn, đã thỏa thuận xong về con chung, tài sản và nghĩa vụ cấp dưỡng.</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl border border-accent/20">
+              <h4 class="font-bold text-gray-900 mb-1">Ly hôn đơn phương</h4>
+              <p class="text-sm text-gray-500">Yêu cầu ly hôn xuất phát từ một phía (vợ hoặc chồng) do mâu thuẫn trầm trọng, bạo lực gia đình hoặc một bên mất tích.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. KHÓ KHĂN THƯỜNG GẶP ============ -->
+<section class="py-24 bg-surface-dark">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-label" style="justify-content:center;">Trở ngại thực tế</div>
+      <h2 class="section-title">Những Khó Khăn Thường Gặp Khi <span>Thực Hiện Ly Hôn</span></h2>
+      <div class="section-line"></div>
+      <p style="color:#777;font-size:0.95rem;max-width:550px;margin:16px auto 0;line-height:1.75;">Quá trình ly hôn thực tế thường phát sinh nhiều vấn đề pháp lý phức tạp khiến người dân lúng túng.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="premium-card p-6 reveal" style="transition-delay:0s;">
+        <div class="icon-circle mb-5"><span class="material-symbols-outlined" style="color:var(--primary);">description</span></div>
+        <h3 class="font-bold text-base text-gray-900 mb-2">Hồ sơ phức tạp</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Hồ sơ dễ thiếu sót hoặc sai sót thông tin dẫn đến việc bị Tòa án trả lại hoặc yêu cầu bổ sung nhiều lần.</p>
+      </div>
+
+      <div class="premium-card p-6 reveal" style="transition-delay:0.06s;">
+        <div class="icon-circle mb-5"><span class="material-symbols-outlined" style="color:var(--primary);">schedule</span></div>
+        <h3 class="font-bold text-base text-gray-900 mb-2">Quy trình kéo dài</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Không nắm rõ quy trình giải quyết tại Tòa án hoặc sự khác biệt giữa đơn phương và thuận tình.</p>
+      </div>
+
+      <div class="premium-card p-6 reveal" style="transition-delay:0.12s;">
+        <div class="icon-circle mb-5"><span class="material-symbols-outlined" style="color:var(--primary);">warning</span></div>
+        <h3 class="font-bold text-base text-gray-900 mb-2">Tranh chấp con/tài sản</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Mâu thuẫn về quyền nuôi con, phân chia tài sản và nghĩa vụ cấp dưỡng thường kéo dài, khó thống nhất.</p>
+      </div>
+
+      <div class="premium-card p-6 reveal" style="transition-delay:0.18s;">
+        <div class="icon-circle mb-5"><span class="material-symbols-outlined" style="color:var(--primary);">gavel</span></div>
+        <h3 class="font-bold text-base text-gray-900 mb-2">Áp lực tố tụng</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Căng thẳng khi phải tham gia trực tiếp nhiều buổi hòa giải, xét xử và làm việc trực tiếp với Tòa án.</p>
+      </div>
+    </div>
+
+    <!-- Additional list items for 2. -->
+    <div class="mt-8 bg-white p-6 rounded-2xl border border-primary/5 grid grid-cols-1 md:grid-cols-2 gap-4 reveal">
+      <div class="flex items-center gap-3">
+        <div class="check-icon-box" style="background:#ebdcae;"><span class="material-symbols-outlined" style="color:#1a0404;font-size:11px;">priority_high</span></div>
+        <span class="text-sm text-gray-600">Khó khăn trong việc tự thu thập chứng cứ chứng minh mâu thuẫn</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="check-icon-box" style="background:#ebdcae;"><span class="material-symbols-outlined" style="color:#1a0404;font-size:11px;">priority_high</span></div>
+        <span class="text-sm text-gray-600">Không xác định đúng thẩm quyền Tòa án tiếp nhận hồ sơ</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="check-icon-box" style="background:#ebdcae;"><span class="material-symbols-outlined" style="color:#1a0404;font-size:11px;">priority_high</span></div>
+        <span class="text-sm text-gray-600">Dễ phát sinh sai sót pháp lý nghiêm trọng ảnh hưởng đến kết quả cuối cùng</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="check-icon-box" style="background:#ebdcae;"><span class="material-symbols-outlined" style="color:#1a0404;font-size:11px;">priority_high</span></div>
+        <span class="text-sm text-gray-600">Áp lực tâm lý nặng nề ảnh hưởng trực tiếp đến đời sống cá nhân</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. DỊCH VỤ LY HÔN TẠI ACC ============ -->
+<section class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5 reveal-left">
+        <div class="rounded-2xl overflow-hidden shadow-2xl relative" style="height: 480px;">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9TTJATAbsfX__Fvvig2LZ4rKd2e4DnSQKhYASrAXx3WEShkTDlPdpv14peEBpxWKvUxOMIfyAI4KcLWE99muAuQcPk-OYLexFKK3_VmS7V3EwrsjNBCQyElccq4VEEFlqWVC3KZCR19fRBpXGwhvPrMgCiexQQB0pB04b4s2ZXMQCgKku5iY2O741IPhFCHOzQ9UrKLgor8faeqeYWU1GDPs23V9c7zruGTxVE-EWkxzVEHQxPh7J57SMwc7fb1QvhH2o9HL_iDkF"
+            alt="Luật sư ACC hỗ trợ giải quyết ly hôn"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
+        </div>
+      </div>
+      <div class="lg:col-span-7 space-y-6 reveal-right">
+        <div class="section-label">Giải pháp toàn diện</div>
+        <h2 class="section-title" style="text-align:left; margin:0;">Dịch Vụ Ly Hôn Nhanh, Trọn Gói Tại ACC</h2>
+        <div class="section-line left"></div>
+        <p class="text-gray-600">
+          ACC cung cấp dịch vụ ly hôn nhanh, trọn gói nhằm hỗ trợ khách hàng giải quyết toàn bộ thủ tục pháp lý một cách nhanh chóng, đúng quy định và hạn chế tối đa việc phải trực tiếp làm việc với Tòa án. Gói dịch vụ bao gồm:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tư vấn hình thức ly hôn phù hợp thực tế</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Rà soát &amp; chuẩn bị hồ sơ ly hôn đúng quy định</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Soạn thảo đơn và các văn bản pháp lý liên quan</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hỗ trợ thu thập chứng cứ, hoàn thiện hồ sơ tranh chấp</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Đại diện nộp hồ sơ &amp; làm việc với Tòa án</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Theo dõi quá trình thụ lý &amp; cập nhật tiến độ liên tục</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hỗ trợ khách hàng trong quá trình hòa giải bắt buộc</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Đại diện tranh tụng tại Tòa án bảo vệ quyền lợi</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hỗ trợ trọn gói cho đến khi có quyết định/bản án</div>
+        </div>
+
+        <div class="pt-4">
+          <a href="https://zalo.me/2171133625094125529" target="_blank" class="btn-primary" style="padding:14px 30px;">
+            <span class="material-symbols-outlined" style="font-size:20px;">chat</span>
+            Liên hệ ngay với ACC để được hỗ trợ thủ tục gọn lẹ
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. QUY TRÌNH THỰC HIỆN ============ -->
+<section class="py-24 bg-surface-dark">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-label" style="justify-content:center;">Quy trình chuyên nghiệp</div>
+      <h2 class="section-title">6 Bước Thực Hiện <span>Dịch Vụ Ly Hôn</span> Tại ACC</h2>
+      <div class="section-line"></div>
+      <p style="color:#777;font-size:0.95rem;margin-top:14px;">Quy trình được thiết kế rõ ràng, minh bạch, tuân thủ nghiêm ngặt quy định pháp luật.</p>
+    </div>
+
+    <div class="space-y-6">
+      <div class="flex gap-5 items-start reveal" style="transition-delay:0s;">
+        <div class="timeline-dot" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));">1</div>
+        <div class="timeline-card">
+          <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:6px;">Bước 1: Tiếp nhận thông tin và tư vấn pháp lý ban đầu</h4>
+          <p style="color:#555;font-size:0.875rem;line-height:1.7;">ACC tiếp nhận thông tin chi tiết từ khách hàng về tình trạng hôn nhân (thời gian chung sống, lý do ly hôn, tình trạng con chung, tài sản). Chuyên viên phân tích và tư vấn hình thức phù hợp nhất (thuận tình hoặc đơn phương), giải thích quyền và nghĩa vụ của các bên.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-5 items-start reveal" style="transition-delay:0.06s;">
+        <div class="timeline-dot" style="background:linear-gradient(135deg,var(--accent),var(--accent-light));">2</div>
+        <div class="timeline-card">
+          <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:6px;">Bước 2: Hướng dẫn và hoàn thiện hồ sơ ly hôn</h4>
+          <p style="color:#555;font-size:0.875rem;line-height:1.7;">Hướng dẫn khách hàng chuẩn bị hồ sơ cần thiết. Đội ngũ chuyên viên soạn thảo đơn ly hôn, đơn yêu cầu công nhận thuận tình ly hôn hoặc đơn khởi kiện đơn phương kèm theo các văn bản liên quan đến con chung, tài sản, nghĩa vụ cấp dưỡng.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-5 items-start reveal" style="transition-delay:0.12s;">
+        <div class="timeline-dot" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));">3</div>
+        <div class="timeline-card">
+          <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:6px;">Bước 3: Nộp hồ sơ và làm việc với Tòa án có thẩm quyền</h4>
+          <p style="color:#555;font-size:0.875rem;line-height:1.7;">ACC đại diện nộp hồ sơ tại Tòa án đúng thẩm quyền, theo dõi tiến trình thụ lý vụ việc, chủ động xử lý các yêu cầu bổ sung từ phía Tòa án để đảm bảo tiến độ nhanh nhất.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-5 items-start reveal" style="transition-delay:0.18s;">
+        <div class="timeline-dot" style="background:linear-gradient(135deg,var(--accent),var(--accent-light));">4</div>
+        <div class="timeline-card">
+          <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:6px;">Bước 4: Tham gia hòa giải và xử lý quá trình giải quyết</h4>
+          <p style="color:#555;font-size:0.875rem;line-height:1.7;">ACC hỗ trợ khách hàng tham gia các buổi hòa giải bắt buộc. Đối với thuận tình ly hôn, hỗ trợ thống nhất nội dung thỏa thuận. Đối với đơn phương ly hôn, theo sát quá trình giải quyết vụ án để bảo vệ quyền lợi của khách hàng.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-5 items-start reveal" style="transition-delay:0.24s;">
+        <div class="timeline-dot" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));">5</div>
+        <div class="timeline-card">
+          <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:6px;">Bước 5: Đại diện tranh tụng tại Tòa án (nếu có tranh chấp)</h4>
+          <p style="color:#555;font-size:0.875rem;line-height:1.7;">Nếu phát sinh tranh chấp phức tạp về quyền nuôi con, chia tài sản chung hoặc nghĩa vụ cấp dưỡng, luật sư ACC đại diện tranh tụng trực tiếp tại Tòa án để bảo vệ tối đa lợi ích hợp pháp của khách hàng.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-5 items-start reveal" style="transition-delay:0.3s;">
+        <div class="timeline-dot" style="background:linear-gradient(135deg,var(--accent),var(--accent-light));">6</div>
+        <div class="timeline-card">
+          <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:6px;">Bước 6: Nhận kết quả và hoàn tất thủ tục sau ly hôn</h4>
+          <p style="color:#555;font-size:0.875rem;line-height:1.7;">Nhận bản án hoặc quyết định công nhận ly hôn có hiệu lực pháp luật bàn giao cho khách hàng, đồng thời hướng dẫn các thủ tục pháp lý cần thiết sau ly hôn để đảm bảo quyền lợi lâu dài.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. HỒ SƠ CẦN CHUẨN BỊ ============ -->
+<section class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-label" style="justify-content:center;">Hướng dẫn chuẩn bị</div>
+      <h2 class="section-title">Hồ Sơ Cần Thiết Khi <span>Làm Thủ Tục Ly Hôn</span></h2>
+      <div class="section-line"></div>
+      <p style="color:#777;font-size:0.95rem;max-width:550px;margin:16px auto 0;line-height:1.75;">ACC hỗ trợ rà soát và hoàn thiện hồ sơ đầy đủ, đúng chuẩn ngay từ đầu để hạn chế tối đa việc bị trả lại.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Hồ sơ cơ bản -->
+      <div class="premium-card p-8 reveal" style="transition-delay:0s;">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;"><span class="material-symbols-outlined" style="color:var(--primary);">folder_shared</span></div>
+          <h3 class="font-bold text-lg text-gray-900">Hồ sơ pháp lý cơ bản</h3>
+        </div>
+        <div class="space-y-1">
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Đơn yêu cầu thuận tình ly hôn hoặc đơn khởi kiện đơn phương</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Giấy chứng nhận đăng ký kết hôn (Bản chính)</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Căn cước công dân/Hộ chiếu của vợ và chồng (Bản sao chứng thực)</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Giấy khai sinh của con (Bản sao chứng thực nếu có con chung)</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Giấy tờ xác nhận nơi cư trú (Trong một số trường hợp theo yêu cầu)</div>
+        </div>
+      </div>
+
+      <!-- Tài liệu bổ sung/tranh chấp -->
+      <div class="premium-card p-8 reveal" style="transition-delay:0.08s;">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;"><span class="material-symbols-outlined" style="color:var(--primary);">library_books</span></div>
+          <h3 class="font-bold text-lg text-gray-900">Tài liệu chứng minh &amp; Tranh chấp</h3>
+        </div>
+        <div class="space-y-1">
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Giấy tờ chứng minh quyền sở hữu tài sản chung (Sổ đỏ, sổ hồng, đăng ký xe...)</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tài liệu chứng minh thu nhập cá nhân phục vụ yêu cầu cấp dưỡng con chung</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Chứng cứ liên quan đến mâu thuẫn hôn nhân, bạo lực gia đình (Ly hôn đơn phương)</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Văn bản thỏa thuận phân chia tài sản/quyền nuôi con (Nếu có)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. CHI PHÍ DỊCH VỤ ============ -->
+<section class="py-24 bg-surface-dark">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 space-y-6 reveal-left">
+        <div class="section-label">Minh bạch chi phí</div>
+        <h2 class="section-title" style="text-align:left; margin:0;">Chi Phí Dịch Vụ Ly Hôn Nhanh, Trọn Gói</h2>
+        <div class="section-line left"></div>
+        <p class="text-gray-600">
+          Chi phí dịch vụ ly hôn tại ACC được xây dựng theo hướng trọn gói, minh bạch và phù hợp với từng tình huống thực tế của khách hàng. Chúng tôi cam kết báo giá rõ ràng ngay từ đầu, không phát sinh chi phí ngoài thỏa thuận. Mức phí cụ thể phụ thuộc vào:
+        </p>
+        <ul class="space-y-3 pt-2">
+          <li class="flex items-center gap-3 text-sm text-gray-700">
+            <span class="w-2 h-2 rounded-full bg-primary"></span>
+            Hình thức ly hôn (Thuận tình giải quyết nhanh hay Đơn phương)
+          </li>
+          <li class="flex items-center gap-3 text-sm text-gray-700">
+            <span class="w-2 h-2 rounded-full bg-primary"></span>
+            Mức độ phức tạp của hồ sơ và tình trạng tranh chấp tài sản, con chung, cấp dưỡng
+          </li>
+          <li class="flex items-center gap-3 text-sm text-gray-700">
+            <span class="w-2 h-2 rounded-full bg-primary"></span>
+            Phạm vi công việc khách hàng yêu cầu (Đại diện làm việc toàn bộ hay hỗ trợ soạn hồ sơ)
+          </li>
+        </ul>
+        <div class="pt-4">
+          <a href="https://zalo.me/2171133625094125529" target="_blank" class="btn-primary" style="padding:16px 36px;">
+            <span class="material-symbols-outlined" style="font-size:20px;">chat</span>
+            Nhận báo giá dịch vụ ly hôn nhanh tại đây
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 reveal-right">
+        <div class="premium-card p-8 bg-gradient-to-br from-primary to-primary-dark text-white relative overflow-hidden">
+          <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/5"></div>
+          <h3 class="font-bold text-xl mb-4 text-accent-light">Cam Kết Của ACC</h3>
+          <div class="space-y-4 text-sm text-white/80">
+            <div class="flex gap-3">
+              <span class="material-symbols-outlined text-accent-light">verified</span>
+              <p><strong>Báo giá 1 lần duy nhất:</strong> Không phát sinh phụ phí ẩn trong suốt quá trình giải quyết.</p>
+            </div>
+            <div class="flex gap-3">
+              <span class="material-symbols-outlined text-accent-light">security</span>
+              <p><strong>Bảo mật thông tin khách hàng:</strong> Bảo mật tuyệt đối mọi thông tin đời tư cá nhân và gia đình.</p>
+            </div>
+            <div class="flex gap-3">
+              <span class="material-symbols-outlined text-accent-light">thumb_up</span>
+              <p><strong>Tối ưu hóa thời gian:</strong> Hồ sơ được chuẩn bị chuẩn chỉnh giúp giảm thiểu tối đa thời gian xử lý.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. THỜI GIAN THỰC HIỆN ============ -->
+<section class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-label" style="justify-content:center;">Lộ trình thời gian</div>
+      <h2 class="section-title">Thời Gian Thực Hiện <span>Thủ Tục Ly Hôn</span></h2>
+      <div class="section-line"></div>
+      <p style="color:#777;font-size:0.95rem;max-width:550px;margin:16px auto 0;line-height:1.75;">Lộ trình thời gian thực hiện được tối ưu hóa nhanh nhất có thể theo từng giai đoạn xử lý cụ thể.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="premium-card p-6 bg-surface-dark relative">
+        <div class="text-xs text-primary font-bold mb-1">GIAI ĐOẠN 1</div>
+        <h3 class="font-bold text-gray-900 mb-2">Tư vấn &amp; Tiếp nhận</h3>
+        <div class="text-2xl font-black text-primary mb-3">1 - 2 Ngày</div>
+        <p class="text-xs text-gray-500">Tiếp nhận thông tin ban đầu, tư vấn pháp lý và thống nhất phương án xử lý thủ tục.</p>
+      </div>
+
+      <div class="premium-card p-6 bg-surface-dark relative">
+        <div class="text-xs text-primary font-bold mb-1">GIAI ĐOẠN 2</div>
+        <h3 class="font-bold text-gray-900 mb-2">Soạn thảo hồ sơ</h3>
+        <div class="text-2xl font-black text-primary mb-3">2 - 5 Ngày</div>
+        <p class="text-xs text-gray-500">Soạn thảo toàn bộ đơn ly hôn, các tài liệu, hồ sơ chứng cứ và hoàn thiện hồ sơ.</p>
+      </div>
+
+      <div class="premium-card p-6 bg-surface-dark relative">
+        <div class="text-xs text-primary font-bold mb-1">GIAI ĐOẠN 3</div>
+        <h3 class="font-bold text-gray-900 mb-2">Nộp &amp; Thụ lý</h3>
+        <div class="text-2xl font-black text-primary mb-3">3 - 7 Ngày</div>
+        <p class="text-xs text-gray-500">Đại diện nộp hồ sơ tại Tòa án có thẩm quyền và nhận thông báo thụ lý.</p>
+      </div>
+
+      <div class="premium-card p-6 bg-surface-dark relative">
+        <div class="text-xs text-primary font-bold mb-1">GIAI ĐOẠN 4</div>
+        <h3 class="font-bold text-gray-900 mb-2">Giải quyết tại Tòa</h3>
+        <div class="text-xs text-gray-600 font-bold mb-3">
+          <div class="text-primary font-black text-lg">Thuận tình: 1 - 2 Tháng</div>
+          <div class="text-primary font-black text-lg">Đơn phương: 4 - 6 Tháng</div>
+        </div>
+        <p class="text-xs text-gray-500">Thời gian có thể kéo dài hơn nếu vụ việc có tranh chấp phức tạp về tài sản hoặc con chung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. ĐIỀU KIỆN LY HÔN ============ -->
+<section class="py-24 bg-surface-dark">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-label" style="justify-content:center;">Quy định pháp lý</div>
+      <h2 class="section-title">Điều Kiện Để Được <span>Tòa Án Giải Quyết Ly Hôn</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Điều kiện ly hôn đơn phương -->
+      <div class="premium-card p-8 reveal" style="transition-delay:0s;">
+        <h3 class="font-bold text-lg text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined">gavel</span>
+          Điều kiện ly hôn đơn phương (Điều 56)
+        </h3>
+        <div class="space-y-1">
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Có hành vi bạo lực gia đình, xâm hại nghiêm trọng sức khỏe, tinh thần của bên kia</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Vi phạm nghiêm trọng quyền, nghĩa vụ vợ chồng làm ảnh hưởng lợi ích (phá tán tài sản...)</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hôn nhân lâm vào tình trạng trầm trọng, không thể duy trì, mục đích kết hôn không đạt được</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Đã tiến hành hòa giải bắt buộc nhưng không thành công</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Vợ hoặc chồng của người bị tuyên bố mất tích yêu cầu ly hôn</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Có căn cứ về việc bạo lực gia đình đe dọa nghiêm trọng tính mạng, sức khỏe đối phương</div>
+        </div>
+      </div>
+
+      <!-- Điều kiện ly hôn thuận tình -->
+      <div class="premium-card p-8 reveal" style="transition-delay:0.08s;">
+        <h3 class="font-bold text-lg text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined">handshake</span>
+          Điều kiện ly hôn thuận tình (Điều 55)
+        </h3>
+        <div class="space-y-1">
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hai bên vợ chồng cùng tự nguyện ly hôn và thống nhất yêu cầu Tòa án công nhận</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Đã thỏa thuận thống nhất về việc chia tài sản và nghĩa vụ tài chính liên quan (nếu có)</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Thống nhất về quyền nuôi con trực tiếp, nghĩa vụ chăm sóc và cấp dưỡng con chung</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Các thỏa thuận tự nguyện không vi phạm pháp luật và không trái đạo đức xã hội</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Quyền lợi chính đáng của con được đảm bảo tốt nhất về mọi mặt (học tập, phát triển)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9, 10, 11, 12. CÁC QUY ĐỊNH PHÁP LÝ QUAN TRỌNG (BENTO GRID) ============ -->
+<section class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-label" style="justify-content:center;">Tư vấn chuyên sâu</div>
+      <h2 class="section-title">Các Quy Định <span>Pháp Lý Quan Trọng</span> Cần Biết</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- 9. Ai có quyền yêu cầu ly hôn? -->
+      <div class="premium-card p-8 reveal" style="transition-delay:0s;">
+        <h3 class="font-bold text-lg text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined">person</span>
+          9. Ai có quyền yêu cầu ly hôn?
+        </h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+          Theo Điều 51 và Điều 53 Luật Hôn nhân và gia đình 2014, chủ thể có quyền yêu cầu giải quyết ly hôn bao gồm:
+        </p>
+        <div class="space-y-1">
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Vợ, chồng hoặc cả hai người cùng yêu cầu Tòa án giải quyết.</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Cha, mẹ, người thân thích khác có quyền yêu cầu khi một bên bị bệnh tâm thần, không nhận thức được hành vi, đồng thời là nạn nhân của bạo lực gia đình do người kia gây ra.</div>
+          <div class="check-item" style="color:#b44040;"><div class="check-icon-box" style="background:#b44040;"><span class="material-symbols-outlined" style="color:white;font-size:11px;">warning</span></div><strong>Lưu ý:</strong> Chồng không có quyền yêu cầu ly hôn trong trường hợp vợ đang có thai, sinh con hoặc đang nuôi con dưới 12 tháng tuổi.</div>
+        </div>
+      </div>
+
+      <!-- 10. Nghĩa vụ cấp dưỡng sau ly hôn -->
+      <div class="premium-card p-8 reveal" style="transition-delay:0.06s;">
+        <h3 class="font-bold text-lg text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined">payments</span>
+          10. Nghĩa vụ cấp dưỡng sau ly hôn
+        </h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+          Căn cứ Điều 82 và Điều 110 Luật Hôn nhân và gia đình 2014, cha hoặc mẹ không trực tiếp nuôi con phải cấp dưỡng cho con chưa thành niên hoặc con đã thành niên nhưng mất năng lực hành vi dân sự, không thể tự nuôi mình.
+        </p>
+        <div class="space-y-1">
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Mức cấp dưỡng do các bên thỏa thuận dựa trên thu nhập thực tế và nhu cầu thiết yếu của con.</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Nếu không thỏa thuận được, Tòa án sẽ quyết định mức cấp dưỡng phù hợp.</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Có thể cấp dưỡng định kỳ hàng tháng, hàng quý, hàng năm hoặc một lần tùy theo thỏa thuận.</div>
+        </div>
+      </div>
+
+      <!-- 11. Ai được quyền nuôi con? -->
+      <div class="premium-card p-8 reveal" style="transition-delay:0.12s;">
+        <h3 class="font-bold text-lg text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined">child_care</span>
+          11. Ai được quyền nuôi con sau ly hôn?
+        </h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+          Theo Điều 81 Luật Hôn nhân và gia đình 2014, việc nuôi con trước hết do vợ chồng thỏa thuận. Nếu không thỏa thuận được, Tòa án sẽ quyết định giao con cho một bên nuôi dựa trên quyền lợi mọi mặt của con:
+        </p>
+        <div class="space-y-1">
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Điều kiện kinh tế, chỗ ở, thời gian chăm sóc, giáo dục và đạo đức lối sống của cha/mẹ.</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Con dưới 36 tháng tuổi được ưu tiên giao cho mẹ trực tiếp nuôi dưỡng (trừ khi mẹ không đủ điều kiện).</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Con từ đủ 07 tuổi trở lên được Tòa án xem xét nguyện vọng của con.</div>
+        </div>
+      </div>
+
+      <!-- 12. Tài sản sau ly hôn chia như thế nào? -->
+      <div class="premium-card p-8 reveal" style="transition-delay:0.18s;">
+        <h3 class="font-bold text-lg text-primary mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined">account_balance</span>
+          12. Nguyên tắc phân chia tài sản sau ly hôn
+        </h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+          Theo Điều 59 Luật Hôn nhân và gia đình 2014, tài sản chung của vợ chồng được ưu tiên phân chia theo thỏa thuận. Nếu không thỏa thuận được, Tòa án sẽ phân chia theo nguyên tắc chia đôi nhưng có tính đến các yếu tố:
+        </p>
+        <div class="space-y-1">
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Công sức đóng góp của mỗi bên vào việc tạo lập, duy trì và phát triển khối tài sản chung.</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hoàn cảnh gia đình và điều kiện kinh tế thực tế của mỗi bên sau khi ly hôn.</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Bảo vệ lợi ích chính đáng của phụ nữ, con chưa thành niên, tài sản riêng thuộc về người đó.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13. LỢI ÍCH KHI SỬ DỤNG DỊCH VỤ TẠI ACC ============ -->
+<section class="py-24 bg-surface-dark">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-label" style="justify-content:center;">Ưu thế vượt trội</div>
+      <h2 class="section-title">Lợi Ích Khi Chọn <span>Dịch Vụ Ly Hôn Trọn Gói</span> Tại ACC</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="premium-card p-6 reveal" style="transition-delay:0s;">
+        <div class="icon-circle mb-5"><span class="material-symbols-outlined" style="color:var(--primary);">support_agent</span></div>
+        <h3 class="font-bold text-base text-gray-900 mb-2">Hỗ trợ toàn bộ A-Z</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Hỗ trợ trọn gói từ tư vấn pháp lý, soạn thảo và rà soát hồ sơ đến khi làm việc trực tiếp với Tòa án.</p>
+      </div>
+
+      <div class="premium-card p-6 reveal" style="transition-delay:0.06s;">
+        <div class="icon-circle mb-5"><span class="material-symbols-outlined" style="color:var(--primary);">speed</span></div>
+        <h3 class="font-bold text-base text-gray-900 mb-2">Rút ngắn thời gian</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Tối ưu quy trình chuẩn chỉnh ngay từ đầu, hạn chế tối đa việc bị trả hồ sơ hay yêu cầu sửa đổi nhiều lần.</p>
+      </div>
+
+      <div class="premium-card p-6 reveal" style="transition-delay:0.12s;">
+        <div class="icon-circle mb-5"><span class="material-symbols-outlined" style="color:var(--primary);">directions_walk</span></div>
+        <h3 class="font-bold text-base text-gray-900 mb-2">Hạn chế đi lại</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Luật sư đại diện làm việc trực tiếp với cơ quan nhà nước, giảm tối đa áp lực đi lại cho khách hàng.</p>
+      </div>
+
+      <div class="premium-card p-6 reveal" style="transition-delay:0.18s;">
+        <div class="icon-circle mb-5"><span class="material-symbols-outlined" style="color:var(--primary);">monetization_on</span></div>
+        <h3 class="font-bold text-base text-gray-900 mb-2">Chi phí minh bạch</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Cam kết báo giá trọn gói minh bạch ngay từ đầu, tuyệt đối không phát sinh thêm chi phí ngoài hợp đồng.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 14. CÂU HỎI THƯỜNG GẶP (FAQ) ============ -->
+<section class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-label" style="justify-content:center;">Giải đáp thắc mắc</div>
+      <h2 class="section-title">Câu Hỏi Thường Gặp Về <span>Thủ Tục Ly Hôn</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="faq-container">
+      <details class="faq-item reveal" style="transition-delay:0s;">
+        <summary class="faq-summary">
+          <span>Không giữ bản chính giấy đăng ký kết hôn có ly hôn được không?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          Có. Trường hợp bị mất hoặc bên kia cố tình không giao bản chính giấy đăng ký kết hôn, bạn vẫn có thể thực hiện thủ tục bằng cách xin cấp bản sao trích lục kết hôn tại Ủy ban nhân dân nơi đã đăng ký kết hôn trước đây để nộp kèm hồ sơ.
+        </div>
+      </details>
+
+      <details class="faq-item reveal" style="transition-delay:0.04s;">
+        <summary class="faq-summary">
+          <span>Vợ/chồng đang ở nước ngoài có ly hôn được không?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          Có. Tuy nhiên, thủ tục ly hôn có yếu tố nước ngoài sẽ phức tạp hơn do thẩm quyền giải quyết thuộc về Tòa án nhân dân cấp tỉnh, đồng thời phải thực hiện các thủ tục ủy quyền, hợp pháp hóa lãnh sự hoặc tống đạt hồ sơ ra nước ngoài theo đúng quy định.
+        </div>
+      </details>
+
+      <details class="faq-item reveal" style="transition-delay:0.08s;">
+        <summary class="faq-summary">
+          <span>Một bên cố tình không hợp tác thì có ly hôn được không?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          Có. Nếu một bên cố tình trốn tránh, không hợp tác hoặc không đồng ý ly hôn, bạn có quyền nộp đơn khởi kiện đơn phương ly hôn. Khi có đủ căn cứ pháp lý chứng minh mâu thuẫn gia đình trầm trọng, Tòa án vẫn giải quyết ly hôn vắng mặt đối phương theo quy định của pháp luật tố tụng.
+        </div>
+      </details>
+
+      <details class="faq-item reveal" style="transition-delay:0.12s;">
+        <summary class="faq-summary">
+          <span>Có thể yêu cầu chia tài sản sau khi đã ly hôn không?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          Có. Trong trường hợp các bên tự thỏa thuận tài sản hoặc chưa yêu cầu Tòa án giải quyết chia tài sản chung khi ly hôn, sau khi có quyết định/bản án ly hôn, các bên vẫn có quyền khởi kiện yêu cầu chia tài sản chung sau ly hôn tại Tòa án có thẩm quyền.
+        </div>
+      </details>
+
+      <details class="faq-item reveal" style="transition-delay:0.16s;">
+        <summary class="faq-summary">
+          <span>Người không trực tiếp nuôi con có được gặp con không?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          Có. Sau khi ly hôn, cha hoặc mẹ không trực tiếp nuôi con có quyền, nghĩa vụ thăm nom, chăm sóc, giáo dục con chung mà không ai được cản trở trái pháp luật. Trường hợp bên nuôi con cố tình cản trở, bạn có quyền yêu cầu cơ quan có thẩm quyền can thiệp hoặc khởi kiện yêu cầu thay đổi người trực tiếp nuôi con.
+        </div>
+      </details>
+
+      <details class="faq-item reveal" style="transition-delay:0.2s;">
+        <summary class="faq-summary">
+          <span>Ly hôn có bắt buộc phải hòa giải không?</span>
+          <span class="material-symbols-outlined faq-icon">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          Thông thường Tòa án sẽ tiến hành hòa giải cơ sở tại Ủy ban nhân dân và hòa giải tố tụng tại Tòa án trước khi đưa vụ án ra xét xử, trừ các trường hợp không tiến hành hòa giải được theo quy định pháp luật (ví dụ: bị đơn mất tích, bị đơn mất năng lực hành vi dân sự...).
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FOOTER ============ -->
+<section class="cta-section py-28 text-center">
+  <div class="cta-orb" style="width:400px;height:400px;background:rgba(197,160,89,0.08);top:-100px;left:-100px;"></div>
+  <div class="cta-orb" style="width:350px;height:350px;background:rgba(139,28,28,0.15);bottom:-80px;right:-80px;"></div>
+  <div class="max-w-3xl mx-auto px-6 relative z-10">
+    <div class="reveal">
+      <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;margin-bottom:24px;">
+        Hỗ trợ pháp lý tận tâm
+      </div>
+      <h2 style="font-family:'Roboto',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:white;line-height:1.2;margin-bottom:20px;">
+        Giải Quyết Thủ Tục Ly Hôn Gọn Lẹ<br/>
+        <span style="background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">tiết kiệm thời gian - giảm bớt áp lực</span>
+      </h2>
+      <p class="text-white/60 leading-relaxed mb-10" style="font-size:1rem;max-width:580px;margin:0 auto 40px;">
+        Ly hôn là vấn đề nhạy cảm và thường kéo theo nhiều áp lực về tâm lý, thời gian cũng như thủ tục pháp lý. Liên hệ ngay với ACC để được tư vấn chi tiết và sử dụng dịch vụ ly hôn nhanh, trọn gói, giúp tiết kiệm thời gian, giảm áp lực pháp lý và đảm bảo quyền lợi của bạn.
+      </p>
+      <div class="flex justify-center flex-wrap gap-4">
+        <a href="tel:19003330" class="btn-primary" style="font-size:1rem;padding:18px 44px;">
+          <span class="material-symbols-outlined" style="font-size:22px;">call</span>
+          Hotline 24/7: 1900 3330
+        </a>
+        <a href="https://zalo.me/2171133625094125529" target="_blank" class="btn-outline" style="font-size:1rem;padding:18px 44px;">
+          <span class="material-symbols-outlined" style="font-size:22px;">chat</span>
+          Zalo Tư Vấn Nhanh
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  // ===== Particle generator =====
+  const container = document.getElementById('particles');
+  const count = 35;
+  if (container) {
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 18 + 6;
+      const pOpacity = Math.random() * 0.4 + 0.45;
+      const drift = Math.random() * 60 - 30;
+      p.style.cssText = 'width:' + size + 'px;height:' + size + 'px;' +
+        'left:' + (Math.random() * 100) + '%;' +
+        'animation-duration:' + (Math.random() * 15 + 12) + 's;' +
+        'animation-delay:' + (Math.random() * 15) + 's;' +
+        '--p-opacity:' + pOpacity + ';' +
+        '--drift:' + drift + 'px;';
+      container.appendChild(p);
+    }
+  }
+
+  // ===== Scroll reveal =====
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  if (revealEls.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.style.transitionDelay || '0s';
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, parseFloat(delay) * 1000);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+  }
+</script>
+</body>
+</html>
