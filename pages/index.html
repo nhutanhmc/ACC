@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hệ thống Dịch vụ Pháp lý & Kế toán ACC Law Firm</title>
+<meta name="description" content="ACC Law Firm cung cấp hệ thống dịch vụ pháp lý và kế toán chuyên nghiệp toàn diện: làm Visa trọn gói, báo cáo thuế, luật sư tư vấn đất đai, hôn nhân gia đình, doanh nghiệp toàn quốc."/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#8B1C1C',
+          'primary-dark': '#5c1114',
+          'primary-light': '#b44040',
+          accent: '#c5a059',
+          'accent-light': '#ebdcae',
+          surface: '#fafafa',
+          'surface-dark': '#f0f0f0',
+        },
+        fontFamily: {
+          sans: ['Roboto', 'sans-serif'],
+          display: ['Roboto', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  :root {
+    --primary: #8B1C1C;
+    --primary-dark: #5c1114;
+    --primary-light: #b44040;
+    --accent: #c5a059;
+    --accent-light: #ebdcae;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    overflow-x: hidden;
+  }
+
+  /* ============ SCROLLBAR ============ */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f1f1f1; }
+  ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+  /* ============ HERO ============ */
+  .hero-section {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hero-gradient {
+    background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 35%, #5c1114 65%, #1a0404 100%);
+  }
+  .hero-particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .particle {
+    position: absolute;
+    bottom: -50px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(235, 220, 174, 0.45) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(197, 160, 89, 0.35) 100%);
+    border: 1px solid rgba(235, 220, 174, 0.45);
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.25), inset 0 0 6px rgba(255, 255, 255, 0.25);
+    animation: float-particle linear infinite;
+    opacity: 0;
+  }
+  @keyframes float-particle {
+    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+    15% { opacity: var(--p-opacity, 0.6); }
+    85% { opacity: var(--p-opacity, 0.6); }
+    100% { transform: translateY(-115vh) translateX(var(--drift, 20px)) rotate(360deg); opacity: 0; }
+  }
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197,160,89,0.08) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse-glow 4s ease-in-out infinite;
+    z-index: 1;
+  }
+  @keyframes pulse-glow {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border: 1px solid rgba(197,160,89,0.5);
+    border-radius: 100px;
+    background: rgba(197,160,89,0.1);
+    backdrop-filter: blur(10px);
+    color: var(--accent-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: fadeInDown 0.8s ease forwards;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: blink 2s ease-in-out infinite;
+  }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .hero-title {
+    animation: fadeInUp 0.9s ease 0.2s both;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.1;
+  }
+  .hero-title span {
+    background: linear-gradient(135deg, #ebdcae, #c5a059, #ebdcae);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+  .hero-desc {
+    animation: fadeInUp 0.9s ease 0.4s both;
+  }
+  .hero-cta {
+    animation: fadeInUp 0.9s ease 0.6s both;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+    color: #1a0404;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(197,160,89,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+  }
+  .btn-primary:hover::before { left: 100%; }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(197,160,89,0.5); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    border: 2px solid rgba(255,255,255,0.3);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .btn-outline:hover {
+    border-color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-3px);
+  }
+
+  /* Hero Stats */
+  .hero-stats {
+    animation: fadeInUp 0.9s ease 0.8s both;
+  }
+  .stat-item {
+    border-left: 1px solid rgba(255,255,255,0.15);
+    padding-left: 20px;
+  }
+  .stat-item:first-child { border-left: none; padding-left: 0; }
+
+  /* Hero Card */
+  .hero-card {
+    animation: fadeInRight 0.9s ease 0.5s both;
+  }
+  .passport-card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.4s ease;
+  }
+  .passport-card:hover { transform: translateY(-8px) rotate(-1deg); }
+  .passport-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(197,160,89,0.05), transparent, rgba(139,28,28,0.05));
+    pointer-events: none;
+  }
+
+  /* Floating badge on hero image */
+  .float-badge {
+    position: absolute;
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    padding: 12px 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* ============ SECTION HEADERS ============ */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 14px;
+    border-radius: 100px;
+    background: rgba(139,28,28,0.08);
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: #1a0404;
+    line-height: 1.2;
+  }
+  .section-title span {
+    color: var(--primary);
+  }
+  .section-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 2px;
+    margin: 16px auto 0;
+  }
+  .section-line.left {
+    margin: 16px 0 0;
+  }
+
+  /* ============ CARDS ============ */
+  .premium-card {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid rgba(139,28,28,0.06);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .premium-card:hover::before {
+    transform: scaleX(1);
+  }
+  .premium-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(139,28,28,0.15);
+    border-color: rgba(139,28,28,0.12);
+  }
+
+  /* Accent borders for cards */
+  .card-border-primary { border-top: 4px solid var(--primary); }
+  .card-border-accent { border-top: 4px solid var(--accent); }
+
+  .icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: rgba(139,28,28,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .premium-card:hover .icon-wrapper {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    transform: rotate(5deg) scale(1.1);
+  }
+  .premium-card:hover .icon-wrapper .material-symbols-outlined {
+    color: white !important;
+  }
+
+  /* ============ CTA ============ */
+  .cta-section {
+    background: linear-gradient(155deg, #1a0202 0%, #5c1114 45%, #2d0505 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(75px);
+    pointer-events: none;
+  }
+
+  /* Floating Zalo/Phone buttons */
+  .float-zalo, .float-phone {
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+  .float-zalo { background: #0068ff; }
+  .float-zalo:hover { transform: scale(1.1); background: #0056d6; }
+  .float-phone { background: var(--accent); }
+  .float-phone:hover { transform: scale(1.1); background: #b08d4a; }
+
+  /* ============ SCROLL REVEAL ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal.visible, .reveal-left.visible, .reveal-right.visible {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero-section hero-gradient" id="hero">
+  <!-- Particles -->
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-glow"></div>
+
+  <!-- Grid overlay -->
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;z-index:1;pointer-events:none;"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-20 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
+      <!-- Left -->
+      <div class="space-y-8 text-left">
+        <div class="hero-badge">
+          ACC Law Firm &nbsp;·&nbsp; Cổng Dịch Vụ Toàn Diện
+        </div>
+
+        <h1 class="hero-title text-white" style="font-size:clamp(2.2rem,4.5vw,3.8rem);">
+          Hệ Thống Dịch Vụ <span>Pháp Lý &amp; Kế Toán</span>
+          <br/>ACC Law Firm
+        </h1>
+
+        <p class="hero-desc text-white/70 leading-relaxed" style="font-size:1.05rem;max-width:540px;">
+          Chào mừng quý khách đến với ACC Law Firm. Chúng tôi cung cấp giải pháp pháp lý toàn diện, nhanh chóng, đúng quy định để hỗ trợ cá nhân và doanh nghiệp vận hành an toàn, hiệu quả.
+        </p>
+
+        <div class="hero-cta flex flex-wrap gap-4">
+          <a href="tel:19003330" class="btn-primary">
+            <span class="material-symbols-outlined" style="font-size:20px;">call</span>
+            Gọi 1900 3330
+          </a>
+          <a href="#services" class="btn-outline">
+            <span class="material-symbols-outlined" style="font-size:20px;">arrow_downward</span>
+            Khám phá dịch vụ
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats flex flex-wrap gap-x-8 gap-y-4 pt-4">
+          <div class="stat-item">
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">15+</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Năm kinh nghiệm</div>
+          </div>
+          <div class="stat-item">
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">20k+</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Khách hàng toàn quốc</div>
+          </div>
+          <div class="stat-item">
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">100%</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Bảo mật thông tin</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="block lg:mt-0 mt-8 hero-card">
+        <div class="relative max-w-md mx-auto lg:max-w-none">
+          <div class="passport-card p-3 shadow-2xl">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdM4lwjOSedsSWBVEq4mgd_Mroxv74qOSzO6PW8_RKysiFPVO75WJQzYra_Mt6fsNza171JDQCwfFJOQpzU_-PuWC3sR_uuW9n2gRgWamQMXXn8vdsuCefhguW8y4PRp8bjWhxGY1akAf8nO8RoMiWGIlljQ-ecqgCLB6lzsptEa4eoYEzvAg-PByoj5LeS7AiVQIZaBn2XlCxiat2ngl5P124e1hlFVD62CTEWir9a4GPiGK6rtyxhDuVErUwJfGeYurDYxiH8sa2"
+              alt="Hệ thống ACC Law Firm"
+              class="w-full rounded-2xl object-cover h-[280px] sm:h-[380px]"
+            />
+          </div>
+          <!-- Floating badges -->
+          <div class="float-badge sm:flex hidden" style="bottom:-20px;left:20px;z-index:10;">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:white;font-size:18px;">gavel</span>
+            </div>
+            <div>
+              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Pháp lý vững chắc</div>
+              <div style="font-size:0.72rem;color:#888;">Đồng hành dài lâu</div>
+            </div>
+          </div>
+          <div class="float-badge sm:flex hidden" style="top:20px;right:-20px;z-index:10;animation-delay:1.5s;">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#c5a059,#99732f);display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:white;font-size:18px;">verified</span>
+            </div>
+            <div>
+              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Uy tín hàng đầu</div>
+              <div style="font-size:0.72rem;color:#888;">Cam kết hiệu quả</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES PORTAL GRID ============ -->
+<section class="py-24 bg-white" id="services">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-label" style="justify-content:center;">Danh mục dịch vụ</div>
+      <h2 class="section-title">Hệ Thống <span>6 Dịch Vụ Key</span> Của ACC</h2>
+      <div class="section-line"></div>
+      <p style="color:#777;font-size:0.95rem;max-width:550px;margin:16px auto 0;line-height:1.75;">Quý khách vui lòng lựa chọn dịch vụ cần hỗ trợ để chuyển tới giao diện tư vấn chuyên sâu chi tiết.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- 1. Visa -->
+      <a href="visa.html" class="premium-card p-8 flex flex-col gap-5 justify-between">
+        <div class="space-y-4">
+          <div class="icon-wrapper">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:26px;">flight_takeoff</span>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900">Dịch Vụ Làm Visa Trọn Gói</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Xin Visa du lịch, công tác, định cư các nước chuyên nghiệp. Tỷ lệ đậu cao, thủ tục nhanh chóng, bàn giao tận nhà.</p>
+        </div>
+        <div class="flex items-center gap-2 font-bold text-sm text-primary group-hover:text-primary-dark">
+          Xem chi tiết
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </div>
+      </a>
+
+      <!-- 2. Báo cáo thuế -->
+      <a href="baocaothue2.html" class="premium-card p-8 flex flex-col gap-5 justify-between">
+        <div class="space-y-4">
+          <div class="icon-wrapper">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:26px;">analytics</span>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900">Dịch Vụ Báo Cáo Thuế</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Kê khai thuế GTGT, TNCN, TNDN trọn gói chuyên nghiệp. Bảo vệ tài chính doanh nghiệp an toàn, tránh truy thu và phạt hành chính.</p>
+        </div>
+        <div class="flex items-center gap-2 font-bold text-sm text-primary">
+          Xem chi tiết
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </div>
+      </a>
+
+      <!-- 3. Luật sư tư vấn -->
+      <a href="dichvuluatsutuvan.html" class="premium-card p-8 flex flex-col gap-5 justify-between">
+        <div class="space-y-4">
+          <div class="icon-wrapper">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:26px;">support_agent</span>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900">Dịch Vụ Luật Sư Tư Vấn</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Tư vấn pháp lý lao động, hợp đồng và các vấn đề dân sự liên quan. Đảm bảo quyền và lợi ích hợp pháp của người lao động &amp; người sử dụng lao động.</p>
+        </div>
+        <div class="flex items-center gap-2 font-bold text-sm text-primary">
+          Xem chi tiết
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </div>
+      </a>
+
+      <!-- 4. Đất đai -->
+      <a href="luatsutuvandatdai.html" class="premium-card p-8 flex flex-col gap-5 justify-between">
+        <div class="space-y-4">
+          <div class="icon-wrapper">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:26px;">map</span>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900">Luật Sư Tư Vấn Đất Đai</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Giải quyết tranh chấp đất đai, thừa kế nhà đất, cấp sổ đỏ lần đầu, quy hoạch đền bù và rà soát pháp lý hợp đồng đặt cọc mua bán bất động sản.</p>
+        </div>
+        <div class="flex items-center gap-2 font-bold text-sm text-primary">
+          Xem chi tiết
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </div>
+      </a>
+
+      <!-- 5. Hôn nhân -->
+      <a href="tuvanhonnhan.html" class="premium-card p-8 flex flex-col gap-5 justify-between">
+        <div class="space-y-4">
+          <div class="icon-wrapper">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:26px;">favorite</span>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900">Luật Sư Hôn Nhân Gia Đình</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Ly hôn thuận tình, ly hôn đơn phương có tranh chấp tài sản &amp; quyền nuôi con. Tư vấn thỏa thuận tiền hôn nhân, bảo mật tuyệt đối.</p>
+        </div>
+        <div class="flex items-center gap-2 font-bold text-sm text-primary">
+          Xem chi tiết
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </div>
+      </a>
+
+      <!-- 6. Doanh nghiệp -->
+      <a href="tuvanphapluatdoanhnghiep.html" class="premium-card p-8 flex flex-col gap-5 justify-between">
+        <div class="space-y-4">
+          <div class="icon-wrapper">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:26px;">business</span>
+          </div>
+          <h3 class="font-bold text-lg text-gray-900">Pháp Luật Doanh Nghiệp</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Tư vấn thành lập công ty, quy chế quản lý nội bộ, soạn thảo hợp đồng thương mại, xử lý tranh chấp cổ đông và giải thể doanh nghiệp trọn gói.</p>
+        </div>
+        <div class="flex items-center gap-2 font-bold text-sm text-primary">
+          Xem chi tiết
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-section py-28 text-center" id="contact">
+  <div class="cta-orb" style="width:400px;height:400px;background:rgba(197,160,89,0.08);top:-100px;left:-100px;"></div>
+  <div class="cta-orb" style="width:350px;height:350px;background:rgba(139,28,28,0.15);bottom:-80px;right:-80px;"></div>
+  <div class="max-w-3xl mx-auto px-6 relative z-10">
+    <div class="reveal">
+      <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;margin-bottom:24px;">
+        Đồng hành pháp lý trọn vẹn
+      </div>
+      <h2 style="font-family:'Roboto',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:white;line-height:1.2;margin-bottom:20px;">
+        Giải Quyết Mọi Khó Khăn Pháp Lý<br/>
+        <span style="background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">an toàn - nhanh chóng - hiệu quả</span>
+      </h2>
+      <p class="text-white/60 leading-relaxed mb-10" style="font-size:1rem;max-width:580px;margin:0 auto 40px;">
+        Quý khách cần tư vấn hoặc báo giá nhanh dịch vụ? Vui lòng liên hệ với ACC Law Firm để được phản hồi trong vòng 10 phút.
+      </p>
+      <div class="flex justify-center flex-wrap gap-4">
+        <a href="tel:19003330" class="btn-primary" style="font-size:1rem;padding:18px 44px;">
+          <span class="material-symbols-outlined" style="font-size:22px;">call</span>
+          Hotline 24/7: 1900 3330
+        </a>
+        <a href="https://zalo.me/2171133625094125529" target="_blank" class="btn-outline" style="font-size:1rem;padding:18px 44px;">
+          <span class="material-symbols-outlined" style="font-size:22px;">chat</span>
+          Zalo Tư Vấn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Floating Action Buttons -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+  <a href="https://zalo.me/2171133625094125529" target="_blank" class="float-zalo" aria-label="Zalo">
+    <span class="material-symbols-outlined" style="font-size:26px;color:white;">chat</span>
+  </a>
+  <a href="tel:19003330" class="float-phone" aria-label="Phone">
+    <span class="material-symbols-outlined" style="font-size:26px;color:white;">call</span>
+  </a>
+</div>
+
+<script>
+  // ===== Particle generator =====
+  const container = document.getElementById('particles');
+  const count = 35;
+  if (container) {
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 18 + 6;
+      const pOpacity = Math.random() * 0.4 + 0.45;
+      const drift = Math.random() * 60 - 30;
+      p.style.cssText = 'width:' + size + 'px;height:' + size + 'px;' +
+        'left:' + (Math.random() * 100) + '%;' +
+        'animation-duration:' + (Math.random() * 15 + 12) + 's;' +
+        'animation-delay:' + (Math.random() * 15) + 's;' +
+        '--p-opacity:' + pOpacity + ';' +
+        '--drift:' + drift + 'px;';
+      container.appendChild(p);
+    }
+  }
+
+  // ===== Scroll reveal =====
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  if (revealEls.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.style.transitionDelay || '0s';
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, parseFloat(delay) * 1000);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+  }
+</script>
+</body>
+</html>

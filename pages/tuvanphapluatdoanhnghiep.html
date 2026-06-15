@@ -7,15 +7,35 @@
 <meta name="description" content="Công ty Luật ACC cung cấp dịch vụ tư vấn pháp luật doanh nghiệp toàn diện: thành lập công ty, hợp đồng, tranh chấp, lao động. Tư vấn miễn phí."/>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#8B1C1C',
+          'primary-dark': '#5c1114',
+          'primary-light': '#b44040',
+          accent: '#c5a059',
+          'accent-light': '#ebdcae',
+          surface: '#fafafa',
+          'surface-dark': '#f0f0f0',
+        },
+        fontFamily: {
+          sans: ['Roboto', 'sans-serif'],
+          display: ['Roboto', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
 <style>
   :root {
     --primary: #8B1C1C;
     --primary-dark: #5c1114;
     --primary-light: #b44040;
-    --accent: #D4AF37;
-    --accent-light: #F5D87C;
-    --gold: #C9963B;
+    --accent: #c5a059;
+    --accent-light: #ebdcae;
   }
 
   * { box-sizing: border-box; }
@@ -27,142 +47,229 @@
     overflow-x: hidden;
   }
 
-  ::-webkit-scrollbar { width: 5px; }
+  /* ============ SCROLLBAR ============ */
+  ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: #f1f1f1; }
   ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
 
-  /* ===== HERO ===== */
-  .hero-bg {
-    background: linear-gradient(160deg, #1a0202 0%, #4a0d0d 30%, #2d0707 60%, #0d0101 100%);
+  /* ============ HERO ============ */
+  .hero-section {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
   }
-  .hero-grid-overlay {
-    background-image:
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 64px 64px;
+  .hero-gradient {
+    background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 35%, #5c1114 65%, #1a0404 100%);
+  }
+  .hero-particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .particle {
+    position: absolute;
+    bottom: -50px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(235, 220, 174, 0.45) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(197, 160, 89, 0.35) 100%);
+    border: 1px solid rgba(235, 220, 174, 0.45);
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.25), inset 0 0 6px rgba(255, 255, 255, 0.25);
+    animation: float-particle linear infinite;
+    opacity: 0;
+  }
+  @keyframes float-particle {
+    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+    15% { opacity: var(--p-opacity, 0.6); }
+    85% { opacity: var(--p-opacity, 0.6); }
+    100% { transform: translateY(-115vh) translateX(var(--drift, 20px)) rotate(360deg); opacity: 0; }
   }
   .hero-glow {
     position: absolute;
+    width: 600px; height: 600px;
     border-radius: 50%;
-    filter: blur(80px);
-    pointer-events: none;
+    background: radial-gradient(circle, rgba(197,160,89,0.08) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse-glow 4s ease-in-out infinite;
+    z-index: 1;
   }
-
-  /* Badge */
-  .badge {
+  @keyframes pulse-glow {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+  }
+  .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 18px;
-    border: 1px solid rgba(212,175,55,0.4);
+    padding: 6px 16px;
+    border: 1px solid rgba(197,160,89,0.5);
     border-radius: 100px;
-    background: rgba(212,175,55,0.08);
+    background: rgba(197,160,89,0.1);
+    backdrop-filter: blur(10px);
     color: var(--accent-light);
-    font-size: 0.72rem;
-    font-weight: 700;
+    font-size: 0.75rem;
+    font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    animation: fadeInDown 0.8s ease forwards;
   }
-  .badge-dot {
+  .hero-badge::before {
+    content: '';
     width: 6px; height: 6px;
     border-radius: 50%;
     background: var(--accent);
     animation: blink 2s ease-in-out infinite;
   }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
-  /* Title shimmer */
-  .shimmer-text {
-    background: linear-gradient(135deg, #F5D87C, #D4AF37, #F5D87C);
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .hero-title {
+    animation: fadeInUp 0.9s ease 0.2s both;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.1;
+  }
+  .hero-title span {
+    background: linear-gradient(135deg, #ebdcae, #c5a059, #ebdcae);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     background-size: 200% auto;
     animation: shimmer 3s linear infinite;
   }
-  @keyframes shimmer { 0%{background-position:0% center} 100%{background-position:200% center} }
-
-  /* Buttons */
-  .btn-gold {
+  @keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+  .hero-desc {
+    animation: fadeInUp 0.9s ease 0.4s both;
+  }
+  .hero-cta {
+    animation: fadeInUp 0.9s ease 0.6s both;
+  }
+  .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 15px 36px;
-    background: linear-gradient(135deg, var(--accent), #B8960A);
+    padding: 16px 36px;
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
     color: #1a0404;
     font-weight: 700;
     font-size: 0.9rem;
     border-radius: 100px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 28px rgba(212,175,55,0.4);
+    box-shadow: 0 8px 30px rgba(197,160,89,0.4);
     position: relative;
     overflow: hidden;
   }
-  .btn-gold::before {
-    content:'';
-    position:absolute;
-    top:0;left:-100%;
-    width:100%;height:100%;
-    background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
-    transition:left 0.5s;
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
   }
-  .btn-gold:hover::before{left:100%;}
-  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(212,175,55,0.5);}
+  .btn-primary:hover::before { left: 100%; }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(197,160,89,0.5); }
 
-  .btn-outline-white {
+  .btn-outline {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 15px 36px;
-    border: 2px solid rgba(255,255,255,0.25);
+    padding: 16px 36px;
+    border: 2px solid rgba(255,255,255,0.3);
     color: white;
     font-weight: 600;
     font-size: 0.9rem;
     border-radius: 100px;
-    background: rgba(255,255,255,0.04);
-    backdrop-filter: blur(8px);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
     text-decoration: none;
     transition: all 0.3s ease;
   }
-  .btn-outline-white:hover{border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.1);transform:translateY(-3px);}
-
-  /* Hero stat */
-  .hero-stat { border-left: 1px solid rgba(255,255,255,0.12); padding-left: 20px; }
-  .hero-stat:first-child { border-left: none; padding-left: 0; }
-  .stat-num {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    background: linear-gradient(135deg,#F5D87C,#D4AF37);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .btn-outline:hover {
+    border-color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-3px);
   }
 
-  /* Float badge */
+  /* Hero Stats */
+  .hero-stats {
+    animation: fadeInUp 0.9s ease 0.8s both;
+  }
+  .stat-item {
+    border-left: 1px solid rgba(255,255,255,0.15);
+    padding-left: 20px;
+  }
+  .stat-item:first-child { border-left: none; padding-left: 0; }
+
+  /* Hero Card */
+  .hero-card {
+    animation: fadeInRight 0.9s ease 0.5s both;
+  }
+  .passport-card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.4s ease;
+  }
+  .passport-card:hover { transform: translateY(-8px) rotate(-1deg); }
+  .passport-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(197,160,89,0.05), transparent, rgba(139,28,28,0.05));
+    pointer-events: none;
+  }
+
+  /* Floating badge on hero image */
   .float-badge {
-    background: rgba(255,255,255,0.96);
+    position: absolute;
+    background: rgba(255,255,255,0.95);
     border-radius: 16px;
     padding: 12px 18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
     gap: 10px;
     animation: float 3s ease-in-out infinite;
   }
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
 
-  /* ===== SECTION HELPERS ===== */
+  /* ============ SECTION HEADERS ============ */
   .section-label {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 4px 14px;
     border-radius: 100px;
-    background: rgba(139,28,28,0.07);
+    background: rgba(139,28,28,0.08);
     color: var(--primary);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -170,114 +277,101 @@
   }
   .section-title {
     font-family: 'Roboto', sans-serif;
-    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     font-weight: 700;
     color: #1a0404;
     line-height: 1.2;
   }
-  .section-title span { color: var(--primary); }
+  .section-title span {
+    color: var(--primary);
+  }
   .section-line {
-    width: 56px; height: 4px;
+    width: 60px;
+    height: 4px;
     background: linear-gradient(90deg, var(--primary), var(--accent));
     border-radius: 2px;
-    margin-top: 14px;
+    margin: 16px auto 0;
   }
-  .section-line.center { margin-left: auto; margin-right: auto; }
-
-  .bg-mesh {
-    background-color: #fafafa;
-    background-image:
-      radial-gradient(at 15% 25%, rgba(139,28,28,0.03) 0, transparent 55%),
-      radial-gradient(at 85% 75%, rgba(212,175,55,0.03) 0, transparent 55%);
+  .section-line.left {
+    margin: 16px 0 0;
   }
 
-  /* ===== CARDS ===== */
-  .card {
+  /* ============ CARDS ============ */
+  .premium-card {
     background: white;
     border-radius: 20px;
     border: 1px solid rgba(139,28,28,0.06);
-    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
-    transition: all 0.35s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
   }
-  .card::before {
-    content:'';
-    position:absolute;
-    top:0;left:0;right:0;
-    height:3px;
-    background:linear-gradient(90deg,var(--primary),var(--accent));
-    transform:scaleX(0);
-    transform-origin:left;
-    transition:transform 0.4s ease;
+  .premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
   }
-  .card:hover::before{transform:scaleX(1);}
-  .card:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(139,28,28,0.1);border-color:rgba(139,28,28,0.12);}
+  .premium-card:hover::before {
+    transform: scaleX(1);
+  }
+  .premium-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(139,28,28,0.1);
+    border-color: rgba(139,28,28,0.12);
+  }
 
-  .icon-box {
-    width: 56px; height: 56px;
+  /* Accent borders for cards */
+  .card-border-primary { border-top: 4px solid var(--primary); }
+  .card-border-accent { border-top: 4px solid var(--accent); }
+
+  .icon-wrapper {
+    width: 56px;
+    height: 56px;
     border-radius: 16px;
-    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(139,28,28,0.03));
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.3s;
+    background: rgba(139,28,28,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
   }
-  .card:hover .icon-box {
+  .premium-card:hover .icon-wrapper {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     transform: rotate(5deg) scale(1.1);
   }
-  .card:hover .icon-box .material-symbols-outlined { color: white !important; }
-
-  /* ===== ROLE CARDS ===== */
-  .role-card {
-    background: white;
-    border-radius: 18px;
-    border: 1px solid rgba(139,28,28,0.06);
-    padding: 28px;
-    transition: all 0.35s ease;
-    position: relative;
-    overflow: hidden;
+  .premium-card:hover .icon-wrapper .material-symbols-outlined {
+    color: white !important;
   }
-  .role-card::after {
-    content:'';
-    position:absolute;
-    bottom:0;left:50%;
-    transform:translateX(-50%);
-    width:0;height:3px;
-    background:linear-gradient(90deg,var(--primary),var(--accent));
-    transition:width 0.4s;
-    border-radius:2px 2px 0 0;
-  }
-  .role-card:hover::after{width:65%;}
-  .role-card:hover{transform:translateY(-5px);box-shadow:0 14px 38px rgba(139,28,28,0.1);}
 
-  /* ===== SERVICE BENTO ===== */
-  .bento-card {
-    background: white;
-    border-radius: 18px;
-    border: 1px solid rgba(139,28,28,0.06);
-    padding: 28px;
-    transition: all 0.3s ease;
-  }
-  .bento-card:hover{box-shadow:0 10px 30px rgba(139,28,28,0.08);border-color:rgba(139,28,28,0.14);}
-
-  .bullet-item {
+  /* Check Rows */
+  .check-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
     padding: 8px 0;
     border-bottom: 1px solid rgba(139,28,28,0.05);
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     color: #444;
+    line-height: 1.5;
   }
-  .bullet-item:last-child { border-bottom: none; }
-  .bullet-dot {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+  .check-item:last-child { border-bottom: none; }
+  .check-icon-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
+    margin-top: 2px;
   }
 
-  /* ===== TIMELINE ===== */
+  /* ============ TIMELINE ============ */
   .timeline-line {
     position: absolute;
     left: 50%;
@@ -287,42 +381,106 @@
     background: linear-gradient(to bottom, var(--primary), rgba(139,28,28,0.15));
   }
   .timeline-dot {
-    width: 44px; height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: 800;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: white;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    box-shadow: 0 4px 16px rgba(139,28,28,0.3);
+    box-shadow: 0 4px 15px rgba(139,28,28,0.25);
     flex-shrink: 0;
     position: relative;
     z-index: 2;
+    transition: transform 0.3s ease;
   }
+  .timeline-dot:hover { transform: scale(1.15); }
   .timeline-card {
     background: white;
     border-radius: 16px;
-    border: 1px solid rgba(139,28,28,0.07);
-    padding: 22px 26px;
-    transition: all 0.3s ease;
+    border: 1px solid rgba(139,28,28,0.06);
+    padding: 20px 24px;
     flex: 1;
+    transition: all 0.3s ease;
   }
-  .timeline-card:hover{box-shadow:0 10px 30px rgba(139,28,28,0.08);border-color:rgba(139,28,28,0.15);}
+  .timeline-card:hover {
+    box-shadow: 0 10px 30px rgba(139,28,28,0.08);
+    border-color: rgba(139,28,28,0.12);
+  }
 
-  /* ===== PRICING ===== */
-  .price-section {
-    background: linear-gradient(135deg, #2a0404 0%, #5c1114 45%, #3a0808 100%);
-    position: relative;
-    overflow: hidden;
+  /* ============ TIMING ============ */
+  .timing-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(139,28,28,0.06);
   }
-  .price-section::before {
-    content:'';
-    position:absolute;
-    top:-100px;right:-100px;
-    width:400px;height:400px;
-    border-radius:50%;
-    background:radial-gradient(circle,rgba(212,175,55,0.07),transparent 70%);
-    pointer-events:none;
+  .timing-item:last-child { border-bottom: none; }
+  .timing-badge {
+    min-width: 56px;
+    padding: 8px 10px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(139,28,28,0.03));
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: var(--primary);
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  /* ============ TARGET ============ */
+  .target-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+  }
+  .target-item:hover { background: rgba(139,28,28,0.03); border-color: rgba(139,28,28,0.1); }
+  .target-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ============ BENEFIT TAGS ============ */
+  .benefit-tag {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid rgba(139,28,28,0.06);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+  .benefit-tag:hover { border-color: rgba(139,28,28,0.2); transform: translateX(4px); box-shadow: 0 4px 12px rgba(139,28,28,0.07); }
+
+  /* ============ PRICING ============ */
+  .price-box {
+    background: linear-gradient(135deg, #1a0202 0%, #5c1114 50%, #2d0707 100%);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+  }
+  .price-box::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197,160,89,0.08), transparent 70%);
+    pointer-events: none;
   }
   .price-card {
     background: rgba(255,255,255,0.05);
@@ -340,74 +498,25 @@
     gap: 16px;
     transition: background 0.3s;
   }
-  .price-row:hover{background:rgba(255,255,255,0.04);}
-  .price-row:last-child{border-bottom:none;}
+  .price-row:hover { background: rgba(255,255,255,0.04); }
+  .price-row:last-child { border-bottom: none; }
 
-  /* ===== TIMING ===== */
-  .timing-item {
+  /* ============ FAQ ============ */
+  .faq-container {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(139,28,28,0.06);
+    flex-direction: column;
+    gap: 12px;
   }
-  .timing-item:last-child{border-bottom:none;}
-  .timing-badge {
-    min-width: 56px;
-    padding: 8px 10px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(139,28,28,0.03));
-    font-weight: 800;
-    font-size: 0.8rem;
-    color: var(--primary);
-    text-align: center;
-    flex-shrink: 0;
-  }
-
-  /* ===== TARGET ===== */
-  .target-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 16px;
-    border-radius: 14px;
-    border: 1px solid transparent;
-    transition: all 0.3s;
-  }
-  .target-item:hover{background:rgba(139,28,28,0.03);border-color:rgba(139,28,28,0.1);}
-  .target-icon {
-    width: 36px; height: 36px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  /* ===== BENEFIT TAGS ===== */
-  .benefit-tag {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 16px;
-    background: white;
-    border-radius: 12px;
-    border: 1px solid rgba(139,28,28,0.06);
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition: all 0.3s;
-  }
-  .benefit-tag:hover{border-color:rgba(139,28,28,0.2);transform:translateX(4px);box-shadow:0 4px 12px rgba(139,28,28,0.07);}
-
-  /* ===== FAQ ===== */
   .faq-item {
     background: white;
     border: 1px solid rgba(139,28,28,0.08);
     border-radius: 16px;
     overflow: hidden;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
   }
-  .faq-item:hover{border-color:rgba(139,28,28,0.18);}
+  .faq-item:hover {
+    border-color: rgba(139,28,28,0.18);
+  }
   .faq-summary {
     list-style: none;
     display: flex;
@@ -418,127 +527,170 @@
     font-weight: 600;
     color: #1a0404;
     gap: 16px;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
   }
-  .faq-item[open] .faq-summary{background:rgba(139,28,28,0.03);color:var(--primary);border-bottom:1px solid rgba(139,28,28,0.07);}
-  .faq-summary::-webkit-details-marker{display:none;}
-  .faq-icon{transition:transform 0.3s;flex-shrink:0;color:var(--primary);}
-  .faq-item[open] .faq-icon{transform:rotate(180deg);}
-  .faq-body{padding:18px 24px;color:#555;line-height:1.7;font-size:0.9rem;}
+  .faq-item[open] .faq-summary {
+    background: rgba(139,28,28,0.03);
+    color: var(--primary);
+    border-bottom: 1px solid rgba(139,28,28,0.07);
+  }
+  .faq-summary::-webkit-details-marker { display: none; }
+  .faq-icon {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    color: var(--primary);
+  }
+  .faq-item[open] .faq-icon {
+    transform: rotate(180deg);
+  }
+  .faq-body {
+    padding: 20px 24px;
+    color: #555;
+    line-height: 1.8;
+    font-size: 0.92rem;
+  }
 
-  /* ===== CTA ===== */
+  /* ============ CTA ============ */
   .cta-section {
-    background: linear-gradient(135deg, #1a0202 0%, #5c1114 45%, #2a0606 100%);
+    background: linear-gradient(155deg, #1a0202 0%, #5c1114 45%, #2d0505 100%);
     position: relative;
     overflow: hidden;
   }
-  .cta-orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;}
+  .cta-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(75px);
+    pointer-events: none;
+  }
 
-  /* ===== SCROLL REVEAL ===== */
-  .reveal{opacity:0;transform:translateY(28px);transition:all 0.7s cubic-bezier(.4,0,.2,1);}
-  .reveal.visible{opacity:1;transform:translateY(0);}
-  .reveal-l{opacity:0;transform:translateX(-28px);transition:all 0.7s cubic-bezier(.4,0,.2,1);}
-  .reveal-l.visible{opacity:1;transform:translateX(0);}
-  .reveal-r{opacity:0;transform:translateX(28px);transition:all 0.7s cubic-bezier(.4,0,.2,1);}
-  .reveal-r.visible{opacity:1;transform:translateX(0);}
+  /* Floating Zalo/Phone buttons */
+  .float-zalo, .float-phone {
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+  .float-zalo { background: #0068ff; }
+  .float-zalo:hover { transform: scale(1.1); background: #0056d6; }
+  .float-phone { background: var(--accent); }
+  .float-phone:hover { transform: scale(1.1); background: #b08d4a; }
 
-  .material-symbols-outlined{font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;}
+  /* ============ SCROLL REVEAL ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal.visible, .reveal-left.visible, .reveal-right.visible {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
 </style>
 </head>
 
 <body>
 
-<!-- ===== HERO ===== -->
-<section class="hero-bg relative min-h-screen flex items-center overflow-hidden">
-  <!-- Grid overlay -->
-  <div class="hero-grid-overlay absolute inset-0 z-0 pointer-events-none"></div>
-  <!-- Orbs -->
-  <div class="hero-glow" style="width:500px;height:500px;background:rgba(139,28,28,0.2);top:-100px;right:-100px;z-index:0;"></div>
-  <div class="hero-glow" style="width:350px;height:350px;background:rgba(212,175,55,0.07);bottom:-80px;left:-80px;z-index:0;"></div>
+<!-- ============ HERO ============ -->
+<section class="hero-section hero-gradient" id="hero">
+  <!-- Particles -->
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-glow"></div>
 
-  <div class="relative z-10 max-w-6xl mx-auto px-6 py-20 w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+  <!-- Grid overlay -->
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;z-index:1;pointer-events:none;"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-20 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
       <!-- Left -->
-      <div class="space-y-8">
-        <div class="badge">
-          <span class="badge-dot"></span>
+      <div class="space-y-8 text-left">
+        <div class="hero-badge">
           ACC Law Firm &nbsp;·&nbsp; Pháp lý doanh nghiệp
         </div>
 
-        <h1 style="font-family:'Roboto',sans-serif;font-size:clamp(2.1rem,4vw,3.5rem);font-weight:700;color:white;line-height:1.12;">
-          Tư vấn <span class="shimmer-text">Pháp luật</span><br/>Doanh nghiệp
+        <h1 class="hero-title text-white" style="font-size:clamp(2.2rem,4.5vw,3.8rem);">
+          Tư Vấn <span>Pháp Luật</span>
+          <br/>Doanh Nghiệp
         </h1>
 
-        <p style="color:rgba(255,255,255,0.68);line-height:1.75;font-size:1rem;max-width:500px;">
-          Từ thành lập công ty, xây dựng điều lệ đến xử lý tranh chấp và thay đổi đăng ký kinh doanh — mỗi quyết định pháp lý đều ảnh hưởng trực tiếp đến tương lai doanh nghiệp. ACC giúp bạn <strong style="color:rgba(255,255,255,0.9);">đúng ngay từ đầu</strong>.
+        <p class="hero-desc text-white/70 leading-relaxed" style="font-size:1.05rem;max-width:540px;">
+          Từ thành lập công ty, xây dựng điều lệ đến xử lý tranh chấp và thay đổi đăng ký kinh doanh — mỗi quyết định pháp lý đều ảnh hưởng trực tiếp đến tương lai doanh nghiệp. ACC giúp bạn <strong class="text-white/90">đúng ngay từ đầu</strong>.
         </p>
 
-        <div class="flex flex-wrap gap-4">
-          <a href="#contact" class="btn-gold">
-            <span class="material-symbols-outlined" style="font-size:18px;">support_agent</span>
+        <div class="hero-cta flex flex-wrap gap-4">
+          <a href="#contact" class="btn-primary">
+            <span class="material-symbols-outlined" style="font-size:20px;">support_agent</span>
             Nhận tư vấn ngay
           </a>
-          <a href="#services" class="btn-outline-white">
-            <span class="material-symbols-outlined" style="font-size:18px;">arrow_downward</span>
+          <a href="#services" class="btn-outline">
+            <span class="material-symbols-outlined" style="font-size:20px;">arrow_downward</span>
             Xem dịch vụ
           </a>
         </div>
 
         <!-- Stats -->
-        <div class="flex flex-wrap gap-0 pt-2">
-          <div class="hero-stat">
-            <div class="stat-num">10+</div>
-            <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:2px;">Năm kinh nghiệm</div>
+        <div class="hero-stats flex flex-wrap gap-x-8 gap-y-4 pt-4">
+          <div class="stat-item">
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">10+</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Năm kinh nghiệm</div>
           </div>
-          <div class="hero-stat" style="margin-left:24px;">
-            <div class="stat-num">3000+</div>
-            <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:2px;">Doanh nghiệp hỗ trợ</div>
+          <div class="stat-item">
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">3000+</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Doanh nghiệp hỗ trợ</div>
           </div>
-          <div class="hero-stat" style="margin-left:24px;">
-            <div class="stat-num">98%</div>
-            <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:2px;">Khách hàng hài lòng</div>
+          <div class="stat-item">
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">98%</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Khách hàng hài lòng</div>
           </div>
         </div>
       </div>
 
-      <!-- Right — Image card -->
-      <div class="hidden lg:block relative">
-        <div style="background:rgba(255,255,255,0.05);backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,0.1);border-radius:24px;overflow:hidden;transition:transform 0.4s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdM4lwjOSedsSWBVEq4mgd_Mroxv74qOSzO6PW8_RKysiFPVO75WJQzYra_Mt6fsNza171JDQCwfFJOQpzU_-PuWC3sR_uuW9n2gRgWamQMXXn8vdsuCefhguW8y4PRp8bjWhxGY1akAf8nO8RoMiWGIlljQ-ecqgCLB6lzsptEa4eoYEzvAg-PByoj5LeS7AiVQIZaBn2XlCxiat2ngl5P124e1hlFVD62CTEWir9a4GPiGK6rtyxhDuVErUwJfGeYurDYxiH8sa2"
-            alt="Luật sư tư vấn doanh nghiệp ACC"
-            class="w-full object-cover rounded-3xl"
-            style="height:360px;padding:12px;"
-          />
-        </div>
-        <!-- Float badges -->
-        <div class="float-badge" style="position:absolute;bottom:-16px;left:20px;z-index:10;">
-          <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
-            <span class="material-symbols-outlined" style="color:white;font-size:18px;">gavel</span>
+      <!-- Right -->
+      <div class="block lg:mt-0 mt-8 hero-card">
+        <div class="relative max-w-md mx-auto lg:max-w-none">
+          <div class="passport-card p-3 shadow-2xl">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdM4lwjOSedsSWBVEq4mgd_Mroxv74qOSzO6PW8_RKysiFPVO75WJQzYra_Mt6fsNza171JDQCwfFJOQpzU_-PuWC3sR_uuW9n2gRgWamQMXXn8vdsuCefhguW8y4PRp8bjWhxGY1akAf8nO8RoMiWGIlljQ-ecqgCLB6lzsptEa4eoYEzvAg-PByoj5LeS7AiVQIZaBn2XlCxiat2ngl5P124e1hlFVD62CTEWir9a4GPiGK6rtyxhDuVErUwJfGeYurDYxiH8sa2"
+              alt="Luật sư tư vấn doanh nghiệp ACC"
+              class="w-full rounded-2xl object-cover h-[280px] sm:h-[380px]"
+            />
           </div>
-          <div>
-            <div style="font-weight:700;font-size:0.83rem;color:#1a0404;">Đúng pháp luật</div>
-            <div style="font-size:0.7rem;color:#888;">Cam kết minh bạch</div>
+          <!-- Floating badges -->
+          <div class="float-badge sm:flex hidden" style="bottom:-20px;left:20px;z-index:10;">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:white;font-size:18px;">gavel</span>
+            </div>
+            <div>
+              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Đúng pháp luật</div>
+              <div style="font-size:0.72rem;color:#888;">Cam kết minh bạch</div>
+            </div>
           </div>
-        </div>
-        <div class="float-badge" style="position:absolute;top:20px;right:-16px;z-index:10;animation-delay:1.5s;">
-          <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#D4AF37,#B8960A);display:flex;align-items:center;justify-content:center;">
-            <span class="material-symbols-outlined" style="color:white;font-size:18px;">verified</span>
-          </div>
-          <div>
-            <div style="font-weight:700;font-size:0.83rem;color:#1a0404;">Uy tín hàng đầu</div>
-            <div style="font-size:0.7rem;color:#888;">Được kiểm chứng</div>
+          <div class="float-badge sm:flex hidden" style="top:20px;right:-20px;z-index:10;animation-delay:1.5s;">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#c5a059,#99732f);display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:white;font-size:18px;">verified</span>
+            </div>
+            <div>
+              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Uy tín hàng đầu</div>
+              <div style="font-size:0.72rem;color:#888;">Được kiểm chứng</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Wave bottom -->
-  <div style="position:absolute;bottom:0;left:0;right:0;z-index:5;">
-    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:80px;">
-      <path d="M0 80 L0 40 Q360 0 720 40 Q1080 80 1440 40 L1440 80 Z" fill="#fafafa"/>
-    </svg>
   </div>
 </section>
 
@@ -564,28 +716,28 @@
 
       <!-- 4-square feature grid -->
       <div class="reveal-r grid grid-cols-2 gap-4">
-        <div class="card p-7 flex flex-col gap-4">
+        <div class="premium-card p-7 flex flex-col gap-4">
           <div class="icon-box">
             <span class="material-symbols-outlined" style="color:var(--primary);font-size:24px;">balance</span>
           </div>
           <h4 class="font-bold text-base">Giải thích luật</h4>
           <p class="text-xs text-gray-500">Diễn giải quy định pháp luật rõ ràng, dễ áp dụng</p>
         </div>
-        <div class="card p-7 flex flex-col gap-4" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));border:none;">
+        <div class="premium-card p-7 flex flex-col gap-4" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));border:none;">
           <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;">
             <span class="material-symbols-outlined" style="color:white;font-size:24px;">shield</span>
           </div>
           <h4 class="font-bold text-base text-white">Hạn chế rủi ro</h4>
           <p class="text-xs text-white/70">Phòng ngừa sai phạm pháp lý từ sớm</p>
         </div>
-        <div class="card p-7 flex flex-col gap-4" style="background:linear-gradient(135deg,rgba(212,175,55,0.08),rgba(212,175,55,0.03));border-color:rgba(212,175,55,0.15);">
-          <div style="width:56px;height:56px;border-radius:16px;background:rgba(212,175,55,0.15);display:flex;align-items:center;justify-content:center;">
+        <div class="premium-card p-7 flex flex-col gap-4" style="background:linear-gradient(135deg,rgba(197,160,89,0.08),rgba(197,160,89,0.03));border-color:rgba(197,160,89,0.15);">
+          <div style="width:56px;height:56px;border-radius:16px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
             <span class="material-symbols-outlined" style="color:#B8960A;font-size:24px;">handshake</span>
           </div>
           <h4 class="font-bold text-base">Đại diện ký kết</h4>
           <p class="text-xs text-gray-500">Tham gia đàm phán và ký hợp đồng</p>
         </div>
-        <div class="card p-7 flex flex-col gap-4">
+        <div class="premium-card p-7 flex flex-col gap-4">
           <div class="icon-box">
             <span class="material-symbols-outlined" style="color:var(--primary);font-size:24px;">trending_up</span>
           </div>
@@ -607,36 +759,36 @@
       <p class="text-gray-500 mt-5 max-w-xl mx-auto text-sm leading-relaxed">Đồng hành cùng doanh nghiệp trong suốt quá trình hoạt động, đảm bảo tuân thủ pháp luật và bảo vệ quyền lợi hợp pháp.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="role-card reveal" style="transition-delay:0s;">
+      <div class="premium-card reveal" style="transition-delay:0s;">
         <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(139,28,28,0.08),rgba(139,28,28,0.03));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
           <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">library_books</span>
         </div>
         <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Tư vấn toàn diện pháp lý</h4>
         <p class="text-gray-500 text-sm leading-relaxed">Hỗ trợ thành lập công ty, đầu tư, thuế, lao động và giải quyết tranh chấp. Giúp doanh nghiệp hiểu rõ quyền và nghĩa vụ pháp lý.</p>
       </div>
-      <div class="role-card reveal" style="transition-delay:0.08s;">
+      <div class="premium-card reveal" style="transition-delay:0.08s;">
         <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(139,28,28,0.08),rgba(139,28,28,0.03));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
           <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">edit_document</span>
         </div>
         <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Soạn thảo &amp; rà soát văn bản</h4>
         <p class="text-gray-500 text-sm leading-relaxed">Soạn hợp đồng, nội quy, quy chế nội bộ và văn bản gửi cơ quan nhà nước. Kiểm tra tính pháp lý tài liệu đối tác cung cấp.</p>
       </div>
-      <div class="role-card reveal" style="transition-delay:0.16s;">
+      <div class="premium-card reveal" style="transition-delay:0.16s;">
         <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(139,28,28,0.08),rgba(139,28,28,0.03));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
           <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">handshake</span>
         </div>
         <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Đại diện trong giao dịch</h4>
         <p class="text-gray-500 text-sm leading-relaxed">Tham gia đàm phán hợp đồng, thương lượng với đối tác, có thể đại diện doanh nghiệp tham gia tố tụng khi cần.</p>
       </div>
-      <div class="role-card reveal" style="transition-delay:0.24s;">
+      <div class="premium-card reveal" style="transition-delay:0.24s;">
         <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(139,28,28,0.08),rgba(139,28,28,0.03));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
           <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">gavel</span>
         </div>
         <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Giải quyết tranh chấp</h4>
         <p class="text-gray-500 text-sm leading-relaxed">Xử lý tranh chấp nội bộ hoặc với đối tác bên ngoài, bảo vệ quyền lợi tối đa, giảm thiểu thiệt hại về thời gian và chi phí.</p>
       </div>
-      <div class="role-card md:col-span-2 reveal" style="transition-delay:0.32s;">
-        <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(212,175,55,0.12),rgba(212,175,55,0.04));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+      <div class="premium-card md:col-span-2 reveal" style="transition-delay:0.32s;">
+        <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(197,160,89,0.12),rgba(197,160,89,0.04));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
           <span class="material-symbols-outlined" style="color:var(--gold);font-size:22px;">psychology</span>
         </div>
         <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Tư vấn pháp lý chuyên sâu</h4>
@@ -680,10 +832,10 @@
           <h3 style="font-weight:700;font-size:1rem;color:var(--primary);">Cơ cấu tổ chức &amp; hệ thống nội bộ</h3>
         </div>
         <div>
-          <div class="bullet-item"><span class="bullet-dot"></span>Lựa chọn loại hình doanh nghiệp phù hợp</div>
-          <div class="bullet-item"><span class="bullet-dot"></span>Hướng dẫn thủ tục thành lập</div>
-          <div class="bullet-item"><span class="bullet-dot"></span>Xây dựng cơ cấu quản lý</div>
-          <div class="bullet-item"><span class="bullet-dot"></span>Hỗ trợ thiết lập hệ thống quy chế nội bộ</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Lựa chọn loại hình doanh nghiệp phù hợp</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hướng dẫn thủ tục thành lập</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Xây dựng cơ cấu quản lý</div>
+          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hỗ trợ thiết lập hệ thống quy chế nội bộ</div>
         </div>
       </div>
 
@@ -695,10 +847,10 @@
           </div>
           <h3 style="font-weight:700;font-size:0.875rem;color:var(--primary);">Thủ tục pháp lý doanh nghiệp</h3>
         </div>
-        <div class="bullet-item"><span class="bullet-dot"></span>Đăng ký thành lập</div>
-        <div class="bullet-item"><span class="bullet-dot"></span>Thay đổi nội dung đăng ký</div>
-        <div class="bullet-item"><span class="bullet-dot"></span>Tạm ngừng / chấm dứt</div>
-        <div class="bullet-item"><span class="bullet-dot"></span>Giải thể / phá sản</div>
+        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Đăng ký thành lập</div>
+        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Thay đổi nội dung đăng ký</div>
+        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tạm ngừng / chấm dứt</div>
+        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Giải thể / phá sản</div>
       </div>
 
       <div class="md:col-span-3 bento-card reveal" style="transition-delay:0.15s;">
@@ -708,16 +860,16 @@
           </div>
           <h3 style="font-weight:700;font-size:0.875rem;color:var(--primary);">Quy định hoạt động</h3>
         </div>
-        <div class="bullet-item"><span class="bullet-dot"></span>Vốn điều lệ</div>
-        <div class="bullet-item"><span class="bullet-dot"></span>Tài sản doanh nghiệp</div>
-        <div class="bullet-item"><span class="bullet-dot"></span>Lao động / Nhân sự</div>
-        <div class="bullet-item"><span class="bullet-dot"></span>Nghĩa vụ thuế</div>
+        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Vốn điều lệ</div>
+        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tài sản doanh nghiệp</div>
+        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Lao động / Nhân sự</div>
+        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Nghĩa vụ thuế</div>
       </div>
 
       <!-- Service 4 full width -->
       <div class="md:col-span-7 bento-card reveal" style="transition-delay:0.2s;">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-          <div style="width:36px;height:36px;border-radius:10px;background:rgba(212,175,55,0.12);display:flex;align-items:center;justify-content:center;">
+          <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.12);display:flex;align-items:center;justify-content:center;">
             <span class="material-symbols-outlined" style="color:var(--gold);font-size:18px;">description</span>
           </div>
           <h3 style="font-weight:700;font-size:0.875rem;color:var(--primary);">Soạn thảo văn bản doanh nghiệp</h3>
@@ -784,7 +936,7 @@
       <!-- Step 6 -->
       <div class="flex gap-5 items-start reveal" style="transition-delay:0.4s;">
         <div class="timeline-dot" style="background:linear-gradient(135deg,var(--gold),#B8960A);">6</div>
-        <div class="timeline-card" style="border-color:rgba(212,175,55,0.2);">
+        <div class="timeline-card" style="border-color:rgba(197,160,89,0.2);">
           <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:8px;">Bàn giao kết quả &amp; hỗ trợ sau dịch vụ</h4>
           <p class="text-sm text-gray-500 leading-relaxed">Bàn giao đầy đủ hồ sơ, kết quả xử lý và tài liệu pháp lý. Luật sư tiếp tục hỗ trợ giải đáp các vấn đề phát sinh sau dịch vụ để đảm bảo hoạt động doanh nghiệp ổn định, đúng pháp luật.</p>
         </div>
@@ -805,7 +957,7 @@
       <!-- Pricing -->
       <div class="price-section rounded-2xl py-10 px-8 reveal-l">
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
-          <div style="width:48px;height:48px;border-radius:14px;background:rgba(212,175,55,0.15);display:flex;align-items:center;justify-content:center;">
+          <div style="width:48px;height:48px;border-radius:14px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
             <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:24px;">payments</span>
           </div>
           <div>
@@ -819,7 +971,7 @@
         <div class="price-card">
           <div class="price-row">
             <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:32px;height:32px;border-radius:9px;background:rgba(212,175,55,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <div style="width:32px;height:32px;border-radius:9px;background:rgba(197,160,89,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                 <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:15px;">info</span>
               </div>
               <span style="color:rgba(255,255,255,0.78);font-size:0.85rem;">Tư vấn pháp lý đơn giản</span>
@@ -828,7 +980,7 @@
           </div>
           <div class="price-row">
             <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:32px;height:32px;border-radius:9px;background:rgba(212,175,55,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <div style="width:32px;height:32px;border-radius:9px;background:rgba(197,160,89,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                 <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:15px;">manage_search</span>
               </div>
               <span style="color:rgba(255,255,255,0.78);font-size:0.85rem;">Tư vấn &amp; rà soát chuyên sâu</span>
@@ -837,16 +989,16 @@
           </div>
           <div class="price-row">
             <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:32px;height:32px;border-radius:9px;background:rgba(212,175,55,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <div style="width:32px;height:32px;border-radius:9px;background:rgba(197,160,89,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                 <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:15px;">gavel</span>
               </div>
               <span style="color:rgba(255,255,255,0.78);font-size:0.85rem;">Hỗ trợ tranh chấp / đại diện</span>
             </div>
             <span style="color:var(--accent-light);font-weight:700;font-size:0.8rem;white-space:nowrap;">Theo phạm vi</span>
           </div>
-          <div class="price-row" style="background:rgba(212,175,55,0.06);">
+          <div class="price-row" style="background:rgba(197,160,89,0.06);">
             <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:32px;height:32px;border-radius:9px;background:rgba(212,175,55,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <div style="width:32px;height:32px;border-radius:9px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                 <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:15px;">verified</span>
               </div>
               <span style="color:white;font-weight:600;font-size:0.85rem;">Báo giá trước khi thực hiện</span>
@@ -1038,51 +1190,82 @@
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
+<!-- ============ CTA ============ -->
 <section class="cta-section py-28 text-center" id="contact">
-  <div class="cta-orb" style="width:380px;height:380px;background:rgba(212,175,55,0.07);top:-100px;left:-80px;"></div>
-  <div class="cta-orb" style="width:320px;height:320px;background:rgba(139,28,28,0.15);bottom:-60px;right:-60px;"></div>
-  <div class="max-w-3xl mx-auto px-6 relative z-10 reveal">
-    <div class="badge" style="justify-content:center;margin:0 auto 24px;">
-      <span class="badge-dot"></span>
-      Liên hệ tư vấn miễn phí
-    </div>
-    <h2 style="font-family:'Roboto',sans-serif;font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700;color:white;line-height:1.2;margin-bottom:16px;">
-      Sẵn sàng bảo vệ<br/>
-      <span class="shimmer-text">doanh nghiệp của bạn?</span>
-    </h2>
-    <p style="color:rgba(255,255,255,0.6);font-size:1rem;max-width:460px;margin:0 auto 40px;line-height:1.7;">
-      Liên hệ ngay với Công ty Luật ACC để được đội ngũ chuyên gia tư vấn giải pháp pháp lý <strong style="color:rgba(255,255,255,0.85);">tối ưu và nhanh chóng nhất</strong>.
-    </p>
-    <div class="flex flex-col sm:flex-row justify-center gap-4 flex-wrap">
-      <a href="tel:19003330" class="btn-gold" style="font-size:0.95rem;padding:16px 40px;">
-        <span class="material-symbols-outlined" style="font-size:20px;">call</span>
-        Hotline: 1900 3330
-      </a>
-      <a href="https://zalo.me/2171133625094125529" target="_blank" class="btn-outline-white" style="font-size:0.95rem;padding:16px 40px;">
-        <span class="material-symbols-outlined" style="font-size:20px;">chat</span>
-        Zalo Tư Vấn
-      </a>
-      <a href="mailto:info@congtyluatacc.vn" class="btn-outline-white" style="font-size:0.95rem;padding:16px 40px;">
-        <span class="material-symbols-outlined" style="font-size:20px;">mail</span>
-        Gửi Email
-      </a>
+  <div class="cta-orb" style="width:400px;height:400px;background:rgba(197,160,89,0.08);top:-100px;left:-100px;"></div>
+  <div class="cta-orb" style="width:350px;height:350px;background:rgba(139,28,28,0.15);bottom:-80px;right:-80px;"></div>
+  <div class="max-w-3xl mx-auto px-6 relative z-10">
+    <div class="reveal">
+      <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;margin-bottom:24px;">
+        Liên hệ tư vấn miễn phí
+      </div>
+      <h2 style="font-family:'Roboto',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:white;line-height:1.2;margin-bottom:20px;">
+        Sẵn sàng bảo vệ<br/>
+        <span style="background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">doanh nghiệp của bạn?</span>
+      </h2>
+      <p class="text-white/60 leading-relaxed mb-10" style="font-size:1rem;max-width:580px;margin:0 auto 40px;">
+        Liên hệ ngay với Công ty Luật ACC để được đội ngũ chuyên gia tư vấn giải pháp pháp lý tối ưu và nhanh chóng nhất.
+      </p>
+      <div class="flex justify-center flex-wrap gap-4">
+        <a href="tel:19003330" class="btn-primary" style="font-size:1rem;padding:18px 44px;">
+          <span class="material-symbols-outlined" style="font-size:22px;">call</span>
+          Hotline: 1900 3330
+        </a>
+        <a href="https://zalo.me/2171133625094125529" target="_blank" class="btn-outline" style="font-size:1rem;padding:18px 44px;">
+          <span class="material-symbols-outlined" style="font-size:22px;">chat</span>
+          Zalo Tư Vấn
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Floating Action Buttons -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+  <a href="https://zalo.me/2171133625094125529" target="_blank" class="float-zalo" aria-label="Zalo">
+    <span class="material-symbols-outlined" style="font-size:26px;color:white;">chat</span>
+  </a>
+  <a href="tel:19003330" class="float-phone" aria-label="Phone">
+    <span class="material-symbols-outlined" style="font-size:26px;color:white;">call</span>
+  </a>
+</div>
+
 <script>
-  // Scroll reveal
-  const els = document.querySelectorAll('.reveal, .reveal-l, .reveal-r');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const delay = parseFloat(e.target.style.transitionDelay || '0') * 1000;
-        setTimeout(() => e.target.classList.add('visible'), delay);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-  els.forEach(el => obs.observe(el));
+  // ===== Particle generator =====
+  const container = document.getElementById('particles');
+  const count = 35;
+  if (container) {
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 18 + 6;
+      const pOpacity = Math.random() * 0.4 + 0.45;
+      const drift = Math.random() * 60 - 30;
+      p.style.cssText = 'width:' + size + 'px;height:' + size + 'px;' +
+        'left:' + (Math.random() * 100) + '%;' +
+        'animation-duration:' + (Math.random() * 15 + 12) + 's;' +
+        'animation-delay:' + (Math.random() * 15) + 's;' +
+        '--p-opacity:' + pOpacity + ';' +
+        '--drift:' + drift + 'px;';
+      container.appendChild(p);
+    }
+  }
+
+  // ===== Scroll reveal =====
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  if (revealEls.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.style.transitionDelay || '0s';
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, parseFloat(delay) * 1000);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+  }
 </script>
 </body>
 </html>

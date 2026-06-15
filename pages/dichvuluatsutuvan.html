@@ -1,691 +1,1346 @@
 <!DOCTYPE html>
-
-<html class="scroll-smooth" lang="vi"><head>
+<html lang="vi" class="scroll-smooth">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Dịch vụ Luật sư tư vấn pháp luật lao động toàn quốc - ACC Law Firm</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-surface": "#1a1c1c",
-                        "secondary-fixed-dim": "#e9c176",
-                        "secondary": "#775a19",
-                        "on-primary-fixed-variant": "#7d2a2a",
-                        "on-primary-fixed": "#410005",
-                        "on-background": "#1a1c1c",
-                        "surface-container-high": "#e8e8e8",
-                        "on-secondary-fixed": "#261900",
-                        "primary-container": "#7a2828",
-                        "error": "#ba1a1a",
-                        "inverse-primary": "#ffb3af",
-                        "surface-container-lowest": "#ffffff",
-                        "background": "#f9f9f9",
-                        "surface-tint": "#9c4140",
-                        "on-tertiary-fixed": "#221b01",
-                        "on-tertiary-container": "#483f1e",
-                        "surface-container": "#eeeeee",
-                        "outline-variant": "#dbc0be",
-                        "inverse-on-surface": "#f0f1f1",
-                        "surface-container-highest": "#e2e2e2",
-                        "outline": "#887270",
-                        "on-primary": "#ffffff",
-                        "primary": "#5c1114",
-                        "error-container": "#ffdad6",
-                        "on-secondary": "#ffffff",
-                        "surface-container-low": "#f3f3f3",
-                        "surface-bright": "#f9f9f9",
-                        "primary-fixed-dim": "#ffb3af",
-                        "on-tertiary-fixed-variant": "#504624",
-                        "on-primary-container": "#ff938f",
-                        "on-surface-variant": "#554241",
-                        "tertiary-fixed-dim": "#d4c699",
-                        "on-tertiary": "#ffffff",
-                        "tertiary": "#685e39",
-                        "surface": "#f9f9f9",
-                        "tertiary-fixed": "#f1e2b4",
-                        "surface-dim": "#dadada",
-                        "on-secondary-fixed-variant": "#5d4201",
-                        "primary-fixed": "#ffdad7",
-                        "on-error": "#ffffff",
-                        "inverse-surface": "#2f3131",
-                        "on-error-container": "#93000a",
-                        "surface-variant": "#e2e2e2",
-                        "tertiary-container": "#b8ab80",
-                        "on-secondary-container": "#785a1a",
-                        "secondary-fixed": "#ffdea5",
-                        "secondary-container": "#fed488"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "margin-desktop": "64px",
-                        "container-max": "1200px",
-                        "margin-mobile": "20px",
-                        "stack-xl": "64px",
-                        "stack-sm": "8px",
-                        "stack-lg": "32px",
-                        "gutter": "24px",
-                        "stack-md": "16px",
-                        "margin-tablet": "32px"
-                    },
-                    "fontFamily": {
-                        "display-lg": ["Roboto"],
-                        "body-md": ["Roboto"],
-                        "label-sm": ["Roboto"],
-                        "headline-lg": ["Roboto"],
-                        "headline-md": ["Roboto"],
-                        "display-md": ["Roboto"],
-                        "label-lg": ["Roboto"],
-                        "display-lg-mobile": ["Roboto"],
-                        "body-lg": ["Roboto"],
-                        "sans": ["Roboto"]
-                    },
-                    "fontSize": {
-                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
-                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
-                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
-                        "display-md": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
-                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
-                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
-                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
-                    }
-                }
-            }
-        }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .fill-icon {
-            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(233, 193, 118, 0.2);
-            box-shadow: 0 10px 30px -10px rgba(122, 40, 40, 0.08);
-        }
-        .premium-border-top {
-            border-top: 2px solid theme('colors.secondary-fixed-dim');
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .text-shadow-strong {
-            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8);
-        }
-    </style>
-</head>
-<body class="bg-background text-on-background font-sans selection:bg-primary-container selection:text-on-primary-container">
-<!-- Hero Section -->
-<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-on-surface">
-<div class="absolute inset-0 w-full h-full opacity-40 mix-blend-overlay">
-<img alt="Hero Background" class="object-cover w-full h-full" data-alt="Corporate legal professionals shaking hands across a polished boardroom table. The atmosphere is highly professional, authoritative, and secure. Soft, warm lighting illuminates the dark wood and leather textures of the room. The color palette features deep blacks, crisp whites, and distinct accents of deep maroon and subtle gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsuS1zF0kQbz5Te4ahId-LAptb7K8oCchGNp3axYje4ygmdaQ2DM8erET7sohM3PKiUrFGgfQo-kat9q6Yqxi57RNnGdOy0SjYTGESe3V_IWSSIl0qL4PS-JUrST2faisbHfqPomAao9M8C8w0p6rusbZvZpX5sIf_vMNyzCf2sSa85jtkgE5KZy2KZzkqFGJb7JzfRZctTwue1hpfeNnn3Bbv9JIcU3IU685aEoebqmYfMqfyv-0qkBTIOi9bgmEwlHfudL1ygd-2"/>
-</div>
-<div class="absolute inset-0 bg-gradient-to-t from-on-surface via-transparent to-transparent opacity-80"></div>
-<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center mt-20">
-<h1 class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-surface-container-lowest via-secondary-fixed-dim to-surface-container-lowest mb-stack-md reveal drop-shadow-2xl text-shadow-strong" style="line-height: 1.2;">
-                Dịch vụ Luật sư Tư vấn<br/>Pháp luật Lao động Toàn quốc
-</h1>
-<p class="font-body-lg text-surface-variant max-w-2xl mx-auto mb-stack-lg reveal" style="transition-delay: 100ms;">
-                Bảo vệ quyền lợi hợp pháp, tối ưu hóa quy trình nhân sự và giải quyết triệt để mọi tranh chấp lao động với đội ngũ chuyên gia pháp lý hàng đầu từ ACC Law Firm.
-            </p>
-<div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4" style="transition-delay: 200ms;">
-<a class="inline-flex items-center justify-center gap-2 bg-[#7a2828] text-on-primary px-8 py-4 rounded-full font-label-lg hover:bg-on-primary-fixed-variant transition-all duration-300 shadow-lg shadow-primary/20 hover:-translate-y-1 w-full sm:w-auto" href="tel:19003330">
-<span class="material-symbols-outlined fill-icon text-[24px]">call</span>
-                    Liên hệ ngay 1900 3330
-                </a>
-<a class="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-secondary-fixed-dim text-secondary-fixed-dim px-8 py-4 rounded-full font-label-lg hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-300 shadow-lg w-full sm:w-auto" href="mailto:info@congtyluatacc.vn">
-<span class="material-symbols-outlined fill-icon text-[24px]">mail</span>
-                    Liên hệ để nhận báo giá chi tiết
-                </a>
-</div>
-</div>
-</section>
-<!-- Các vấn đề pháp luật lao động thường gặp -->
-<section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-surface">
-<div class="max-w-container-max mx-auto">
-<div class="mb-stack-lg text-center reveal">
-<h2 class="font-display-md text-on-surface mb-stack-sm">Các vấn đề pháp luật lao động thường gặp</h2>
-<div class="w-24 h-1 bg-[#7a2828] mx-auto rounded-full"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-<!-- Card 1 -->
-<div class="glass-card premium-border-top rounded-xl p-6 reveal hover:-translate-y-2 transition-transform duration-300">
-<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-[#7a2828]">
-<span class="material-symbols-outlined text-[28px]">description</span>
-</div>
-<h3 class="font-headline-md text-on-surface mb-2">Tranh chấp Hợp đồng</h3>
-<p class="text-on-surface-variant font-body-md">Xử lý các vi phạm cam kết, điều khoản bảo mật, cạnh tranh không lành mạnh và các thỏa thuận bồi thường đào tạo.</p>
-</div>
-<!-- Card 2 -->
-<div class="glass-card premium-border-top rounded-xl p-6 reveal hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 100ms;">
-<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-[#7a2828]">
-<span class="material-symbols-outlined text-[28px]">gavel</span>
-</div>
-<h3 class="font-headline-md text-on-surface mb-2">Kỷ luật &amp; Sa thải</h3>
-<p class="text-on-surface-variant font-body-md">Tư vấn quy trình xử lý kỷ luật lao động hợp pháp, khiếu nại sa thải trái pháp luật và bồi thường thiệt hại.</p>
-</div>
-<!-- Card 3 -->
-<div class="glass-card premium-border-top rounded-xl p-6 reveal hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 200ms;">
-<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-[#7a2828]">
-<span class="material-symbols-outlined text-[28px]">payments</span>
-</div>
-<h3 class="font-headline-md text-on-surface mb-2">Lương &amp; Thưởng</h3>
-<p class="text-on-surface-variant font-body-md">Giải quyết khiếu nại về chậm lương, nợ lương, không trả trợ cấp thôi việc, mất việc làm theo đúng quy định.</p>
-</div>
-<!-- Card 4 -->
-<div class="glass-card premium-border-top rounded-xl p-6 reveal hover:-translate-y-2 transition-transform duration-300">
-<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-[#7a2828]">
-<span class="material-symbols-outlined text-[28px]">shield</span>
-</div>
-<h3 class="font-headline-md text-on-surface mb-2">Bảo hiểm Xã hội</h3>
-<p class="text-on-surface-variant font-body-md">Xử lý các vi phạm trốn đóng, chậm đóng BHXH, BHYT, BHTN và chốt sổ bảo hiểm cho người lao động.</p>
-</div>
-<!-- Card 5 -->
-<div class="glass-card premium-border-top rounded-xl p-6 reveal hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 100ms;">
-<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-[#7a2828]">
-<span class="material-symbols-outlined text-[28px]">work_history</span>
-</div>
-<h3 class="font-headline-md text-on-surface mb-2">An toàn Lao động</h3>
-<p class="text-on-surface-variant font-body-md">Tư vấn thủ tục bồi thường tai nạn lao động, bệnh nghề nghiệp và các vi phạm về môi trường làm việc.</p>
-</div>
-</div>
-<div class="mt-stack-lg text-center reveal" style="transition-delay: 300ms;">
-<a class="inline-flex items-center justify-center gap-2 bg-[#7a2828] text-on-primary px-8 py-3 rounded-full font-label-lg hover:bg-on-primary-fixed-variant transition-all duration-300 shadow-md" href="https://zalo.me/2171133625094125529" target="_blank">
-<span class="material-symbols-outlined fill-icon text-[20px]">chat</span>
-                    Liên hệ qua Zalo để được tư vấn
-                </a>
-</div>
-</div>
-</section>
-<!-- Vai trò của luật sư & Bối cảnh -->
-<section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
-<div class="max-w-container-max mx-auto">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
-<div class="reveal">
-<img alt="Legal Authority" class="rounded-xl shadow-xl shadow-primary/10 w-full h-[500px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvL42XSMOHg_WTKH5Q1nJz2mWpXIY0Y5h65cm4D9U5gq63Zm3x4nqvxgd1Fz1TDBjKykdtFhS4-B4t1DLA-WG3_TmnDOyntYgNrY8D-1nv_lcEGQXOveQ5vQFb167kBFhT-8hsPlvpfDGEnSu0yskL7XG3D3G9f-ZTU8Mzh-6e9UL1UdSjpAPU8N6I8eKbw6nxXWko89S5irRnyqIo8dbpnh8hpwjbIFOaDvf_BMMFaqKG0L2w2SsjGhUKmGST7u1pRdie0is6Ny-R"/>
-</div>
-<div class="reveal">
-<h2 class="font-display-md text-on-surface mb-stack-sm">Vai trò thiết yếu của Luật sư</h2>
-<p class="text-on-surface-variant font-body-lg mb-stack-md">Sự can thiệp kịp thời của luật sư không chỉ giảm thiểu rủi ro pháp lý mà còn bảo vệ tối đa lợi ích kinh tế cho khách hàng.</p>
-<ul class="space-y-4">
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-[#7a2828] mt-1">check_circle</span>
-<div>
-<strong class="font-label-lg text-on-surface block mb-1">Giải thích &amp; Áp dụng Pháp luật</strong>
-<p class="text-on-surface-variant text-body-md">Phân tích rõ ràng các quy định phức tạp, giúp doanh nghiệp và người lao động hiểu đúng quyền và nghĩa vụ.</p>
-</div>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-[#7a2828] mt-1">fact_check</span>
-<div>
-<strong class="font-label-lg text-on-surface block mb-1">Rà soát &amp; Soạn thảo Văn bản</strong>
-<p class="text-on-surface-variant text-body-md">Thiết lập hệ thống hợp đồng, nội quy lao động chặt chẽ, phòng ngừa tranh chấp từ gốc rễ.</p>
-</div>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-[#7a2828] mt-1">diversity_3</span>
-<div>
-<strong class="font-label-lg text-on-surface block mb-1">Đại diện Đàm phán &amp; Tố tụng</strong>
-<p class="text-on-surface-variant text-body-md">Trực tiếp tham gia hòa giải hoặc tranh tụng tại Tòa án để bảo vệ quyền lợi hợp pháp tốt nhất.</p>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<!-- Dịch vụ tư vấn toàn diện -->
-<section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-surface">
-<div class="max-w-container-max mx-auto">
-<div class="mb-stack-lg text-center reveal">
-<h2 class="font-display-md text-on-surface mb-stack-sm">Dịch vụ Tư vấn Toàn diện</h2>
-<div class="w-24 h-1 bg-[#7a2828] mx-auto rounded-full"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-stack-md">
-<div class="glass-card p-6 rounded-xl flex items-center gap-4 reveal">
-<span class="material-symbols-outlined text-[#7a2828] text-[32px] p-3 bg-primary/5 rounded-full">edit_document</span>
-<div>
-<h4 class="font-headline-md text-on-surface">Tư vấn Hợp đồng Lao động</h4>
-<p class="text-sm text-on-surface-variant">Soạn thảo, rà soát, đàm phán các loại hợp đồng.</p>
-</div>
-</div>
-<div class="glass-card p-6 rounded-xl flex items-center gap-4 reveal" style="transition-delay: 100ms;">
-<span class="material-symbols-outlined text-[#7a2828] text-[32px] p-3 bg-primary/5 rounded-full">account_balance_wallet</span>
-<div>
-<h4 class="font-headline-md text-on-surface">Chế độ Tiền lương &amp; Phúc lợi</h4>
-<p class="text-sm text-on-surface-variant">Xây dựng thang bảng lương, quy chế thưởng phạt.</p>
-</div>
-</div>
-<div class="glass-card p-6 rounded-xl flex items-center gap-4 reveal">
-<span class="material-symbols-outlined text-[#7a2828] text-[32px] p-3 bg-primary/5 rounded-full">rule</span>
-<div>
-<h4 class="font-headline-md text-on-surface">Kỷ luật &amp; Trách nhiệm Vật chất</h4>
-<p class="text-sm text-on-surface-variant">Quy trình xử lý kỷ luật đảm bảo tuân thủ pháp luật.</p>
-</div>
-</div>
-<div class="glass-card p-6 rounded-xl flex items-center gap-4 reveal" style="transition-delay: 100ms;">
-<span class="material-symbols-outlined text-[#7a2828] text-[32px] p-3 bg-primary/5 rounded-full">balance</span>
-<div>
-<h4 class="font-headline-md text-on-surface">Giải quyết Tranh chấp</h4>
-<p class="text-sm text-on-surface-variant">Đại diện tham gia hòa giải, tố tụng tại cơ quan có thẩm quyền.</p>
-</div>
-</div>
-<div class="glass-card p-6 rounded-xl flex items-center gap-4 reveal">
-<span class="material-symbols-outlined text-[#7a2828] text-[32px] p-3 bg-primary/5 rounded-full">public</span>
-<div>
-<h4 class="font-headline-md text-on-surface">Lao động Nước ngoài</h4>
-<p class="text-sm text-on-surface-variant">Thủ tục cấp phép lao động, thẻ tạm trú, visa.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Quy trình tư vấn -->
-<section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-on-surface text-surface-container-lowest overflow-hidden">
-<div class="max-w-container-max mx-auto relative">
-<div class="mb-stack-lg text-center reveal">
-<h2 class="font-display-md mb-stack-sm text-surface-container-lowest">Quy trình Tư vấn Chuyên nghiệp</h2>
-<div class="w-24 h-1 bg-secondary-fixed-dim mx-auto rounded-full"></div>
-</div>
-<!-- Timeline -->
-<div class="relative mt-12">
-<div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-outline/30 transform md:-translate-x-1/2"></div>
-<div class="space-y-8">
-<!-- Step 1 -->
-<div class="relative flex items-center justify-start md:justify-end md:w-1/2 ml-12 md:ml-0 md:pr-12 reveal">
-<div class="absolute left-[-48px] md:left-auto md:right-[-20px] w-10 h-10 rounded-full bg-[#7a2828] border-4 border-on-surface flex items-center justify-center font-bold text-on-primary z-10">1</div>
-<div class="glass-card bg-surface-variant/10 !border-outline/20 p-6 rounded-xl w-full text-left">
-<h4 class="font-headline-md text-secondary-fixed-dim mb-2">Tiếp nhận thông tin</h4>
-<p class="text-outline-variant font-body-md">Thu thập hồ sơ, lắng nghe yêu cầu và nắm bắt sơ bộ vấn đề pháp lý của khách hàng.</p>
-</div>
-</div>
-<!-- Step 2 -->
-<div class="relative flex items-center justify-start md:w-1/2 md:ml-auto ml-12 md:pl-12 reveal">
-<div class="absolute left-[-48px] md:left-[-20px] w-10 h-10 rounded-full bg-[#7a2828] border-4 border-on-surface flex items-center justify-center font-bold text-on-primary z-10">2</div>
-<div class="glass-card bg-surface-variant/10 !border-outline/20 p-6 rounded-xl w-full text-left">
-<h4 class="font-headline-md text-secondary-fixed-dim mb-2">Phân tích &amp; Đánh giá</h4>
-<p class="text-outline-variant font-body-md">Luật sư chuyên môn nghiên cứu hồ sơ, đối chiếu quy định pháp luật để đưa ra nhận định.</p>
-</div>
-</div>
-<!-- Step 3 -->
-<div class="relative flex items-center justify-start md:justify-end md:w-1/2 ml-12 md:ml-0 md:pr-12 reveal">
-<div class="absolute left-[-48px] md:left-auto md:right-[-20px] w-10 h-10 rounded-full bg-[#7a2828] border-4 border-on-surface flex items-center justify-center font-bold text-on-primary z-10">3</div>
-<div class="glass-card bg-surface-variant/10 !border-outline/20 p-6 rounded-xl w-full text-left">
-<h4 class="font-headline-md text-secondary-fixed-dim mb-2">Tư vấn giải pháp</h4>
-<p class="text-outline-variant font-body-md">Đề xuất các phương án xử lý, phân tích ưu nhược điểm và rủi ro của từng phương án.</p>
-</div>
-</div>
-<!-- Step 4 -->
-<div class="relative flex items-center justify-start md:w-1/2 md:ml-auto ml-12 md:pl-12 reveal">
-<div class="absolute left-[-48px] md:left-[-20px] w-10 h-10 rounded-full bg-[#7a2828] border-4 border-on-surface flex items-center justify-center font-bold text-on-primary z-10">4</div>
-<div class="glass-card bg-surface-variant/10 !border-outline/20 p-6 rounded-xl w-full text-left">
-<h4 class="font-headline-md text-secondary-fixed-dim mb-2">Ký kết Hợp đồng</h4>
-<p class="text-outline-variant font-body-md">Thống nhất phạm vi công việc, chi phí và ký kết hợp đồng dịch vụ pháp lý minh bạch.</p>
-</div>
-</div>
-<!-- Step 5 -->
-<div class="relative flex items-center justify-start md:justify-end md:w-1/2 ml-12 md:ml-0 md:pr-12 reveal">
-<div class="absolute left-[-48px] md:left-auto md:right-[-20px] w-10 h-10 rounded-full bg-[#7a2828] border-4 border-on-surface flex items-center justify-center font-bold text-on-primary z-10">5</div>
-<div class="glass-card bg-surface-variant/10 !border-outline/20 p-6 rounded-xl w-full text-left">
-<h4 class="font-headline-md text-secondary-fixed-dim mb-2">Triển khai Thực hiện</h4>
-<p class="text-outline-variant font-body-md">Luật sư trực tiếp soạn thảo văn bản, làm việc với cơ quan nhà nước, doanh nghiệp và các bên liên quan để xử lý vụ việc.</p>
-</div>
-</div>
-<!-- Step 6 -->
-<div class="relative flex items-center justify-start md:w-1/2 md:ml-auto ml-12 md:pl-12 reveal">
-<div class="absolute left-[-48px] md:left-[-20px] w-10 h-10 rounded-full bg-[#7a2828] border-4 border-on-surface flex items-center justify-center font-bold text-on-primary z-10">6</div>
-<div class="glass-card bg-surface-variant/10 !border-outline/20 p-6 rounded-xl w-full text-left">
-<h4 class="font-headline-md text-secondary-fixed-dim mb-2">Theo dõi &amp; Báo cáo Tiến độ</h4>
-<p class="text-outline-variant font-body-md">Cập nhật kết quả xử lý thường xuyên, minh bạch để khách hàng luôn nắm rõ tình trạng hồ sơ của mình.</p>
-</div>
-</div>
-<!-- Step 7 -->
-<div class="relative flex items-center justify-start md:justify-end md:w-1/2 ml-12 md:ml-0 md:pr-12 reveal">
-<div class="absolute left-[-48px] md:left-auto md:right-[-20px] w-10 h-10 rounded-full bg-[#7a2828] border-4 border-on-surface flex items-center justify-center font-bold text-on-primary z-10">7</div>
-<div class="glass-card bg-surface-variant/10 !border-outline/20 p-6 rounded-xl w-full text-left">
-<h4 class="font-headline-md text-secondary-fixed-dim mb-2">Hỗ trợ Sau Dịch vụ</h4>
-<p class="text-outline-variant font-body-md">Tiếp tục giải đáp các vướng mắc phát sinh, hướng dẫn thi hành quyết định, bản án sau khi vụ việc kết thúc.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="mt-stack-xl text-center reveal">
-<p class="text-secondary-fixed-dim mb-4 font-body-lg">Sẵn sàng bắt đầu quá trình tư vấn?</p>
-<a class="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#7a2828] text-[#7a2828] px-8 py-3 rounded-full font-label-lg hover:bg-[#7a2828] hover:text-on-primary transition-all duration-300" href="tel:19003330">
-<span class="material-symbols-outlined text-[20px]">call</span>
-                    Liên hệ Hotline 1900 3330
-                </a>
-</div>
-</div>
-</section>
-<!-- Chi phí & Thời gian thực hiện -->
-<section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
-<div class="max-w-container-max mx-auto">
-<div class="mb-stack-lg text-center reveal">
-<h2 class="font-display-md text-on-surface mb-stack-sm">Chi phí &amp; Thời gian Thực hiện</h2>
-<div class="w-24 h-1 bg-[#7a2828] mx-auto rounded-full"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<div class="glass-card p-8 rounded-xl reveal">
-<div class="flex items-center gap-3 mb-4">
-<span class="material-symbols-outlined text-[#7a2828] text-[32px]">payments</span>
-<h3 class="font-headline-lg text-on-surface">Chi phí Dịch vụ</h3>
-</div>
-<p class="text-on-surface-variant font-body-md mb-4">Phí tư vấn được xây dựng linh hoạt, phù hợp với tính chất và quy mô của từng vụ việc:</p>
-<ul class="space-y-3">
-<li class="flex justify-between border-b border-outline-variant/30 pb-2">
-<span class="text-on-surface-variant font-body-md">Tư vấn theo vụ việc</span>
-<span class="font-label-lg text-[#7a2828]">Trọn gói</span>
-</li>
-<li class="flex justify-between border-b border-outline-variant/30 pb-2">
-<span class="text-on-surface-variant font-body-md">Tư vấn thường xuyên cho doanh nghiệp</span>
-<span class="font-label-lg text-[#7a2828]">Theo tháng/năm</span>
-</li>
-<li class="flex justify-between border-b border-outline-variant/30 pb-2">
-<span class="text-on-surface-variant font-body-md">Đại diện tranh tụng</span>
-<span class="font-label-lg text-[#7a2828]">Theo thỏa thuận</span>
-</li>
-<li class="flex justify-between pb-2">
-<span class="text-on-surface-variant font-body-md">Tư vấn sơ bộ qua hotline/Zalo</span>
-<span class="font-label-lg text-[#7a2828]">Miễn phí</span>
-</li>
-</ul>
-<p class="text-sm text-on-surface-variant italic mt-4">* Chi phí được thông báo rõ ràng và thỏa thuận minh bạch trong hợp đồng dịch vụ, không phát sinh thêm.</p>
-</div>
-<div class="glass-card p-8 rounded-xl reveal" style="transition-delay: 100ms;">
-<div class="flex items-center gap-3 mb-4">
-<span class="material-symbols-outlined text-[#7a2828] text-[32px]">schedule</span>
-<h3 class="font-headline-lg text-on-surface">Thời gian Thực hiện</h3>
-</div>
-<p class="text-on-surface-variant font-body-md mb-4">Thời gian xử lý phụ thuộc vào tính chất và mức độ phức tạp của từng vấn đề:</p>
-<ul class="space-y-3">
-<li class="flex justify-between border-b border-outline-variant/30 pb-2">
-<span class="text-on-surface-variant font-body-md">Tư vấn nhanh, giải đáp thắc mắc</span>
-<span class="font-label-lg text-[#7a2828]">Trong ngày</span>
-</li>
-<li class="flex justify-between border-b border-outline-variant/30 pb-2">
-<span class="text-on-surface-variant font-body-md">Soạn thảo hợp đồng, nội quy lao động</span>
-<span class="font-label-lg text-[#7a2828]">3 - 7 ngày</span>
-</li>
-<li class="flex justify-between border-b border-outline-variant/30 pb-2">
-<span class="text-on-surface-variant font-body-md">Giải quyết tranh chấp, hòa giải</span>
-<span class="font-label-lg text-[#7a2828]">2 - 4 tuần</span>
-</li>
-<li class="flex justify-between pb-2">
-<span class="text-on-surface-variant font-body-md">Tranh tụng tại Tòa án</span>
-<span class="font-label-lg text-[#7a2828]">Theo tiến độ xét xử</span>
-</li>
-</ul>
-<p class="text-sm text-on-surface-variant italic mt-4">* Cam kết tiến độ rõ ràng, cập nhật thường xuyên trong suốt quá trình thực hiện.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Collaborative Image Section -->
-<section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-surface">
-<div class="max-w-container-max mx-auto">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
-<div class="order-2 lg:order-1 reveal">
-<h2 class="font-display-md text-on-surface mb-stack-sm">Đồng hành cùng Doanh nghiệp &amp; Người Lao động</h2>
-<p class="text-on-surface-variant font-body-lg mb-stack-md">Chúng tôi hướng tới việc xây dựng môi trường làm việc hài hòa, ổn định, nơi quyền lợi của cả người sử dụng lao động và người lao động đều được tôn trọng và bảo vệ.</p>
-<a class="inline-flex items-center gap-2 text-[#7a2828] font-label-lg hover:underline" href="tel:19003330">
-                        Nhận tư vấn miễn phí bước đầu <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-</a>
-</div>
-<div class="order-1 lg:order-2 reveal">
-<img alt="Collaborative Consultation" class="rounded-xl shadow-xl shadow-primary/10 w-full h-[400px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHOXQBJsjEYqghAZcJeGW35bffLqZjXM-fCkvCcnuh1uaqBZTPexbTgifbpoJ0yELGRZF4OZTsZb1OIjyTOZpVguBUWIL6wA_8np3EYkQDoLkpibtT8_-vbZ1jHeL1arGQ39tTAH5A32QFQY0IHcSdP_-JVIHTMq3hitFhb4OoaWYnShJrSSAP4j7VwGjxii5u-Ce21N3l75VZ4i2zJktdMVmWPruChp9d6noTbFLsauF5yJyaueuB7ebjodrqxUhIwWjweqa7fkm-"/>
-</div>
-</div>
-</div>
-</section>
-<!-- Lợi ích cho NLĐ & NSDLĐ -->
-<section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
-<div class="max-w-container-max mx-auto">
-<div class="mb-stack-lg text-center reveal">
-<h2 class="font-display-md text-on-surface mb-stack-sm">Lợi ích Dành cho Bạn</h2>
-<div class="w-24 h-1 bg-[#7a2828] mx-auto rounded-full"></div>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
-<div class="glass-card p-8 rounded-xl reveal">
-<div class="flex items-center gap-3 mb-4">
-<span class="material-symbols-outlined text-[#7a2828] text-[32px]">badge</span>
-<h3 class="font-headline-lg text-on-surface">Đối với Người lao động</h3>
-</div>
-<ul class="space-y-3">
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-[#7a2828] text-[20px] mt-1">check</span>
-<span class="text-on-surface-variant font-body-md">Hiểu rõ quyền lợi về lương, thưởng, bảo hiểm và các chế độ phúc lợi hợp pháp.</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-[#7a2828] text-[20px] mt-1">check</span>
-<span class="text-on-surface-variant font-body-md">Được bảo vệ khi bị sa thải, kỷ luật hoặc chấm dứt hợp đồng trái pháp luật.</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-[#7a2828] text-[20px] mt-1">check</span>
-<span class="text-on-surface-variant font-body-md">Hỗ trợ đòi lại quyền lợi về bảo hiểm xã hội, trợ cấp thôi việc, tai nạn lao động.</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-[#7a2828] text-[20px] mt-1">check</span>
-<span class="text-on-surface-variant font-body-md">Được đại diện thương lượng, hòa giải hoặc khởi kiện khi quyền lợi bị xâm phạm.</span>
-</li>
-</ul>
-</div>
-<div class="glass-card p-8 rounded-xl reveal" style="transition-delay: 100ms;">
-<div class="flex items-center gap-3 mb-4">
-<span class="material-symbols-outlined text-[#7a2828] text-[32px]">corporate_fare</span>
-<h3 class="font-headline-lg text-on-surface">Đối với Doanh nghiệp</h3>
-</div>
-<ul class="space-y-3">
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-[#7a2828] text-[20px] mt-1">check</span>
-<span class="text-on-surface-variant font-body-md">Xây dựng hệ thống hợp đồng, nội quy, quy chế lương đúng quy định pháp luật.</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-[#7a2828] text-[20px] mt-1">check</span>
-<span class="text-on-surface-variant font-body-md">Giảm thiểu rủi ro bị xử phạt hành chính hoặc khởi kiện từ người lao động.</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-[#7a2828] text-[20px] mt-1">check</span>
-<span class="text-on-surface-variant font-body-md">Hỗ trợ thủ tục sử dụng lao động nước ngoài, giấy phép lao động đúng hạn.</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-[#7a2828] text-[20px] mt-1">check</span>
-<span class="text-on-surface-variant font-body-md">Đại diện làm việc với cơ quan thanh tra lao động, bảo hiểm xã hội khi cần.</span>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<!-- Kinh nghiệm chọn luật sư -->
-<section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-surface">
-<div class="max-w-container-max mx-auto">
-<div class="mb-stack-lg text-center reveal">
-<h2 class="font-display-md text-on-surface mb-stack-sm">Kinh nghiệm Chọn Luật sư Lao động Uy tín</h2>
-<p class="text-on-surface-variant font-body-lg max-w-2xl mx-auto mt-stack-sm">Để được bảo vệ quyền lợi tốt nhất, hãy lựa chọn đơn vị tư vấn dựa trên các tiêu chí sau:</p>
-<div class="w-24 h-1 bg-[#7a2828] mx-auto rounded-full mt-stack-sm"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<div class="glass-card p-6 rounded-xl text-center reveal">
-<div class="w-12 h-12 rounded-full bg-[#7a2828] text-on-primary flex items-center justify-center font-bold mx-auto mb-4">1</div>
-<h3 class="font-headline-md text-on-surface mb-2">Chuyên môn Sâu</h3>
-<p class="text-on-surface-variant font-body-md">Nhiều năm kinh nghiệm xử lý các vụ việc về hợp đồng, tranh chấp, kỷ luật lao động.</p>
-</div>
-<div class="glass-card p-6 rounded-xl text-center reveal" style="transition-delay: 100ms;">
-<div class="w-12 h-12 rounded-full bg-[#7a2828] text-on-primary flex items-center justify-center font-bold mx-auto mb-4">2</div>
-<h3 class="font-headline-md text-on-surface mb-2">Minh bạch Chi phí</h3>
-<p class="text-on-surface-variant font-body-md">Báo giá rõ ràng ngay từ đầu, không phát sinh chi phí ẩn trong quá trình thực hiện.</p>
-</div>
-<div class="glass-card p-6 rounded-xl text-center reveal" style="transition-delay: 200ms;">
-<div class="w-12 h-12 rounded-full bg-[#7a2828] text-on-primary flex items-center justify-center font-bold mx-auto mb-4">3</div>
-<h3 class="font-headline-md text-on-surface mb-2">Cam kết &amp; Bảo mật</h3>
-<p class="text-on-surface-variant font-body-md">Cập nhật tiến độ thường xuyên, bảo mật tuyệt đối thông tin khách hàng.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Lợi ích bổ sung -->
-<section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-surface-container-lowest text-center">
-<div class="max-w-container-max mx-auto">
-<div class="mb-stack-lg reveal">
-<h2 class="font-display-md text-on-surface mb-stack-sm">Lợi ích Khi Sử dụng Dịch vụ của ACC</h2>
-<div class="w-24 h-1 bg-[#7a2828] mx-auto rounded-full"></div>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-5 gap-gutter reveal">
-<div class="flex flex-col items-center">
-<div class="w-20 h-20 rounded-2xl bg-primary/5 flex items-center justify-center mb-4 border border-[#7a2828]/10">
-<span class="material-symbols-outlined text-[#7a2828] text-4xl">groups</span>
-</div>
-<div class="font-headline-md text-on-surface">500+</div>
-<div class="text-xs font-label-lg text-on-surface-variant uppercase tracking-wider mt-1">Doanh nghiệp tin dùng</div>
-</div>
-<div class="flex flex-col items-center">
-<div class="w-20 h-20 rounded-2xl bg-primary/5 flex items-center justify-center mb-4 border border-[#7a2828]/10">
-<span class="material-symbols-outlined text-[#7a2828] text-4xl">verified_user</span>
-</div>
-<div class="font-headline-md text-on-surface">Chuyên Sâu</div>
-<div class="text-xs font-label-lg text-on-surface-variant uppercase tracking-wider mt-1">Đội ngũ am hiểu luật lao động</div>
-</div>
-<div class="flex flex-col items-center">
-<div class="w-20 h-20 rounded-2xl bg-primary/5 flex items-center justify-center mb-4 border border-[#7a2828]/10">
-<span class="material-symbols-outlined text-[#7a2828] text-4xl">speed</span>
-</div>
-<div class="font-headline-md text-on-surface">Nhanh Chóng</div>
-<div class="text-xs font-label-lg text-on-surface-variant uppercase tracking-wider mt-1">Xử lý hồ sơ đúng tiến độ</div>
-</div>
-<div class="flex flex-col items-center">
-<div class="w-20 h-20 rounded-2xl bg-primary/5 flex items-center justify-center mb-4 border border-[#7a2828]/10">
-<span class="material-symbols-outlined text-[#7a2828] text-4xl">support_agent</span>
-</div>
-<div class="font-headline-md text-on-surface">24/7</div>
-<div class="text-xs font-label-lg text-on-surface-variant uppercase tracking-wider mt-1">Hỗ trợ tư vấn mọi lúc</div>
-</div>
-<div class="flex flex-col items-center">
-<div class="w-20 h-20 rounded-2xl bg-primary/5 flex items-center justify-center mb-4 border border-[#7a2828]/10">
-<span class="material-symbols-outlined text-[#7a2828] text-4xl">security</span>
-</div>
-<div class="font-headline-md text-on-surface">Bảo Mật</div>
-<div class="text-xs font-label-lg text-on-surface-variant uppercase tracking-wider mt-1">Tuyệt đối thông tin khách hàng</div>
-</div>
-</div>
-</div>
-</section>
-<!-- FAQ Section -->
-<section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-surface">
-<div class="max-w-3xl mx-auto">
-<div class="mb-stack-lg text-center reveal">
-<h2 class="font-display-md text-on-surface mb-stack-sm">Câu hỏi Thường gặp</h2>
-<div class="w-24 h-1 bg-[#7a2828] mx-auto rounded-full"></div>
-</div>
-<div class="space-y-4">
-<details class="group glass-card rounded-xl overflow-hidden reveal" open="">
-<summary class="flex justify-between items-center p-6 cursor-pointer list-none font-headline-md text-on-surface">
-                    Chi phí thuê luật sư tư vấn lao động được tính như thế nào?
-                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
-</summary>
-<div class="p-6 pt-0 text-on-surface-variant font-body-md border-t border-outline-variant/30">
-                    Chi phí được tính dựa trên tính chất, mức độ phức tạp của vụ việc và phạm vi công việc (tư vấn theo vụ, theo hợp đồng dài hạn hoặc đại diện tranh tụng). ACC luôn báo giá minh bạch và thỏa thuận rõ trong hợp đồng trước khi triển khai.
-                </div>
-</details>
-<details class="group glass-card rounded-xl overflow-hidden reveal" style="transition-delay: 100ms;">
-<summary class="flex justify-between items-center p-6 cursor-pointer list-none font-headline-md text-on-surface">
-                    Doanh nghiệp nhỏ có cần ký hợp đồng tư vấn pháp luật lao động thường xuyên không?
-                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
-</summary>
-<div class="p-6 pt-0 text-on-surface-variant font-body-md border-t border-outline-variant/30">
-                    Có. Luật sư đồng hành thường xuyên giúp doanh nghiệp xây dựng hệ thống hợp đồng, nội quy đúng quy định từ đầu, hạn chế tối đa rủi ro tranh chấp và xử phạt sau này, đồng thời được tư vấn nhanh khi có vướng mắc phát sinh.
-                </div>
-</details>
-<details class="group glass-card rounded-xl overflow-hidden reveal" style="transition-delay: 200ms;">
-<summary class="flex justify-between items-center p-6 cursor-pointer list-none font-headline-md text-on-surface">
-                    Người lao động bị sa thải trái pháp luật cần làm gì?
-                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
-</summary>
-<div class="p-6 pt-0 text-on-surface-variant font-body-md border-t border-outline-variant/30">
-                    Người lao động nên thu thập đầy đủ hồ sơ liên quan (hợp đồng lao động, quyết định sa thải, bảng lương...) và liên hệ luật sư để được đánh giá căn cứ pháp lý. ACC sẽ hỗ trợ thương lượng với doanh nghiệp hoặc đại diện khởi kiện để đòi lại quyền lợi hợp pháp.
-                </div>
-</details>
-<details class="group glass-card rounded-xl overflow-hidden reveal" style="transition-delay: 300ms;">
-<summary class="flex justify-between items-center p-6 cursor-pointer list-none font-headline-md text-on-surface">
-                    ACC có hỗ trợ thủ tục cho lao động nước ngoài làm việc tại Việt Nam không?
-                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
-</summary>
-<div class="p-6 pt-0 text-on-surface-variant font-body-md border-t border-outline-variant/30">
-                    Có. ACC tư vấn và thực hiện trọn gói thủ tục xin giấy phép lao động, gia hạn, cấp thẻ tạm trú cho người nước ngoài làm việc tại Việt Nam, đảm bảo tuân thủ đúng quy định pháp luật hiện hành.
-                </div>
-</details>
-<details class="group glass-card rounded-xl overflow-hidden reveal" style="transition-delay: 400ms;">
-<summary class="flex justify-between items-center p-6 cursor-pointer list-none font-headline-md text-on-surface">
-                    Tôi có thể tư vấn online mà không cần đến văn phòng không?
-                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
-</summary>
-<div class="p-6 pt-0 text-on-surface-variant font-body-md border-t border-outline-variant/30">
-                    Hoàn toàn được. ACC hỗ trợ tư vấn qua điện thoại, Zalo, email và video call. Hồ sơ, tài liệu có thể trao đổi trực tuyến hoặc qua chuyển phát, giúp khách hàng tiết kiệm thời gian và chi phí đi lại.
-                </div>
-</details>
-</div>
-</div>
-</section>
-<!-- Final Call to Action -->
-<section class="py-stack-xl px-margin-mobile md:px-margin-desktop text-center bg-on-surface text-surface-container-lowest relative overflow-hidden">
-<div class="relative z-10 max-w-4xl mx-auto reveal">
-<h2 class="font-display-md mb-stack-md">Cần Hỗ trợ Pháp lý Lao động Ngay Hôm Nay?</h2>
-<p class="font-body-lg mb-stack-lg text-surface-variant">
-                Liên hệ ngay với ACC Law Firm để được luật sư chuyên môn tư vấn miễn phí và đưa ra giải pháp tối ưu cho doanh nghiệp hoặc cá nhân của bạn.
-            </p>
-<div class="flex flex-col md:flex-row gap-gutter justify-center items-center">
-<a class="inline-flex items-center justify-center gap-2 bg-[#7a2828] text-on-primary px-10 py-5 rounded-full font-label-lg hover:bg-on-primary-fixed-variant transition-all duration-300 shadow-lg" href="tel:19003330">
-<span class="material-symbols-outlined fill-icon text-[24px]">call</span>
-                    1900 3330
-                </a>
-<a class="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-secondary-fixed-dim text-secondary-fixed-dim px-10 py-5 rounded-full font-label-lg hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all duration-300" href="mailto:info@congtyluatacc.vn">
-<span class="material-symbols-outlined text-[24px]">mail</span>
-                    Email tư vấn
-                </a>
-</div>
-</div>
-</section>
+<meta name="description" content="Bảo vệ quyền lợi hợp pháp, tối ưu hóa quy trình nhân sự và giải quyết tranh chấp lao động hiệu quả cùng đội ngũ Luật sư Lao động từ ACC Law Firm."/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 <script>
-        // Simple Scroll Reveal Logic
-        document.addEventListener('DOMContentLoaded', () => {
-            const reveals = document.querySelectorAll('.reveal');
-            
-            const revealOnScroll = () => {
-                const windowHeight = window.innerHeight;
-                const elementVisible = 100;
-                
-                reveals.forEach((reveal) => {
-                    const elementTop = reveal.getBoundingClientRect().top;
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveal.classList.add('active');
-                    }
-                });
-            };
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#8B1C1C',
+          'primary-dark': '#5c1114',
+          'primary-light': '#b44040',
+          accent: '#c5a059',
+          'accent-light': '#ebdcae',
+          surface: '#fafafa',
+          'surface-dark': '#f0f0f0',
+        },
+        fontFamily: {
+          sans: ['Roboto', 'sans-serif'],
+          display: ['Roboto', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  :root {
+    --primary: #8B1C1C;
+    --primary-dark: #5c1114;
+    --primary-light: #b44040;
+    --accent: #c5a059;
+    --accent-light: #ebdcae;
+  }
 
-            window.addEventListener('scroll', revealOnScroll);
-            revealOnScroll(); // Trigger on load
-        });
-    </script>
-</body></html>
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    overflow-x: hidden;
+  }
+
+  /* ============ SCROLLBAR ============ */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f1f1f1; }
+  ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+  /* ============ HERO ============ */
+  .hero-section {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hero-gradient {
+    background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 35%, #5c1114 65%, #1a0404 100%);
+  }
+  .hero-particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .particle {
+    position: absolute;
+    bottom: -50px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(235, 220, 174, 0.45) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(197, 160, 89, 0.35) 100%);
+    border: 1px solid rgba(235, 220, 174, 0.45);
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.25), inset 0 0 6px rgba(255, 255, 255, 0.25);
+    animation: float-particle linear infinite;
+    opacity: 0;
+  }
+  @keyframes float-particle {
+    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+    15% { opacity: var(--p-opacity, 0.6); }
+    85% { opacity: var(--p-opacity, 0.6); }
+    100% { transform: translateY(-115vh) translateX(var(--drift, 20px)) rotate(360deg); opacity: 0; }
+  }
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197,160,89,0.08) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse-glow 4s ease-in-out infinite;
+    z-index: 1;
+  }
+  @keyframes pulse-glow {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border: 1px solid rgba(197,160,89,0.5);
+    border-radius: 100px;
+    background: rgba(197,160,89,0.1);
+    backdrop-filter: blur(10px);
+    color: var(--accent-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: fadeInDown 0.8s ease forwards;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: blink 2s ease-in-out infinite;
+  }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .hero-title {
+    animation: fadeInUp 0.9s ease 0.2s both;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.1;
+  }
+  .hero-title span {
+    background: linear-gradient(135deg, #ebdcae, #c5a059, #ebdcae);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+  .hero-desc {
+    animation: fadeInUp 0.9s ease 0.4s both;
+  }
+  .hero-cta {
+    animation: fadeInUp 0.9s ease 0.6s both;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+    color: #1a0404;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(197,160,89,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+  }
+  .btn-primary:hover::before { left: 100%; }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(197,160,89,0.5); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    border: 2px solid rgba(255,255,255,0.3);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .btn-outline:hover {
+    border-color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-3px);
+  }
+
+  /* Hero Stats */
+  .hero-stats {
+    animation: fadeInUp 0.9s ease 0.8s both;
+  }
+  .stat-item {
+    border-left: 1px solid rgba(255,255,255,0.15);
+    padding-left: 20px;
+  }
+  .stat-item:first-child { border-left: none; padding-left: 0; }
+
+  /* Hero Card */
+  .hero-card {
+    animation: fadeInRight 0.9s ease 0.5s both;
+  }
+  .passport-card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.4s ease;
+  }
+  .passport-card:hover { transform: translateY(-8px) rotate(-1deg); }
+  .passport-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(197,160,89,0.05), transparent, rgba(139,28,28,0.05));
+    pointer-events: none;
+  }
+
+  /* Floating badge on hero image */
+  .float-badge {
+    position: absolute;
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    padding: 12px 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* ============ SECTION HEADERS ============ */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 14px;
+    border-radius: 100px;
+    background: rgba(139,28,28,0.08);
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: #1a0404;
+    line-height: 1.2;
+  }
+  .section-title span {
+    color: var(--primary);
+  }
+  .section-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 2px;
+    margin: 16px auto 0;
+  }
+
+  /* ============ CARDS ============ */
+  .premium-card {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid rgba(139,28,28,0.06);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+  }
+  .premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .premium-card:hover::before { transform: scaleX(1); }
+  .premium-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(139,28,28,0.12);
+    border-color: rgba(139,28,28,0.15);
+  }
+
+  .icon-circle {
+    width: 64px; height: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(139,28,28,0.04));
+    transition: all 0.3s ease;
+  }
+  .premium-card:hover .icon-circle {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    transform: rotate(5deg) scale(1.1);
+  }
+  .premium-card:hover .icon-circle .material-symbols-outlined {
+    color: white !important;
+  }
+
+  /* ============ PROCESS STEPS ============ */
+  .steps-container {
+    position: relative;
+  }
+  .steps-line {
+    position: absolute;
+    top: 32px; left: 50%;
+    width: calc(100% - 64px);
+    transform: translateX(-50%);
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    .steps-line { display: block; }
+  }
+  .step-number {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--primary);
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(139,28,28,0.2);
+  }
+  .step-item:hover .step-number {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(139,28,28,0.35);
+  }
+  .step-item:hover .step-title { color: var(--primary); }
+
+  /* ============ COST TABLE ============ */
+  .cost-section {
+    background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 50%, #5c1114 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .cost-section::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -10%;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197,160,89,0.08), transparent 70%);
+    pointer-events: none;
+  }
+  .cost-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  .cost-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: background 0.3s;
+  }
+  .cost-row:hover { background: rgba(255,255,255,0.05); }
+  .cost-row:last-child { border-bottom: none; }
+
+  /* ============ REJECTION REASONS / PROBLEMS ============ */
+  .rejection-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .rejection-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 3px; height: 0;
+    background: var(--primary);
+    border-radius: 0 2px 2px 0;
+    transition: height 0.3s ease;
+  }
+  .rejection-item:hover { background: rgba(139,28,28,0.03); border-color: rgba(139,28,28,0.1); }
+  .rejection-item:hover::before { height: 70%; }
+  .rejection-number {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgba(139,28,28,0.15);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 48px;
+    transition: color 0.3s;
+  }
+  .rejection-item:hover .rejection-number { color: rgba(139,28,28,0.4); }
+
+  /* ============ BENEFITS ============ */
+  .benefit-card {
+    background: white;
+    border-radius: 18px;
+    padding: 28px 20px;
+    text-align: center;
+    border: 1px solid rgba(139,28,28,0.06);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .benefit-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transition: width 0.4s ease;
+    border-radius: 2px 2px 0 0;
+  }
+  .benefit-card:hover::after { width: 70%; }
+  .benefit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(139,28,28,0.1);
+    border-color: rgba(139,28,28,0.12);
+  }
+  .benefit-icon {
+    width: 56px; height: 56px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(197,160,89,0.08));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    transition: all 0.3s ease;
+  }
+  .benefit-card:hover .benefit-icon {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  }
+  .benefit-card:hover .benefit-icon .material-symbols-outlined {
+    color: white !important;
+  }
+
+  /* ============ FAQ ============ */
+  .faq-item {
+    border: 1px solid rgba(139,28,28,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .faq-item:hover { border-color: rgba(139,28,28,0.2); }
+  .faq-summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #1a0404;
+    transition: all 0.3s;
+    background: white;
+    gap: 16px;
+  }
+  .faq-item[open] .faq-summary {
+    background: linear-gradient(135deg, rgba(139,28,28,0.04), rgba(139,28,28,0.01));
+    color: var(--primary);
+    border-bottom: 1px solid rgba(139,28,28,0.08);
+  }
+  .faq-summary::-webkit-details-marker { display: none; }
+  .faq-icon {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    color: var(--primary);
+  }
+  .faq-item[open] .faq-icon { transform: rotate(180deg); }
+  .faq-body {
+    padding: 20px 24px;
+    background: white;
+    color: #555;
+    line-height: 1.7;
+    font-size: 0.9rem;
+  }
+
+  /* ============ CTA SECTION ============ */
+  .cta-section {
+    background: linear-gradient(135deg, #2a0404 0%, #5c1114 40%, #3d0808 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  /* ============ FLOATING BUTTON ============ */
+  .float-zalo {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, #0068ff, #004dc0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 6px 25px rgba(0,104,255,0.45);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .float-zalo::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: rgba(0,104,255,0.25);
+    animation: pulse-ring 2s ease-in-out infinite;
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
+  .float-zalo:hover { transform: scale(1.1); box-shadow: 0 10px 35px rgba(0,104,255,0.55); }
+
+  .float-phone {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 6px 25px rgba(139,28,28,0.45);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .float-phone::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: rgba(139,28,28,0.25);
+    animation: pulse-ring 2s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  .float-phone:hover { transform: scale(1.1); box-shadow: 0 10px 35px rgba(139,28,28,0.55); }
+
+  /* ============ SCROLL REVEAL ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ============ MATERIAL ICONS ============ */
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  /* ============ SECTION BACKGROUNDS ============ */
+  .bg-mesh-light {
+    background-color: #fafafa;
+    background-image: radial-gradient(at 20% 30%, rgba(139,28,28,0.03) 0, transparent 50%),
+                      radial-gradient(at 80% 70%, rgba(197,160,89,0.03) 0, transparent 50%);
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero-section hero-gradient" id="hero">
+  <!-- Particles -->
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-glow"></div>
+
+  <!-- Grid overlay -->
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;z-index:1;pointer-events:none;"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-20 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
+      <!-- Left -->
+      <div class="space-y-8">
+        <div class="hero-badge">
+          ACC Law Firm &nbsp;·&nbsp; Luật sư lao động uy tín
+        </div>
+
+        <h1 class="hero-title text-white" style="font-size:clamp(2.2rem,4.5vw,3.8rem);">
+          Luật sư Tư vấn <span>Pháp luật Lao động</span>
+          <br/>Toàn quốc - Trọn gói
+        </h1>
+
+        <p class="hero-desc text-white/70 leading-relaxed" style="font-size:1.05rem;max-width:540px;">
+          Bảo vệ quyền lợi hợp pháp, tối ưu hóa quy trình nhân sự và giải quyết triệt để mọi tranh chấp lao động với đội ngũ chuyên gia pháp lý hàng đầu từ ACC Law Firm.
+        </p>
+
+        <div class="hero-cta flex flex-wrap gap-4">
+          <a href="tel:19003330" class="btn-primary">
+            <span class="material-symbols-outlined" style="font-size:20px;">call</span>
+            Gọi 1900 3330
+          </a>
+          <a href="#cac-van-de" class="btn-outline">
+            <span class="material-symbols-outlined" style="font-size:20px;">arrow_downward</span>
+            Tìm hiểu thêm
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats flex flex-wrap gap-x-8 gap-y-4 pt-4">
+          <div class="stat-item">
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">500+</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Doanh nghiệp đồng hành</div>
+          </div>
+          <div class="stat-item">
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">98%</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Tỷ lệ thành công tranh chấp</div>
+          </div>
+          <div class="stat-item">
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">15+</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Năm kinh nghiệm</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="block lg:mt-0 mt-8 hero-card">
+        <div class="relative max-w-md mx-auto lg:max-w-none">
+          <div class="passport-card p-3 shadow-2xl">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsuS1zF0kQbz5Te4ahId-LAptb7K8oCchGNp3axYje4ygmdaQ2DM8erET7sohM3PKiUrFGgfQo-kat9q6Yqxi57RNnGdOy0SjYTGESe3V_IWSSIl0qL4PS-JUrST2faisbHfqPomAao9M8C8w0p6rusbZvZpX5sIf_vMNyzCf2sSa85jtkgE5KZy2KZzkqFGJb7JzfRZctTwue1hpfeNnn3Bbv9JIcU3IU685aEoebqmYfMqfyv-0qkBTIOi9bgmEwlHfudL1ygd-2"
+              alt="Luật sư Lao động ACC Law Firm"
+              class="w-full rounded-2xl object-cover h-[280px] sm:h-[380px]"
+            />
+          </div>
+          <!-- Floating badges -->
+          <div class="float-badge sm:flex hidden" style="bottom:-20px;left:20px;z-index:10;">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:white;font-size:18px;">verified</span>
+            </div>
+            <div>
+              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Tư vấn 24/7</div>
+              <div style="font-size:0.72rem;color:#888;">Luật sư chuyên nghiệp hỗ trợ</div>
+            </div>
+          </div>
+          <div class="float-badge sm:flex hidden" style="top:20px;right:-20px;z-index:10;animation-delay:1.5s;">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#c5a059,#99732f);display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:white;font-size:18px;">security</span>
+            </div>
+            <div>
+              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Bảo vệ quyền lợi</div>
+              <div style="font-size:0.72rem;color:#888;">Doanh nghiệp & Người lao động</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave bottom -->
+  <div style="position:absolute;bottom:0;left:0;right:0;z-index:5;">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:80px;">
+      <path d="M0 80 L0 40 Q360 0 720 40 Q1080 80 1440 40 L1440 80 Z" fill="#fafafa"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ COMMON ISSUES ============ -->
+<section class="py-24 bg-mesh-light" id="cac-van-de">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="section-label" style="justify-content:center;">Vấn đề thường gặp</div>
+      <h2 class="section-title">Các vấn đề pháp luật lao động <span>thường gặp</span></h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 reveal mb-12">
+      <!-- Card 1 -->
+      <div class="premium-card p-6 flex flex-col gap-4">
+        <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+          <span class="material-symbols-outlined text-xl" style="color:var(--primary);">description</span>
+        </div>
+        <h4 class="font-bold text-sm text-gray-900">Tranh chấp Hợp đồng</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Xử lý các vi phạm cam kết, điều khoản bảo mật, cạnh tranh không lành mạnh và các thỏa thuận bồi thường đào tạo.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="premium-card p-6 flex flex-col gap-4">
+        <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+          <span class="material-symbols-outlined text-xl" style="color:var(--primary);">gavel</span>
+        </div>
+        <h4 class="font-bold text-sm text-gray-900">Kỷ luật & Sa thải</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Tư vấn quy trình xử lý kỷ luật lao động hợp pháp, khiếu nại sa thải trái pháp luật và yêu cầu bồi thường thiệt hại liên quan.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="premium-card p-6 flex flex-col gap-4">
+        <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+          <span class="material-symbols-outlined text-xl" style="color:var(--primary);">payments</span>
+        </div>
+        <h4 class="font-bold text-sm text-gray-900">Lương & Thưởng</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Giải quyết nhanh khiếu nại về chậm lương, nợ lương, không trả trợ cấp thôi việc hay mất việc làm theo luật định.</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="premium-card p-6 flex flex-col gap-4">
+        <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+          <span class="material-symbols-outlined text-xl" style="color:var(--primary);">shield</span>
+        </div>
+        <h4 class="font-bold text-sm text-gray-900">Bảo hiểm Xã hội</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Xử lý các hành vi trốn đóng, chậm đóng BHXH, BHYT, BHTN và hỗ trợ thủ tục chốt sổ bảo hiểm cho người lao động.</p>
+      </div>
+      <!-- Card 5 -->
+      <div class="premium-card p-6 flex flex-col gap-4">
+        <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+          <span class="material-symbols-outlined text-xl" style="color:var(--primary);">work_history</span>
+        </div>
+        <h4 class="font-bold text-sm text-gray-900">An toàn Lao động</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Tư vấn thủ tục bồi thường tai nạn lao động, bệnh nghề nghiệp và giải quyết các vi phạm về môi trường làm việc.</p>
+      </div>
+    </div>
+
+    <div class="text-center reveal">
+      <a class="btn-primary" href="https://zalo.me/2171133625094125529" target="_blank">
+        <span class="material-symbols-outlined" style="font-size:20px;">chat</span>
+        Liên hệ Zalo để được tư vấn miễn phí
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LAWYER ROLE ============ -->
+<section class="py-24" style="background:white;">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="reveal-left">
+        <div class="relative max-w-md mx-auto lg:max-w-none">
+          <div class="passport-card p-3 shadow-2xl">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvL42XSMOHg_WTKH5Q1nJz2mWpXIY0Y5h65cm4D9U5gq63Zm3x4nqvxgd1Fz1TDBjKykdtFhS4-B4t1DLA-WG3_TmnDOyntYgNrY8D-1nv_lcEGQXOveQ5vQFb167kBFhT-8hsPlvpfDGEnSu0yskL7XG3D3G9f-ZTU8Mzh-6e9UL1UdSjpAPU8N6I8eKbw6nxXWko89S5irRnyqIo8dbpnh8hpwjbIFOaDvf_BMMFaqKG0L2w2SsjGhUKmGST7u1pRdie0is6Ny-R"
+              alt="Vai trò thiết yếu của Luật sư lao động"
+              class="w-full rounded-2xl object-cover h-[340px] sm:h-[420px]"
+            />
+          </div>
+        </div>
+      </div>
+      
+      <div class="reveal-right space-y-6">
+        <div>
+          <div class="section-label">Tầm quan trọng</div>
+          <h2 class="section-title">Vai trò thiết yếu của <span>Luật sư</span></h2>
+          <div class="section-line" style="margin-left:0;"></div>
+        </div>
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Sự can thiệp và hỗ trợ pháp lý kịp thời từ đội ngũ luật sư kinh nghiệm không chỉ giúp phòng ngừa rủi ro pháp lý hành chính mà còn bảo vệ tối đa lợi ích kinh tế cho cả người lao động và doanh nghiệp.
+        </p>
+        
+        <div class="space-y-4 pt-2">
+          <!-- Item 1 -->
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-primary flex-shrink-0">
+              <span class="material-symbols-outlined text-lg">check_circle</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 mb-1">Giải thích & Áp dụng Pháp luật</h4>
+              <p class="text-xs text-gray-500 leading-relaxed">Phân tích rõ ràng các quy định phức tạp trong Bộ luật Lao động, giúp các bên hiểu đúng quyền và nghĩa vụ hợp pháp của mình.</p>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-primary flex-shrink-0">
+              <span class="material-symbols-outlined text-lg">fact_check</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 mb-1">Rà soát & Soạn thảo Văn bản</h4>
+              <p class="text-xs text-gray-500 leading-relaxed">Thiết lập hệ thống hợp đồng, quy chế lương thưởng, thỏa ước và nội quy lao động chặt chẽ, phòng ngừa tranh chấp từ gốc rễ.</p>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-primary flex-shrink-0">
+              <span class="material-symbols-outlined text-lg">diversity_3</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-gray-900 mb-1">Đại diện Đàm phán & Tố tụng</h4>
+              <p class="text-xs text-gray-500 leading-relaxed">Trực tiếp tham gia thương lượng hòa giải hoặc đại diện tranh tụng chuyên nghiệp bảo vệ quyền lợi hợp pháp tại Tòa án các cấp.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE CONSULT ============ -->
+<section class="py-24 bg-mesh-light" id="dich-vu-toan-dien">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="section-label" style="justify-content:center;">Dịch vụ pháp lý</div>
+      <h2 class="section-title">Dịch vụ Tư vấn <span>Toàn diện</span></h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 reveal">
+      <!-- Card 1 -->
+      <div class="premium-card p-6 flex flex-col gap-4 text-center items-center">
+        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">edit_document</span>
+        </div>
+        <h4 class="font-bold text-sm text-gray-900">Hợp đồng Lao động</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Soạn thảo, rà soát và đàm phán các loại hợp đồng, thỏa thuận bảo mật, bồi hoàn phí đào tạo.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="premium-card p-6 flex flex-col gap-4 text-center items-center">
+        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">account_balance_wallet</span>
+        </div>
+        <h4 class="font-bold text-sm text-gray-900">Lương & Phúc lợi</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Tư vấn xây dựng thang bảng lương, quy chế khen thưởng, phúc lợi xã hội và phương án đóng BHXH.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="premium-card p-6 flex flex-col gap-4 text-center items-center">
+        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">rule</span>
+        </div>
+        <h4 class="font-bold text-sm text-gray-900">Kỷ luật Lao động</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Hướng dẫn trình tự, thủ tục xử lý kỷ luật lao động, sa thải và trách nhiệm vật chất đúng chuẩn luật.</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="premium-card p-6 flex flex-col gap-4 text-center items-center">
+        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">balance</span>
+        </div>
+        <h4 class="font-bold text-sm text-gray-900">Giải quyết Tranh chấp</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Đại diện đàm phán hòa giải, hỗ trợ xây dựng hồ sơ khởi kiện và trực tiếp tranh tụng tại Tòa án.</p>
+      </div>
+      <!-- Card 5 -->
+      <div class="premium-card p-6 flex flex-col gap-4 text-center items-center">
+        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">public</span>
+        </div>
+        <h4 class="font-bold text-sm text-gray-900">Lao động Nước ngoài</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Tư vấn và thực hiện trọn gói thủ tục xin Giấy phép lao động (Work Permit), Thẻ tạm trú, Visa cho người nước ngoài.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="py-24 bg-white" id="quy-trinh">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <div class="section-label" style="justify-content:center;">Quy trình</div>
+      <h2 class="section-title">Quy trình Tư vấn <span>Chuyên nghiệp</span></h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="steps-container">
+      <div class="steps-line hidden lg:block" style="width:calc(100% - 160px);"></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-6">
+        <!-- Steps -->
+        <div class="step-item flex flex-col items-center text-center gap-3 cursor-default reveal" style="transition-delay:0s;">
+          <div class="step-number">1</div>
+          <h4 class="font-bold text-xs step-title">Tiếp nhận</h4>
+          <p class="text-[11px] text-gray-500 leading-relaxed">Thu thập hồ sơ, lắng nghe yêu cầu vụ việc</p>
+        </div>
+        <div class="step-item flex flex-col items-center text-center gap-3 cursor-default reveal" style="transition-delay:0.08s;">
+          <div class="step-number">2</div>
+          <h4 class="font-bold text-xs step-title">Phân tích</h4>
+          <p class="text-[11px] text-gray-500 leading-relaxed">Luật sư nghiên cứu hồ sơ và đánh giá pháp lý</p>
+        </div>
+        <div class="step-item flex flex-col items-center text-center gap-3 cursor-default reveal" style="transition-delay:0.16s;">
+          <div class="step-number">3</div>
+          <h4 class="font-bold text-xs step-title">Đề xuất</h4>
+          <p class="text-[11px] text-gray-500 leading-relaxed">Tư vấn các giải pháp tối ưu và dự báo rủi ro</p>
+        </div>
+        <div class="step-item flex flex-col items-center text-center gap-3 cursor-default reveal" style="transition-delay:0.24s;">
+          <div class="step-number">4</div>
+          <h4 class="font-bold text-xs step-title">Ký hợp đồng</h4>
+          <p class="text-[11px] text-gray-500 leading-relaxed">Thống nhất phạm vi dịch vụ và phí minh bạch</p>
+        </div>
+        <div class="step-item flex flex-col items-center text-center gap-3 cursor-default reveal" style="transition-delay:0.32s;">
+          <div class="step-number">5</div>
+          <h4 class="font-bold text-xs step-title">Triển khai</h4>
+          <p class="text-[11px] text-gray-500 leading-relaxed">Soạn thảo hồ sơ, đàm phán hoặc làm việc cơ quan nhà nước</p>
+        </div>
+        <div class="step-item flex flex-col items-center text-center gap-3 cursor-default reveal" style="transition-delay:0.4s;">
+          <div class="step-number">6</div>
+          <h4 class="font-bold text-xs step-title">Báo cáo</h4>
+          <p class="text-[11px] text-gray-500 leading-relaxed">Cập nhật tiến trình thường xuyên cho khách hàng</p>
+        </div>
+        <div class="step-item flex flex-col items-center text-center gap-3 cursor-default reveal" style="transition-delay:0.48s;">
+          <div class="step-number">7</div>
+          <h4 class="font-bold text-xs step-title">Hỗ trợ sau dịch vụ</h4>
+          <p class="text-[11px] text-gray-500 leading-relaxed">Đồng hành tháo gỡ vướng mắc phát sinh sau đó</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COSTS & TIME ============ -->
+<section class="cost-section py-24">
+  <div class="max-w-5xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-12 reveal">
+      <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;">Chi phí & Thời gian</div>
+      <h2 class="section-title text-white">Chi phí & Lộ trình <span>minh bạch</span></h2>
+      <div class="section-line" style="background:linear-gradient(90deg,var(--accent),var(--accent-light));"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Cost Card -->
+      <div class="cost-card reveal">
+        <div style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <h4 class="text-white font-bold text-base mb-6 flex items-center gap-3">
+            <span class="material-symbols-outlined text-accent-light">payments</span>
+            Chi phí dịch vụ
+          </h4>
+          <div class="cost-row" style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span class="text-white/80 text-sm">Tư vấn theo vụ việc lao động</span>
+            <span class="font-bold text-accent-light text-sm">Trọn gói</span>
+          </div>
+          <div class="cost-row" style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span class="text-white/80 text-sm">Tư vấn thường xuyên Doanh nghiệp</span>
+            <span class="font-bold text-accent-light text-sm">Theo tháng / năm</span>
+          </div>
+          <div class="cost-row" style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span class="text-white/80 text-sm">Đại diện tham gia tranh tụng Tòa án</span>
+            <span class="font-bold text-accent-light text-sm">Theo thỏa thuận</span>
+          </div>
+          <div class="cost-row" style="padding:14px 0;">
+            <span class="text-white/80 text-sm">Tư vấn sơ bộ qua Hotline / Zalo</span>
+            <span class="font-bold text-accent-light text-sm">Miễn phí</span>
+          </div>
+        </div>
+        <div style="padding:18px 32px;background:rgba(197,160,89,0.06);">
+          <p class="text-white/50 text-xs italic">Chi phí được cam kết rõ ràng trong hợp đồng, hoàn toàn không phát sinh phí ẩn.</p>
+        </div>
+      </div>
+      
+      <!-- Time Card -->
+      <div class="cost-card reveal" style="animation-delay:0.15s;">
+        <div style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <h4 class="text-white font-bold text-base mb-6 flex items-center gap-3">
+            <span class="material-symbols-outlined text-accent-light">schedule</span>
+            Thời gian xử lý
+          </h4>
+          <div class="cost-row" style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span class="text-white/80 text-sm">Tư vấn nhanh, giải đáp thắc mắc</span>
+            <span class="font-bold text-accent-light text-sm">Trong ngày</span>
+          </div>
+          <div class="cost-row" style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span class="text-white/80 text-sm">Soạn thảo hợp đồng, nội quy lao động</span>
+            <span class="font-bold text-accent-light text-sm">3 - 7 ngày làm việc</span>
+          </div>
+          <div class="cost-row" style="padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span class="text-white/80 text-sm">Giải quyết tranh chấp, hòa giải</span>
+            <span class="font-bold text-accent-light text-sm">2 - 4 tuần</span>
+          </div>
+          <div class="cost-row" style="padding:14px 0;">
+            <span class="text-white/80 text-sm">Tranh tụng bảo vệ tại Tòa án</span>
+            <span class="font-bold text-accent-light text-sm">Theo tiến trình xét xử</span>
+          </div>
+        </div>
+        <div style="padding:18px 32px;background:rgba(197,160,89,0.06);">
+          <p class="text-white/50 text-xs italic">ACC cam kết bám sát tiến độ vụ việc và báo cáo chi tiết cho khách hàng thường xuyên.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MUTUAL BENEFITS ============ -->
+<section class="py-24 bg-mesh-light">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+      <div class="reveal-left space-y-6">
+        <div>
+          <div class="section-label">Đồng hành</div>
+          <h2 class="section-title">Cân bằng lợi ích giữa <span>Doanh nghiệp & Lao động</span></h2>
+          <div class="section-line" style="margin-left:0;"></div>
+        </div>
+        <p class="text-gray-600 leading-relaxed text-sm">
+          Chúng tôi hướng tới việc xây dựng môi trường làm việc hài hòa, ổn định, nơi quyền lợi kinh tế của người sử dụng lao động và quyền lợi pháp lý của người lao động đều được tôn trọng và bảo vệ tối đa.
+        </p>
+        <div>
+          <a class="inline-flex items-center gap-2 text-sm font-semibold hover:underline" style="color:var(--primary);" href="tel:19003330">
+            Thẩm định hồ sơ ban đầu miễn phí
+            <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="reveal-right">
+        <div class="relative max-w-md mx-auto lg:max-w-none">
+          <div class="passport-card p-3 shadow-2xl">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHOXQBJsjEYqghAZcJeGW35bffLqZjXM-fCkvCcnuh1uaqBZTPexbTgifbpoJ0yELGRZF4OZTsZb1OIjyTOZpVguBUWIL6wA_8np3EYkQDoLkpibtT8_-vbZ1jHeL1arGQ39tTAH5A32QFQY0IHcSdP_-JVIHTMq3hitFhb4OoaWYnShJrSSAP4j7VwGjxii5u-Ce21N3l75VZ4i2zJktdMVmWPruChp9d6noTbFLsauF5yJyaueuB7ebjodrqxUhIwWjweqa7fkm-"
+              alt="Hợp tác giải quyết quan hệ lao động hài hòa"
+              class="w-full rounded-2xl object-cover h-[240px] sm:h-[320px]"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+      <!-- Employee benefits -->
+      <div class="premium-card p-8 flex flex-col gap-4 border-l-4 border-l-primary">
+        <h4 class="font-bold text-base text-gray-900 flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary">badge</span>
+          Đối với Người lao động
+        </h4>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-xs text-gray-500 leading-relaxed">
+            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check</span>
+            Hiểu rõ quyền lợi về lương, thưởng, bảo hiểm xã hội và các chế độ phúc lợi hợp pháp khác.
+          </li>
+          <li class="flex items-start gap-3 text-xs text-gray-500 leading-relaxed">
+            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check</span>
+            Được bảo vệ quyền lợi hợp pháp khi bị sa thải, kỷ luật hoặc chấm dứt hợp đồng lao động vô cớ.
+          </li>
+          <li class="flex items-start gap-3 text-xs text-gray-500 leading-relaxed">
+            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check</span>
+            Hỗ trợ đòi lại quyền lợi BHXH, trợ cấp thôi việc, mất việc làm hoặc bồi thường tai nạn lao động.
+          </li>
+          <li class="flex items-start gap-3 text-xs text-gray-500 leading-relaxed">
+            <span class="material-symbols-outlined text-primary text-sm mt-0.5">check</span>
+            Được luật sư đại diện thương lượng hòa giải hoặc trực tiếp khởi kiện bảo vệ quyền lợi trước Tòa.
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Employer benefits -->
+      <div class="premium-card p-8 flex flex-col gap-4 border-l-4 border-l-accent">
+        <h4 class="font-bold text-base text-gray-900 flex items-center gap-3">
+          <span class="material-symbols-outlined text-accent">corporate_fare</span>
+          Đối với Doanh nghiệp
+        </h4>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-xs text-gray-500 leading-relaxed">
+            <span class="material-symbols-outlined text-accent text-sm mt-0.5">check</span>
+            Xây dựng hệ thống hợp đồng lao động, nội quy và quy chế lương thưởng đúng chuẩn pháp luật.
+          </li>
+          <li class="flex items-start gap-3 text-xs text-gray-500 leading-relaxed">
+            <span class="material-symbols-outlined text-accent text-sm mt-0.5">check</span>
+            Giảm thiểu tối đa rủi ro pháp lý bị cơ quan chức năng xử phạt hành chính hoặc khởi kiện từ nhân viên.
+          </li>
+          <li class="flex items-start gap-3 text-xs text-gray-500 leading-relaxed">
+            <span class="material-symbols-outlined text-accent text-sm mt-0.5">check</span>
+            Hỗ trợ toàn bộ thủ tục cấp Giấy phép lao động và cư trú cho lao động nước ngoài an toàn, nhanh chóng.
+          </li>
+          <li class="flex items-start gap-3 text-xs text-gray-500 leading-relaxed">
+            <span class="material-symbols-outlined text-accent text-sm mt-0.5">check</span>
+            Đại diện doanh nghiệp làm việc trực tiếp với thanh tra lao động và cơ quan bảo hiểm xã hội.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIPS TO CHOOSE LAWYER ============ -->
+<section class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="section-label" style="justify-content:center;">Kinh nghiệm</div>
+      <h2 class="section-title">Kinh nghiệm chọn <span>Luật sư Lao động uy tín</span></h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+      <!-- Tip 1 -->
+      <div class="premium-card p-8 text-center flex flex-col items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center font-bold text-primary text-lg">1</div>
+        <h4 class="font-bold text-sm text-gray-900">Chuyên môn sâu</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Lựa chọn các luật sư chuyên trách có kinh nghiệm thực tế sâu rộng xử lý tranh chấp, soạn thảo tài liệu nhân sự lao động phức tạp.</p>
+      </div>
+      <!-- Tip 2 -->
+      <div class="premium-card p-8 text-center flex flex-col items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center font-bold text-primary text-lg">2</div>
+        <h4 class="font-bold text-sm text-gray-900">Minh bạch chi phí</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Báo giá dịch vụ chi tiết, trọn gói rõ ràng ngay từ khâu tư vấn đầu tiên, cam kết không phát sinh các loại phụ phí ngầm.</p>
+      </div>
+      <!-- Tip 3 -->
+      <div class="premium-card p-8 text-center flex flex-col items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center font-bold text-primary text-lg">3</div>
+        <h4 class="font-bold text-sm text-gray-900">Bảo mật thông tin</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Có cam kết bảo mật thông tin hồ sơ và bí mật kinh doanh, cập nhật tiến độ công việc minh bạch trong suốt thời gian thực hiện.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACC BENEFITS ============ -->
+<section class="py-24 bg-mesh-light">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="section-label" style="justify-content:center;">Tại sao chọn ACC</div>
+      <h2 class="section-title">Lợi ích vượt trội tại <span>ACC Law Firm</span></h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div class="benefit-card reveal" style="transition-delay:0s;">
+        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">groups</span></div>
+        <h5 class="font-bold text-xs">Doanh nghiệp tin chọn</h5>
+        <span class="block text-[10px] text-gray-400 mt-1">Hơn 500+ doanh nghiệp</span>
+      </div>
+      <div class="benefit-card reveal" style="transition-delay:0.06s;">
+        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">verified_user</span></div>
+        <h5 class="font-bold text-xs">Đội ngũ chuyên sâu</h5>
+        <span class="block text-[10px] text-gray-400 mt-1">Am hiểu sâu luật lao động</span>
+      </div>
+      <div class="benefit-card reveal" style="transition-delay:0.12s;">
+        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">speed</span></div>
+        <h5 class="font-bold text-xs">Xử lý nhanh chóng</h5>
+        <span class="block text-[10px] text-gray-400 mt-1">Bám sát tiến độ cam kết</span>
+      </div>
+      <div class="benefit-card reveal" style="transition-delay:0.18s;">
+        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">support_agent</span></div>
+        <h5 class="font-bold text-xs">Hỗ trợ 24/7</h5>
+        <span class="block text-[10px] text-gray-400 mt-1">Giải đáp mọi thắc mắc</span>
+      </div>
+      <div class="benefit-card reveal" style="transition-delay:0.24s;">
+        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">security</span></div>
+        <h5 class="font-bold text-xs">Bảo mật thông tin</h5>
+        <span class="block text-[10px] text-gray-400 mt-1">Tuyệt đối an toàn dữ liệu</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="py-24 bg-white" id="faq">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="section-label" style="justify-content:center;">Giải đáp</div>
+      <h2 class="section-title">Câu hỏi <span>thường gặp</span></h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="space-y-3 reveal">
+      <!-- FAQ 1 -->
+      <details class="faq-item">
+        <summary class="faq-summary">
+          Chi phí thuê luật sư tư vấn lao động được tính như thế nào?
+          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          Chi phí được tính căn cứ theo tính chất phức tạp của vụ việc và phạm vi công việc khách hàng yêu cầu (tư vấn theo vụ việc, tư vấn thường xuyên dài hạn theo tháng/năm, hoặc đại diện tranh tụng). ACC luôn báo giá minh bạch trọn gói trong hợp đồng trước khi triển khai công việc.
+        </div>
+      </details>
+      <!-- FAQ 2 -->
+      <details class="faq-item">
+        <summary class="faq-summary">
+          Doanh nghiệp nhỏ có cần ký hợp đồng tư vấn pháp luật lao động thường xuyên không?
+          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          <strong>Có.</strong> Luật sư đồng hành thường xuyên giúp doanh nghiệp thiết lập hệ thống hợp đồng, quy chế, nội quy chặt chẽ đúng luật ngay từ đầu, giảm thiểu tối đa các rủi ro phát sinh tranh chấp hoặc bị thanh tra xử phạt hành chính.
+        </div>
+      </details>
+      <!-- FAQ 3 -->
+      <details class="faq-item">
+        <summary class="faq-summary">
+          Người lao động bị sa thải trái pháp luật cần chuẩn bị những gì?
+          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          Người lao động nên thu thập đầy đủ các hồ sơ liên quan như: Hợp đồng lao động, quyết định kỷ luật/sa thải, bảng lương, chứng từ chứng minh làm việc... để luật sư đánh giá căn cứ pháp lý. ACC sẽ hỗ trợ thương lượng bồi thường hoặc đại diện khởi kiện đòi quyền lợi hợp pháp tại Tòa án.
+        </div>
+      </details>
+      <!-- FAQ 4 -->
+      <details class="faq-item">
+        <summary class="faq-summary">
+          ACC có hỗ trợ làm thủ tục cho người lao động nước ngoài không?
+          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          <strong>Có.</strong> ACC cung cấp dịch vụ tư vấn và làm thủ tục xin cấp Giấy phép lao động (Work Permit), gia hạn giấy phép, xin cấp Thẻ tạm trú (TRC) và Visa thương mại cho chuyên gia nước ngoài làm việc tại Việt Nam trọn gói, nhanh chóng.
+        </div>
+      </details>
+      <!-- FAQ 5 -->
+      <details class="faq-item">
+        <summary class="faq-summary">
+          Tôi có thể tư vấn online mà không cần đến văn phòng của ACC không?
+          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+        </summary>
+        <div class="faq-body">
+          <strong>Hoàn toàn được.</strong> ACC hỗ trợ tư vấn linh hoạt thông qua Zalo, điện thoại, email và các ứng dụng họp trực tuyến. Hồ sơ tài liệu có thể scan gửi online hoặc chuyển phát nhanh, giúp khách hàng ở xa tiết kiệm tối đa thời gian và công sức đi lại.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-section py-28 text-center">
+  <div class="cta-orb" style="width:400px;height:400px;background:rgba(197,160,89,0.08);top:-100px;left:-100px;"></div>
+  <div class="cta-orb" style="width:350px;height:350px;background:rgba(139,28,28,0.15);bottom:-80px;right:-80px;"></div>
+  <div class="max-w-3xl mx-auto px-6 relative z-10">
+    <div class="reveal">
+      <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;margin-bottom:24px;">
+        Hỗ trợ toàn quốc
+      </div>
+      <h2 style="font-family:'Roboto',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:white;line-height:1.2;margin-bottom:20px;">
+        Cần hỗ trợ pháp lý lao động <br/>
+        <span style="background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">ngay hôm nay?</span>
+      </h2>
+      <p class="text-white/60 leading-relaxed mb-10" style="font-size:1rem;max-width:540px;margin:0 auto 40px;">
+        Liên hệ ngay với đội ngũ luật sư chuyên trách lao động của ACC để được thẩm định pháp lý và giải quyết vướng mắc nhanh chóng nhất.
+      </p>
+      <div class="flex justify-center flex-wrap gap-4">
+        <a href="tel:19003330" class="btn-primary" style="font-size:1rem;padding:18px 44px;">
+          <span class="material-symbols-outlined" style="font-size:22px;">call</span>
+          Kết nối ngay - 1900 3330
+        </a>
+        <a href="https://zalo.me/2171133625094125529" target="_blank" class="btn-outline" style="font-size:1rem;padding:18px 44px;">
+          <span class="material-symbols-outlined" style="font-size:22px;">chat</span>
+          Tư vấn Zalo
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Floating Action Buttons -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+  <a href="https://zalo.me/2171133625094125529" target="_blank" class="float-zalo" aria-label="Zalo">
+    <span class="material-symbols-outlined" style="font-size:26px;color:white;">chat</span>
+  </a>
+  <a href="tel:19003330" class="float-phone" aria-label="Phone">
+    <span class="material-symbols-outlined" style="font-size:26px;color:white;">call</span>
+  </a>
+</div>
+
+<script>
+  // ===== Particle generator =====
+  const container = document.getElementById('particles');
+  const count = 35;
+  if (container) {
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 18 + 6;
+      const pOpacity = Math.random() * 0.4 + 0.45;
+      const drift = Math.random() * 60 - 30;
+      p.style.cssText = `
+        width:${size}px;height:${size}px;
+        left:${Math.random()*100}%;
+        animation-duration:${Math.random()*15+12}s;
+        animation-delay:${Math.random()*15}s;
+        --p-opacity:${pOpacity};
+        --drift:${drift}px;
+      `;
+      container.appendChild(p);
+    }
+  }
+
+  // ===== Scroll reveal =====
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  if (revealEls.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.style.transitionDelay || '0s';
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, parseFloat(delay) * 1000);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+  }
+</script>
+</body>
+</html>

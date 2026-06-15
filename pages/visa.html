@@ -16,8 +16,8 @@
           primary: '#8B1C1C',
           'primary-dark': '#5c1114',
           'primary-light': '#b44040',
-          accent: '#D4AF37',
-          'accent-light': '#F5D87C',
+          accent: '#c5a059',
+          'accent-light': '#ebdcae',
           surface: '#fafafa',
           'surface-dark': '#f0f0f0',
         },
@@ -34,8 +34,8 @@
     --primary: #8B1C1C;
     --primary-dark: #5c1114;
     --primary-light: #b44040;
-    --accent: #D4AF37;
-    --accent-light: #F5D87C;
+    --accent: #c5a059;
+    --accent-light: #ebdcae;
   }
 
   * { box-sizing: border-box; }
@@ -98,24 +98,29 @@
     inset: 0;
     overflow: hidden;
     z-index: 1;
+    pointer-events: none;
   }
   .particle {
     position: absolute;
+    bottom: -50px;
     border-radius: 50%;
-    background: rgba(212,175,55,0.15);
+    background: radial-gradient(circle at 30% 30%, rgba(235, 220, 174, 0.45) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(197, 160, 89, 0.35) 100%);
+    border: 1px solid rgba(235, 220, 174, 0.45);
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.25), inset 0 0 6px rgba(255, 255, 255, 0.25);
     animation: float-particle linear infinite;
+    opacity: 0;
   }
   @keyframes float-particle {
-    0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+    15% { opacity: var(--p-opacity, 0.6); }
+    85% { opacity: var(--p-opacity, 0.6); }
+    100% { transform: translateY(-115vh) translateX(var(--drift, 20px)) rotate(360deg); opacity: 0; }
   }
   .hero-glow {
     position: absolute;
     width: 600px; height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(197,160,89,0.08) 0%, transparent 70%);
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     animation: pulse-glow 4s ease-in-out infinite;
@@ -130,9 +135,9 @@
     align-items: center;
     gap: 8px;
     padding: 6px 16px;
-    border: 1px solid rgba(212,175,55,0.5);
+    border: 1px solid rgba(197,160,89,0.5);
     border-radius: 100px;
-    background: rgba(212,175,55,0.1);
+    background: rgba(197,160,89,0.1);
     backdrop-filter: blur(10px);
     color: var(--accent-light);
     font-size: 0.75rem;
@@ -171,7 +176,7 @@
     line-height: 1.1;
   }
   .hero-title span {
-    background: linear-gradient(135deg, #F5D87C, #D4AF37, #F5D87C);
+    background: linear-gradient(135deg, #ebdcae, #c5a059, #ebdcae);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -193,14 +198,14 @@
     align-items: center;
     gap: 10px;
     padding: 16px 36px;
-    background: linear-gradient(135deg, var(--accent) 0%, #B8960A 100%);
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
     color: #1a0404;
     font-weight: 700;
     font-size: 0.9rem;
     border-radius: 100px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 30px rgba(212,175,55,0.4);
+    box-shadow: 0 8px 30px rgba(197,160,89,0.4);
     position: relative;
     overflow: hidden;
   }
@@ -213,7 +218,7 @@
     transition: left 0.5s ease;
   }
   .btn-primary:hover::before { left: 100%; }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(212,175,55,0.5); }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(197,160,89,0.5); }
 
   .btn-outline {
     display: inline-flex;
@@ -264,7 +269,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(212,175,55,0.05), transparent, rgba(139,28,28,0.05));
+    background: linear-gradient(135deg, rgba(197,160,89,0.05), transparent, rgba(139,28,28,0.05));
     pointer-events: none;
   }
 
@@ -443,7 +448,7 @@
     top: -50%; right: -10%;
     width: 500px; height: 500px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(212,175,55,0.08), transparent 70%);
+    background: radial-gradient(circle, rgba(197,160,89,0.08), transparent 70%);
     pointer-events: none;
   }
   .cost-card {
@@ -514,7 +519,7 @@
   }
   .country-card-header {
     padding: 24px 28px;
-    background: linear-gradient(135deg, rgba(139,28,28,0.06), rgba(212,175,55,0.04));
+    background: linear-gradient(135deg, rgba(139,28,28,0.06), rgba(197,160,89,0.04));
     border-bottom: 1px solid rgba(139,28,28,0.06);
     display: flex;
     align-items: center;
@@ -594,7 +599,7 @@
   .benefit-icon {
     width: 56px; height: 56px;
     border-radius: 16px;
-    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(212,175,55,0.08));
+    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(197,160,89,0.08));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -750,7 +755,7 @@
   .bg-mesh-light {
     background-color: #fafafa;
     background-image: radial-gradient(at 20% 30%, rgba(139,28,28,0.03) 0, transparent 50%),
-                      radial-gradient(at 80% 70%, rgba(212,175,55,0.03) 0, transparent 50%);
+                      radial-gradient(at 80% 70%, rgba(197,160,89,0.03) 0, transparent 50%);
   }
 </style>
 </head>
@@ -795,35 +800,34 @@
         </div>
 
         <!-- Stats -->
-        <div class="hero-stats flex flex-wrap gap-0 pt-4">
+        <div class="hero-stats flex flex-wrap gap-x-8 gap-y-4 pt-4">
           <div class="stat-item">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#F5D87C,#D4AF37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">5000+</div>
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">5000+</div>
             <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Hồ sơ thành công</div>
           </div>
-          <div class="stat-item" style="margin-left:28px;">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#F5D87C,#D4AF37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">98%</div>
+          <div class="stat-item">
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">98%</div>
             <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Tỷ lệ đậu visa</div>
           </div>
-          <div class="stat-item" style="margin-left:28px;">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#F5D87C,#D4AF37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">50+</div>
+          <div class="stat-item">
+            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">50+</div>
             <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Quốc gia hỗ trợ</div>
           </div>
         </div>
       </div>
 
       <!-- Right -->
-      <div class="hidden lg:block hero-card">
-        <div class="relative">
+      <div class="block lg:mt-0 mt-8 hero-card">
+        <div class="relative max-w-md mx-auto lg:max-w-none">
           <div class="passport-card p-3 shadow-2xl">
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV-F_yah2KWKNndViik0Jkmj1RnfMUcZE7949OGidvAPG4xCBJvl74dT_X32DXykEHa8hmUsm2ive78pS5B3-peS5jQGQHEDVCOE9C0kIc7VfE7BwdcdXKz1k5yDIYW1qleG6_aE9IS3p5SvUVweHrn74j7rNJLj1RB5s-fACJY_y4Tx7kIrkL5Bdq4wqOLVCBcpLoVHlbzVRfePXQuDRPk73DsFBMgwJVPV0dJa8nwtcjMAUKgUjDIPveGvmcoE_Vaalo1AT31SQ1"
               alt="Dịch vụ làm Visa ACC Law Firm"
-              class="w-full rounded-2xl object-cover"
-              style="height:380px;"
+              class="w-full rounded-2xl object-cover h-[280px] sm:h-[380px]"
             />
           </div>
           <!-- Floating badges -->
-          <div class="float-badge" style="bottom:-20px;left:20px;z-index:10;">
+          <div class="float-badge sm:flex hidden" style="bottom:-20px;left:20px;z-index:10;">
             <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
               <span class="material-symbols-outlined" style="color:white;font-size:18px;">verified</span>
             </div>
@@ -832,8 +836,8 @@
               <div style="font-size:0.72rem;color:#888;">Hoàn tiền nếu không đậu</div>
             </div>
           </div>
-          <div class="float-badge" style="top:20px;right:-20px;z-index:10;animation-delay:1.5s;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#D4AF37,#B8960A);display:flex;align-items:center;justify-content:center;">
+          <div class="float-badge sm:flex hidden" style="top:20px;right:-20px;z-index:10;animation-delay:1.5s;">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#c5a059,#99732f);display:flex;align-items:center;justify-content:center;">
               <span class="material-symbols-outlined" style="color:white;font-size:18px;">star</span>
             </div>
             <div>
@@ -857,53 +861,72 @@
 <!-- ============ WHAT IS VISA ============ -->
 <section class="py-24 bg-mesh-light" id="visa-la-gi">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <!-- Top row: Text on Left, Image on Right -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
       <div class="reveal-left space-y-6">
         <div>
           <div class="section-label">Kiến thức cơ bản</div>
           <h2 class="section-title">Visa là gì?</h2>
           <div class="section-line" style="margin-left:0;"></div>
         </div>
-        <p class="text-gray-600 leading-relaxed">
-          <strong class="text-gray-900">Visa (hay còn gọi là Thị thực)</strong> là một loại chứng nhận do cơ quan có thẩm quyền của một quốc gia cấp, xác nhận rằng một cá nhân được phép nhập cảnh, xuất cảnh hoặc quá cảnh tại quốc gia đó trong một khoảng thời gian nhất định.
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          <strong class="text-gray-900">Visa (Thị thực)</strong> là chứng nhận do cơ quan có thẩm quyền của một quốc gia cấp, xác nhận cá nhân được phép nhập cảnh, xuất cảnh hoặc quá cảnh tại quốc gia đó trong khoảng thời gian nhất định.
         </p>
         <p class="text-gray-500 leading-relaxed text-sm">
-          Tùy thuộc vào mục đích của chuyến đi (du lịch, công tác, học tập), thị thực sẽ có những yêu cầu và thời hạn khác nhau. Việc sở hữu một bộ hồ sơ minh bạch là chìa khóa để vượt qua rào cản hành chính này.
+          Tùy mục đích chuyến đi (du lịch, công tác, du học), thị thực có yêu cầu khác nhau. Việc sở hữu một bộ hồ sơ minh bạch là chìa khóa để vượt qua rào cản hành chính này.
         </p>
-        <a href="#quy-trinh" class="inline-flex items-center gap-2 text-sm font-semibold" style="color:var(--primary);">
-          Xem quy trình làm việc
+        <a href="#quy-trinh" class="inline-flex items-center gap-2 text-sm font-semibold hover:underline" style="color:var(--primary);">
+          Xem quy trình làm việc từ A-Z
           <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
         </a>
       </div>
-      <div class="reveal-right grid grid-cols-2 gap-4">
-        <div class="premium-card p-8 flex flex-col items-center text-center gap-4">
-          <div class="icon-circle">
-            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">approval_delegation</span>
+      
+      <div class="reveal-right">
+        <div class="relative max-w-md mx-auto lg:max-w-none">
+          <div class="passport-card p-3 shadow-2xl">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHOXQBJsjEYqghAZcJeGW35bffLqZjXM-fCkvCcnuh1uaqBZTPexbTgifbpoJ0yELGRZF4OZTsZb1OIjyTOZpVguBUWIL6wA_8np3EYkQDoLkpibtT8_-vbZ1jHeL1arGQ39tTAH5A32QFQY0IHcSdP_-JVIHTMq3hitFhb4OoaWYnShJrSSAP4j7VwGjxii5u-Ce21N3l75VZ4i2zJktdMVmWPruChp9d6noTbFLsauF5yJyaueuB7ebjodrqxUhIwWjweqa7fkm-"
+              alt="Luật sư ACC tư vấn làm Visa chuyên nghiệp"
+              class="w-full rounded-2xl object-cover h-[240px] sm:h-[320px]"
+            />
           </div>
-          <h4 class="font-bold text-base">Xác thực</h4>
-          <p class="text-xs text-gray-500">Chứng nhận hợp pháp từ cơ quan nhà nước</p>
         </div>
-        <div class="premium-card p-8 flex flex-col items-center text-center gap-4" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));">
-          <div style="width:64px;height:64px;border-radius:18px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;">
-            <span class="material-symbols-outlined text-2xl" style="color:white;">flight_land</span>
-          </div>
-          <h4 class="font-bold text-base text-white">Nhập cảnh</h4>
-          <p class="text-xs text-white/70">Được phép nhập cảnh hợp pháp</p>
+      </div>
+    </div>
+    
+    <!-- Bottom row: 4 key cards horizontally -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+      <!-- Card 1 -->
+      <div class="premium-card p-8 flex flex-col items-center text-center gap-4">
+        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">approval_delegation</span>
         </div>
-        <div class="premium-card p-8 flex flex-col items-center text-center gap-4" style="background:linear-gradient(135deg,rgba(212,175,55,0.1),rgba(212,175,55,0.04));">
-          <div style="width:64px;height:64px;border-radius:18px;background:rgba(212,175,55,0.15);display:flex;align-items:center;justify-content:center;">
-            <span class="material-symbols-outlined text-2xl" style="color:#B8960A;">verified_user</span>
-          </div>
-          <h4 class="font-bold text-base">An toàn</h4>
-          <p class="text-xs text-gray-500">Đảm bảo an ninh quốc gia</p>
+        <h4 class="font-bold text-base">Xác thực</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Chứng nhận hợp pháp từ cơ quan nhà nước sở tại</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="premium-card p-8 flex flex-col items-center text-center gap-4" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;">
+          <span class="material-symbols-outlined text-2xl" style="color:white;">flight_land</span>
         </div>
-        <div class="premium-card p-8 flex flex-col items-center text-center gap-4">
-          <div class="icon-circle">
-            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">timer</span>
-          </div>
-          <h4 class="font-bold text-base">Thời hạn</h4>
-          <p class="text-xs text-gray-500">Quy định rõ thời gian lưu trú</p>
+        <h4 class="font-bold text-base text-white">Nhập cảnh</h4>
+        <p class="text-xs text-white/70 leading-relaxed">Quyền nhập cảnh và lưu trú hợp pháp tại quốc gia đến</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="premium-card p-8 flex flex-col items-center text-center gap-4" style="background:linear-gradient(135deg,rgba(197,160,89,0.1),rgba(197,160,89,0.04));border-color:rgba(197,160,89,0.25);">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+          <span class="material-symbols-outlined text-2xl" style="color:#99732f;">verified_user</span>
         </div>
+        <h4 class="font-bold text-base text-gray-900">An toàn</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Đảm bảo các quy định an ninh quốc tế được đáp ứng</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="premium-card p-8 flex flex-col items-center text-center gap-4">
+        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">timer</span>
+        </div>
+        <h4 class="font-bold text-base">Thời hạn</h4>
+        <p class="text-xs text-gray-500 leading-relaxed">Quy định rõ ràng về số ngày lưu trú tối đa cho phép</p>
       </div>
     </div>
   </div>
@@ -912,42 +935,65 @@
 <!-- ============ CONDITIONS ============ -->
 <section class="py-24" id="dieu-kien" style="background:white;">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16 reveal">
-      <div class="section-label" style="justify-content:center;">Pháp lý</div>
-      <h2 class="section-title">Điều kiện cấp Visa theo <span>Luật 2014</span></h2>
-      <div class="section-line"></div>
-      <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm leading-relaxed">
-        Các quy định nghiêm ngặt mà ứng viên cần tuân thủ để đảm bảo khả năng đậu cao nhất.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="premium-card p-8 reveal" style="transition-delay:0s;">
-        <div class="icon-circle mb-6">
-          <span class="material-symbols-outlined text-3xl" style="color:var(--primary);">menu_book</span>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Left Column: Title & Conditions Grid -->
+      <div class="lg:col-span-7 space-y-8 reveal-left">
+        <div>
+          <div class="section-label">Pháp lý</div>
+          <h2 class="section-title">Điều kiện cấp Visa theo <span>Luật 2014</span></h2>
+          <div class="section-line" style="margin-left:0;"></div>
+          <p class="text-gray-500 mt-4 text-sm leading-relaxed">
+            Các quy định nghiêm ngặt mà ứng viên cần tuân thủ để đảm bảo khả năng đậu thị thực cao nhất.
+          </p>
         </div>
-        <h3 class="font-bold text-lg mb-3">Hộ chiếu hợp lệ</h3>
-        <p class="text-sm text-gray-500 leading-relaxed">Phải còn thời hạn ít nhất <strong>6 tháng</strong> và trang trống theo quy định của quốc gia đến.</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Condition 1 -->
+          <div class="premium-card p-6">
+            <div class="icon-circle mb-4" style="width:48px;height:48px;border-radius:12px;">
+              <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">menu_book</span>
+            </div>
+            <h3 class="font-bold text-sm mb-2">Hộ chiếu hợp lệ</h3>
+            <p class="text-xs text-gray-500 leading-relaxed">Còn thời hạn ít nhất <strong>6 tháng</strong> và có trang trống theo quy định.</p>
+          </div>
+          <!-- Condition 2 -->
+          <div class="premium-card p-6">
+            <div class="icon-circle mb-4" style="width:48px;height:48px;border-radius:12px;">
+              <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">handshake</span>
+            </div>
+            <h3 class="font-bold text-sm mb-2">Có người bảo lãnh</h3>
+            <p class="text-xs text-gray-500 leading-relaxed">Có tổ chức, cá nhân tại nước sở tại mời hoặc bảo lãnh nhập cảnh.</p>
+          </div>
+          <!-- Condition 3 -->
+          <div class="premium-card p-6">
+            <div class="icon-circle mb-4" style="width:48px;height:48px;border-radius:12px;">
+              <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">gpp_maybe</span>
+            </div>
+            <h3 class="font-bold text-sm mb-2">Không bị cấm nhập cảnh</h3>
+            <p class="text-xs text-gray-500 leading-relaxed">Không thuộc các trường hợp chưa cho nhập cảnh theo an ninh quốc gia.</p>
+          </div>
+          <!-- Condition 4 -->
+          <div class="premium-card p-6">
+            <div class="icon-circle mb-4" style="width:48px;height:48px;border-radius:12px;">
+              <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">receipt_long</span>
+            </div>
+            <h3 class="font-bold text-sm mb-2">Chứng minh mục đích</h3>
+            <p class="text-xs text-gray-500 leading-relaxed">Chứng minh rõ ràng mục đích nhập cảnh bằng các hồ sơ, giấy tờ hợp lệ.</p>
+          </div>
+        </div>
       </div>
-      <div class="premium-card p-8 reveal" style="transition-delay:0.1s;">
-        <div class="icon-circle mb-6">
-          <span class="material-symbols-outlined text-3xl" style="color:var(--primary);">handshake</span>
+
+      <!-- Right Column: Image 4 -->
+      <div class="lg:col-span-5 reveal-right">
+        <div class="relative max-w-sm mx-auto">
+          <div class="passport-card p-3 shadow-2xl">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvL42XSMOHg_WTKH5Q1nJz2mWpXIY0Y5h65cm4D9U5gq63Zm3x4nqvxgd1Fz1TDBjKykdtFhS4-B4t1DLA-WG3_TmnDOyntYgNrY8D-1nv_lcEGQXOveQ5vQFb167kBFhT-8hsPlvpfDGEnSu0yskL7XG3D3G9f-ZTU8Mzh-6e9UL1UdSjpAPU8N6I8eKbw6nxXWko89S5irRnyqIo8dbpnh8hpwjbIFOaDvf_BMMFaqKG0L2w2SsjGhUKmGST7u1pRdie0is6Ny-R"
+              alt="Luật sư ACC hỗ trợ chuẩn bị thủ tục hồ sơ làm Visa"
+              class="w-full rounded-2xl object-cover h-[320px] sm:h-[380px]"
+            />
+          </div>
         </div>
-        <h3 class="font-bold text-lg mb-3">Có người bảo lãnh</h3>
-        <p class="text-sm text-gray-500 leading-relaxed">Có tổ chức, cá nhân tại nước sở tại mời hoặc bảo lãnh nhập cảnh theo quy định.</p>
-      </div>
-      <div class="premium-card p-8 reveal" style="transition-delay:0.2s;">
-        <div class="icon-circle mb-6">
-          <span class="material-symbols-outlined text-3xl" style="color:var(--primary);">gpp_maybe</span>
-        </div>
-        <h3 class="font-bold text-lg mb-3">Không bị cấm</h3>
-        <p class="text-sm text-gray-500 leading-relaxed">Không thuộc các trường hợp chưa cho nhập cảnh theo quy định an ninh quốc gia.</p>
-      </div>
-      <div class="premium-card p-8 reveal" style="transition-delay:0.3s;">
-        <div class="icon-circle mb-6">
-          <span class="material-symbols-outlined text-3xl" style="color:var(--primary);">receipt_long</span>
-        </div>
-        <h3 class="font-bold text-lg mb-3">Chứng minh mục đích</h3>
-        <p class="text-sm text-gray-500 leading-relaxed">Chứng minh rõ ràng mục đích nhập cảnh thông qua các giấy tờ chứng thực.</p>
       </div>
     </div>
   </div>
@@ -1007,56 +1053,32 @@
       <div class="section-label" style="justify-content:center;">Chuẩn bị</div>
       <h2 class="section-title">Hồ sơ cần <span>chuẩn bị</span></h2>
       <div class="section-line"></div>
-      <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm">ACC Law Firm sẽ hỗ trợ bạn chuẩn bị đầy đủ và đúng quy định.</p>
+      <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm">ACC Law Firm sẽ hỗ trợ bạn chuẩn bị đầy đủ và đúng quy định của Đại sứ quán.</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 reveal">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
       <div class="check-item">
         <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Đơn xin visa theo mẫu của Đại sứ quán/Lãnh sự quán (ACC hỗ trợ chuẩn bị)</span>
+        <span class="text-sm text-gray-600 leading-relaxed">Đơn xin visa theo mẫu Đại sứ quán (ACC hỗ trợ điền tờ khai chuẩn xác)</span>
       </div>
       <div class="check-item">
         <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Giấy tờ chứng minh mục đích lưu trú: thư mời, chứng minh tài chính, hợp đồng lao động</span>
+        <span class="text-sm text-gray-600 leading-relaxed">Hộ chiếu gốc còn thời hạn từ 6 tháng trở lên có trang trống để dán visa</span>
       </div>
       <div class="check-item">
         <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Hộ chiếu gốc còn hạn ít nhất 6 tháng kể từ ngày dự định rời quốc gia đến</span>
+        <span class="text-sm text-gray-600 leading-relaxed">02 ảnh chân dung 4x6 cm nền trắng, chụp rõ nét trong vòng 6 tháng gần nhất</span>
       </div>
       <div class="check-item">
         <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Hộ chiếu cũ (nếu có)</span>
+        <span class="text-sm text-gray-600 leading-relaxed">Giấy tờ chứng minh tài chính: Sổ tiết kiệm, xác nhận số dư tài khoản, nhà đất</span>
       </div>
       <div class="check-item">
         <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">02 ảnh 4x6 cm nền trắng, chụp không quá 6 tháng</span>
+        <span class="text-sm text-gray-600 leading-relaxed">Giấy tờ chứng minh công việc: HĐLĐ, quyết định bổ nhiệm, GPKD (nếu là chủ DN)</span>
       </div>
       <div class="check-item">
         <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Tờ khai chi tiết về thân nhân</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Giấy khai sinh</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Chứng minh nhân dân hoặc Căn cước công dân</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Giấy đăng ký kết hôn (nếu đã kết hôn)</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Quyết định ly hôn (nếu đã ly hôn)</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Giấy chứng nhận quân sự hoặc giấy xuất ngũ (nếu đã từng phục vụ trong quân đội)</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Giấy chứng nhận sức khỏe và lý lịch tư pháp (nếu được yêu cầu)</span>
+        <span class="text-sm text-gray-600 leading-relaxed">Giấy tờ tùy thân: Căn cước công dân, hộ khẩu, giấy đăng ký kết hôn (nếu có)</span>
       </div>
     </div>
   </div>
@@ -1066,7 +1088,7 @@
 <section class="cost-section py-24">
   <div class="max-w-3xl mx-auto px-6 relative z-10">
     <div class="text-center mb-12 reveal">
-      <div class="section-label" style="justify-content:center;background:rgba(212,175,55,0.15);color:#F5D87C;">Chi phí</div>
+      <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;">Chi phí</div>
       <h2 class="section-title text-white">Chi phí dịch vụ <span style="color:var(--accent-light);">minh bạch</span></h2>
       <div class="section-line" style="background:linear-gradient(90deg,var(--accent),var(--accent-light));"></div>
     </div>
@@ -1074,7 +1096,7 @@
       <div style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08);">
         <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
           <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(212,175,55,0.15);display:flex;align-items:center;justify-content:center;">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
               <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">description</span>
             </div>
             <span class="text-white/80 text-sm">Phí chuẩn bị hồ sơ &amp; tư vấn</span>
@@ -1083,7 +1105,7 @@
         </div>
         <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
           <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(212,175,55,0.15);display:flex;align-items:center;justify-content:center;">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
               <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">gavel</span>
             </div>
             <span class="text-white/80 text-sm">Phí xử lý pháp lý &amp; công chứng</span>
@@ -1092,7 +1114,7 @@
         </div>
         <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
           <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(212,175,55,0.15);display:flex;align-items:center;justify-content:center;">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
               <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">translate</span>
             </div>
             <span class="text-white/80 text-sm">Phí dịch thuật công chứng</span>
@@ -1101,7 +1123,7 @@
         </div>
         <div class="cost-row" style="padding:16px 0;">
           <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(212,175,55,0.15);display:flex;align-items:center;justify-content:center;">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
               <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">payments</span>
             </div>
             <span class="text-white/80 text-sm">Lệ phí lãnh sự (Thu hộ)</span>
@@ -1109,7 +1131,7 @@
           <span class="font-bold text-white text-sm">Theo biểu giá SQ</span>
         </div>
       </div>
-      <div style="padding:20px 32px;background:rgba(212,175,55,0.06);display:flex;align-items:center;gap:12px;">
+      <div style="padding:20px 32px;background:rgba(197,160,89,0.06);display:flex;align-items:center;gap:12px;">
         <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;">info</span>
         <p class="text-white/50 text-xs italic">ACC cam kết không phát sinh chi phí ngoài hợp đồng đã ký kết.</p>
       </div>
@@ -1240,13 +1262,12 @@
 <!-- ============ REJECTION REASONS ============ -->
 <section class="py-24 bg-mesh-light">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div class="reveal-left">
         <img
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-hivavczfeIOFewmLQPXp18__QYbVGah6kI-fdwuAwAZci_NCpnhC4GPhP9A84PSLVQZK0eOQhAhKmulANc2pcwwKcPEi9nEdRbFTFAihGfjGD4QqKeDhbnrlnCK20oBsTfPfxQ9z4bzN06YXb7q0EKS7ORpasGuUL9DLOPpFuZAVSChvXbIwH6WVR83dMaLN8o7QoVY-P_cfEmo2ryEmSnPoI3k3o4GUBD3KXHoQRpAZigy-dnIbNbtbHIvnQBwmzr8gHzFL8-Lf"
           alt="Tại sao visa bị từ chối"
-          class="w-full rounded-3xl shadow-2xl object-cover"
-          style="height:480px;"
+          class="w-full rounded-3xl shadow-2xl object-cover h-[280px] md:h-[480px]"
         />
       </div>
       <div class="reveal-right space-y-6">
@@ -1255,47 +1276,33 @@
           <h2 class="section-title">Tại sao Visa của bạn <span>bị từ chối?</span></h2>
           <div class="section-line" style="margin-left:0;"></div>
         </div>
-        <div class="space-y-2">
+        <div class="space-y-1">
           <div class="rejection-item">
             <span class="rejection-number">01</span>
             <div>
               <h4 class="font-bold text-base mb-1">Mục đích chuyến đi không rõ ràng</h4>
-              <p class="text-gray-500 text-sm">Thiếu lịch trình chi tiết hoặc các giấy tờ chứng minh sự ràng buộc tại quê nhà.</p>
+              <p class="text-gray-500 text-sm">Thiếu lịch trình chi tiết hoặc các giấy tờ chứng minh sự ràng buộc chặt chẽ tại quê nhà.</p>
             </div>
           </div>
           <div class="rejection-item">
             <span class="rejection-number">02</span>
             <div>
-              <h4 class="font-bold text-base mb-1">Vấn đề tài chính</h4>
-              <p class="text-gray-500 text-sm">Không chứng minh đủ khả năng chi trả cho toàn bộ chuyến đi.</p>
+              <h4 class="font-bold text-base mb-1">Vấn đề chứng minh tài chính yếu</h4>
+              <p class="text-gray-500 text-sm">Số dư tài khoản không đủ hoặc nguồn gốc thu nhập không rõ ràng để chi trả toàn bộ chuyến đi.</p>
             </div>
           </div>
           <div class="rejection-item">
             <span class="rejection-number">03</span>
             <div>
-              <h4 class="font-bold text-base mb-1">Lịch sử du lịch kém</h4>
-              <p class="text-gray-500 text-sm">Hộ chiếu trắng hoặc từng có tiền sử vi phạm thời hạn visa trước đó.</p>
+              <h4 class="font-bold text-base mb-1">Lịch sử du lịch quá ít (Hộ chiếu trắng)</h4>
+              <p class="text-gray-500 text-sm">Chưa từng đi nước ngoài hoặc từng có lịch sử vi phạm thời hạn cư trú trước đó.</p>
             </div>
           </div>
           <div class="rejection-item">
             <span class="rejection-number">04</span>
             <div>
-              <h4 class="font-bold text-base mb-1">Sai sót trong giấy tờ</h4>
-              <p class="text-gray-500 text-sm">Thông tin không nhất quán giữa tờ khai và hồ sơ thực tế.</p>
-            </div>
-          </div>
-          <div class="rejection-item">
-            <span class="rejection-number">05</span>
-            <div>
-              <h4 class="font-bold text-base mb-1">Yếu tố an ninh</h4>
-              <p class="text-gray-500 text-sm">Có tiền án, tiền sự hoặc liên quan đến các hoạt động bị hạn chế.</p>
-            </div>
-          </div>
-          <div class="rejection-item">
-            <span class="rejection-number">06</span>
-            <div>
-              <h4 class="font-bold text-base mb-1">Thay đổi chính sách nhập cảnh</h4>
-              <p class="text-gray-500 text-sm">Chính sách hoặc tình hình chính trị - xã hội thay đổi, ảnh hưởng đến việc xét duyệt.</p>
+              <h4 class="font-bold text-base mb-1">Sai sót hoặc thiếu sót trong giấy tờ</h4>
+              <p class="text-gray-500 text-sm">Thông tin khai báo mâu thuẫn, thiếu tính nhất quán giữa tờ khai và hồ sơ thực tế.</p>
             </div>
           </div>
         </div>
@@ -1309,49 +1316,33 @@
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-14 reveal">
       <div class="section-label" style="justify-content:center;">Tại sao chọn chúng tôi</div>
-      <h2 class="section-title">10 Lợi ích khi chọn <span>ACC Law Firm</span></h2>
+      <h2 class="section-title">Lợi ích vượt trội khi chọn <span>ACC Law Firm</span></h2>
       <div class="section-line"></div>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
       <div class="benefit-card reveal" style="transition-delay:0s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">update</span></div>
-        <h5 class="font-bold text-sm">Cập nhật nhanh</h5>
-      </div>
-      <div class="benefit-card reveal" style="transition-delay:0.05s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">lock</span></div>
-        <h5 class="font-bold text-sm">Bảo mật dữ liệu</h5>
-      </div>
-      <div class="benefit-card reveal" style="transition-delay:0.1s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">support_agent</span></div>
-        <h5 class="font-bold text-sm">Hỗ trợ 24/7</h5>
-      </div>
-      <div class="benefit-card reveal" style="transition-delay:0.15s;">
         <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">assignment_turned_in</span></div>
         <h5 class="font-bold text-sm">Tỷ lệ đậu cao</h5>
       </div>
-      <div class="benefit-card reveal" style="transition-delay:0.2s;">
+      <div class="benefit-card reveal" style="transition-delay:0.05s;">
         <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">verified</span></div>
         <h5 class="font-bold text-sm">Đội ngũ luật sư</h5>
       </div>
-      <div class="benefit-card reveal" style="transition-delay:0.25s;">
+      <div class="benefit-card reveal" style="transition-delay:0.1s;">
         <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">payments</span></div>
         <h5 class="font-bold text-sm">Giá cả minh bạch</h5>
       </div>
-      <div class="benefit-card reveal" style="transition-delay:0.3s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">history_edu</span></div>
-        <h5 class="font-bold text-sm">Hồ sơ sạch</h5>
-      </div>
-      <div class="benefit-card reveal" style="transition-delay:0.35s;">
+      <div class="benefit-card reveal" style="transition-delay:0.15s;">
         <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">speed</span></div>
         <h5 class="font-bold text-sm">Xử lý nhanh</h5>
       </div>
-      <div class="benefit-card reveal" style="transition-delay:0.4s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">gavel</span></div>
-        <h5 class="font-bold text-sm">Đúng pháp luật</h5>
+      <div class="benefit-card reveal" style="transition-delay:0.2s;">
+        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">lock</span></div>
+        <h5 class="font-bold text-sm">Bảo mật dữ liệu</h5>
       </div>
-      <div class="benefit-card reveal" style="transition-delay:0.45s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">sentiment_very_satisfied</span></div>
-        <h5 class="font-bold text-sm">Tận tâm phục vụ</h5>
+      <div class="benefit-card reveal" style="transition-delay:0.25s;">
+        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">support_agent</span></div>
+        <h5 class="font-bold text-sm">Hỗ trợ 24/7</h5>
       </div>
     </div>
   </div>
@@ -1368,56 +1359,38 @@
     <div class="space-y-3 reveal">
       <details class="faq-item">
         <summary class="faq-summary">
-          Làm visa mất bao lâu?
+          Làm visa mất thời gian bao lâu?
           <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
         </summary>
         <div class="faq-body">
-          Thời gian trung bình từ <strong>7-15 ngày</strong> làm việc tùy quốc gia và loại visa. Các dịch vụ khẩn có thể nhanh hơn nhưng yêu cầu chi phí cao hơn. ACC sẽ tư vấn lộ trình phù hợp với nhu cầu của bạn.
+          Thời gian trung bình từ <strong>7 - 15 ngày làm việc</strong> tùy quốc gia và diện hồ sơ. Các trường hợp khẩn có thể xử lý nhanh hơn theo biểu phí bổ sung.
         </div>
       </details>
       <details class="faq-item">
         <summary class="faq-summary">
-          Nếu bị trượt visa có được hoàn tiền không?
+          Bị trượt visa có được hoàn lại phí dịch vụ không?
           <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
         </summary>
         <div class="faq-body">
-          Lệ phí nộp cho lãnh sự thường không được hoàn lại. Tuy nhiên, phí dịch vụ tư vấn của ACC sẽ được xem xét hoàn trả một phần tùy theo điều khoản hợp đồng cam kết tỷ lệ đậu.
+          Lệ phí nộp Lãnh sự sẽ không được hoàn. Tuy nhiên, phí dịch vụ của ACC sẽ được cam kết hoàn trả một phần hoặc toàn bộ tùy theo thỏa thuận hợp đồng đã ký.
         </div>
       </details>
       <details class="faq-item">
         <summary class="faq-summary">
-          Tôi có cần đi phỏng vấn trực tiếp không?
+          Tôi có bắt buộc phải đi phỏng vấn trực tiếp không?
           <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
         </summary>
         <div class="faq-body">
-          Một số quốc gia như Mỹ, Thụy Sĩ yêu cầu phỏng vấn trực tiếp. ACC sẽ hỗ trợ bạn <strong>tập dượt các câu hỏi phỏng vấn</strong> để tăng sự tự tin và tối đa hóa tỷ lệ thành công.
+          Tùy quốc gia (như Mỹ, Thụy Sĩ...) yêu cầu phỏng vấn trực tiếp. ACC sẽ hỗ trợ luyện phỏng vấn thử 1-1 giúp bạn chuẩn bị câu trả lời tối ưu nhất.
         </div>
       </details>
       <details class="faq-item">
         <summary class="faq-summary">
-          Hộ chiếu còn hạn bao lâu thì làm được Visa?
+          Hộ chiếu còn hạn bao lâu thì nộp xin visa được?
           <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
         </summary>
         <div class="faq-body">
-          Hầu hết các nước yêu cầu hộ chiếu phải còn hạn ít nhất <strong>6 tháng</strong> tính từ ngày dự kiến rời khỏi quốc gia đó. Nên kiểm tra trước ít nhất 3 tháng trước chuyến đi.
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Visa có hiệu lực trong bao lâu?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          Thời hạn visa không cố định mà phụ thuộc vào từng quốc gia và loại thị thực, có thể từ 1-3 tháng đến 1, 3 hoặc 5 năm. Cần phân biệt giữa <strong>thời hạn visa</strong> (được nhập cảnh trong khoảng thời gian nào) và <strong>thời gian lưu trú</strong> (được ở lại bao nhiêu ngày mỗi lần nhập cảnh).
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Visa bị từ chối có xin lại được không?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          Có thể. Bạn vẫn được quyền nộp lại hồ sơ sau khi bị từ chối. Tuy nhiên cần xác định rõ lý do bị từ chối trước đó để điều chỉnh, bổ sung đầy đủ hơn, tránh lặp lại lỗi cũ. ACC có kinh nghiệm xử lý nhiều trường hợp phức tạp thành công.
+          Hộ chiếu của bạn bắt buộc phải còn hạn **tối thiểu 6 tháng** tính từ ngày dự kiến xuất cảnh khỏi quốc gia điểm đến.
         </div>
       </details>
     </div>
@@ -1426,16 +1399,16 @@
 
 <!-- ============ CTA ============ -->
 <section class="cta-section py-28 text-center">
-  <div class="cta-orb" style="width:400px;height:400px;background:rgba(212,175,55,0.08);top:-100px;left:-100px;"></div>
+  <div class="cta-orb" style="width:400px;height:400px;background:rgba(197,160,89,0.08);top:-100px;left:-100px;"></div>
   <div class="cta-orb" style="width:350px;height:350px;background:rgba(139,28,28,0.15);bottom:-80px;right:-80px;"></div>
   <div class="max-w-3xl mx-auto px-6 relative z-10">
     <div class="reveal">
-      <div class="section-label" style="justify-content:center;background:rgba(212,175,55,0.15);color:#F5D87C;margin-bottom:24px;">
+      <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;margin-bottom:24px;">
         Bắt đầu ngay hôm nay
       </div>
       <h2 style="font-family:'Roboto',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:white;line-height:1.2;margin-bottom:20px;">
         Sẵn sàng bắt đầu <br/>
-        <span style="background:linear-gradient(135deg,#F5D87C,#D4AF37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">hành trình của bạn?</span>
+        <span style="background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">hành trình của bạn?</span>
       </h2>
       <p class="text-white/60 leading-relaxed mb-10" style="font-size:1rem;max-width:480px;margin:0 auto 40px;">
         Liên hệ ngay với đội ngũ luật sư của ACC để được thẩm định hồ sơ <strong class="text-white/80">miễn phí</strong>.
@@ -1459,42 +1432,67 @@
 <script>
   // ===== Navbar scroll effect =====
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) navbar.classList.add('scrolled');
-    else navbar.classList.remove('scrolled');
-  });
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+  }
+
+  // ===== Mobile menu toggle =====
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+
+  function toggleMobileMenu() {
+    if (mobileMenu && menuIcon) {
+      mobileMenu.classList.toggle('hidden');
+      const isHidden = mobileMenu.classList.contains('hidden');
+      menuIcon.textContent = isHidden ? 'menu' : 'close';
+    }
+  }
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', toggleMobileMenu);
+  }
 
   // ===== Particle generator =====
   const container = document.getElementById('particles');
-  const count = 20;
-  for (let i = 0; i < count; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const size = Math.random() * 12 + 4;
-    p.style.cssText = `
-      width:${size}px;height:${size}px;
-      left:${Math.random()*100}%;
-      animation-duration:${Math.random()*20+15}s;
-      animation-delay:${Math.random()*15}s;
-      opacity:${Math.random()*0.4+0.1};
-    `;
-    container.appendChild(p);
+  const count = 35;
+  if (container) {
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 18 + 6;
+      const pOpacity = Math.random() * 0.4 + 0.45;
+      const drift = Math.random() * 60 - 30;
+      p.style.cssText = `
+        width:${size}px;height:${size}px;
+        left:${Math.random()*100}%;
+        animation-duration:${Math.random()*15+12}s;
+        animation-delay:${Math.random()*15}s;
+        --p-opacity:${pOpacity};
+        --drift:${drift}px;
+      `;
+      container.appendChild(p);
+    }
   }
 
   // ===== Scroll reveal =====
   const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Delay for staggered children
-        const delay = entry.target.style.transitionDelay || '0s';
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, parseFloat(delay) * 1000);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  revealEls.forEach(el => observer.observe(el));
+  if (revealEls.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.style.transitionDelay || '0s';
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, parseFloat(delay) * 1000);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+  }
 
   // ===== Counter animation for hero stats =====
   function animateCounter(el, target, suffix = '') {
