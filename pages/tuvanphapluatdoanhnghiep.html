@@ -36,6 +36,7 @@
     --primary-light: #b44040;
     --accent: #c5a059;
     --accent-light: #ebdcae;
+    --gold: #c5a059;
   }
 
   * { box-sizing: border-box; }
@@ -302,6 +303,7 @@
     border-radius: 20px;
     border: 1px solid rgba(139,28,28,0.06);
     box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    padding: 28px;
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -338,6 +340,30 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+  }
+  .icon-box {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: rgba(139,28,28,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ============ BENTO CARDS ============ */
+  .bento-card {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid rgba(139,28,28,0.06);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    padding: 24px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(139,28,28,0.08);
+    border-color: rgba(139,28,28,0.12);
   }
   .premium-card:hover .icon-wrapper {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
@@ -390,6 +416,7 @@
     font-weight: 800;
     font-size: 1.1rem;
     color: white;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     box-shadow: 0 4px 15px rgba(139,28,28,0.25);
     flex-shrink: 0;
     position: relative;
@@ -467,13 +494,13 @@
   .benefit-tag:hover { border-color: rgba(139,28,28,0.2); transform: translateX(4px); box-shadow: 0 4px 12px rgba(139,28,28,0.07); }
 
   /* ============ PRICING ============ */
-  .price-box {
+  .price-box, .price-section {
     background: linear-gradient(135deg, #1a0202 0%, #5c1114 50%, #2d0707 100%);
     border-radius: 24px;
     overflow: hidden;
     position: relative;
   }
-  .price-box::before {
+  .price-box::before, .price-section::before {
     content: '';
     position: absolute;
     top: -80px; right: -80px;
@@ -1072,78 +1099,64 @@
 <!-- ===== 7 & 8. TARGET + BENEFITS ===== -->
 <section class="py-24" style="background:white;">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-      <!-- Image left -->
-      <div class="reveal-l relative">
-        <img
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX2eSJP4D2pMej6KNHE8cOEaPeZUTNdQxVWLiO9gbJd33PsbaJ24Z43tT-7RTx1rvm6IfA2A7eD59WxXkbUNm7y0rmSShyqutlFp0jGH9M998Q8nEOL1KbvXRv_2oe7a-E6F7eau_4V-ICl_pLBtyRTuj3DJpoGdx_v8-2jUArsNTxaIcnIGJYUTIYLL3DiDVuPdbyUuM8xNcXYsOrBrb9jBjJEHy3PMXbvN5DiOwMfy2z3YLg4IgcGIdrddzk-fDu5y3tZZvqzavc"
-          alt="Lợi ích dịch vụ luật sư"
-          class="w-full rounded-3xl shadow-2xl object-cover"
-          style="height:500px;"
-        />
-        <div style="position:absolute;inset:0;background:linear-gradient(to top right,rgba(139,28,28,0.15),transparent);border-radius:24px;pointer-events:none;"></div>
-      </div>
-
-      <!-- Right -->
-      <div class="space-y-12 reveal-r">
-        <!-- Target -->
-        <div>
-          <div class="section-label">Đối tượng</div>
-          <h2 class="section-title">Ai cần sử dụng <span>dịch vụ này?</span></h2>
-          <div class="section-line"></div>
-          <div class="mt-6 space-y-2">
-            <div class="target-item">
-              <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">business</span></div>
-              <div>
-                <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Doanh nghiệp đang hoạt động</div>
-                <p class="text-gray-500 text-sm">Công ty sản xuất, thương mại, dịch vụ hoặc xây dựng cần hỗ trợ pháp lý trong quá trình vận hành.</p>
-              </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <!-- Target -->
+      <div class="reveal-l">
+        <div class="section-label">Đối tượng</div>
+        <h2 class="section-title">Ai cần sử dụng <span>dịch vụ này?</span></h2>
+        <div class="section-line"></div>
+        <div class="mt-6 space-y-2">
+          <div class="target-item">
+            <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">business</span></div>
+            <div>
+              <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Doanh nghiệp đang hoạt động</div>
+              <p class="text-gray-500 text-sm">Công ty sản xuất, thương mại, dịch vụ hoặc xây dựng cần hỗ trợ pháp lý trong quá trình vận hành.</p>
             </div>
-            <div class="target-item">
-              <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">apartment</span></div>
-              <div>
-                <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Doanh nghiệp vừa và nhỏ (SMEs)</div>
-                <p class="text-gray-500 text-sm">Đơn vị chưa có bộ phận pháp chế riêng, cần tư vấn thường xuyên về hợp đồng, lao động và thủ tục pháp lý.</p>
-              </div>
+          </div>
+          <div class="target-item">
+            <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">apartment</span></div>
+            <div>
+              <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Doanh nghiệp vừa và nhỏ (SMEs)</div>
+              <p class="text-gray-500 text-sm">Đơn vị chưa có bộ phận pháp chế riêng, cần tư vấn thường xuyên về hợp đồng, lao động và thủ tục pháp lý.</p>
             </div>
-            <div class="target-item">
-              <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">rocket_launch</span></div>
-              <div>
-                <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Startup &amp; cá nhân khởi nghiệp</div>
-                <p class="text-gray-500 text-sm">Cần hỗ trợ từ bước thành lập công ty đến xây dựng nền tảng pháp lý ban đầu vững chắc.</p>
-              </div>
+          </div>
+          <div class="target-item">
+            <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">rocket_launch</span></div>
+            <div>
+              <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Startup &amp; cá nhân khởi nghiệp</div>
+              <p class="text-gray-500 text-sm">Cần hỗ trợ từ bước thành lập công ty đến xây dựng nền tảng pháp lý ban đầu vững chắc.</p>
             </div>
-            <div class="target-item">
-              <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">savings</span></div>
-              <div>
-                <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Nhà đầu tư &amp; cá nhân góp vốn</div>
-                <p class="text-gray-500 text-sm">Cần tư vấn về rủi ro pháp lý, cơ cấu vốn và quyền lợi trong doanh nghiệp.</p>
-              </div>
+          </div>
+          <div class="target-item">
+            <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">savings</span></div>
+            <div>
+              <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Nhà đầu tư &amp; cá nhân góp vốn</div>
+              <p class="text-gray-500 text-sm">Cần tư vấn về rủi ro pháp lý, cơ cấu vốn và quyền lợi trong doanh nghiệp.</p>
             </div>
-            <div class="target-item">
-              <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">groups</span></div>
-              <div>
-                <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Tổ chức, hiệp hội kinh doanh</div>
-                <p class="text-gray-500 text-sm">Cần tham vấn pháp lý trong quá trình hoạt động hoặc triển khai dự án liên quan đến doanh nghiệp.</p>
-              </div>
+          </div>
+          <div class="target-item">
+            <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">groups</span></div>
+            <div>
+              <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Tổ chức, hiệp hội kinh doanh</div>
+              <p class="text-gray-500 text-sm">Cần tham vấn pháp lý trong quá trình hoạt động hoặc triển khai dự án liên quan đến doanh nghiệp.</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Benefits -->
-        <div>
-          <div class="section-label">Lợi ích</div>
-          <h2 class="section-title">Lợi ích khi chọn <span>ACC</span></h2>
-          <div class="section-line"></div>
-          <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">bolt</span>Tiếp cận thông tin nhanh</div>
-            <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">shield</span>Giảm nguy cơ sai sót</div>
-            <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">timer</span>Rút ngắn thời gian</div>
-            <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">balance</span>Hạn chế rủi ro tranh chấp</div>
-            <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">psychology</span>Quyết định chính xác</div>
-            <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">thumb_up</span>Tăng mức độ tin cậy</div>
-            <div class="benefit-tag sm:col-span-2"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">workspace_premium</span>Hỗ trợ đa lĩnh vực, đa năng</div>
-          </div>
+      <!-- Benefits -->
+      <div class="reveal-r">
+        <div class="section-label">Lợi ích</div>
+        <h2 class="section-title">Lợi ích khi chọn <span>ACC</span></h2>
+        <div class="section-line"></div>
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">bolt</span>Tiếp cận thông tin nhanh</div>
+          <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">shield</span>Giảm nguy cơ sai sót</div>
+          <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">timer</span>Rút ngắn thời gian</div>
+          <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">balance</span>Hạn chế rủi ro tranh chấp</div>
+          <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">psychology</span>Quyết định chính xác</div>
+          <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">thumb_up</span>Tăng mức độ tin cậy</div>
+          <div class="benefit-tag sm:col-span-2"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">workspace_premium</span>Hỗ trợ đa lĩnh vực, đa năng</div>
         </div>
       </div>
     </div>
