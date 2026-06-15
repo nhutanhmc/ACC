@@ -87,6 +87,15 @@
     85% { opacity: var(--p-opacity, 0.6); }
     100% { transform: translateY(-115vh) translateX(var(--drift, 20px)) rotate(360deg); opacity: 0; }
   }
+  .hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 2;
+    pointer-events: none;
+  }
   .hero-glow {
     position: absolute;
     width: 600px; height: 600px;
@@ -719,6 +728,11 @@
       </div>
     </div>
   </div>
+
+  <!-- Wave divider -->
+  <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,56 C240,0 480,0 720,40 C960,80 1200,120 1440,72 L1440,120 L0,120 Z" fill="#fafafa"/>
+  </svg>
 </section>
 
 <!-- ===== 1. WHO ===== -->
