@@ -285,6 +285,9 @@
   .section-title span {
     color: var(--primary);
   }
+  .section-title.text-white span {
+    color: var(--accent-light);
+  }
   .section-line {
     width: 60px;
     height: 4px;
@@ -699,15 +702,15 @@
   <!-- Grid overlay -->
   <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;z-index:1;pointer-events:none;"></div>
 
-  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-20 w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
+  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-20 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[60vh]">
       <!-- Left -->
-      <div class="space-y-8">
+      <div class="space-y-6">
         <div class="hero-badge">
-          ACC Law Firm &nbsp;·&nbsp; Tư vấn Đất đai
+          Công ty luật ACC &nbsp;·&nbsp; Tư vấn Đất đai
         </div>
 
-        <h1 class="hero-title text-white" style="font-size:clamp(2.2rem,4.5vw,3.8rem);">
+        <h1 class="hero-title text-white" style="font-size:clamp(1.8rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.15;">
           Luật Sư <span>Tư Vấn Đất Đai</span>
           <br/>Chuyên Sâu - Trọn Gói
         </h1>
@@ -753,7 +756,7 @@
         <div class="relative max-w-md mx-auto lg:max-w-none">
           <div class="passport-card p-3 shadow-2xl">
             <img
-              src="https://lh3.googleusercontent.com/aida/AP1WRLsdyBf6vv0FRwM7D_CQK4oaRgnb65wD7wKxZ9YsGusa62EaMt2gJjRucysfvrGYY1lIyHp3RNCjUuyDToKPebCECSlFJhOVG2iPj16YPc6MdFeZ1tVPBKJUVCa3n_KAjPAXnn6c-4CE3DB668d8sTpaFy4fbSDkhGbP4tKzpygEBINdW3jMC5iLe3HebHK3iBXR1Bj2JpVGREj_2qwwNfWdoO0WMbUjvK_CqEmqPbgBxK2tpy-e1X4vMRe4"
+              src="./images/land_law_hero.png"
               alt="Dịch vụ pháp lý đất đai ACC"
               class="w-full rounded-2xl object-cover h-[280px] sm:h-[380px]"
             />
@@ -791,9 +794,9 @@
 </section>
 
 <!-- ============ WHAT IS LAND LAWYER ============ -->
-<section class="py-24 bg-mesh-light" id="gioi-thieu">
+<section class="py-8 bg-mesh-light" id="gioi-thieu">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-6">
       <div class="reveal-left space-y-6">
         <div>
           <div class="section-label">Giới thiệu</div>
@@ -816,7 +819,7 @@
         <div class="relative max-w-md mx-auto lg:max-w-none">
           <div class="passport-card p-3 shadow-2xl">
             <img
-              src="https://lh3.googleusercontent.com/aida/AP1WRLsdyBf6vv0FRwM7D_CQK4oaRgnb65wD7wKxZ9YsGusa62EaMt2gJjRucysfvrGYY1lIyHp3RNCjUuyDToKPebCECSlFJhOVG2iPj16YPc6MdFeZ1tVPBKJUVCa3n_KAjPAXnn6c-4CE3DB668d8sTpaFy4fbSDkhGbP4tKzpygEBINdW3jMC5iLe3HebHK3iBXR1Bj2JpVGREj_2qwwNfWdoO0WMbUjvK_CqEmqPbgBxK2tpy-e1X4vMRe4"
+              src="./images/land_law_consultation.png"
               alt="Luật sư đất đai ACC tư vấn sổ đỏ"
               class="w-full rounded-2xl object-cover h-[240px] sm:h-[320px]"
             />
@@ -828,9 +831,9 @@
 </section>
 
 <!-- ============ WHEN NEED LAWYER (SCENARIOS) ============ -->
-<section class="py-24" style="background:white;" id="scenarios">
+<section class="py-8" style="background:white;" id="scenarios">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-14 reveal">
+    <div class="text-center mb-6 reveal">
       <div class="section-label" style="justify-content:center;">Tình huống pháp lý</div>
       <h2 class="section-title">Khi nào bạn <span>cần Luật sư?</span></h2>
       <div class="section-line"></div>
@@ -892,9 +895,9 @@
 </section>
 
 <!-- ============ 12 COMMON SITUATIONS ============ -->
-<section class="py-24 bg-mesh-light">
+<section class="py-8 bg-mesh-light">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-14 reveal">
+    <div class="text-center mb-6 reveal">
       <div class="section-label" style="justify-content:center;">Trường hợp điển hình</div>
       <h2 class="section-title">12 tình huống <span>cần hỗ trợ của Luật sư</span></h2>
       <div class="section-line"></div>
@@ -918,9 +921,9 @@
 </section>
 
 <!-- ============ SERVICE DETAILS ============ -->
-<section class="py-24 bg-white" id="services">
+<section class="py-8 bg-white" id="services">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-14 reveal">
+    <div class="text-center mb-6 reveal">
       <div class="section-label" style="justify-content:center;">Dịch vụ nổi bật</div>
       <h2 class="section-title">Dịch vụ Tư vấn <span>Chuyên Sâu</span></h2>
       <div class="section-line"></div>
@@ -1007,9 +1010,9 @@
 </section>
 
 <!-- ============ PROCESS ============ -->
-<section class="py-24 bg-mesh-light" id="quy-trinh">
+<section class="py-8 bg-mesh-light" id="quy-trinh">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16 reveal">
+    <div class="text-center mb-6 reveal">
       <div class="section-label" style="justify-content:center;">Quy trình</div>
       <h2 class="section-title">Quy trình 6 bước <span>chuyên nghiệp</span></h2>
       <div class="section-line"></div>
@@ -1054,9 +1057,9 @@
 </section>
 
 <!-- ============ DOCUMENTS TO PROVIDE ============ -->
-<section class="py-24" id="ho-so" style="background:white;">
+<section class="py-8" id="ho-so" style="background:white;">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-14 reveal">
+    <div class="text-center mb-6 reveal">
       <div class="section-label" style="justify-content:center;">Chuẩn bị</div>
       <h2 class="section-title">Hồ sơ khách hàng cần <span>cung cấp</span></h2>
       <div class="section-line"></div>
@@ -1100,11 +1103,11 @@
 </section>
 
 <!-- ============ PRICING ============ -->
-<section class="cost-section py-24">
+<section class="cost-section py-8">
   <div class="max-w-3xl mx-auto px-6 relative z-10">
-    <div class="text-center mb-12 reveal">
+    <div class="text-center mb-6 reveal">
       <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;">Chi phí</div>
-      <h2 class="section-title text-white">Chi phí dịch vụ <span>tại ACC</span></h2>
+      <h2 class="section-title text-white">Chi phí dịch vụ tại <span>ACC</span></h2>
       <div class="section-line" style="background:linear-gradient(90deg,var(--accent),var(--accent-light));"></div>
     </div>
     
@@ -1156,9 +1159,9 @@
 </section>
 
 <!-- ============ ACC DIFFERENCES ============ -->
-<section class="py-24" style="background:white;" id="acc-difference">
+<section class="py-8" style="background:white;" id="acc-difference">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-14 reveal">
+    <div class="text-center mb-6 reveal">
       <div class="section-label" style="justify-content:center;">Điểm khác biệt</div>
       <h2 class="section-title">Tại sao nên chọn <span>ACC Law Firm?</span></h2>
       <div class="section-line"></div>
@@ -1194,9 +1197,9 @@
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="py-24 bg-mesh-light" id="faq">
+<section class="py-8 bg-mesh-light" id="faq">
   <div class="max-w-3xl mx-auto px-6">
-    <div class="text-center mb-14 reveal">
+    <div class="text-center mb-6 reveal">
       <div class="section-label" style="justify-content:center;">Giải đáp</div>
       <h2 class="section-title">Câu Hỏi <span>Thường Gặp</span></h2>
       <div class="section-line"></div>
@@ -1258,7 +1261,7 @@
 </section>
 
 <!-- ============ CTA ============ -->
-<section class="cta-section py-28 text-center">
+<section class="cta-section py-12 text-center">
   <div class="cta-orb" style="width:400px;height:400px;background:rgba(197,160,89,0.08);top:-100px;left:-100px;"></div>
   <div class="cta-orb" style="width:350px;height:350px;background:rgba(139,28,28,0.15);bottom:-80px;right:-80px;"></div>
   <div class="max-w-3xl mx-auto px-6 relative z-10">
@@ -1270,7 +1273,7 @@
         Bảo vệ tài sản nhà đất của bạn <br/>
         <span style="background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">an toàn - tối ưu quyền lợi</span>
       </h2>
-      <p class="text-white/60 leading-relaxed mb-10" style="font-size:1rem;max-width:540px;margin:0 auto 40px;">
+      <p class="text-white/60 leading-relaxed mb-6" style="font-size:1rem;max-width:540px;margin:0 auto 40px;">
         Đừng để những rủi ro pháp lý làm ảnh hưởng đến khối tài sản mà bạn đã nỗ lực tích lũy. Hãy để đội ngũ Luật sư Đất đai từ ACC hỗ trợ bạn hôm nay.
       </p>
       <div class="flex justify-center flex-wrap gap-4">
