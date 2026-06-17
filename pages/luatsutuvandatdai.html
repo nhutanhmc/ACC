@@ -1,1335 +1,1756 @@
 <!DOCTYPE html>
 <html lang="vi" class="scroll-smooth">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Luật Sư Tư Vấn Luật Đất Đai Chuyên Sâu</title>
-<meta name="description" content="Dịch vụ luật sư tư vấn đất đai chuyên nghiệp tại Công ty Luật ACC. Giải quyết tranh chấp, thủ tục sổ đỏ, quy hoạch và giao dịch bất động sản."/>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          primary: '#8B1C1C',
-          'primary-dark': '#5c1114',
-          'primary-light': '#b44040',
-          accent: '#c5a059',
-          'accent-light': '#ebdcae',
-          surface: '#fafafa',
-          'surface-dark': '#f0f0f0',
-        },
-        fontFamily: {
-          sans: ['Roboto', 'sans-serif'],
-          display: ['Roboto', 'sans-serif'],
-        },
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Luật Sư Tư Vấn Luật Đất Đai Chuyên Sâu</title>
+  <meta name="description"
+    content="Dịch vụ luật sư tư vấn đất đai chuyên nghiệp tại Công ty Luật ACC. Giải quyết tranh chấp, thủ tục sổ đỏ, quy hoạch và giao dịch bất động sản." />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#8B1C1C',
+            'primary-dark': '#5c1114',
+            'primary-light': '#b44040',
+            accent: '#c5a059',
+            'accent-light': '#ebdcae',
+            surface: '#fafafa',
+            'surface-dark': '#f0f0f0',
+          },
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Roboto', 'sans-serif'],
+          },
+        }
       }
     }
-  }
-</script>
-<style>
-  :root {
-    --primary: #8B1C1C;
-    --primary-dark: #5c1114;
-    --primary-light: #b44040;
-    --accent: #c5a059;
-    --accent-light: #ebdcae;
-  }
+  </script>
+  <style>
+    :root {
+      --primary: #8B1C1C;
+      --primary-dark: #5c1114;
+      --primary-light: #b44040;
+      --accent: #c5a059;
+      --accent-light: #ebdcae;
+    }
 
-  * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: #fafafa;
-    color: #1a1a1a;
-    overflow-x: hidden;
-  }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #fafafa;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
 
-  /* ============ SCROLLBAR ============ */
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #f1f1f1; }
-  ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+    /* ============ SCROLLBAR ============ */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
 
-  /* ============ HERO ============ */
-  .hero-section {
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
-  .hero-gradient {
-    background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 35%, #5c1114 65%, #1a0404 100%);
-  }
-  .hero-particles {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 1;
-    pointer-events: none;
-  }
-  .particle {
-    position: absolute;
-    bottom: -50px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, rgba(235, 220, 174, 0.45) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(197, 160, 89, 0.35) 100%);
-    border: 1px solid rgba(235, 220, 174, 0.45);
-    box-shadow: 0 0 10px rgba(197, 160, 89, 0.25), inset 0 0 6px rgba(255, 255, 255, 0.25);
-    animation: float-particle linear infinite;
-    opacity: 0;
-  }
-  @keyframes float-particle {
-    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
-    15% { opacity: var(--p-opacity, 0.6); }
-    85% { opacity: var(--p-opacity, 0.6); }
-    100% { transform: translateY(-115vh) translateX(var(--drift, 20px)) rotate(360deg); opacity: 0; }
-  }
-  .hero-glow {
-    position: absolute;
-    width: 600px; height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(197,160,89,0.08) 0%, transparent 70%);
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    animation: pulse-glow 4s ease-in-out infinite;
-    z-index: 1;
-  }
-  @keyframes pulse-glow {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
-  }
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    border: 1px solid rgba(197,160,89,0.5);
-    border-radius: 100px;
-    background: rgba(197,160,89,0.1);
-    backdrop-filter: blur(10px);
-    color: var(--accent-light);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    animation: fadeInDown 0.8s ease forwards;
-  }
-  .hero-badge::before {
-    content: '';
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: blink 2s ease-in-out infinite;
-  }
-  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-  @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-30px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(30px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  .hero-title {
-    animation: fadeInUp 0.9s ease 0.2s both;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.1;
-  }
-  .hero-title span {
-    background: linear-gradient(135deg, #ebdcae, #c5a059, #ebdcae);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 200% auto;
-    animation: shimmer 3s linear infinite;
-  }
-  @keyframes shimmer {
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
-  }
-  .hero-desc {
-    animation: fadeInUp 0.9s ease 0.4s both;
-  }
-  .hero-cta {
-    animation: fadeInUp 0.9s ease 0.6s both;
-  }
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 36px;
-    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
-    color: #1a0404;
-    font-weight: 700;
-    font-size: 0.9rem;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 30px rgba(197,160,89,0.4);
-    position: relative;
-    overflow: hidden;
-  }
-  .btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s ease;
-  }
-  .btn-primary:hover::before { left: 100%; }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(197,160,89,0.5); }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
 
-  .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 36px;
-    border: 2px solid rgba(255,255,255,0.3);
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    border-radius: 100px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  .btn-outline:hover {
-    border-color: rgba(255,255,255,0.7);
-    background: rgba(255,255,255,0.15);
-    transform: translateY(-3px);
-  }
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 3px;
+    }
 
-  /* Hero Stats */
-  .hero-stats {
-    animation: fadeInUp 0.9s ease 0.8s both;
-  }
-  .stat-item {
-    border-left: 1px solid rgba(255,255,255,0.15);
-    padding-left: 20px;
-  }
-  .stat-item:first-child { border-left: none; padding-left: 0; }
+    /* ============ HERO ============ */
+    .hero-section {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
 
-  /* Hero Card */
-  .hero-card {
-    animation: fadeInRight 0.9s ease 0.5s both;
-  }
-  .passport-card {
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(30px);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 24px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.4s ease;
-  }
-  .passport-card:hover { transform: translateY(-8px) rotate(-1deg); }
-  .passport-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(197,160,89,0.05), transparent, rgba(139,28,28,0.05));
-    pointer-events: none;
-  }
+    .hero-gradient {
+      background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 35%, #5c1114 65%, #1a0404 100%);
+    }
 
-  /* Floating badge on hero image */
-  .float-badge {
-    position: absolute;
-    background: rgba(255,255,255,0.95);
-    border-radius: 16px;
-    padding: 12px 18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    animation: float 3s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
 
-  /* ============ SECTION HEADERS ============ */
-  .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 14px;
-    border-radius: 100px;
-    background: rgba(139,28,28,0.08);
-    color: var(--primary);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  .section-title {
-    font-family: 'Roboto', sans-serif;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    font-weight: 700;
-    color: #1a0404;
-    line-height: 1.2;
-  }
-  .section-title span {
-    color: var(--primary);
-  }
-  .section-title.text-white span {
-    color: var(--accent-light);
-  }
-  .section-line {
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    border-radius: 2px;
-    margin: 16px auto 0;
-  }
+    .particle {
+      position: absolute;
+      bottom: -50px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(235, 220, 174, 0.45) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(197, 160, 89, 0.35) 100%);
+      border: 1px solid rgba(235, 220, 174, 0.45);
+      box-shadow: 0 0 10px rgba(197, 160, 89, 0.25), inset 0 0 6px rgba(255, 255, 255, 0.25);
+      animation: float-particle linear infinite;
+      opacity: 0;
+    }
 
-  /* ============ CARDS ============ */
-  .premium-card {
-    background: white;
-    border-radius: 20px;
-    border: 1px solid rgba(139,28,28,0.06);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    position: relative;
-  }
-  .premium-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-  .premium-card:hover::before { transform: scaleX(1); }
-  .premium-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(139,28,28,0.12);
-    border-color: rgba(139,28,28,0.15);
-  }
+    @keyframes float-particle {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
 
-  .icon-circle {
-    width: 64px; height: 64px;
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(139,28,28,0.04));
-    transition: all 0.3s ease;
-  }
-  .premium-card:hover .icon-circle {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    transform: rotate(5deg) scale(1.1);
-  }
-  .premium-card:hover .icon-circle .material-symbols-outlined {
-    color: white !important;
-  }
+      15% {
+        opacity: var(--p-opacity, 0.6);
+      }
 
-  /* ============ PROCESS STEPS ============ */
-  .steps-container {
-    position: relative;
-  }
-  .steps-line {
-    position: absolute;
-    top: 32px; left: 50%;
-    width: calc(100% - 64px);
-    transform: translateX(-50%);
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
-    background-size: 200% auto;
-    animation: shimmer 3s linear infinite;
-    display: none;
-  }
-  @media (min-width: 1024px) {
-    .steps-line { display: block; }
-  }
-  .step-number {
-    width: 64px; height: 64px;
-    border-radius: 50%;
-    background: white;
-    border: 3px solid var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 1.25rem;
-    color: var(--primary);
-    position: relative;
-    z-index: 2;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(139,28,28,0.2);
-  }
-  .step-item:hover .step-number {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: white;
-    transform: scale(1.1);
-    box-shadow: 0 8px 30px rgba(139,28,28,0.35);
-  }
-  .step-item:hover .step-title { color: var(--primary); }
+      85% {
+        opacity: var(--p-opacity, 0.6);
+      }
 
-  /* ============ CHECKLIST ITEMS ============ */
-  .check-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 14px 18px;
-    background: white;
-    border-radius: 14px;
-    border: 1px solid rgba(139,28,28,0.06);
-    transition: all 0.3s ease;
-  }
-  .check-item:hover {
-    border-color: rgba(139,28,28,0.2);
-    transform: translateX(6px);
-    box-shadow: 0 4px 15px rgba(139,28,28,0.08);
-  }
-  .check-icon {
-    width: 28px; height: 28px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
+      100% {
+        transform: translateY(-115vh) translateX(var(--drift, 20px)) rotate(360deg);
+        opacity: 0;
+      }
+    }
 
-  /* ============ COST TABLE ============ */
-  .cost-section {
-    background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 50%, #5c1114 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .cost-section::before {
-    content: '';
-    position: absolute;
-    top: -50%; right: -10%;
-    width: 500px; height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(197,160,89,0.08), transparent 70%);
-    pointer-events: none;
-  }
-  .cost-card {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 24px;
-    overflow: hidden;
-  }
-  .cost-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 24px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    transition: background 0.3s;
-  }
-  .cost-row:hover { background: rgba(255,255,255,0.05); }
-  .cost-row:last-child { border-bottom: none; }
+    .hero-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(197, 160, 89, 0.08) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulse-glow 4s ease-in-out infinite;
+      z-index: 1;
+    }
 
-  /* ============ REJECTION REASONS / PROBLEMS ============ */
-  .rejection-item {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  .rejection-item::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 50%;
-    transform: translateY(-50%);
-    width: 3px; height: 0;
-    background: var(--primary);
-    border-radius: 0 2px 2px 0;
-    transition: height 0.3s ease;
-  }
-  .rejection-item:hover { background: rgba(139,28,28,0.03); border-color: rgba(139,28,28,0.1); }
-  .rejection-item:hover::before { height: 70%; }
-  .rejection-number {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: rgba(139,28,28,0.15);
-    line-height: 1;
-    flex-shrink: 0;
-    min-width: 48px;
-    transition: color 0.3s;
-  }
-  .rejection-item:hover .rejection-number { color: rgba(139,28,28,0.4); }
+    @keyframes pulse-glow {
 
-  /* ============ BENEFITS ============ */
-  .benefit-card {
-    background: white;
-    border-radius: 18px;
-    padding: 28px 20px;
-    text-align: center;
-    border: 1px solid rgba(139,28,28,0.06);
-    transition: all 0.35s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  .benefit-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 50%;
-    transform: translateX(-50%);
-    width: 0; height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    transition: width 0.4s ease;
-    border-radius: 2px 2px 0 0;
-  }
-  .benefit-card:hover::after { width: 70%; }
-  .benefit-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(139,28,28,0.1);
-    border-color: rgba(139,28,28,0.12);
-  }
-  .benefit-icon {
-    width: 56px; height: 56px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(197,160,89,0.08));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-    transition: all 0.3s ease;
-  }
-  .benefit-card:hover .benefit-icon {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  }
-  .benefit-card:hover .benefit-icon .material-symbols-outlined {
-    color: white !important;
-  }
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+      }
 
-  /* ============ FAQ ============ */
-  .faq-item {
-    border: 1px solid rgba(139,28,28,0.08);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-  .faq-item:hover { border-color: rgba(139,28,28,0.2); }
-  .faq-summary {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 24px;
-    cursor: pointer;
-    font-weight: 600;
-    color: #1a0404;
-    transition: all 0.3s;
-    background: white;
-    gap: 16px;
-  }
-  .faq-item[open] .faq-summary {
-    background: linear-gradient(135deg, rgba(139,28,28,0.04), rgba(139,28,28,0.01));
-    color: var(--primary);
-    border-bottom: 1px solid rgba(139,28,28,0.08);
-  }
-  .faq-summary::-webkit-details-marker { display: none; }
-  .faq-icon {
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-    color: var(--primary);
-  }
-  .faq-item[open] .faq-icon { transform: rotate(180deg); }
-  .faq-body {
-    padding: 20px 24px;
-    background: white;
-    color: #555;
-    line-height: 1.7;
-    font-size: 0.9rem;
-  }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+      }
+    }
 
-  /* ============ CTA SECTION ============ */
-  .cta-section {
-    background: linear-gradient(135deg, #2a0404 0%, #5c1114 40%, #3d0808 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(60px);
-    pointer-events: none;
-  }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border: 1px solid rgba(197, 160, 89, 0.5);
+      border-radius: 100px;
+      background: rgba(197, 160, 89, 0.1);
+      backdrop-filter: blur(10px);
+      color: var(--accent-light);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: fadeInDown 0.8s ease forwards;
+    }
 
-  /* ============ FLOATING BUTTON ============ */
-  .float-zalo {
-    width: 56px; height: 56px;
-    background: linear-gradient(135deg, #0068ff, #004dc0);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    box-shadow: 0 6px 25px rgba(0,104,255,0.45);
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  .float-zalo::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    background: rgba(0,104,255,0.25);
-    animation: pulse-ring 2s ease-in-out infinite;
-  }
-  @keyframes pulse-ring {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(1.6); opacity: 0; }
-  }
-  .float-zalo:hover { transform: scale(1.1); box-shadow: 0 10px 35px rgba(0,104,255,0.55); }
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: blink 2s ease-in-out infinite;
+    }
 
-  .float-phone {
-    width: 56px; height: 56px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    box-shadow: 0 6px 25px rgba(139,28,28,0.45);
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  .float-phone::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    background: rgba(139,28,28,0.25);
-    animation: pulse-ring 2s ease-in-out infinite;
-    animation-delay: 1s;
-  }
-  .float-phone:hover { transform: scale(1.1); box-shadow: 0 10px 35px rgba(139,28,28,0.55); }
+    @keyframes blink {
 
-  /* ============ SCROLL REVEAL ============ */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .reveal-left {
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .reveal-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  .reveal-right {
-    opacity: 0;
-    transform: translateX(30px);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .reveal-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
+      0%,
+      100% {
+        opacity: 1;
+      }
 
-  /* ============ MATERIAL ICONS ============ */
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  }
+      50% {
+        opacity: 0.3;
+      }
+    }
 
-  /* ============ SECTION BACKGROUNDS ============ */
-  .bg-mesh-light {
-    background-color: #fafafa;
-    background-image: radial-gradient(at 20% 30%, rgba(139,28,28,0.03) 0, transparent 50%),
-                      radial-gradient(at 80% 70%, rgba(197,160,89,0.03) 0, transparent 50%);
-  }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
 
-  .svc-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(139,28,28,0.06);
-    font-size: 0.875rem;
-    color: #444;
-    line-height: 1.6;
-  }
-  .svc-row:last-child { border-bottom: none; }
-  .svc-dot {
-    width: 22px;
-    height: 22px;
-    border-radius: 7px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-</style>
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .hero-title {
+      animation: fadeInUp 0.9s ease 0.2s both;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.1;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #ebdcae, #c5a059, #ebdcae);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% auto;
+      animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 0% center;
+      }
+
+      100% {
+        background-position: 200% center;
+      }
+    }
+
+    .hero-desc {
+      animation: fadeInUp 0.9s ease 0.4s both;
+    }
+
+    .hero-cta {
+      animation: fadeInUp 0.9s ease 0.6s both;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+      color: #1a0404;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(197, 160, 89, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(197, 160, 89, 0.5);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-3px);
+    }
+
+    /* Hero Stats */
+    .hero-stats {
+      animation: fadeInUp 0.9s ease 0.8s both;
+    }
+
+    .stat-item {
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+      padding-left: 20px;
+    }
+
+    .stat-item:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+
+    /* Hero Card */
+    .hero-card {
+      animation: fadeInRight 0.9s ease 0.5s both;
+    }
+
+    .passport-card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(30px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.4s ease;
+    }
+
+    .passport-card:hover {
+      transform: translateY(-8px) rotate(-1deg);
+    }
+
+    .passport-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.05), transparent, rgba(139, 28, 28, 0.05));
+      pointer-events: none;
+    }
+
+    /* Floating badge on hero image */
+    .float-badge {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 12px 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* ============ SECTION HEADERS ============ */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 14px;
+      border-radius: 100px;
+      background: rgba(139, 28, 28, 0.08);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: #1a0404;
+      line-height: 1.2;
+    }
+
+    .section-title span {
+      color: var(--primary);
+    }
+
+    .section-title.text-white span {
+      color: var(--accent-light);
+    }
+
+    .section-line {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 2px;
+      margin: 16px auto 0;
+    }
+
+    /* ============ CARDS ============ */
+    .premium-card {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .premium-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .premium-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .premium-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(139, 28, 28, 0.12);
+      border-color: rgba(139, 28, 28, 0.15);
+    }
+
+    .icon-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(139, 28, 28, 0.08), rgba(139, 28, 28, 0.04));
+      transition: all 0.3s ease;
+    }
+
+    .premium-card:hover .icon-circle {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      transform: rotate(5deg) scale(1.1);
+    }
+
+    .premium-card:hover .icon-circle .material-symbols-outlined {
+      color: white !important;
+    }
+
+    /* ============ PROCESS STEPS ============ */
+    .steps-container {
+      position: relative;
+    }
+
+    .steps-line {
+      position: absolute;
+      top: 32px;
+      left: 50%;
+      width: calc(100% - 64px);
+      transform: translateX(-50%);
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+      background-size: 200% auto;
+      animation: shimmer 3s linear infinite;
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .steps-line {
+        display: block;
+      }
+    }
+
+    .step-number {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: white;
+      border: 3px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--primary);
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(139, 28, 28, 0.2);
+    }
+
+    .step-item:hover .step-number {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(139, 28, 28, 0.35);
+    }
+
+    .step-item:hover .step-title {
+      color: var(--primary);
+    }
+
+    /* ============ CHECKLIST ITEMS ============ */
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 18px;
+      background: white;
+      border-radius: 14px;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .check-item:hover {
+      border-color: rgba(139, 28, 28, 0.2);
+      transform: translateX(6px);
+      box-shadow: 0 4px 15px rgba(139, 28, 28, 0.08);
+    }
+
+    .check-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ============ COST TABLE ============ */
+    .cost-section {
+      background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 50%, #5c1114 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cost-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(197, 160, 89, 0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    .cost-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .cost-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: background 0.3s;
+    }
+
+    .cost-row:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .cost-row:last-child {
+      border-bottom: none;
+    }
+
+    /* ============ REJECTION REASONS / PROBLEMS ============ */
+    .rejection-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .rejection-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 0;
+      background: var(--primary);
+      border-radius: 0 2px 2px 0;
+      transition: height 0.3s ease;
+    }
+
+    .rejection-item:hover {
+      background: rgba(139, 28, 28, 0.03);
+      border-color: rgba(139, 28, 28, 0.1);
+    }
+
+    .rejection-item:hover::before {
+      height: 70%;
+    }
+
+    .rejection-number {
+      font-family: 'Roboto', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: rgba(139, 28, 28, 0.15);
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 48px;
+      transition: color 0.3s;
+    }
+
+    .rejection-item:hover .rejection-number {
+      color: rgba(139, 28, 28, 0.4);
+    }
+
+    /* ============ BENEFITS ============ */
+    .benefit-card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px 20px;
+      text-align: center;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.4s ease;
+      border-radius: 2px 2px 0 0;
+    }
+
+    .benefit-card:hover::after {
+      width: 70%;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(139, 28, 28, 0.1);
+      border-color: rgba(139, 28, 28, 0.12);
+    }
+
+    .benefit-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(139, 28, 28, 0.08), rgba(197, 160, 89, 0.08));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      transition: all 0.3s ease;
+    }
+
+    .benefit-card:hover .benefit-icon {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    }
+
+    .benefit-card:hover .benefit-icon .material-symbols-outlined {
+      color: white !important;
+    }
+
+    /* ============ FAQ ============ */
+    .faq-item {
+      border: 1px solid rgba(139, 28, 28, 0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(139, 28, 28, 0.2);
+    }
+
+    .faq-summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #1a0404;
+      transition: all 0.3s;
+      background: white;
+      gap: 16px;
+    }
+
+    .faq-item[open] .faq-summary {
+      background: linear-gradient(135deg, rgba(139, 28, 28, 0.04), rgba(139, 28, 28, 0.01));
+      color: var(--primary);
+      border-bottom: 1px solid rgba(139, 28, 28, 0.08);
+    }
+
+    .faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+
+    .faq-item[open] .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-body {
+      padding: 20px 24px;
+      background: white;
+      color: #555;
+      line-height: 1.7;
+      font-size: 0.9rem;
+    }
+
+    /* ============ CTA SECTION ============ */
+    .cta-section {
+      background: linear-gradient(135deg, #2a0404 0%, #5c1114 40%, #3d0808 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+    }
+
+    /* ============ FLOATING BUTTON ============ */
+    .float-zalo {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #0068ff, #004dc0);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 6px 25px rgba(0, 104, 255, 0.45);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .float-zalo::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: rgba(0, 104, 255, 0.25);
+      animation: pulse-ring 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1.6);
+        opacity: 0;
+      }
+    }
+
+    .float-zalo:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 35px rgba(0, 104, 255, 0.55);
+    }
+
+    .float-phone {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 6px 25px rgba(139, 28, 28, 0.45);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .float-phone::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: rgba(139, 28, 28, 0.25);
+      animation: pulse-ring 2s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+
+    .float-phone:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 35px rgba(139, 28, 28, 0.55);
+    }
+
+    /* ============ SCROLL REVEAL ============ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ============ MATERIAL ICONS ============ */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* ============ SECTION BACKGROUNDS ============ */
+    .bg-mesh-light {
+      background-color: #fafafa;
+      background-image: radial-gradient(at 20% 30%, rgba(139, 28, 28, 0.03) 0, transparent 50%),
+        radial-gradient(at 80% 70%, rgba(197, 160, 89, 0.03) 0, transparent 50%);
+    }
+
+    .svc-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(139, 28, 28, 0.06);
+      font-size: 0.875rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .svc-row:last-child {
+      border-bottom: none;
+    }
+
+    .svc-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 7px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ============ HERO ============ -->
-<section class="hero-section hero-gradient" id="hero">
-  <!-- Particles -->
-  <div class="hero-particles" id="particles"></div>
-  <div class="hero-glow"></div>
+  <!-- ============ HERO ============ -->
+  <section class="hero-section hero-gradient" id="hero">
+    <!-- Particles -->
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-glow"></div>
 
-  <!-- Grid overlay -->
-  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;z-index:1;pointer-events:none;"></div>
+    <!-- Grid overlay -->
+    <div
+      style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;z-index:1;pointer-events:none;">
+    </div>
 
-  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-20 w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[60vh]">
-      <!-- Left -->
-      <div class="space-y-6">
-        <div class="hero-badge">
-          Công ty luật ACC &nbsp;·&nbsp; Tư vấn Đất đai
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-20 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[60vh]">
+        <!-- Left -->
+        <div class="space-y-6">
+          <div class="hero-badge">
+            Công ty luật ACC &nbsp;·&nbsp; Tư vấn Đất đai
+          </div>
+
+          <h1 class="hero-title text-white"
+            style="font-size:clamp(1.8rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.15;">
+            Luật Sư <span>Tư Vấn Đất Đai</span>
+            <br />Chuyên Sâu - Trọn Gói
+          </h1>
+
+          <p class="hero-desc text-white/70 leading-relaxed" style="font-size:1.05rem;max-width:540px;">
+            Giải pháp an toàn, bảo vệ quyền lợi tối đa trong mọi giao dịch bất động sản với đội ngũ luật sư <strong
+              class="text-white/90">hàng đầu tại Công ty Luật ACC</strong>. Hàng tỷ đồng tài sản được bảo vệ mỗi năm.
+          </p>
+
+          <div
+            style="padding:20px 24px;background:rgba(255,255,255,0.06);backdrop-filter:blur(12px);border:1px solid rgba(197,160,89,0.25);border-left:3px solid var(--accent);border-radius:14px;max-width:540px;">
+            <p style="color:rgba(255,255,255,0.75);font-style:italic;font-size:0.92rem;line-height:1.65;">"Trong thị
+              trường bất động sản phức tạp, sự hiện diện của một luật sư chuyên sâu là rào chắn an toàn nhất cho tương
+              lai tài chính của bạn."</p>
+          </div>
+
+          <div class="hero-cta flex flex-wrap gap-4">
+            <a href="tel:19003330" class="btn-primary">
+              <span class="material-symbols-outlined" style="font-size:20px;">call</span>
+              Gọi 1900 3330
+            </a>
+            <a href="#services" class="btn-outline">
+              <span class="material-symbols-outlined" style="font-size:20px;">arrow_downward</span>
+              Tìm hiểu dịch vụ
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="hero-stats flex flex-wrap gap-x-8 gap-y-4 pt-4">
+            <div class="stat-item">
+              <div
+                style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                15+</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Năm kinh nghiệm</div>
+            </div>
+            <div class="stat-item">
+              <div
+                style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                1000+</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Hồ sơ thành công</div>
+            </div>
+            <div class="stat-item">
+              <div
+                style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                Toàn Quốc</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Phủ sóng hỗ trợ</div>
+            </div>
+          </div>
         </div>
 
-        <h1 class="hero-title text-white" style="font-size:clamp(1.8rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.15;">
-          Luật Sư <span>Tư Vấn Đất Đai</span>
-          <br/>Chuyên Sâu - Trọn Gói
-        </h1>
-
-        <p class="hero-desc text-white/70 leading-relaxed" style="font-size:1.05rem;max-width:540px;">
-          Giải pháp an toàn, bảo vệ quyền lợi tối đa trong mọi giao dịch bất động sản với đội ngũ luật sư <strong class="text-white/90">hàng đầu tại Công ty Luật ACC</strong>. Hàng tỷ đồng tài sản được bảo vệ mỗi năm.
-        </p>
-
-        <div style="padding:20px 24px;background:rgba(255,255,255,0.06);backdrop-filter:blur(12px);border:1px solid rgba(197,160,89,0.25);border-left:3px solid var(--accent);border-radius:14px;max-width:540px;">
-          <p style="color:rgba(255,255,255,0.75);font-style:italic;font-size:0.92rem;line-height:1.65;">"Trong thị trường bất động sản phức tạp, sự hiện diện của một luật sư chuyên sâu là rào chắn an toàn nhất cho tương lai tài chính của bạn."</p>
+        <!-- Right -->
+        <div class="block lg:mt-0 mt-8 hero-card">
+          <div class="relative max-w-md mx-auto lg:max-w-none">
+            <div class="passport-card p-3 shadow-2xl">
+              <img src="./images/tuvandatdai2.png" alt="Dịch vụ pháp lý đất đai ACC"
+                class="w-full rounded-2xl object-cover h-[280px] sm:h-[380px]" />
+            </div>
+            <!-- Floating badges -->
+            <div class="float-badge sm:flex hidden" style="bottom:-20px;left:20px;z-index:10;">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined" style="color:white;font-size:18px;">verified</span>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Pháp lý đảm bảo</div>
+                <div style="font-size:0.72rem;color:#888;">Cam kết toàn diện A-Z</div>
+              </div>
+            </div>
+            <div class="float-badge sm:flex hidden" style="top:20px;right:-20px;z-index:10;animation-delay:1.5s;">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#c5a059,#99732f);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined" style="color:white;font-size:18px;">shield</span>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Bảo mật tuyệt đối</div>
+                <div style="font-size:0.72rem;color:#888;">An toàn thông tin khách hàng</div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <div class="hero-cta flex flex-wrap gap-4">
-          <a href="tel:19003330" class="btn-primary">
-            <span class="material-symbols-outlined" style="font-size:20px;">call</span>
-            Gọi 1900 3330
+    <!-- Wave bottom -->
+    <div style="position:absolute;bottom:0;left:0;right:0;z-index:5;">
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        style="display:block;width:100%;height:80px;">
+        <path d="M0 80 L0 40 Q360 0 720 40 Q1080 80 1440 40 L1440 80 Z" fill="#fafafa" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ WHAT IS LAND LAWYER ============ -->
+  <section class="py-8 bg-mesh-light" id="gioi-thieu">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-6">
+        <div class="reveal-left space-y-6">
+          <div>
+            <div class="section-label">Giới thiệu</div>
+            <h2 class="section-title">Luật Sư Đất Đai <span>Là Ai?</span></h2>
+            <div class="section-line" style="margin-left:0;"></div>
+          </div>
+          <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+            <strong class="text-gray-900">Luật sư đất đai</strong> là những chuyên gia pháp lý chuyên sâu về các quy
+            định liên quan đến quyền sở hữu, sử dụng và giao dịch tài sản gắn liền với đất.
+          </p>
+          <p class="text-gray-500 leading-relaxed text-sm">
+            Tại Công ty Luật ACC, vai trò của chúng tôi không chỉ dừng lại ở việc tư vấn văn bản hành chính. Chúng tôi
+            là người đồng hành pháp lý tin cậy, bảo vệ sự an toàn cho tài sản và ngăn ngừa mọi rủi ro tranh chấp bất
+            động sản phức tạp.
+          </p>
+          <a href="#services" class="inline-flex items-center gap-2 text-sm font-semibold hover:underline"
+            style="color:var(--primary);">
+            Xem chi tiết dịch vụ chuyên sâu
+            <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
           </a>
-          <a href="#services" class="btn-outline">
-            <span class="material-symbols-outlined" style="font-size:20px;">arrow_downward</span>
-            Tìm hiểu dịch vụ
+        </div>
+
+        <div class="reveal-right">
+          <div class="relative max-w-md mx-auto lg:max-w-none">
+            <div class="passport-card p-3 shadow-2xl">
+              <img src="./images/land_law_consultation.png" alt="Luật sư đất đai ACC tư vấn sổ đỏ"
+                class="w-full rounded-2xl object-cover h-[240px] sm:h-[320px]" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHEN NEED LAWYER (SCENARIOS) ============ -->
+  <section class="py-8" style="background:white;" id="scenarios">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Tình huống pháp lý</div>
+        <h2 class="section-title">Khi nào bạn <span>cần Luật sư?</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal mb-6">
+        <!-- Scenario 1 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+            <span class="material-symbols-outlined text-xl" style="color:var(--primary);">gavel</span>
+          </div>
+          <h4 class="font-bold text-sm text-gray-900">Tranh Chấp Đất Đai</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Giải quyết tranh chấp ranh giới, lối đi chung, thừa kế đất
+            đai hoặc phân chia tài sản bất động sản.</p>
+        </div>
+        <!-- Scenario 2 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+            <span class="material-symbols-outlined text-xl" style="color:var(--primary);">description</span>
+          </div>
+          <h4 class="font-bold text-sm text-gray-900">Thủ Tục Sổ Đỏ</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Hỗ trợ xin cấp mới sổ đỏ, sang tên, chuyển nhượng, đính chính
+            thông tin bị sai sót trên Giấy chứng nhận.</p>
+        </div>
+        <!-- Scenario 3 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+            <span class="material-symbols-outlined text-xl" style="color:var(--primary);">apartment</span>
+          </div>
+          <h4 class="font-bold text-sm text-gray-900">Mua Bán / Chuyển Nhượng</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Rà soát tính pháp lý dự án, kiểm tra quy hoạch và soạn thảo
+            hợp đồng đặt cọc mua bán bất động sản.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 reveal">
+        <!-- Scenario 4 -->
+        <div class="premium-card p-8 lg:col-span-2 flex flex-col md:flex-row gap-6 items-center">
+          <div class="space-y-3 flex-1">
+            <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+              <span class="material-symbols-outlined text-xl" style="color:var(--primary);">map</span>
+            </div>
+            <h4 class="font-bold text-sm text-gray-900">Quy Hoạch & Đền Bù</h4>
+            <p class="text-xs text-gray-500 leading-relaxed">Tư vấn chính sách bồi thường hỗ trợ tái định cư khi Nhà
+              nước thu hồi đất, kiểm tra đất dính quy hoạch lộ giới.</p>
+          </div>
+          <img src="./images/land_planning_map.png" alt="Bản đồ quy hoạch đất đai"
+            class="w-full md:w-48 h-32 rounded-xl object-cover grayscale hover:grayscale-0 transition-all duration-500 flex-shrink-0" />
+        </div>
+        <!-- Scenario 5 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+            <span class="material-symbols-outlined text-xl" style="color:var(--primary);">family_history</span>
+          </div>
+          <h4 class="font-bold text-sm text-gray-900">Thừa Kế & Tặng Cho</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Tư vấn soạn thảo di chúc tài sản đất đai hợp pháp, làm thủ
+            tục tặng cho nhà đất giữa người thân.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12 COMMON SITUATIONS ============ -->
+  <section class="py-8 bg-mesh-light">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Trường hợp điển hình</div>
+        <h2 class="section-title">12 tình huống <span>cần hỗ trợ của Luật sư</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 reveal">
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi xảy ra tranh
+            chấp về ranh giới, lối đi chung hoặc lấn chiếm đất đai</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi thực hiện
+            giao dịch mua bán, chuyển nhượng nhưng chưa rõ pháp lý bất động sản</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi làm thủ tục
+            cấp sổ đỏ lần đầu, sang tên hoặc hợp thức hóa nhà đất phức tạp</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi đất nằm
+            trong diện quy hoạch, bị thu hồi hoặc nhận tiền đền bù đền bù giải phóng mặt bằng</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi cần thẩm
+            định pháp lý dự án toàn diện trước khi đầu tư số tiền lớn</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi tài sản đất
+            đai có nhiều đồng sở hữu, cần thỏa thuận phân chia diện tích sử dụng</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi phân chia di
+            sản thừa kế là nhà đất nhưng có bất đồng ý kiến giữa các đồng thừa kế</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi bị cơ quan
+            nhà nước từ chối cấp sổ đỏ hoặc hồ sơ bị trả lại nhiều lần không rõ lý do</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi cần đại diện
+            khiếu nại, giải trình tranh chấp hành chính với cơ quan chính quyền sở tại</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi muốn ủy
+            quyền cho bên thứ ba thay mặt thực hiện trọn gói các thủ tục nhà đất</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi cần soạn
+            thảo và rà soát hợp đồng đặt cọc để ngăn ngừa mất cọc, lừa đảo mua bán</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi bất động sản
+            có vướng mắc phức tạp: Mua bán giấy viết tay, chưa chuyển mục đích sử dụng</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE DETAILS ============ -->
+  <section class="py-8 bg-white" id="services">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Dịch vụ nổi bật</div>
+        <h2 class="section-title">Dịch vụ Tư vấn <span>Chuyên Sâu</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+        <!-- Card 1 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div
+            style="display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(139,28,28,0.06);padding-bottom:14px;">
+            <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+              <span class="material-symbols-outlined" style="color:var(--primary);">folder_open</span>
+            </div>
+            <h4 class="font-bold text-sm text-gray-900">Sổ đỏ & Đăng ký</h4>
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Hướng dẫn chuẩn bị hồ sơ và thủ tục xin cấp Sổ đỏ
+            lần đầu
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Xử lý đất khó: Đất nằm trong quy hoạch treo, đất
+            chưa đủ giấy tờ nguồn gốc
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Hỗ trợ thủ tục đăng ký biến động, sang tên sổ đỏ
+            do mua bán, cho tặng
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div
+            style="display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(139,28,28,0.06);padding-bottom:14px;">
+            <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+              <span class="material-symbols-outlined" style="color:var(--primary);">gavel</span>
+            </div>
+            <h4 class="font-bold text-sm text-gray-900">Tranh chấp & Thừa kế</h4>
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Giải quyết tranh chấp ranh giới đất, tranh chấp
+            lối đi chung hoặc tài sản chung
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Tư vấn thừa kế nhà đất: Lập di chúc, phân chia di
+            sản theo luật hoặc thỏa thuận
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Cử luật sư đại diện bảo vệ quyền lợi hợp pháp tại
+            Tòa án các cấp
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div
+            style="display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(139,28,28,0.06);padding-bottom:14px;">
+            <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+              <span class="material-symbols-outlined" style="color:var(--primary);">edit_document</span>
+            </div>
+            <h4 class="font-bold text-sm text-gray-900">Giao dịch & Hợp đồng</h4>
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Soạn thảo hợp đồng đặt cọc mua bán, hợp đồng cho
+            thuê nhà đất đúng luật
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Thẩm định hồ sơ pháp lý dự án căn hộ, biệt thự
+            trước khi ký hợp đồng chính thức
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Thực hiện thủ tục xóa thế chấp, nộp thuế trước bạ,
+            đăng ký biến động nhanh
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal mt-6">
+        <!-- Card 4 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div
+            style="display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(139,28,28,0.06);padding-bottom:14px;">
+            <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+              <span class="material-symbols-outlined" style="color:var(--primary);">location_city</span>
+            </div>
+            <h4 class="font-bold text-sm text-gray-900">Thu hồi & Đền bù</h4>
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Tư vấn điều kiện và mức đền bù tối đa khi Nhà nước
+            thu hồi đất dự án
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Hỗ trợ thủ tục khiếu nại quyết định hành chính về
+            thu hồi đất sai quy định
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Tư vấn quyền lợi nhận đất tái định cư hoặc đền bù
+            bằng tiền mặt
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div
+            style="display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(139,28,28,0.06);padding-bottom:14px;">
+            <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+              <span class="material-symbols-outlined" style="color:var(--primary);">balance</span>
+            </div>
+            <h4 class="font-bold text-sm text-gray-900">Hòa giải & Tố tụng</h4>
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Đại diện thương lượng hòa giải tranh chấp đất đai
+            tại UBND cấp xã/phường
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Soạn thảo đơn khởi kiện và xây dựng hệ thống chứng
+            cứ pháp lý vững chắc
+          </div>
+          <div class="svc-row">
+            <div class="svc-dot"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Hỗ trợ khách hàng trong suốt tiến trình tố tụng
+            tranh chấp đất đai tại Tòa án
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="premium-card p-8 flex flex-col gap-4 justify-between"
+          style="background:linear-gradient(135deg,rgba(139,28,28,0.03),rgba(197,160,89,0.02));">
+          <div class="space-y-4">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div
+                style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined text-white" style="font-size:24px;">workspace_premium</span>
+              </div>
+              <h4 class="font-bold text-sm text-gray-900">Hỗ trợ trọn gói A-Z</h4>
+            </div>
+            <p class="text-xs text-gray-500 leading-relaxed">Từ khâu thẩm định ban đầu, nộp hồ sơ, làm việc trực tiếp
+              với cơ quan nhà nước cho đến khi bàn giao kết quả tận tay. ACC cam kết đồng hành để tiết kiệm thời gian
+              tối đa cho quý khách.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="py-8 bg-mesh-light" id="quy-trinh">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Quy trình</div>
+        <h2 class="section-title">Quy trình 6 bước <span>chuyên nghiệp</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="steps-container">
+        <div class="steps-line hidden lg:block" style="width:calc(100% - 160px);"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
+          <!-- Steps -->
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0s;">
+            <div class="step-number">1</div>
+            <h4 class="font-bold text-sm step-title">Tiếp nhận</h4>
+            <p class="text-xs text-gray-500 leading-relaxed px-4">ACC ghi nhận nhu cầu ban đầu và hồ sơ liên quan của
+              khách hàng</p>
+          </div>
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0.1s;">
+            <div class="step-number">2</div>
+            <h4 class="font-bold text-sm step-title">Tư vấn chuyên sâu</h4>
+            <p class="text-xs text-gray-500 leading-relaxed px-4">Luật sư chuyên trách phân tích, chỉ ra rủi ro và
+              phương án xử lý</p>
+          </div>
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0.2s;">
+            <div class="step-number">3</div>
+            <h4 class="font-bold text-sm step-title">Ký hợp đồng</h4>
+            <p class="text-xs text-gray-500 leading-relaxed px-4">Ký hợp đồng dịch vụ pháp lý với điều khoản chi phí
+              minh bạch</p>
+          </div>
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0.3s;">
+            <div class="step-number">4</div>
+            <h4 class="font-bold text-sm step-title">Thực hiện</h4>
+            <p class="text-xs text-gray-500 leading-relaxed px-4">Luật sư soạn thảo văn bản và đại diện làm việc với cơ
+              quan nhà nước</p>
+          </div>
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0.4s;">
+            <div class="step-number">5</div>
+            <h4 class="font-bold text-sm step-title">Đại diện tố tụng</h4>
+            <p class="text-xs text-gray-500 leading-relaxed px-4">Tham gia hòa giải hoặc trực tiếp tố tụng tại Tòa án
+              khi có tranh chấp</p>
+          </div>
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0.5s;">
+            <div class="step-number">6</div>
+            <h4 class="font-bold text-sm step-title">Bàn giao kết quả</h4>
+            <p class="text-xs text-gray-500 leading-relaxed px-4">Bàn giao hồ sơ gốc, kết quả và hỗ trợ giải pháp sau
+              dịch vụ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOCUMENTS TO PROVIDE ============ -->
+  <section class="py-8" id="ho-so" style="background:white;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Chuẩn bị</div>
+        <h2 class="section-title">Hồ sơ khách hàng cần <span>cung cấp</span></h2>
+        <div class="section-line"></div>
+        <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm">Để quá trình làm việc diễn ra nhanh chóng và thuận lợi,
+          quý khách vui lòng chuẩn bị các tài liệu cơ bản sau (bản sao photo):</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
+        <!-- Item 1 -->
+        <div class="check-item flex-col items-start gap-3 p-6">
+          <div class="flex items-center gap-3">
+            <div class="check-icon"><span class="material-symbols-outlined"
+                style="color:white;font-size:14px;">check</span></div>
+            <h4 class="font-bold text-sm text-gray-900">Giấy chứng nhận (Sổ đỏ)</h4>
+          </div>
+          <p class="text-xs text-gray-500 leading-relaxed">Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài
+            sản gắn liền với đất (nếu có).</p>
+        </div>
+        <!-- Item 2 -->
+        <div class="check-item flex-col items-start gap-3 p-6">
+          <div class="flex items-center gap-3">
+            <div class="check-icon"><span class="material-symbols-outlined"
+                style="color:white;font-size:14px;">check</span></div>
+            <h4 class="font-bold text-sm text-gray-900">Giấy tờ tùy thân</h4>
+          </div>
+          <p class="text-xs text-gray-500 leading-relaxed">Căn cước công dân hoặc Hộ chiếu còn thời hạn hợp lệ của những
+            người đứng tên quyền sử dụng đất.</p>
+        </div>
+        <!-- Item 3 -->
+        <div class="check-item flex-col items-start gap-3 p-6">
+          <div class="flex items-center gap-3">
+            <div class="check-icon"><span class="material-symbols-outlined"
+                style="color:white;font-size:14px;">check</span></div>
+            <h4 class="font-bold text-sm text-gray-900">Hồ sơ đo vẽ, bản đồ đất</h4>
+          </div>
+          <p class="text-xs text-gray-500 leading-relaxed">Biên bản đo đạc hiện trạng, bản vẽ sơ đồ nhà đất hoặc bản đồ
+            trích lục địa chính (nếu có).</p>
+        </div>
+        <!-- Item 4 -->
+        <div class="check-item flex-col items-start gap-3 p-6">
+          <div class="flex items-center gap-3">
+            <div class="check-icon"><span class="material-symbols-outlined"
+                style="color:white;font-size:14px;">check</span></div>
+            <h4 class="font-bold text-sm text-gray-900">Tài liệu, hóa đơn liên quan</h4>
+          </div>
+          <p class="text-xs text-gray-500 leading-relaxed">Hợp đồng mua bán cũ, hóa đơn đóng thuế đất hàng năm, các
+            thông báo nộp thuế, giấy tờ chia đất tay cũ...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="cost-section py-8">
+    <div class="max-w-3xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;">Chi
+          phí</div>
+        <h2 class="section-title text-white">Chi phí dịch vụ tại <span>ACC</span></h2>
+        <div class="section-line" style="background:linear-gradient(90deg,var(--accent),var(--accent-light));"></div>
+      </div>
+
+      <div class="cost-card reveal">
+        <div style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div class="flex items-center gap-3">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">chat</span>
+              </div>
+              <span class="text-white/80 text-sm">Tư vấn sơ bộ ban đầu qua điện thoại/Zalo</span>
+            </div>
+            <span class="font-bold text-white text-sm">Miễn phí</span>
+          </div>
+          <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div class="flex items-center gap-3">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">feed</span>
+              </div>
+              <span class="text-white/80 text-sm">Soạn thảo hợp đồng, văn bản chuyển nhượng</span>
+            </div>
+            <span class="font-bold text-white text-sm">Từ 1.500.000đ</span>
+          </div>
+          <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div class="flex items-center gap-3">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">gavel</span>
+              </div>
+              <span class="text-white/80 text-sm">Đại diện giải quyết tranh chấp đất đai</span>
+            </div>
+            <span class="font-bold text-white text-sm">Theo thỏa thuận hợp đồng</span>
+          </div>
+          <div class="cost-row" style="padding:16px 0;">
+            <div class="flex items-center gap-3">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined"
+                  style="color:var(--accent-light);font-size:18px;">folder_special</span>
+              </div>
+              <span class="text-white/80 text-sm">Thực hiện thủ tục cấp Sổ đỏ trọn gói</span>
+            </div>
+            <span class="font-bold text-white text-sm">Theo quy mô nhà đất</span>
+          </div>
+        </div>
+        <div style="padding:20px 32px;background:rgba(197,160,89,0.06);display:flex;align-items:center;gap:12px;">
+          <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;">info</span>
+          <p class="text-white/50 text-xs italic">Chi phí được thỏa thuận trọn gói, minh bạch và cam kết không phát sinh
+            thêm chi phí ẩn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACC DIFFERENCES ============ -->
+  <section class="py-8" style="background:white;" id="acc-difference">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Điểm khác biệt</div>
+        <h2 class="section-title">Tại sao nên chọn <span>Công ty Luật ACC?</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+        <!-- Feature 1 -->
+        <div class="premium-card p-8 flex flex-col gap-4 text-center items-center">
+          <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">workspace_premium</span>
+          </div>
+          <h4 class="font-bold text-base text-gray-900">Kinh nghiệm dày dặn</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Với hơn 15 năm kinh nghiệm giải quyết thành công hàng ngàn vụ
+            việc đất đai từ đơn giản đến phức tạp nhất.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="premium-card p-8 flex flex-col gap-4 text-center items-center">
+          <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">fact_check</span>
+          </div>
+          <h4 class="font-bold text-base text-gray-900">Chi phí hợp lý, rõ ràng</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Mọi khoản phí dịch vụ đều được kê khai minh bạch trên hợp
+            đồng, cam kết trọn gói và không phụ thu.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="premium-card p-8 flex flex-col gap-4 text-center items-center">
+          <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">verified</span>
+          </div>
+          <h4 class="font-bold text-base text-gray-900">Bảo mật thông tin tuyệt đối</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Hồ sơ thông tin tài sản, bí mật kinh doanh được bảo vệ nghiêm
+            ngặt theo đúng nguyên tắc nghề nghiệp luật sư.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="py-8 bg-mesh-light" id="faq">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Giải đáp</div>
+        <h2 class="section-title">Câu Hỏi <span>Thường Gặp</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="space-y-3 reveal">
+        <!-- FAQ 1 -->
+        <details class="faq-item" open>
+          <summary class="faq-summary">
+            Thời gian giải quyết một vụ tranh chấp đất đai mất bao lâu?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            Thời gian phụ thuộc hoàn toàn vào tính chất phức tạp của vụ việc. Thông thường, một vụ tranh tụng tại Tòa án
+            cấp sơ thẩm kéo dài từ <strong>6–12 tháng</strong>. Đối với các vụ việc giải quyết bằng hòa giải hoặc thương
+            lượng ngoài tòa, thời gian có thể rút ngắn chỉ còn từ <strong>1–3 tháng</strong>.
+          </div>
+        </details>
+        <!-- FAQ 2 -->
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Tôi có thể tư vấn online mà không cần đến trực tiếp văn phòng không?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            <strong>Hoàn toàn được.</strong> ACC cung cấp dịch vụ tư vấn trực tuyến thông qua <strong>Zalo, Video Call
+              hoặc Email</strong>. Chúng tôi cũng hỗ trợ nhận và bàn giao hồ sơ tận nhà qua nhân viên chuyển phát nhanh
+            riêng để tiết kiệm thời gian di chuyển của quý khách.
+          </div>
+        </details>
+        <!-- FAQ 3 -->
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Luật sư có thể thay mặt tôi trực tiếp ra Tòa tranh tụng được không?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            <strong>Có.</strong> Thông qua hợp đồng ủy quyền hợp pháp, luật sư của ACC có thể thay mặt khách hàng
+            <strong>tham gia các buổi làm việc với cơ quan chức năng</strong> và tiến hành tranh tụng tại Tòa án để bảo
+            vệ quyền lợi mà không bắt buộc khách hàng phải có mặt.
+          </div>
+        </details>
+        <!-- FAQ 4 -->
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Tranh chấp đất đai có bắt buộc phải làm thủ tục ra tòa án không?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            <strong>Không bắt buộc.</strong> Rất nhiều trường hợp mâu thuẫn ranh giới hoặc phân chia thừa kế đất đai có
+            thể được tháo gỡ hiệu quả thông qua con đường hòa giải cơ sở tại địa phương hoặc đàm phán thương lượng trực
+            tiếp, giúp tiết kiệm tối đa thời gian và chi phí.
+          </div>
+        </details>
+        <!-- FAQ 5 -->
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Nếu vụ việc phát sinh tranh chấp mới, ACC có tiếp tục hỗ trợ không?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            <strong>Có.</strong> ACC cam kết luôn đồng hành lâu dài cùng khách hàng. Chúng tôi sẽ hỗ trợ thương lượng
+            lại, lập hồ sơ phản tố hoặc tiếp tục đại diện khách hàng tham gia tố tụng để bảo vệ quyền lợi tối đa đến
+            cùng.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section py-12 text-center">
+    <div class="cta-orb" style="width:400px;height:400px;background:rgba(197,160,89,0.08);top:-100px;left:-100px;">
+    </div>
+    <div class="cta-orb" style="width:350px;height:350px;background:rgba(139,28,28,0.15);bottom:-80px;right:-80px;">
+    </div>
+    <div class="max-w-3xl mx-auto px-6 relative z-10">
+      <div class="reveal">
+        <div class="section-label"
+          style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;margin-bottom:24px;">
+          Hỗ trợ toàn quốc
+        </div>
+        <h2
+          style="font-family:'Roboto',sans-serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;color:white;line-height:1.2;margin-bottom:20px;">
+          Bảo vệ tài sản nhà đất của bạn <br />
+          <span
+            style="background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">an
+            toàn - tối ưu quyền lợi</span>
+        </h2>
+        <p class="text-white/60 leading-relaxed mb-6" style="font-size:1rem;max-width:540px;margin:0 auto 40px;">
+          Đừng để những rủi ro pháp lý làm ảnh hưởng đến khối tài sản mà bạn đã nỗ lực tích lũy. Hãy để đội ngũ Luật sư
+          Đất đai từ ACC hỗ trợ bạn hôm nay.
+        </p>
+        <div class="flex justify-center flex-wrap gap-4">
+          <a href="tel:19003330" class="btn-primary" style="font-size:1rem;padding:18px 44px;">
+            <span class="material-symbols-outlined" style="font-size:22px;">call</span>
+            Kết nối ngay - 1900 3330
+          </a>
+          <a href="https://zalo.me/2171133625094125529" target="_blank" class="btn-outline"
+            style="font-size:1rem;padding:18px 44px;">
+            <span class="material-symbols-outlined" style="font-size:22px;">chat</span>
+            Tư vấn Zalo
           </a>
         </div>
-
-        <!-- Stats -->
-        <div class="hero-stats flex flex-wrap gap-x-8 gap-y-4 pt-4">
-          <div class="stat-item">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">15+</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Năm kinh nghiệm</div>
-          </div>
-          <div class="stat-item">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">1000+</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Hồ sơ thành công</div>
-          </div>
-          <div class="stat-item">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Toàn Quốc</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Phủ sóng hỗ trợ</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right -->
-      <div class="block lg:mt-0 mt-8 hero-card">
-        <div class="relative max-w-md mx-auto lg:max-w-none">
-          <div class="passport-card p-3 shadow-2xl">
-            <img
-              src="./images/land_law_hero.png"
-              alt="Dịch vụ pháp lý đất đai ACC"
-              class="w-full rounded-2xl object-cover h-[280px] sm:h-[380px]"
-            />
-          </div>
-          <!-- Floating badges -->
-          <div class="float-badge sm:flex hidden" style="bottom:-20px;left:20px;z-index:10;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:white;font-size:18px;">verified</span>
-            </div>
-            <div>
-              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Pháp lý đảm bảo</div>
-              <div style="font-size:0.72rem;color:#888;">Cam kết toàn diện A-Z</div>
-            </div>
-          </div>
-          <div class="float-badge sm:flex hidden" style="top:20px;right:-20px;z-index:10;animation-delay:1.5s;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#c5a059,#99732f);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:white;font-size:18px;">shield</span>
-            </div>
-            <div>
-              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Bảo mật tuyệt đối</div>
-              <div style="font-size:0.72rem;color:#888;">An toàn thông tin khách hàng</div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Wave bottom -->
-  <div style="position:absolute;bottom:0;left:0;right:0;z-index:5;">
-    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:80px;">
-      <path d="M0 80 L0 40 Q360 0 720 40 Q1080 80 1440 40 L1440 80 Z" fill="#fafafa"/>
-    </svg>
-  </div>
-</section>
-
-<!-- ============ WHAT IS LAND LAWYER ============ -->
-<section class="py-8 bg-mesh-light" id="gioi-thieu">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-6">
-      <div class="reveal-left space-y-6">
-        <div>
-          <div class="section-label">Giới thiệu</div>
-          <h2 class="section-title">Luật Sư Đất Đai <span>Là Ai?</span></h2>
-          <div class="section-line" style="margin-left:0;"></div>
-        </div>
-        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
-          <strong class="text-gray-900">Luật sư đất đai</strong> là những chuyên gia pháp lý chuyên sâu về các quy định liên quan đến quyền sở hữu, sử dụng và giao dịch tài sản gắn liền với đất.
-        </p>
-        <p class="text-gray-500 leading-relaxed text-sm">
-          Tại Công ty Luật ACC, vai trò của chúng tôi không chỉ dừng lại ở việc tư vấn văn bản hành chính. Chúng tôi là người đồng hành pháp lý tin cậy, bảo vệ sự an toàn cho tài sản và ngăn ngừa mọi rủi ro tranh chấp bất động sản phức tạp.
-        </p>
-        <a href="#services" class="inline-flex items-center gap-2 text-sm font-semibold hover:underline" style="color:var(--primary);">
-          Xem chi tiết dịch vụ chuyên sâu
-          <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
-        </a>
-      </div>
-      
-      <div class="reveal-right">
-        <div class="relative max-w-md mx-auto lg:max-w-none">
-          <div class="passport-card p-3 shadow-2xl">
-            <img
-              src="./images/land_law_consultation.png"
-              alt="Luật sư đất đai ACC tư vấn sổ đỏ"
-              class="w-full rounded-2xl object-cover h-[240px] sm:h-[320px]"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHEN NEED LAWYER (SCENARIOS) ============ -->
-<section class="py-8" style="background:white;" id="scenarios">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Tình huống pháp lý</div>
-      <h2 class="section-title">Khi nào bạn <span>cần Luật sư?</span></h2>
-      <div class="section-line"></div>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal mb-6">
-      <!-- Scenario 1 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-          <span class="material-symbols-outlined text-xl" style="color:var(--primary);">gavel</span>
-        </div>
-        <h4 class="font-bold text-sm text-gray-900">Tranh Chấp Đất Đai</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Giải quyết tranh chấp ranh giới, lối đi chung, thừa kế đất đai hoặc phân chia tài sản bất động sản.</p>
-      </div>
-      <!-- Scenario 2 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-          <span class="material-symbols-outlined text-xl" style="color:var(--primary);">description</span>
-        </div>
-        <h4 class="font-bold text-sm text-gray-900">Thủ Tục Sổ Đỏ</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Hỗ trợ xin cấp mới sổ đỏ, sang tên, chuyển nhượng, đính chính thông tin bị sai sót trên Giấy chứng nhận.</p>
-      </div>
-      <!-- Scenario 3 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-          <span class="material-symbols-outlined text-xl" style="color:var(--primary);">apartment</span>
-        </div>
-        <h4 class="font-bold text-sm text-gray-900">Mua Bán / Chuyển Nhượng</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Rà soát tính pháp lý dự án, kiểm tra quy hoạch và soạn thảo hợp đồng đặt cọc mua bán bất động sản.</p>
-      </div>
-    </div>
-    
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 reveal">
-      <!-- Scenario 4 -->
-      <div class="premium-card p-8 lg:col-span-2 flex flex-col md:flex-row gap-6 items-center">
-        <div class="space-y-3 flex-1">
-          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-            <span class="material-symbols-outlined text-xl" style="color:var(--primary);">map</span>
-          </div>
-          <h4 class="font-bold text-sm text-gray-900">Quy Hoạch & Đền Bù</h4>
-          <p class="text-xs text-gray-500 leading-relaxed">Tư vấn chính sách bồi thường hỗ trợ tái định cư khi Nhà nước thu hồi đất, kiểm tra đất dính quy hoạch lộ giới.</p>
-        </div>
-        <img
-          src="./images/land_planning_map.png"
-          alt="Bản đồ quy hoạch đất đai"
-          class="w-full md:w-48 h-32 rounded-xl object-cover grayscale hover:grayscale-0 transition-all duration-500 flex-shrink-0"
-        />
-      </div>
-      <!-- Scenario 5 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-          <span class="material-symbols-outlined text-xl" style="color:var(--primary);">family_history</span>
-        </div>
-        <h4 class="font-bold text-sm text-gray-900">Thừa Kế & Tặng Cho</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Tư vấn soạn thảo di chúc tài sản đất đai hợp pháp, làm thủ tục tặng cho nhà đất giữa người thân.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 12 COMMON SITUATIONS ============ -->
-<section class="py-8 bg-mesh-light">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Trường hợp điển hình</div>
-      <h2 class="section-title">12 tình huống <span>cần hỗ trợ của Luật sư</span></h2>
-      <div class="section-line"></div>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 reveal">
-      <div class="check-item"><div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi xảy ra tranh chấp về ranh giới, lối đi chung hoặc lấn chiếm đất đai</span></div>
-      <div class="check-item"><div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi thực hiện giao dịch mua bán, chuyển nhượng nhưng chưa rõ pháp lý bất động sản</span></div>
-      <div class="check-item"><div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi làm thủ tục cấp sổ đỏ lần đầu, sang tên hoặc hợp thức hóa nhà đất phức tạp</span></div>
-      <div class="check-item"><div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi đất nằm trong diện quy hoạch, bị thu hồi hoặc nhận tiền đền bù đền bù giải phóng mặt bằng</span></div>
-      <div class="check-item"><div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi cần thẩm định pháp lý dự án toàn diện trước khi đầu tư số tiền lớn</span></div>
-      <div class="check-item"><div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi tài sản đất đai có nhiều đồng sở hữu, cần thỏa thuận phân chia diện tích sử dụng</span></div>
-      <div class="check-item"><div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi phân chia di sản thừa kế là nhà đất nhưng có bất đồng ý kiến giữa các đồng thừa kế</span></div>
-      <div class="check-item"><div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi bị cơ quan nhà nước từ chối cấp sổ đỏ hoặc hồ sơ bị trả lại nhiều lần không rõ lý do</span></div>
-      <div class="check-item"><div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi cần đại diện khiếu nại, giải trình tranh chấp hành chính với cơ quan chính quyền sở tại</span></div>
-      <div class="check-item"><div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi muốn ủy quyền cho bên thứ ba thay mặt thực hiện trọn gói các thủ tục nhà đất</span></div>
-      <div class="check-item"><div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi cần soạn thảo và rà soát hợp đồng đặt cọc để ngăn ngừa mất cọc, lừa đảo mua bán</span></div>
-      <div class="check-item"><div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div><span class="text-sm text-gray-600">Khi bất động sản có vướng mắc phức tạp: Mua bán giấy viết tay, chưa chuyển mục đích sử dụng</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SERVICE DETAILS ============ -->
-<section class="py-8 bg-white" id="services">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Dịch vụ nổi bật</div>
-      <h2 class="section-title">Dịch vụ Tư vấn <span>Chuyên Sâu</span></h2>
-      <div class="section-line"></div>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
-      <!-- Card 1 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div style="display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(139,28,28,0.06);padding-bottom:14px;">
-          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-            <span class="material-symbols-outlined" style="color:var(--primary);">folder_open</span>
-          </div>
-          <h4 class="font-bold text-sm text-gray-900">Sổ đỏ & Đăng ký</h4>
-        </div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hướng dẫn chuẩn bị hồ sơ và thủ tục xin cấp Sổ đỏ lần đầu</div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Xử lý đất khó: Đất nằm trong quy hoạch treo, đất chưa đủ giấy tờ nguồn gốc</div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hỗ trợ thủ tục đăng ký biến động, sang tên sổ đỏ do mua bán, cho tặng</div>
-      </div>
-      <!-- Card 2 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div style="display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(139,28,28,0.06);padding-bottom:14px;">
-          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-            <span class="material-symbols-outlined" style="color:var(--primary);">gavel</span>
-          </div>
-          <h4 class="font-bold text-sm text-gray-900">Tranh chấp & Thừa kế</h4>
-        </div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Giải quyết tranh chấp ranh giới đất, tranh chấp lối đi chung hoặc tài sản chung</div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tư vấn thừa kế nhà đất: Lập di chúc, phân chia di sản theo luật hoặc thỏa thuận</div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Cử luật sư đại diện bảo vệ quyền lợi hợp pháp tại Tòa án các cấp</div>
-      </div>
-      <!-- Card 3 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div style="display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(139,28,28,0.06);padding-bottom:14px;">
-          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-            <span class="material-symbols-outlined" style="color:var(--primary);">edit_document</span>
-          </div>
-          <h4 class="font-bold text-sm text-gray-900">Giao dịch & Hợp đồng</h4>
-        </div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Soạn thảo hợp đồng đặt cọc mua bán, hợp đồng cho thuê nhà đất đúng luật</div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Thẩm định hồ sơ pháp lý dự án căn hộ, biệt thự trước khi ký hợp đồng chính thức</div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Thực hiện thủ tục xóa thế chấp, nộp thuế trước bạ, đăng ký biến động nhanh</div>
-      </div>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal mt-6">
-      <!-- Card 4 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div style="display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(139,28,28,0.06);padding-bottom:14px;">
-          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-            <span class="material-symbols-outlined" style="color:var(--primary);">location_city</span>
-          </div>
-          <h4 class="font-bold text-sm text-gray-900">Thu hồi & Đền bù</h4>
-        </div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tư vấn điều kiện và mức đền bù tối đa khi Nhà nước thu hồi đất dự án</div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hỗ trợ thủ tục khiếu nại quyết định hành chính về thu hồi đất sai quy định</div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tư vấn quyền lợi nhận đất tái định cư hoặc đền bù bằng tiền mặt</div>
-      </div>
-      <!-- Card 5 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div style="display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(139,28,28,0.06);padding-bottom:14px;">
-          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-            <span class="material-symbols-outlined" style="color:var(--primary);">balance</span>
-          </div>
-          <h4 class="font-bold text-sm text-gray-900">Hòa giải & Tố tụng</h4>
-        </div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Đại diện thương lượng hòa giải tranh chấp đất đai tại UBND cấp xã/phường</div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Soạn thảo đơn khởi kiện và xây dựng hệ thống chứng cứ pháp lý vững chắc</div>
-        <div class="svc-row"><div class="svc-dot"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hỗ trợ khách hàng trong suốt tiến trình tố tụng tranh chấp đất đai tại Tòa án</div>
-      </div>
-      <!-- Card 6 -->
-      <div class="premium-card p-8 flex flex-col gap-4 justify-between" style="background:linear-gradient(135deg,rgba(139,28,28,0.03),rgba(197,160,89,0.02));">
-        <div class="space-y-4">
-          <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined text-white" style="font-size:24px;">workspace_premium</span>
-            </div>
-            <h4 class="font-bold text-sm text-gray-900">Hỗ trợ trọn gói A-Z</h4>
-          </div>
-          <p class="text-xs text-gray-500 leading-relaxed">Từ khâu thẩm định ban đầu, nộp hồ sơ, làm việc trực tiếp với cơ quan nhà nước cho đến khi bàn giao kết quả tận tay. ACC cam kết đồng hành để tiết kiệm thời gian tối đa cho quý khách.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROCESS ============ -->
-<section class="py-8 bg-mesh-light" id="quy-trinh">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Quy trình</div>
-      <h2 class="section-title">Quy trình 6 bước <span>chuyên nghiệp</span></h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="steps-container">
-      <div class="steps-line hidden lg:block" style="width:calc(100% - 160px);"></div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
-        <!-- Steps -->
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0s;">
-          <div class="step-number">1</div>
-          <h4 class="font-bold text-sm step-title">Tiếp nhận</h4>
-          <p class="text-xs text-gray-500 leading-relaxed px-4">ACC ghi nhận nhu cầu ban đầu và hồ sơ liên quan của khách hàng</p>
-        </div>
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0.1s;">
-          <div class="step-number">2</div>
-          <h4 class="font-bold text-sm step-title">Tư vấn chuyên sâu</h4>
-          <p class="text-xs text-gray-500 leading-relaxed px-4">Luật sư chuyên trách phân tích, chỉ ra rủi ro và phương án xử lý</p>
-        </div>
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0.2s;">
-          <div class="step-number">3</div>
-          <h4 class="font-bold text-sm step-title">Ký hợp đồng</h4>
-          <p class="text-xs text-gray-500 leading-relaxed px-4">Ký hợp đồng dịch vụ pháp lý với điều khoản chi phí minh bạch</p>
-        </div>
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0.3s;">
-          <div class="step-number">4</div>
-          <h4 class="font-bold text-sm step-title">Thực hiện</h4>
-          <p class="text-xs text-gray-500 leading-relaxed px-4">Luật sư soạn thảo văn bản và đại diện làm việc với cơ quan nhà nước</p>
-        </div>
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0.4s;">
-          <div class="step-number">5</div>
-          <h4 class="font-bold text-sm step-title">Đại diện tố tụng</h4>
-          <p class="text-xs text-gray-500 leading-relaxed px-4">Tham gia hòa giải hoặc trực tiếp tố tụng tại Tòa án khi có tranh chấp</p>
-        </div>
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0.5s;">
-          <div class="step-number">6</div>
-          <h4 class="font-bold text-sm step-title">Bàn giao kết quả</h4>
-          <p class="text-xs text-gray-500 leading-relaxed px-4">Bàn giao hồ sơ gốc, kết quả và hỗ trợ giải pháp sau dịch vụ</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ DOCUMENTS TO PROVIDE ============ -->
-<section class="py-8" id="ho-so" style="background:white;">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Chuẩn bị</div>
-      <h2 class="section-title">Hồ sơ khách hàng cần <span>cung cấp</span></h2>
-      <div class="section-line"></div>
-      <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm">Để quá trình làm việc diễn ra nhanh chóng và thuận lợi, quý khách vui lòng chuẩn bị các tài liệu cơ bản sau (bản sao photo):</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
-      <!-- Item 1 -->
-      <div class="check-item flex-col items-start gap-3 p-6">
-        <div class="flex items-center gap-3">
-          <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-          <h4 class="font-bold text-sm text-gray-900">Giấy chứng nhận (Sổ đỏ)</h4>
-        </div>
-        <p class="text-xs text-gray-500 leading-relaxed">Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản gắn liền với đất (nếu có).</p>
-      </div>
-      <!-- Item 2 -->
-      <div class="check-item flex-col items-start gap-3 p-6">
-        <div class="flex items-center gap-3">
-          <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-          <h4 class="font-bold text-sm text-gray-900">Giấy tờ tùy thân</h4>
-        </div>
-        <p class="text-xs text-gray-500 leading-relaxed">Căn cước công dân hoặc Hộ chiếu còn thời hạn hợp lệ của những người đứng tên quyền sử dụng đất.</p>
-      </div>
-      <!-- Item 3 -->
-      <div class="check-item flex-col items-start gap-3 p-6">
-        <div class="flex items-center gap-3">
-          <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-          <h4 class="font-bold text-sm text-gray-900">Hồ sơ đo vẽ, bản đồ đất</h4>
-        </div>
-        <p class="text-xs text-gray-500 leading-relaxed">Biên bản đo đạc hiện trạng, bản vẽ sơ đồ nhà đất hoặc bản đồ trích lục địa chính (nếu có).</p>
-      </div>
-      <!-- Item 4 -->
-      <div class="check-item flex-col items-start gap-3 p-6">
-        <div class="flex items-center gap-3">
-          <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-          <h4 class="font-bold text-sm text-gray-900">Tài liệu, hóa đơn liên quan</h4>
-        </div>
-        <p class="text-xs text-gray-500 leading-relaxed">Hợp đồng mua bán cũ, hóa đơn đóng thuế đất hàng năm, các thông báo nộp thuế, giấy tờ chia đất tay cũ...</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PRICING ============ -->
-<section class="cost-section py-8">
-  <div class="max-w-3xl mx-auto px-6 relative z-10">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;">Chi phí</div>
-      <h2 class="section-title text-white">Chi phí dịch vụ tại <span>ACC</span></h2>
-      <div class="section-line" style="background:linear-gradient(90deg,var(--accent),var(--accent-light));"></div>
-    </div>
-    
-    <div class="cost-card reveal">
-      <div style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08);">
-        <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">chat</span>
-            </div>
-            <span class="text-white/80 text-sm">Tư vấn sơ bộ ban đầu qua điện thoại/Zalo</span>
-          </div>
-          <span class="font-bold text-white text-sm">Miễn phí</span>
-        </div>
-        <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">feed</span>
-            </div>
-            <span class="text-white/80 text-sm">Soạn thảo hợp đồng, văn bản chuyển nhượng</span>
-          </div>
-          <span class="font-bold text-white text-sm">Từ 1.500.000đ</span>
-        </div>
-        <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">gavel</span>
-            </div>
-            <span class="text-white/80 text-sm">Đại diện giải quyết tranh chấp đất đai</span>
-          </div>
-          <span class="font-bold text-white text-sm">Theo thỏa thuận hợp đồng</span>
-        </div>
-        <div class="cost-row" style="padding:16px 0;">
-          <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">folder_special</span>
-            </div>
-            <span class="text-white/80 text-sm">Thực hiện thủ tục cấp Sổ đỏ trọn gói</span>
-          </div>
-          <span class="font-bold text-white text-sm">Theo quy mô nhà đất</span>
-        </div>
-      </div>
-      <div style="padding:20px 32px;background:rgba(197,160,89,0.06);display:flex;align-items:center;gap:12px;">
-        <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;">info</span>
-        <p class="text-white/50 text-xs italic">Chi phí được thỏa thuận trọn gói, minh bạch và cam kết không phát sinh thêm chi phí ẩn.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ACC DIFFERENCES ============ -->
-<section class="py-8" style="background:white;" id="acc-difference">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Điểm khác biệt</div>
-      <h2 class="section-title">Tại sao nên chọn <span>Công ty Luật ACC?</span></h2>
-      <div class="section-line"></div>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
-      <!-- Feature 1 -->
-      <div class="premium-card p-8 flex flex-col gap-4 text-center items-center">
-        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">workspace_premium</span>
-        </div>
-        <h4 class="font-bold text-base text-gray-900">Kinh nghiệm dày dặn</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Với hơn 15 năm kinh nghiệm giải quyết thành công hàng ngàn vụ việc đất đai từ đơn giản đến phức tạp nhất.</p>
-      </div>
-      <!-- Feature 2 -->
-      <div class="premium-card p-8 flex flex-col gap-4 text-center items-center">
-        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">fact_check</span>
-        </div>
-        <h4 class="font-bold text-base text-gray-900">Chi phí hợp lý, rõ ràng</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Mọi khoản phí dịch vụ đều được kê khai minh bạch trên hợp đồng, cam kết trọn gói và không phụ thu.</p>
-      </div>
-      <!-- Feature 3 -->
-      <div class="premium-card p-8 flex flex-col gap-4 text-center items-center">
-        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">verified</span>
-        </div>
-        <h4 class="font-bold text-base text-gray-900">Bảo mật thông tin tuyệt đối</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Hồ sơ thông tin tài sản, bí mật kinh doanh được bảo vệ nghiêm ngặt theo đúng nguyên tắc nghề nghiệp luật sư.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section class="py-8 bg-mesh-light" id="faq">
-  <div class="max-w-3xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Giải đáp</div>
-      <h2 class="section-title">Câu Hỏi <span>Thường Gặp</span></h2>
-      <div class="section-line"></div>
-    </div>
-    
-    <div class="space-y-3 reveal">
-      <!-- FAQ 1 -->
-      <details class="faq-item" open>
-        <summary class="faq-summary">
-          Thời gian giải quyết một vụ tranh chấp đất đai mất bao lâu?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          Thời gian phụ thuộc hoàn toàn vào tính chất phức tạp của vụ việc. Thông thường, một vụ tranh tụng tại Tòa án cấp sơ thẩm kéo dài từ <strong>6–12 tháng</strong>. Đối với các vụ việc giải quyết bằng hòa giải hoặc thương lượng ngoài tòa, thời gian có thể rút ngắn chỉ còn từ <strong>1–3 tháng</strong>.
-        </div>
-      </details>
-      <!-- FAQ 2 -->
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Tôi có thể tư vấn online mà không cần đến trực tiếp văn phòng không?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          <strong>Hoàn toàn được.</strong> ACC cung cấp dịch vụ tư vấn trực tuyến thông qua <strong>Zalo, Video Call hoặc Email</strong>. Chúng tôi cũng hỗ trợ nhận và bàn giao hồ sơ tận nhà qua nhân viên chuyển phát nhanh riêng để tiết kiệm thời gian di chuyển của quý khách.
-        </div>
-      </details>
-      <!-- FAQ 3 -->
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Luật sư có thể thay mặt tôi trực tiếp ra Tòa tranh tụng được không?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          <strong>Có.</strong> Thông qua hợp đồng ủy quyền hợp pháp, luật sư của ACC có thể thay mặt khách hàng <strong>tham gia các buổi làm việc với cơ quan chức năng</strong> và tiến hành tranh tụng tại Tòa án để bảo vệ quyền lợi mà không bắt buộc khách hàng phải có mặt.
-        </div>
-      </details>
-      <!-- FAQ 4 -->
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Tranh chấp đất đai có bắt buộc phải làm thủ tục ra tòa án không?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          <strong>Không bắt buộc.</strong> Rất nhiều trường hợp mâu thuẫn ranh giới hoặc phân chia thừa kế đất đai có thể được tháo gỡ hiệu quả thông qua con đường hòa giải cơ sở tại địa phương hoặc đàm phán thương lượng trực tiếp, giúp tiết kiệm tối đa thời gian và chi phí.
-        </div>
-      </details>
-      <!-- FAQ 5 -->
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Nếu vụ việc phát sinh tranh chấp mới, ACC có tiếp tục hỗ trợ không?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          <strong>Có.</strong> ACC cam kết luôn đồng hành lâu dài cùng khách hàng. Chúng tôi sẽ hỗ trợ thương lượng lại, lập hồ sơ phản tố hoặc tiếp tục đại diện khách hàng tham gia tố tụng để bảo vệ quyền lợi tối đa đến cùng.
-        </div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CTA ============ -->
-<section class="cta-section py-12 text-center">
-  <div class="cta-orb" style="width:400px;height:400px;background:rgba(197,160,89,0.08);top:-100px;left:-100px;"></div>
-  <div class="cta-orb" style="width:350px;height:350px;background:rgba(139,28,28,0.15);bottom:-80px;right:-80px;"></div>
-  <div class="max-w-3xl mx-auto px-6 relative z-10">
-    <div class="reveal">
-      <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;margin-bottom:24px;">
-        Hỗ trợ toàn quốc
-      </div>
-      <h2 style="font-family:'Roboto',sans-serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;color:white;line-height:1.2;margin-bottom:20px;">
-        Bảo vệ tài sản nhà đất của bạn <br/>
-        <span style="background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">an toàn - tối ưu quyền lợi</span>
-      </h2>
-      <p class="text-white/60 leading-relaxed mb-6" style="font-size:1rem;max-width:540px;margin:0 auto 40px;">
-        Đừng để những rủi ro pháp lý làm ảnh hưởng đến khối tài sản mà bạn đã nỗ lực tích lũy. Hãy để đội ngũ Luật sư Đất đai từ ACC hỗ trợ bạn hôm nay.
-      </p>
-      <div class="flex justify-center flex-wrap gap-4">
-        <a href="tel:19003330" class="btn-primary" style="font-size:1rem;padding:18px 44px;">
-          <span class="material-symbols-outlined" style="font-size:22px;">call</span>
-          Kết nối ngay - 1900 3330
-        </a>
-        <a href="https://zalo.me/2171133625094125529" target="_blank" class="btn-outline" style="font-size:1rem;padding:18px 44px;">
-          <span class="material-symbols-outlined" style="font-size:22px;">chat</span>
-          Tư vấn Zalo
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 
 
-<script>
-  // ===== Particle generator =====
-  const container = document.getElementById('particles');
-  const count = 35;
-  if (container) {
-    for (let i = 0; i < count; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle';
-      const size = Math.random() * 18 + 6;
-      const pOpacity = Math.random() * 0.4 + 0.45;
-      const drift = Math.random() * 60 - 30;
-      p.style.cssText = `
+  <script>
+    // ===== Particle generator =====
+    const container = document.getElementById('particles');
+    const count = 35;
+    if (container) {
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = Math.random() * 18 + 6;
+        const pOpacity = Math.random() * 0.4 + 0.45;
+        const drift = Math.random() * 60 - 30;
+        p.style.cssText = `
         width:${size}px;height:${size}px;
-        left:${Math.random()*100}%;
-        animation-duration:${Math.random()*15+12}s;
-        animation-delay:${Math.random()*15}s;
+        left:${Math.random() * 100}%;
+        animation-duration:${Math.random() * 15 + 12}s;
+        animation-delay:${Math.random() * 15}s;
         --p-opacity:${pOpacity};
         --drift:${drift}px;
       `;
-      container.appendChild(p);
+        container.appendChild(p);
+      }
     }
-  }
 
-  // ===== Scroll reveal =====
-  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-  if (revealEls.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.style.transitionDelay || '0s';
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, parseFloat(delay) * 1000);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
-    revealEls.forEach(el => observer.observe(el));
-  }
-</script>
+    // ===== Scroll reveal =====
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    if (revealEls.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.style.transitionDelay || '0s';
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, parseFloat(delay) * 1000);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+      revealEls.forEach(el => observer.observe(el));
+    }
+  </script>
 </body>
+
 </html>

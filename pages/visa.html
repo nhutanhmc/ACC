@@ -1,1510 +1,1842 @@
 <!DOCTYPE html>
 <html lang="vi" class="scroll-smooth">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Dịch vụ làm Visa trọn gói</title>
-<meta name="description" content="Công ty Luật ACC cung cấp dịch vụ làm Visa trọn gói, hỗ trợ A-Z, tối ưu tỷ lệ đậu. Tư vấn miễn phí, đội ngũ luật sư chuyên nghiệp."/>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          primary: '#8B1C1C',
-          'primary-dark': '#5c1114',
-          'primary-light': '#b44040',
-          accent: '#c5a059',
-          'accent-light': '#ebdcae',
-          surface: '#fafafa',
-          'surface-dark': '#f0f0f0',
-        },
-        fontFamily: {
-          sans: ['Roboto', 'sans-serif'],
-          display: ['Roboto', 'sans-serif'],
-        },
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Dịch vụ làm Visa trọn gói</title>
+  <meta name="description"
+    content="Công ty Luật ACC cung cấp dịch vụ làm Visa trọn gói, hỗ trợ A-Z, tối ưu tỷ lệ đậu. Tư vấn miễn phí, đội ngũ luật sư chuyên nghiệp." />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#8B1C1C',
+            'primary-dark': '#5c1114',
+            'primary-light': '#b44040',
+            accent: '#c5a059',
+            'accent-light': '#ebdcae',
+            surface: '#fafafa',
+            'surface-dark': '#f0f0f0',
+          },
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Roboto', 'sans-serif'],
+          },
+        }
       }
     }
-  }
-</script>
-<style>
-  :root {
-    --primary: #8B1C1C;
-    --primary-dark: #5c1114;
-    --primary-light: #b44040;
-    --accent: #c5a059;
-    --accent-light: #ebdcae;
-  }
+  </script>
+  <style>
+    :root {
+      --primary: #8B1C1C;
+      --primary-dark: #5c1114;
+      --primary-light: #b44040;
+      --accent: #c5a059;
+      --accent-light: #ebdcae;
+    }
 
-  * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: #fafafa;
-    color: #1a1a1a;
-    overflow-x: hidden;
-  }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #fafafa;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
 
-  /* ============ SCROLLBAR ============ */
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #f1f1f1; }
-  ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+    /* ============ SCROLLBAR ============ */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
 
-  /* ============ NAVBAR ============ */
-  .navbar {
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(139,28,28,0.08);
-    transition: all 0.3s ease;
-  }
-  .navbar.scrolled {
-    box-shadow: 0 4px 30px rgba(139,28,28,0.12);
-  }
-  .nav-link {
-    position: relative;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #333;
-    transition: color 0.3s;
-  }
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px; left: 0;
-    width: 0; height: 2px;
-    background: var(--primary);
-    transition: width 0.3s ease;
-    border-radius: 2px;
-  }
-  .nav-link:hover { color: var(--primary); }
-  .nav-link:hover::after { width: 100%; }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
 
-  /* ============ HERO ============ */
-  .hero-section {
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
-  .hero-gradient {
-    background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 35%, #5c1114 65%, #1a0404 100%);
-  }
-  .hero-particles {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 1;
-    pointer-events: none;
-  }
-  .particle {
-    position: absolute;
-    bottom: -50px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, rgba(235, 220, 174, 0.45) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(197, 160, 89, 0.35) 100%);
-    border: 1px solid rgba(235, 220, 174, 0.45);
-    box-shadow: 0 0 10px rgba(197, 160, 89, 0.25), inset 0 0 6px rgba(255, 255, 255, 0.25);
-    animation: float-particle linear infinite;
-    opacity: 0;
-  }
-  @keyframes float-particle {
-    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
-    15% { opacity: var(--p-opacity, 0.6); }
-    85% { opacity: var(--p-opacity, 0.6); }
-    100% { transform: translateY(-115vh) translateX(var(--drift, 20px)) rotate(360deg); opacity: 0; }
-  }
-  .hero-glow {
-    position: absolute;
-    width: 600px; height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(197,160,89,0.08) 0%, transparent 70%);
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    animation: pulse-glow 4s ease-in-out infinite;
-    z-index: 1;
-  }
-  @keyframes pulse-glow {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
-  }
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    border: 1px solid rgba(197,160,89,0.5);
-    border-radius: 100px;
-    background: rgba(197,160,89,0.1);
-    backdrop-filter: blur(10px);
-    color: var(--accent-light);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    animation: fadeInDown 0.8s ease forwards;
-  }
-  .hero-badge::before {
-    content: '';
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: blink 2s ease-in-out infinite;
-  }
-  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-  @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-30px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(30px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  .hero-title {
-    animation: fadeInUp 0.9s ease 0.2s both;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.1;
-  }
-  .hero-title span {
-    background: linear-gradient(135deg, #ebdcae, #c5a059, #ebdcae);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 200% auto;
-    animation: shimmer 3s linear infinite;
-  }
-  @keyframes shimmer {
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
-  }
-  .hero-desc {
-    animation: fadeInUp 0.9s ease 0.4s both;
-  }
-  .hero-cta {
-    animation: fadeInUp 0.9s ease 0.6s both;
-  }
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 36px;
-    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
-    color: #1a0404;
-    font-weight: 700;
-    font-size: 0.9rem;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 30px rgba(197,160,89,0.4);
-    position: relative;
-    overflow: hidden;
-  }
-  .btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s ease;
-  }
-  .btn-primary:hover::before { left: 100%; }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(197,160,89,0.5); }
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 3px;
+    }
 
-  .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 36px;
-    border: 2px solid rgba(255,255,255,0.3);
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    border-radius: 100px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  .btn-outline:hover {
-    border-color: rgba(255,255,255,0.7);
-    background: rgba(255,255,255,0.15);
-    transform: translateY(-3px);
-  }
+    /* ============ NAVBAR ============ */
+    .navbar {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(139, 28, 28, 0.08);
+      transition: all 0.3s ease;
+    }
 
-  /* Hero Stats */
-  .hero-stats {
-    animation: fadeInUp 0.9s ease 0.8s both;
-  }
-  .stat-item {
-    border-left: 1px solid rgba(255,255,255,0.15);
-    padding-left: 20px;
-  }
-  .stat-item:first-child { border-left: none; padding-left: 0; }
+    .navbar.scrolled {
+      box-shadow: 0 4px 30px rgba(139, 28, 28, 0.12);
+    }
 
-  /* Hero Card */
-  .hero-card {
-    animation: fadeInRight 0.9s ease 0.5s both;
-  }
-  .passport-card {
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(30px);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 24px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.4s ease;
-  }
-  .passport-card:hover { transform: translateY(-8px) rotate(-1deg); }
-  .passport-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(197,160,89,0.05), transparent, rgba(139,28,28,0.05));
-    pointer-events: none;
-  }
+    .nav-link {
+      position: relative;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #333;
+      transition: color 0.3s;
+    }
 
-  /* Floating badge on hero image */
-  .float-badge {
-    position: absolute;
-    background: rgba(255,255,255,0.95);
-    border-radius: 16px;
-    padding: 12px 18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    animation: float 3s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
 
-  /* ============ SECTION HEADERS ============ */
-  .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 14px;
-    border-radius: 100px;
-    background: rgba(139,28,28,0.08);
-    color: var(--primary);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  .section-title {
-    font-family: 'Roboto', sans-serif;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    font-weight: 700;
-    color: #1a0404;
-    line-height: 1.2;
-  }
-  .section-title span {
-    color: var(--primary);
-  }
-  .section-line {
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    border-radius: 2px;
-    margin: 16px auto 0;
-  }
+    .nav-link:hover {
+      color: var(--primary);
+    }
 
-  /* ============ CARDS ============ */
-  .premium-card {
-    background: white;
-    border-radius: 20px;
-    border: 1px solid rgba(139,28,28,0.06);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    position: relative;
-  }
-  .premium-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-  .premium-card:hover::before { transform: scaleX(1); }
-  .premium-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(139,28,28,0.12);
-    border-color: rgba(139,28,28,0.15);
-  }
+    .nav-link:hover::after {
+      width: 100%;
+    }
 
-  .icon-circle {
-    width: 64px; height: 64px;
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(139,28,28,0.04));
-    transition: all 0.3s ease;
-  }
-  .premium-card:hover .icon-circle {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    transform: rotate(5deg) scale(1.1);
-  }
-  .premium-card:hover .icon-circle .material-symbols-outlined {
-    color: white !important;
-  }
+    /* ============ HERO ============ */
+    .hero-section {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
 
-  /* ============ PROCESS STEPS ============ */
-  .steps-container {
-    position: relative;
-  }
-  .steps-line {
-    position: absolute;
-    top: 32px; left: 50%;
-    width: calc(100% - 64px);
-    transform: translateX(-50%);
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
-    background-size: 200% auto;
-    animation: shimmer 3s linear infinite;
-    display: none;
-  }
-  @media (min-width: 1024px) {
-    .steps-line { display: block; }
-  }
-  .step-number {
-    width: 64px; height: 64px;
-    border-radius: 50%;
-    background: white;
-    border: 3px solid var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 1.25rem;
-    color: var(--primary);
-    position: relative;
-    z-index: 2;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(139,28,28,0.2);
-  }
-  .step-item:hover .step-number {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: white;
-    transform: scale(1.1);
-    box-shadow: 0 8px 30px rgba(139,28,28,0.35);
-  }
-  .step-item:hover .step-title { color: var(--primary); }
+    .hero-gradient {
+      background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 35%, #5c1114 65%, #1a0404 100%);
+    }
 
-  /* ============ CHECKLIST ITEMS ============ */
-  .check-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 14px 18px;
-    background: white;
-    border-radius: 14px;
-    border: 1px solid rgba(139,28,28,0.06);
-    transition: all 0.3s ease;
-  }
-  .check-item:hover {
-    border-color: rgba(139,28,28,0.2);
-    transform: translateX(6px);
-    box-shadow: 0 4px 15px rgba(139,28,28,0.08);
-  }
-  .check-icon {
-    width: 28px; height: 28px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
 
-  /* ============ COST TABLE ============ */
-  .cost-section {
-    background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 50%, #5c1114 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .cost-section::before {
-    content: '';
-    position: absolute;
-    top: -50%; right: -10%;
-    width: 500px; height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(197,160,89,0.08), transparent 70%);
-    pointer-events: none;
-  }
-  .cost-card {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 24px;
-    overflow: hidden;
-  }
-  .cost-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 24px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    transition: background 0.3s;
-  }
-  .cost-row:hover { background: rgba(255,255,255,0.05); }
-  .cost-row:last-child { border-bottom: none; }
+    .particle {
+      position: absolute;
+      bottom: -50px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(235, 220, 174, 0.45) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(197, 160, 89, 0.35) 100%);
+      border: 1px solid rgba(235, 220, 174, 0.45);
+      box-shadow: 0 0 10px rgba(197, 160, 89, 0.25), inset 0 0 6px rgba(255, 255, 255, 0.25);
+      animation: float-particle linear infinite;
+      opacity: 0;
+    }
 
-  /* ============ VISA TYPES ============ */
-  .visa-type-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 24px 16px;
-    border-radius: 20px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: all 0.35s ease;
-    background: white;
-    text-align: center;
-  }
-  .visa-type-card:hover {
-    border-color: var(--primary);
-    background: linear-gradient(135deg, rgba(139,28,28,0.04), rgba(139,28,28,0.01));
-    transform: translateY(-6px);
-    box-shadow: 0 12px 35px rgba(139,28,28,0.15);
-  }
-  .visa-icon-wrap {
-    width: 64px; height: 64px;
-    border-radius: 18px;
-    background: rgba(139,28,28,0.07);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-  }
-  .visa-type-card:hover .visa-icon-wrap {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  }
-  .visa-type-card:hover .visa-icon-wrap .material-symbols-outlined {
-    color: white !important;
-  }
+    @keyframes float-particle {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
 
-  /* ============ COUNTRY CARDS ============ */
-  .country-card {
-    background: white;
-    border-radius: 20px;
-    border: 1px solid rgba(139,28,28,0.06);
-    overflow: hidden;
-    transition: all 0.35s ease;
-  }
-  .country-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(139,28,28,0.1);
-  }
-  .country-card-header {
-    padding: 24px 28px;
-    background: linear-gradient(135deg, rgba(139,28,28,0.06), rgba(197,160,89,0.04));
-    border-bottom: 1px solid rgba(139,28,28,0.06);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .country-icon {
-    width: 48px; height: 48px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+      15% {
+        opacity: var(--p-opacity, 0.6);
+      }
 
-  /* ============ REJECTION REASONS ============ */
-  .rejection-item {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  .rejection-item::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 50%;
-    transform: translateY(-50%);
-    width: 3px; height: 0;
-    background: var(--primary);
-    border-radius: 0 2px 2px 0;
-    transition: height 0.3s ease;
-  }
-  .rejection-item:hover { background: rgba(139,28,28,0.03); border-color: rgba(139,28,28,0.1); }
-  .rejection-item:hover::before { height: 70%; }
-  .rejection-number {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: rgba(139,28,28,0.15);
-    line-height: 1;
-    flex-shrink: 0;
-    min-width: 48px;
-    transition: color 0.3s;
-  }
-  .rejection-item:hover .rejection-number { color: rgba(139,28,28,0.4); }
+      85% {
+        opacity: var(--p-opacity, 0.6);
+      }
 
-  /* ============ BENEFITS ============ */
-  .benefit-card {
-    background: white;
-    border-radius: 18px;
-    padding: 28px 20px;
-    text-align: center;
-    border: 1px solid rgba(139,28,28,0.06);
-    transition: all 0.35s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  .benefit-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 50%;
-    transform: translateX(-50%);
-    width: 0; height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    transition: width 0.4s ease;
-    border-radius: 2px 2px 0 0;
-  }
-  .benefit-card:hover::after { width: 70%; }
-  .benefit-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(139,28,28,0.1);
-    border-color: rgba(139,28,28,0.12);
-  }
-  .benefit-icon {
-    width: 56px; height: 56px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(197,160,89,0.08));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-    transition: all 0.3s ease;
-  }
-  .benefit-card:hover .benefit-icon {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  }
-  .benefit-card:hover .benefit-icon .material-symbols-outlined {
-    color: white !important;
-  }
+      100% {
+        transform: translateY(-115vh) translateX(var(--drift, 20px)) rotate(360deg);
+        opacity: 0;
+      }
+    }
 
-  /* ============ FAQ ============ */
-  .faq-item {
-    border: 1px solid rgba(139,28,28,0.08);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-  .faq-item:hover { border-color: rgba(139,28,28,0.2); }
-  .faq-summary {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 24px;
-    cursor: pointer;
-    font-weight: 600;
-    color: #1a0404;
-    transition: all 0.3s;
-    background: white;
-    gap: 16px;
-  }
-  .faq-item[open] .faq-summary {
-    background: linear-gradient(135deg, rgba(139,28,28,0.04), rgba(139,28,28,0.01));
-    color: var(--primary);
-    border-bottom: 1px solid rgba(139,28,28,0.08);
-  }
-  .faq-summary::-webkit-details-marker { display: none; }
-  .faq-icon {
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-    color: var(--primary);
-  }
-  .faq-item[open] .faq-icon { transform: rotate(180deg); }
-  .faq-body {
-    padding: 20px 24px;
-    background: white;
-    color: #555;
-    line-height: 1.7;
-    font-size: 0.9rem;
-  }
+    .hero-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(197, 160, 89, 0.08) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulse-glow 4s ease-in-out infinite;
+      z-index: 1;
+    }
 
-  /* ============ CTA SECTION ============ */
-  .cta-section {
-    background: linear-gradient(135deg, #2a0404 0%, #5c1114 40%, #3d0808 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(60px);
-    pointer-events: none;
-  }
+    @keyframes pulse-glow {
 
-  /* ============ FLOATING BUTTON ============ */
-  .float-zalo {
-    width: 56px; height: 56px;
-    background: linear-gradient(135deg, #0068ff, #004dc0);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    box-shadow: 0 6px 25px rgba(0,104,255,0.45);
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  .float-zalo::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    background: rgba(0,104,255,0.25);
-    animation: pulse-ring 2s ease-in-out infinite;
-  }
-  @keyframes pulse-ring {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(1.6); opacity: 0; }
-  }
-  .float-zalo:hover { transform: scale(1.1); box-shadow: 0 10px 35px rgba(0,104,255,0.55); }
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+      }
 
-  .float-phone {
-    width: 56px; height: 56px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    box-shadow: 0 6px 25px rgba(139,28,28,0.45);
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  .float-phone::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    background: rgba(139,28,28,0.25);
-    animation: pulse-ring 2s ease-in-out infinite;
-    animation-delay: 1s;
-  }
-  .float-phone:hover { transform: scale(1.1); box-shadow: 0 10px 35px rgba(139,28,28,0.55); }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+      }
+    }
 
-  /* ============ SCROLL REVEAL ============ */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .reveal-left {
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .reveal-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  .reveal-right {
-    opacity: 0;
-    transform: translateX(30px);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .reveal-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border: 1px solid rgba(197, 160, 89, 0.5);
+      border-radius: 100px;
+      background: rgba(197, 160, 89, 0.1);
+      backdrop-filter: blur(10px);
+      color: var(--accent-light);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: fadeInDown 0.8s ease forwards;
+    }
 
-  /* ============ MATERIAL ICONS ============ */
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  }
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: blink 2s ease-in-out infinite;
+    }
 
-  /* ============ SECTION BACKGROUNDS ============ */
-  .bg-mesh-light {
-    background-color: #fafafa;
-    background-image: radial-gradient(at 20% 30%, rgba(139,28,28,0.03) 0, transparent 50%),
-                      radial-gradient(at 80% 70%, rgba(197,160,89,0.03) 0, transparent 50%);
-  }
-</style>
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .hero-title {
+      animation: fadeInUp 0.9s ease 0.2s both;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.1;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #ebdcae, #c5a059, #ebdcae);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% auto;
+      animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 0% center;
+      }
+
+      100% {
+        background-position: 200% center;
+      }
+    }
+
+    .hero-desc {
+      animation: fadeInUp 0.9s ease 0.4s both;
+    }
+
+    .hero-cta {
+      animation: fadeInUp 0.9s ease 0.6s both;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+      color: #1a0404;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(197, 160, 89, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(197, 160, 89, 0.5);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-3px);
+    }
+
+    /* Hero Stats */
+    .hero-stats {
+      animation: fadeInUp 0.9s ease 0.8s both;
+    }
+
+    .stat-item {
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+      padding-left: 20px;
+    }
+
+    .stat-item:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+
+    /* Hero Card */
+    .hero-card {
+      animation: fadeInRight 0.9s ease 0.5s both;
+    }
+
+    .passport-card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(30px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.4s ease;
+    }
+
+    .passport-card:hover {
+      transform: translateY(-8px) rotate(-1deg);
+    }
+
+    .passport-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.05), transparent, rgba(139, 28, 28, 0.05));
+      pointer-events: none;
+    }
+
+    /* Floating badge on hero image */
+    .float-badge {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 12px 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* ============ SECTION HEADERS ============ */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 14px;
+      border-radius: 100px;
+      background: rgba(139, 28, 28, 0.08);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: #1a0404;
+      line-height: 1.2;
+    }
+
+    .section-title span {
+      color: var(--primary);
+    }
+
+    .section-line {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 2px;
+      margin: 16px auto 0;
+    }
+
+    /* ============ CARDS ============ */
+    .premium-card {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .premium-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .premium-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .premium-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(139, 28, 28, 0.12);
+      border-color: rgba(139, 28, 28, 0.15);
+    }
+
+    .icon-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(139, 28, 28, 0.08), rgba(139, 28, 28, 0.04));
+      transition: all 0.3s ease;
+    }
+
+    .premium-card:hover .icon-circle {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      transform: rotate(5deg) scale(1.1);
+    }
+
+    .premium-card:hover .icon-circle .material-symbols-outlined {
+      color: white !important;
+    }
+
+    /* ============ PROCESS STEPS ============ */
+    .steps-container {
+      position: relative;
+    }
+
+    .steps-line {
+      position: absolute;
+      top: 32px;
+      left: 50%;
+      width: calc(100% - 64px);
+      transform: translateX(-50%);
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+      background-size: 200% auto;
+      animation: shimmer 3s linear infinite;
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .steps-line {
+        display: block;
+      }
+    }
+
+    .step-number {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: white;
+      border: 3px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--primary);
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(139, 28, 28, 0.2);
+    }
+
+    .step-item:hover .step-number {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(139, 28, 28, 0.35);
+    }
+
+    .step-item:hover .step-title {
+      color: var(--primary);
+    }
+
+    /* ============ CHECKLIST ITEMS ============ */
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 18px;
+      background: white;
+      border-radius: 14px;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .check-item:hover {
+      border-color: rgba(139, 28, 28, 0.2);
+      transform: translateX(6px);
+      box-shadow: 0 4px 15px rgba(139, 28, 28, 0.08);
+    }
+
+    .check-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ============ COST TABLE ============ */
+    .cost-section {
+      background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 50%, #5c1114 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cost-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(197, 160, 89, 0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    .cost-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .cost-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: background 0.3s;
+    }
+
+    .cost-row:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .cost-row:last-child {
+      border-bottom: none;
+    }
+
+    /* ============ VISA TYPES ============ */
+    .visa-type-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 16px;
+      border-radius: 20px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      background: white;
+      text-align: center;
+    }
+
+    .visa-type-card:hover {
+      border-color: var(--primary);
+      background: linear-gradient(135deg, rgba(139, 28, 28, 0.04), rgba(139, 28, 28, 0.01));
+      transform: translateY(-6px);
+      box-shadow: 0 12px 35px rgba(139, 28, 28, 0.15);
+    }
+
+    .visa-icon-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: rgba(139, 28, 28, 0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .visa-type-card:hover .visa-icon-wrap {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    }
+
+    .visa-type-card:hover .visa-icon-wrap .material-symbols-outlined {
+      color: white !important;
+    }
+
+    /* ============ COUNTRY CARDS ============ */
+    .country-card {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      overflow: hidden;
+      transition: all 0.35s ease;
+    }
+
+    .country-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(139, 28, 28, 0.1);
+    }
+
+    .country-card-header {
+      padding: 24px 28px;
+      background: linear-gradient(135deg, rgba(139, 28, 28, 0.06), rgba(197, 160, 89, 0.04));
+      border-bottom: 1px solid rgba(139, 28, 28, 0.06);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .country-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ============ REJECTION REASONS ============ */
+    .rejection-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .rejection-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 0;
+      background: var(--primary);
+      border-radius: 0 2px 2px 0;
+      transition: height 0.3s ease;
+    }
+
+    .rejection-item:hover {
+      background: rgba(139, 28, 28, 0.03);
+      border-color: rgba(139, 28, 28, 0.1);
+    }
+
+    .rejection-item:hover::before {
+      height: 70%;
+    }
+
+    .rejection-number {
+      font-family: 'Roboto', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: rgba(139, 28, 28, 0.15);
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 48px;
+      transition: color 0.3s;
+    }
+
+    .rejection-item:hover .rejection-number {
+      color: rgba(139, 28, 28, 0.4);
+    }
+
+    /* ============ BENEFITS ============ */
+    .benefit-card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px 20px;
+      text-align: center;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.4s ease;
+      border-radius: 2px 2px 0 0;
+    }
+
+    .benefit-card:hover::after {
+      width: 70%;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(139, 28, 28, 0.1);
+      border-color: rgba(139, 28, 28, 0.12);
+    }
+
+    .benefit-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(139, 28, 28, 0.08), rgba(197, 160, 89, 0.08));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      transition: all 0.3s ease;
+    }
+
+    .benefit-card:hover .benefit-icon {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    }
+
+    .benefit-card:hover .benefit-icon .material-symbols-outlined {
+      color: white !important;
+    }
+
+    /* ============ FAQ ============ */
+    .faq-item {
+      border: 1px solid rgba(139, 28, 28, 0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(139, 28, 28, 0.2);
+    }
+
+    .faq-summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #1a0404;
+      transition: all 0.3s;
+      background: white;
+      gap: 16px;
+    }
+
+    .faq-item[open] .faq-summary {
+      background: linear-gradient(135deg, rgba(139, 28, 28, 0.04), rgba(139, 28, 28, 0.01));
+      color: var(--primary);
+      border-bottom: 1px solid rgba(139, 28, 28, 0.08);
+    }
+
+    .faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+
+    .faq-item[open] .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-body {
+      padding: 20px 24px;
+      background: white;
+      color: #555;
+      line-height: 1.7;
+      font-size: 0.9rem;
+    }
+
+    /* ============ CTA SECTION ============ */
+    .cta-section {
+      background: linear-gradient(135deg, #2a0404 0%, #5c1114 40%, #3d0808 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+    }
+
+    /* ============ FLOATING BUTTON ============ */
+    .float-zalo {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #0068ff, #004dc0);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 6px 25px rgba(0, 104, 255, 0.45);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .float-zalo::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: rgba(0, 104, 255, 0.25);
+      animation: pulse-ring 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1.6);
+        opacity: 0;
+      }
+    }
+
+    .float-zalo:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 35px rgba(0, 104, 255, 0.55);
+    }
+
+    .float-phone {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 6px 25px rgba(139, 28, 28, 0.45);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .float-phone::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: rgba(139, 28, 28, 0.25);
+      animation: pulse-ring 2s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+
+    .float-phone:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 35px rgba(139, 28, 28, 0.55);
+    }
+
+    /* ============ SCROLL REVEAL ============ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ============ MATERIAL ICONS ============ */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* ============ SECTION BACKGROUNDS ============ */
+    .bg-mesh-light {
+      background-color: #fafafa;
+      background-image: radial-gradient(at 20% 30%, rgba(139, 28, 28, 0.03) 0, transparent 50%),
+        radial-gradient(at 80% 70%, rgba(197, 160, 89, 0.03) 0, transparent 50%);
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ============ HERO ============ -->
-<section class="hero-section hero-gradient" id="hero">
-  <!-- Particles -->
-  <div class="hero-particles" id="particles"></div>
-  <div class="hero-glow"></div>
+  <!-- ============ HERO ============ -->
+  <section class="hero-section hero-gradient" id="hero">
+    <!-- Particles -->
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-glow"></div>
 
-  <!-- Grid overlay -->
-  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;z-index:1;pointer-events:none;"></div>
-
-  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-20 w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[60vh]">
-      <!-- Left -->
-      <div class="space-y-6">
-        <div class="hero-badge">
-          Công ty luật ACC &nbsp;·&nbsp; Chuyên gia pháp lý visa
-        </div>
-
-        <h1 class="hero-title text-white" style="font-size:clamp(1.8rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.15;">
-          Dịch vụ làm <span>Visa trọn gói</span>
-          <br/>Tối ưu tỷ lệ đậu
-        </h1>
-
-        <p class="hero-desc text-white/70 leading-relaxed" style="font-size:1.05rem;max-width:520px;">
-          Thủ tục Visa ngày càng phức tạp với các quy định khắt khe. Công ty Luật ACC cung cấp giải pháp hỗ trợ <strong class="text-white/90">A-Z</strong>, xử lý hồ sơ chuyên nghiệp, giúp bạn tiết kiệm thời gian và tối đa hóa khả năng được cấp thị thực.
-        </p>
-
-        <div class="hero-cta flex flex-wrap gap-4">
-          <a href="tel:19003330" class="btn-primary">
-            <span class="material-symbols-outlined" style="font-size:20px;">call</span>
-            Gọi 1900 3330
-          </a>
-          <a href="#quy-trinh" class="btn-outline">
-            <span class="material-symbols-outlined" style="font-size:20px;">arrow_downward</span>
-            Tìm hiểu thêm
-          </a>
-        </div>
-
-        <!-- Stats -->
-        <div class="hero-stats flex flex-wrap gap-x-8 gap-y-4 pt-4">
-          <div class="stat-item">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">5000+</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Hồ sơ thành công</div>
-          </div>
-          <div class="stat-item">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">98%</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Tỷ lệ đậu visa</div>
-          </div>
-          <div class="stat-item">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">50+</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Quốc gia hỗ trợ</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right -->
-      <div class="block lg:mt-0 mt-8 hero-card">
-        <div class="relative max-w-md mx-auto lg:max-w-none">
-          <div class="passport-card p-3 shadow-2xl">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV-F_yah2KWKNndViik0Jkmj1RnfMUcZE7949OGidvAPG4xCBJvl74dT_X32DXykEHa8hmUsm2ive78pS5B3-peS5jQGQHEDVCOE9C0kIc7VfE7BwdcdXKz1k5yDIYW1qleG6_aE9IS3p5SvUVweHrn74j7rNJLj1RB5s-fACJY_y4Tx7kIrkL5Bdq4wqOLVCBcpLoVHlbzVRfePXQuDRPk73DsFBMgwJVPV0dJa8nwtcjMAUKgUjDIPveGvmcoE_Vaalo1AT31SQ1"
-              alt="Dịch vụ làm Visa Công ty Luật ACC"
-              class="w-full rounded-2xl object-cover h-[280px] sm:h-[380px]"
-            />
-          </div>
-          <!-- Floating badges -->
-          <div class="float-badge sm:flex hidden" style="bottom:-20px;left:20px;z-index:10;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:white;font-size:18px;">verified</span>
-            </div>
-            <div>
-              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Cam kết đậu</div>
-              <div style="font-size:0.72rem;color:#888;">Hoàn tiền nếu không đậu</div>
-            </div>
-          </div>
-          <div class="float-badge sm:flex hidden" style="top:20px;right:-20px;z-index:10;animation-delay:1.5s;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#c5a059,#99732f);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:white;font-size:18px;">star</span>
-            </div>
-            <div>
-              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">5 Sao</div>
-              <div style="font-size:0.72rem;color:#888;">Đánh giá khách hàng</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Grid overlay -->
+    <div
+      style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;z-index:1;pointer-events:none;">
     </div>
-  </div>
 
-  <!-- Wave bottom -->
-  <div style="position:absolute;bottom:0;left:0;right:0;z-index:5;">
-    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:80px;">
-      <path d="M0 80 L0 40 Q360 0 720 40 Q1080 80 1440 40 L1440 80 Z" fill="#fafafa"/>
-    </svg>
-  </div>
-</section>
-
-<!-- ============ WHAT IS VISA ============ -->
-<section class="py-8 bg-mesh-light" id="visa-la-gi">
-  <div class="max-w-6xl mx-auto px-6">
-    <!-- Top row: Text on Left, Image on Right -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-6">
-      <div class="reveal-left space-y-6">
-        <div>
-          <div class="section-label">Kiến thức cơ bản</div>
-          <h2 class="section-title">Visa là gì?</h2>
-          <div class="section-line" style="margin-left:0;"></div>
-        </div>
-        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
-          <strong class="text-gray-900">Visa (Thị thực)</strong> là chứng nhận do cơ quan có thẩm quyền của một quốc gia cấp, xác nhận cá nhân được phép nhập cảnh, xuất cảnh hoặc quá cảnh tại quốc gia đó trong khoảng thời gian nhất định.
-        </p>
-        <p class="text-gray-500 leading-relaxed text-sm">
-          Tùy mục đích chuyến đi (du lịch, công tác, du học), thị thực có yêu cầu khác nhau. Việc sở hữu một bộ hồ sơ minh bạch là chìa khóa để vượt qua rào cản hành chính này.
-        </p>
-        <a href="#quy-trinh" class="inline-flex items-center gap-2 text-sm font-semibold hover:underline" style="color:var(--primary);">
-          Xem quy trình làm việc từ A-Z
-          <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
-        </a>
-      </div>
-      
-      <div class="reveal-right">
-        <div class="relative max-w-md mx-auto lg:max-w-none">
-          <div class="passport-card p-3 shadow-2xl">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHOXQBJsjEYqghAZcJeGW35bffLqZjXM-fCkvCcnuh1uaqBZTPexbTgifbpoJ0yELGRZF4OZTsZb1OIjyTOZpVguBUWIL6wA_8np3EYkQDoLkpibtT8_-vbZ1jHeL1arGQ39tTAH5A32QFQY0IHcSdP_-JVIHTMq3hitFhb4OoaWYnShJrSSAP4j7VwGjxii5u-Ce21N3l75VZ4i2zJktdMVmWPruChp9d6noTbFLsauF5yJyaueuB7ebjodrqxUhIwWjweqa7fkm-"
-              alt="Luật sư ACC tư vấn làm Visa chuyên nghiệp"
-              class="w-full rounded-2xl object-cover h-[240px] sm:h-[320px]"
-            />
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-20 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[60vh]">
+        <!-- Left -->
+        <div class="space-y-6">
+          <div class="hero-badge">
+            Công ty luật ACC &nbsp;·&nbsp; Chuyên gia pháp lý visa
           </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Bottom row: 4 key cards horizontally -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
-      <!-- Card 1 -->
-      <div class="premium-card p-8 flex flex-col items-center text-center gap-4">
-        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">approval_delegation</span>
-        </div>
-        <h4 class="font-bold text-base">Xác thực</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Chứng nhận hợp pháp từ cơ quan nhà nước sở tại</p>
-      </div>
-      <!-- Card 2 -->
-      <div class="premium-card p-8 flex flex-col items-center text-center gap-4" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));">
-        <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;">
-          <span class="material-symbols-outlined text-2xl" style="color:white;">flight_land</span>
-        </div>
-        <h4 class="font-bold text-base text-white">Nhập cảnh</h4>
-        <p class="text-xs text-white/70 leading-relaxed">Quyền nhập cảnh và lưu trú hợp pháp tại quốc gia đến</p>
-      </div>
-      <!-- Card 3 -->
-      <div class="premium-card p-8 flex flex-col items-center text-center gap-4" style="background:linear-gradient(135deg,rgba(197,160,89,0.1),rgba(197,160,89,0.04));border-color:rgba(197,160,89,0.25);">
-        <div style="width:56px;height:56px;border-radius:16px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-          <span class="material-symbols-outlined text-2xl" style="color:#99732f;">verified_user</span>
-        </div>
-        <h4 class="font-bold text-base text-gray-900">An toàn</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Đảm bảo các quy định an ninh quốc tế được đáp ứng</p>
-      </div>
-      <!-- Card 4 -->
-      <div class="premium-card p-8 flex flex-col items-center text-center gap-4">
-        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">timer</span>
-        </div>
-        <h4 class="font-bold text-base">Thời hạn</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Quy định rõ ràng về số ngày lưu trú tối đa cho phép</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============ CONDITIONS ============ -->
-<section class="py-8" id="dieu-kien" style="background:white;">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <!-- Left Column: Title & Conditions Grid -->
-      <div class="lg:col-span-7 space-y-8 reveal-left">
-        <div>
-          <div class="section-label">Pháp lý</div>
-          <h2 class="section-title">Điều kiện cấp Visa theo <span>Luật 2014</span></h2>
-          <div class="section-line" style="margin-left:0;"></div>
-          <p class="text-gray-500 mt-4 text-sm leading-relaxed">
-            Các quy định nghiêm ngặt mà ứng viên cần tuân thủ để đảm bảo khả năng đậu thị thực cao nhất.
+          <h1 class="hero-title text-white"
+            style="font-size:clamp(1.8rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.15;">
+            Dịch vụ làm <span>Visa trọn gói</span>
+            <br />Tối ưu tỷ lệ đậu
+          </h1>
+
+          <p class="hero-desc text-white/70 leading-relaxed" style="font-size:1.05rem;max-width:520px;">
+            Thủ tục Visa ngày càng phức tạp với các quy định khắt khe. Công ty Luật ACC cung cấp giải pháp hỗ trợ
+            <strong class="text-white/90">A-Z</strong>, xử lý hồ sơ chuyên nghiệp, giúp bạn tiết kiệm thời gian và tối
+            đa hóa khả năng được cấp thị thực.
           </p>
-        </div>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <!-- Condition 1 -->
-          <div class="premium-card p-6">
-            <div class="icon-circle mb-4" style="width:48px;height:48px;border-radius:12px;">
-              <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">menu_book</span>
-            </div>
-            <h3 class="font-bold text-sm mb-2">Hộ chiếu hợp lệ</h3>
-            <p class="text-xs text-gray-500 leading-relaxed">Còn thời hạn ít nhất <strong>6 tháng</strong> và có trang trống theo quy định.</p>
-          </div>
-          <!-- Condition 2 -->
-          <div class="premium-card p-6">
-            <div class="icon-circle mb-4" style="width:48px;height:48px;border-radius:12px;">
-              <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">handshake</span>
-            </div>
-            <h3 class="font-bold text-sm mb-2">Có người bảo lãnh</h3>
-            <p class="text-xs text-gray-500 leading-relaxed">Có tổ chức, cá nhân tại nước sở tại mời hoặc bảo lãnh nhập cảnh.</p>
-          </div>
-          <!-- Condition 3 -->
-          <div class="premium-card p-6">
-            <div class="icon-circle mb-4" style="width:48px;height:48px;border-radius:12px;">
-              <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">gpp_maybe</span>
-            </div>
-            <h3 class="font-bold text-sm mb-2">Không bị cấm nhập cảnh</h3>
-            <p class="text-xs text-gray-500 leading-relaxed">Không thuộc các trường hợp chưa cho nhập cảnh theo an ninh quốc gia.</p>
-          </div>
-          <!-- Condition 4 -->
-          <div class="premium-card p-6">
-            <div class="icon-circle mb-4" style="width:48px;height:48px;border-radius:12px;">
-              <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">receipt_long</span>
-            </div>
-            <h3 class="font-bold text-sm mb-2">Chứng minh mục đích</h3>
-            <p class="text-xs text-gray-500 leading-relaxed">Chứng minh rõ ràng mục đích nhập cảnh bằng các hồ sơ, giấy tờ hợp lệ.</p>
-          </div>
-        </div>
-      </div>
 
-      <!-- Right Column: Image 4 -->
-      <div class="lg:col-span-5 reveal-right">
-        <div class="relative max-w-sm mx-auto">
-          <div class="passport-card p-3 shadow-2xl">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvL42XSMOHg_WTKH5Q1nJz2mWpXIY0Y5h65cm4D9U5gq63Zm3x4nqvxgd1Fz1TDBjKykdtFhS4-B4t1DLA-WG3_TmnDOyntYgNrY8D-1nv_lcEGQXOveQ5vQFb167kBFhT-8hsPlvpfDGEnSu0yskL7XG3D3G9f-ZTU8Mzh-6e9UL1UdSjpAPU8N6I8eKbw6nxXWko89S5irRnyqIo8dbpnh8hpwjbIFOaDvf_BMMFaqKG0L2w2SsjGhUKmGST7u1pRdie0is6Ny-R"
-              alt="Luật sư ACC hỗ trợ chuẩn bị thủ tục hồ sơ làm Visa"
-              class="w-full rounded-2xl object-cover h-[320px] sm:h-[380px]"
-            />
+          <div class="hero-cta flex flex-wrap gap-4">
+            <a href="tel:19003330" class="btn-primary">
+              <span class="material-symbols-outlined" style="font-size:20px;">call</span>
+              Gọi 1900 3330
+            </a>
+            <a href="#quy-trinh" class="btn-outline">
+              <span class="material-symbols-outlined" style="font-size:20px;">arrow_downward</span>
+              Tìm hiểu thêm
+            </a>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============ PROCESS ============ -->
-<section class="py-8 bg-mesh-light overflow-hidden" id="quy-trinh">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Dịch vụ</div>
-      <h2 class="section-title">Quy trình dịch vụ <span>chuyên nghiệp</span></h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="steps-container">
-      <div class="steps-line hidden lg:block"></div>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-        <!-- Steps -->
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0s;">
-          <div class="step-number">1</div>
-          <h4 class="font-bold text-sm step-title">Tiếp nhận</h4>
-          <p class="text-xs text-gray-500 leading-relaxed">Khảo sát hồ sơ ban đầu</p>
+          <!-- Stats -->
+          <div class="hero-stats flex flex-wrap gap-x-8 gap-y-4 pt-4">
+            <div class="stat-item">
+              <div
+                style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                5000+</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Hồ sơ thành công</div>
+            </div>
+            <div class="stat-item">
+              <div
+                style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                98%</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Tỷ lệ đậu visa</div>
+            </div>
+            <div class="stat-item">
+              <div
+                style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                50+</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Quốc gia hỗ trợ</div>
+            </div>
+          </div>
         </div>
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0.1s;">
-          <div class="step-number">2</div>
-          <h4 class="font-bold text-sm step-title">Tư vấn</h4>
-          <p class="text-xs text-gray-500 leading-relaxed">Xác định loại Visa tối ưu</p>
-        </div>
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0.2s;">
-          <div class="step-number">3</div>
-          <h4 class="font-bold text-sm step-title">Hoàn thiện</h4>
-          <p class="text-xs text-gray-500 leading-relaxed">Chuẩn bị hồ sơ pháp lý</p>
-        </div>
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0.3s;">
-          <div class="step-number">4</div>
-          <h4 class="font-bold text-sm step-title">Nộp hồ sơ</h4>
-          <p class="text-xs text-gray-500 leading-relaxed">Đại diện làm việc với TLSQ</p>
-        </div>
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0.4s;">
-          <div class="step-number">5</div>
-          <h4 class="font-bold text-sm step-title">Theo dõi</h4>
-          <p class="text-xs text-gray-500 leading-relaxed">Cập nhật tiến độ liên tục</p>
-        </div>
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0.5s;">
-          <div class="step-number">6</div>
-          <h4 class="font-bold text-sm step-title">Bàn giao</h4>
-          <p class="text-xs text-gray-500 leading-relaxed">Kết quả tận tay khách hàng</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============ DOCUMENTS ============ -->
-<section class="py-8" id="ho-so" style="background:white;">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Chuẩn bị</div>
-      <h2 class="section-title">Hồ sơ cần <span>chuẩn bị</span></h2>
-      <div class="section-line"></div>
-      <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm">Công ty Luật ACC sẽ hỗ trợ bạn chuẩn bị đầy đủ và đúng quy định của Đại sứ quán.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
-      <div class="check-item">
-        <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Đơn xin visa theo mẫu Đại sứ quán (ACC hỗ trợ điền tờ khai chuẩn xác)</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Hộ chiếu gốc còn thời hạn từ 6 tháng trở lên có trang trống để dán visa</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">02 ảnh chân dung 4x6 cm nền trắng, chụp rõ nét trong vòng 6 tháng gần nhất</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Giấy tờ chứng minh tài chính: Sổ tiết kiệm, xác nhận số dư tài khoản, nhà đất</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Giấy tờ chứng minh công việc: HĐLĐ, quyết định bổ nhiệm, GPKD (nếu là chủ DN)</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-        <span class="text-sm text-gray-600 leading-relaxed">Giấy tờ tùy thân: Căn cước công dân, hộ khẩu, giấy đăng ký kết hôn (nếu có)</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ COSTS ============ -->
-<section class="cost-section py-8">
-  <div class="max-w-3xl mx-auto px-6 relative z-10">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;">Chi phí</div>
-      <h2 class="section-title text-white">Chi phí dịch vụ <span style="color:var(--accent-light);">minh bạch</span></h2>
-      <div class="section-line" style="background:linear-gradient(90deg,var(--accent),var(--accent-light));"></div>
-    </div>
-    <div class="cost-card reveal">
-      <div style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08);">
-        <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">description</span>
+        <!-- Right -->
+        <div class="block lg:mt-0 mt-8 hero-card">
+          <div class="relative max-w-md mx-auto lg:max-w-none">
+            <div class="passport-card p-3 shadow-2xl">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV-F_yah2KWKNndViik0Jkmj1RnfMUcZE7949OGidvAPG4xCBJvl74dT_X32DXykEHa8hmUsm2ive78pS5B3-peS5jQGQHEDVCOE9C0kIc7VfE7BwdcdXKz1k5yDIYW1qleG6_aE9IS3p5SvUVweHrn74j7rNJLj1RB5s-fACJY_y4Tx7kIrkL5Bdq4wqOLVCBcpLoVHlbzVRfePXQuDRPk73DsFBMgwJVPV0dJa8nwtcjMAUKgUjDIPveGvmcoE_Vaalo1AT31SQ1"
+                alt="Dịch vụ làm Visa Công ty Luật ACC"
+                class="w-full rounded-2xl object-cover h-[280px] sm:h-[380px]" />
             </div>
-            <span class="text-white/80 text-sm">Phí chuẩn bị hồ sơ &amp; tư vấn</span>
-          </div>
-          <span class="font-bold text-white text-sm">Theo loại visa</span>
-        </div>
-        <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">gavel</span>
+            <!-- Floating badges -->
+            <div class="float-badge sm:flex hidden" style="bottom:-20px;left:20px;z-index:10;">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined" style="color:white;font-size:18px;">verified</span>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Cam kết đậu</div>
+                <div style="font-size:0.72rem;color:#888;">Hoàn tiền nếu không đậu</div>
+              </div>
             </div>
-            <span class="text-white/80 text-sm">Phí xử lý pháp lý &amp; công chứng</span>
-          </div>
-          <span class="font-bold text-white text-sm">Kê khai rõ</span>
-        </div>
-        <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">translate</span>
-            </div>
-            <span class="text-white/80 text-sm">Phí dịch thuật công chứng</span>
-          </div>
-          <span class="font-bold text-white text-sm">Tùy ngôn ngữ</span>
-        </div>
-        <div class="cost-row" style="padding:16px 0;">
-          <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">payments</span>
-            </div>
-            <span class="text-white/80 text-sm">Lệ phí lãnh sự (Thu hộ)</span>
-          </div>
-          <span class="font-bold text-white text-sm">Theo biểu giá SQ</span>
-        </div>
-      </div>
-      <div style="padding:20px 32px;background:rgba(197,160,89,0.06);display:flex;align-items:center;gap:12px;">
-        <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;">info</span>
-        <p class="text-white/50 text-xs italic">ACC cam kết không phát sinh chi phí ngoài hợp đồng đã ký kết.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ VISA TYPES ============ -->
-<section class="py-8 bg-mesh-light" id="loai-visa">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Danh mục</div>
-      <h2 class="section-title">Các loại Visa <span>phổ biến</span></h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 reveal">
-      <div class="visa-type-card">
-        <div class="visa-icon-wrap">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">landscape</span>
-        </div>
-        <h4 class="font-bold text-sm">Du lịch</h4>
-      </div>
-      <div class="visa-type-card">
-        <div class="visa-icon-wrap">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">business_center</span>
-        </div>
-        <h4 class="font-bold text-sm">Công tác</h4>
-      </div>
-      <div class="visa-type-card">
-        <div class="visa-icon-wrap">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">school</span>
-        </div>
-        <h4 class="font-bold text-sm">Du học</h4>
-      </div>
-      <div class="visa-type-card">
-        <div class="visa-icon-wrap">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">work</span>
-        </div>
-        <h4 class="font-bold text-sm">Lao động</h4>
-      </div>
-      <div class="visa-type-card">
-        <div class="visa-icon-wrap">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">family_restroom</span>
-        </div>
-        <h4 class="font-bold text-sm">Thăm thân</h4>
-      </div>
-      <div class="visa-type-card">
-        <div class="visa-icon-wrap">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">home_pin</span>
-        </div>
-        <h4 class="font-bold text-sm">Định cư</h4>
-      </div>
-      <div class="visa-type-card">
-        <div class="visa-icon-wrap">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">looks_one</span>
-        </div>
-        <h4 class="font-bold text-sm">Nhập cảnh 1 lần</h4>
-      </div>
-      <div class="visa-type-card">
-        <div class="visa-icon-wrap">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">repeat</span>
-        </div>
-        <h4 class="font-bold text-sm">Nhiều lần</h4>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ VISA-FREE COUNTRIES ============ -->
-<section class="py-8" style="background:white;">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Thông tin</div>
-      <h2 class="section-title">Quốc gia <span>miễn Visa</span> cho Việt Nam</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="country-card reveal" style="transition-delay:0s;">
-        <div class="country-card-header">
-          <div class="country-icon">
-            <span class="material-symbols-outlined" style="color:white;font-size:22px;">south_east</span>
-          </div>
-          <h3 class="font-bold text-lg">Đông Nam Á</h3>
-        </div>
-        <div class="p-6">
-          <p class="text-gray-500 text-sm leading-relaxed">Thái Lan, Singapore, Lào, Campuchia, Philippines, Myanmar, Indonesia, Brunei, Malaysia...</p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="text-xs px-3 py-1 rounded-full" style="background:rgba(139,28,28,0.07);color:var(--primary);font-weight:500;">🇹🇭 Thái Lan</span>
-            <span class="text-xs px-3 py-1 rounded-full" style="background:rgba(139,28,28,0.07);color:var(--primary);font-weight:500;">🇸🇬 Singapore</span>
-            <span class="text-xs px-3 py-1 rounded-full" style="background:rgba(139,28,28,0.07);color:var(--primary);font-weight:500;">🇲🇾 Malaysia</span>
-          </div>
-        </div>
-      </div>
-      <div class="country-card reveal" style="transition-delay:0.15s;">
-        <div class="country-card-header">
-          <div class="country-icon">
-            <span class="material-symbols-outlined" style="color:white;font-size:22px;">public</span>
-          </div>
-          <h3 class="font-bold text-lg">Châu Á / Trung Đông</h3>
-        </div>
-        <div class="p-6">
-          <p class="text-gray-500 text-sm leading-relaxed">Kyrgyzstan, Maldives, Kazakhstan, Timor-Leste, Sri Lanka (e-visa)...</p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="text-xs px-3 py-1 rounded-full" style="background:rgba(139,28,28,0.07);color:var(--primary);font-weight:500;">🇲🇻 Maldives</span>
-            <span class="text-xs px-3 py-1 rounded-full" style="background:rgba(139,28,28,0.07);color:var(--primary);font-weight:500;">🇰🇿 Kazakhstan</span>
-          </div>
-        </div>
-      </div>
-      <div class="country-card reveal" style="transition-delay:0.3s;">
-        <div class="country-card-header">
-          <div class="country-icon">
-            <span class="material-symbols-outlined" style="color:white;font-size:22px;">map</span>
-          </div>
-          <h3 class="font-bold text-lg">Mỹ Latinh</h3>
-        </div>
-        <div class="p-6">
-          <p class="text-gray-500 text-sm leading-relaxed">Panama, Ecuador, Chile, Haiti, Saint Lucia, Barbados, Dominica...</p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="text-xs px-3 py-1 rounded-full" style="background:rgba(139,28,28,0.07);color:var(--primary);font-weight:500;">🇵🇦 Panama</span>
-            <span class="text-xs px-3 py-1 rounded-full" style="background:rgba(139,28,28,0.07);color:var(--primary);font-weight:500;">🇨🇱 Chile</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ REJECTION REASONS ============ -->
-<section class="py-8 bg-mesh-light">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div class="reveal-left">
-        <img
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-hivavczfeIOFewmLQPXp18__QYbVGah6kI-fdwuAwAZci_NCpnhC4GPhP9A84PSLVQZK0eOQhAhKmulANc2pcwwKcPEi9nEdRbFTFAihGfjGD4QqKeDhbnrlnCK20oBsTfPfxQ9z4bzN06YXb7q0EKS7ORpasGuUL9DLOPpFuZAVSChvXbIwH6WVR83dMaLN8o7QoVY-P_cfEmo2ryEmSnPoI3k3o4GUBD3KXHoQRpAZigy-dnIbNbtbHIvnQBwmzr8gHzFL8-Lf"
-          alt="Tại sao visa bị từ chối"
-          class="w-full rounded-3xl shadow-2xl object-cover h-[280px] md:h-[480px]"
-        />
-      </div>
-      <div class="reveal-right space-y-6">
-        <div>
-          <div class="section-label">Cẩn thận</div>
-          <h2 class="section-title">Tại sao Visa của bạn <span>bị từ chối?</span></h2>
-          <div class="section-line" style="margin-left:0;"></div>
-        </div>
-        <div class="space-y-1">
-          <div class="rejection-item">
-            <span class="rejection-number">01</span>
-            <div>
-              <h4 class="font-bold text-base mb-1">Mục đích chuyến đi không rõ ràng</h4>
-              <p class="text-gray-500 text-sm">Thiếu lịch trình chi tiết hoặc các giấy tờ chứng minh sự ràng buộc chặt chẽ tại quê nhà.</p>
-            </div>
-          </div>
-          <div class="rejection-item">
-            <span class="rejection-number">02</span>
-            <div>
-              <h4 class="font-bold text-base mb-1">Vấn đề chứng minh tài chính yếu</h4>
-              <p class="text-gray-500 text-sm">Số dư tài khoản không đủ hoặc nguồn gốc thu nhập không rõ ràng để chi trả toàn bộ chuyến đi.</p>
-            </div>
-          </div>
-          <div class="rejection-item">
-            <span class="rejection-number">03</span>
-            <div>
-              <h4 class="font-bold text-base mb-1">Lịch sử du lịch quá ít (Hộ chiếu trắng)</h4>
-              <p class="text-gray-500 text-sm">Chưa từng đi nước ngoài hoặc từng có lịch sử vi phạm thời hạn cư trú trước đó.</p>
-            </div>
-          </div>
-          <div class="rejection-item">
-            <span class="rejection-number">04</span>
-            <div>
-              <h4 class="font-bold text-base mb-1">Sai sót hoặc thiếu sót trong giấy tờ</h4>
-              <p class="text-gray-500 text-sm">Thông tin khai báo mâu thuẫn, thiếu tính nhất quán giữa tờ khai và hồ sơ thực tế.</p>
+            <div class="float-badge sm:flex hidden" style="top:20px;right:-20px;z-index:10;animation-delay:1.5s;">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#c5a059,#99732f);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined" style="color:white;font-size:18px;">star</span>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">5 Sao</div>
+                <div style="font-size:0.72rem;color:#888;">Đánh giá khách hàng</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ============ BENEFITS ============ -->
-<section class="py-8" style="background:white;">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Tại sao chọn chúng tôi</div>
-      <h2 class="section-title">Lợi ích vượt trội khi chọn <span>Công ty Luật ACC</span></h2>
-      <div class="section-line"></div>
+    <!-- Wave bottom -->
+    <div style="position:absolute;bottom:0;left:0;right:0;z-index:5;">
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        style="display:block;width:100%;height:80px;">
+        <path d="M0 80 L0 40 Q360 0 720 40 Q1080 80 1440 40 L1440 80 Z" fill="#fafafa" />
+      </svg>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-      <div class="benefit-card reveal" style="transition-delay:0s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">assignment_turned_in</span></div>
-        <h5 class="font-bold text-sm">Tỷ lệ đậu cao</h5>
-      </div>
-      <div class="benefit-card reveal" style="transition-delay:0.05s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">verified</span></div>
-        <h5 class="font-bold text-sm">Đội ngũ luật sư</h5>
-      </div>
-      <div class="benefit-card reveal" style="transition-delay:0.1s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">payments</span></div>
-        <h5 class="font-bold text-sm">Giá cả minh bạch</h5>
-      </div>
-      <div class="benefit-card reveal" style="transition-delay:0.15s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">speed</span></div>
-        <h5 class="font-bold text-sm">Xử lý nhanh</h5>
-      </div>
-      <div class="benefit-card reveal" style="transition-delay:0.2s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">lock</span></div>
-        <h5 class="font-bold text-sm">Bảo mật dữ liệu</h5>
-      </div>
-      <div class="benefit-card reveal" style="transition-delay:0.25s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">support_agent</span></div>
-        <h5 class="font-bold text-sm">Hỗ trợ 24/7</h5>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ FAQ ============ -->
-<section class="py-8 bg-mesh-light" id="faq">
-  <div class="max-w-3xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Giải đáp</div>
-      <h2 class="section-title">Câu hỏi <span>thường gặp</span></h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="space-y-3 reveal">
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Làm visa mất thời gian bao lâu?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          Thời gian trung bình từ <strong>7 - 15 ngày làm việc</strong> tùy quốc gia và diện hồ sơ. Các trường hợp khẩn có thể xử lý nhanh hơn theo biểu phí bổ sung.
+  <!-- ============ WHAT IS VISA ============ -->
+  <section class="py-8 bg-mesh-light" id="visa-la-gi">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Top row: Text on Left, Image on Right -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-6">
+        <div class="reveal-left space-y-6">
+          <div>
+            <div class="section-label">Kiến thức cơ bản</div>
+            <h2 class="section-title">Visa là gì?</h2>
+            <div class="section-line" style="margin-left:0;"></div>
+          </div>
+          <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+            <strong class="text-gray-900">Visa (Thị thực)</strong> là chứng nhận do cơ quan có thẩm quyền của một quốc
+            gia cấp, xác nhận cá nhân được phép nhập cảnh, xuất cảnh hoặc quá cảnh tại quốc gia đó trong khoảng thời
+            gian nhất định.
+          </p>
+          <p class="text-gray-500 leading-relaxed text-sm">
+            Tùy mục đích chuyến đi (du lịch, công tác, du học), thị thực có yêu cầu khác nhau. Việc sở hữu một bộ hồ sơ
+            minh bạch là chìa khóa để vượt qua rào cản hành chính này.
+          </p>
+          <a href="#quy-trinh" class="inline-flex items-center gap-2 text-sm font-semibold hover:underline"
+            style="color:var(--primary);">
+            Xem quy trình làm việc từ A-Z
+            <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
+          </a>
         </div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Bị trượt visa có được hoàn lại phí dịch vụ không?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          Lệ phí nộp Lãnh sự sẽ không được hoàn. Tuy nhiên, phí dịch vụ của ACC sẽ được cam kết hoàn trả một phần hoặc toàn bộ tùy theo thỏa thuận hợp đồng đã ký.
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Tôi có bắt buộc phải đi phỏng vấn trực tiếp không?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          Tùy quốc gia (như Mỹ, Thụy Sĩ...) yêu cầu phỏng vấn trực tiếp. ACC sẽ hỗ trợ luyện phỏng vấn thử 1-1 giúp bạn chuẩn bị câu trả lời tối ưu nhất.
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Hộ chiếu còn hạn bao lâu thì nộp xin visa được?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          Hộ chiếu của bạn bắt buộc phải còn hạn **tối thiểu 6 tháng** tính từ ngày dự kiến xuất cảnh khỏi quốc gia điểm đến.
-        </div>
-      </details>
-    </div>
-  </div>
-</section>
 
-<!-- ============ CTA ============ -->
-<section class="cta-section py-12 text-center">
-  <div class="cta-orb" style="width:400px;height:400px;background:rgba(197,160,89,0.08);top:-100px;left:-100px;"></div>
-  <div class="cta-orb" style="width:350px;height:350px;background:rgba(139,28,28,0.15);bottom:-80px;right:-80px;"></div>
-  <div class="max-w-3xl mx-auto px-6 relative z-10">
-    <div class="reveal">
-      <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;margin-bottom:24px;">
-        Bắt đầu ngay hôm nay
+        <div class="reveal-right">
+          <div class="relative max-w-md mx-auto lg:max-w-none">
+            <div class="passport-card p-3 shadow-2xl">
+              <img src="./images/hochieu.jpg" alt="Luật sư ACC tư vấn làm Visa chuyên nghiệp"
+                class="w-full rounded-2xl object-cover h-[240px] sm:h-[320px]" />
+            </div>
+          </div>
+        </div>
       </div>
-      <h2 style="font-family:'Roboto',sans-serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;color:white;line-height:1.2;margin-bottom:20px;">
-        Sẵn sàng bắt đầu <br/>
-        <span style="background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">hành trình của bạn?</span>
-      </h2>
-      <p class="text-white/60 leading-relaxed mb-6" style="font-size:1rem;max-width:480px;margin:0 auto 40px;">
-        Liên hệ ngay với đội ngũ luật sư của ACC để được thẩm định hồ sơ <strong class="text-white/80">miễn phí</strong>.
-      </p>
-      <div class="flex justify-center flex-wrap gap-4">
-        <a href="tel:19003330" class="btn-primary" style="font-size:1rem;padding:18px 44px;">
-          <span class="material-symbols-outlined" style="font-size:22px;">call</span>
-          Kết nối ngay - 1900 3330
-        </a>
-        <a href="#" class="btn-outline" style="font-size:1rem;padding:18px 44px;">
-          <span class="material-symbols-outlined" style="font-size:22px;">chat</span>
-          Chat Zalo
-        </a>
+
+      <!-- Bottom row: 4 key cards horizontally -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+        <!-- Card 1 -->
+        <div class="premium-card p-8 flex flex-col items-center text-center gap-4">
+          <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">approval_delegation</span>
+          </div>
+          <h4 class="font-bold text-base">Xác thực</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Chứng nhận hợp pháp từ cơ quan nhà nước sở tại</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="premium-card p-8 flex flex-col items-center text-center gap-4"
+          style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));">
+          <div
+            style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined text-2xl" style="color:white;">flight_land</span>
+          </div>
+          <h4 class="font-bold text-base text-white">Nhập cảnh</h4>
+          <p class="text-xs text-white/70 leading-relaxed">Quyền nhập cảnh và lưu trú hợp pháp tại quốc gia đến</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="premium-card p-8 flex flex-col items-center text-center gap-4"
+          style="background:linear-gradient(135deg,rgba(197,160,89,0.1),rgba(197,160,89,0.04));border-color:rgba(197,160,89,0.25);">
+          <div
+            style="width:56px;height:56px;border-radius:16px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined text-2xl" style="color:#99732f;">verified_user</span>
+          </div>
+          <h4 class="font-bold text-base text-gray-900">An toàn</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Đảm bảo các quy định an ninh quốc tế được đáp ứng</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="premium-card p-8 flex flex-col items-center text-center gap-4">
+          <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">timer</span>
+          </div>
+          <h4 class="font-bold text-base">Thời hạn</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Quy định rõ ràng về số ngày lưu trú tối đa cho phép</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- ============ CONDITIONS ============ -->
+  <section class="py-8" id="dieu-kien" style="background:white;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column: Title & Conditions Grid -->
+        <div class="lg:col-span-7 space-y-8 reveal-left">
+          <div>
+            <div class="section-label">Pháp lý</div>
+            <h2 class="section-title">Điều kiện cấp Visa theo <span>Luật 2014</span></h2>
+            <div class="section-line" style="margin-left:0;"></div>
+            <p class="text-gray-500 mt-4 text-sm leading-relaxed">
+              Các quy định nghiêm ngặt mà ứng viên cần tuân thủ để đảm bảo khả năng đậu thị thực cao nhất.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Condition 1 -->
+            <div class="premium-card p-6">
+              <div class="icon-circle mb-4" style="width:48px;height:48px;border-radius:12px;">
+                <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">menu_book</span>
+              </div>
+              <h3 class="font-bold text-sm mb-2">Hộ chiếu hợp lệ</h3>
+              <p class="text-xs text-gray-500 leading-relaxed">Còn thời hạn ít nhất <strong>6 tháng</strong> và có trang
+                trống theo quy định.</p>
+            </div>
+            <!-- Condition 2 -->
+            <div class="premium-card p-6">
+              <div class="icon-circle mb-4" style="width:48px;height:48px;border-radius:12px;">
+                <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">handshake</span>
+              </div>
+              <h3 class="font-bold text-sm mb-2">Có người bảo lãnh</h3>
+              <p class="text-xs text-gray-500 leading-relaxed">Có tổ chức, cá nhân tại nước sở tại mời hoặc bảo lãnh
+                nhập cảnh.</p>
+            </div>
+            <!-- Condition 3 -->
+            <div class="premium-card p-6">
+              <div class="icon-circle mb-4" style="width:48px;height:48px;border-radius:12px;">
+                <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">gpp_maybe</span>
+              </div>
+              <h3 class="font-bold text-sm mb-2">Không bị cấm nhập cảnh</h3>
+              <p class="text-xs text-gray-500 leading-relaxed">Không thuộc các trường hợp chưa cho nhập cảnh theo an
+                ninh quốc gia.</p>
+            </div>
+            <!-- Condition 4 -->
+            <div class="premium-card p-6">
+              <div class="icon-circle mb-4" style="width:48px;height:48px;border-radius:12px;">
+                <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">receipt_long</span>
+              </div>
+              <h3 class="font-bold text-sm mb-2">Chứng minh mục đích</h3>
+              <p class="text-xs text-gray-500 leading-relaxed">Chứng minh rõ ràng mục đích nhập cảnh bằng các hồ sơ,
+                giấy tờ hợp lệ.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Image 4 -->
+        <div class="lg:col-span-5 reveal-right">
+          <div class="relative max-w-sm mx-auto">
+            <div class="passport-card p-3 shadow-2xl">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvL42XSMOHg_WTKH5Q1nJz2mWpXIY0Y5h65cm4D9U5gq63Zm3x4nqvxgd1Fz1TDBjKykdtFhS4-B4t1DLA-WG3_TmnDOyntYgNrY8D-1nv_lcEGQXOveQ5vQFb167kBFhT-8hsPlvpfDGEnSu0yskL7XG3D3G9f-ZTU8Mzh-6e9UL1UdSjpAPU8N6I8eKbw6nxXWko89S5irRnyqIo8dbpnh8hpwjbIFOaDvf_BMMFaqKG0L2w2SsjGhUKmGST7u1pRdie0is6Ny-R"
+                alt="Luật sư ACC hỗ trợ chuẩn bị thủ tục hồ sơ làm Visa"
+                class="w-full rounded-2xl object-cover h-[320px] sm:h-[380px]" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="py-8 bg-mesh-light overflow-hidden" id="quy-trinh">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Dịch vụ</div>
+        <h2 class="section-title">Quy trình dịch vụ <span>chuyên nghiệp</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="steps-container">
+        <div class="steps-line hidden lg:block"></div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <!-- Steps -->
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0s;">
+            <div class="step-number">1</div>
+            <h4 class="font-bold text-sm step-title">Tiếp nhận</h4>
+            <p class="text-xs text-gray-500 leading-relaxed">Khảo sát hồ sơ ban đầu</p>
+          </div>
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0.1s;">
+            <div class="step-number">2</div>
+            <h4 class="font-bold text-sm step-title">Tư vấn</h4>
+            <p class="text-xs text-gray-500 leading-relaxed">Xác định loại Visa tối ưu</p>
+          </div>
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0.2s;">
+            <div class="step-number">3</div>
+            <h4 class="font-bold text-sm step-title">Hoàn thiện</h4>
+            <p class="text-xs text-gray-500 leading-relaxed">Chuẩn bị hồ sơ pháp lý</p>
+          </div>
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0.3s;">
+            <div class="step-number">4</div>
+            <h4 class="font-bold text-sm step-title">Nộp hồ sơ</h4>
+            <p class="text-xs text-gray-500 leading-relaxed">Đại diện làm việc với TLSQ</p>
+          </div>
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0.4s;">
+            <div class="step-number">5</div>
+            <h4 class="font-bold text-sm step-title">Theo dõi</h4>
+            <p class="text-xs text-gray-500 leading-relaxed">Cập nhật tiến độ liên tục</p>
+          </div>
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0.5s;">
+            <div class="step-number">6</div>
+            <h4 class="font-bold text-sm step-title">Bàn giao</h4>
+            <p class="text-xs text-gray-500 leading-relaxed">Kết quả tận tay khách hàng</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOCUMENTS ============ -->
+  <section class="py-8" id="ho-so" style="background:white;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Chuẩn bị</div>
+        <h2 class="section-title">Hồ sơ cần <span>chuẩn bị</span></h2>
+        <div class="section-line"></div>
+        <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm">Công ty Luật ACC sẽ hỗ trợ bạn chuẩn bị đầy đủ và đúng
+          quy định của Đại sứ quán.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div>
+          <span class="text-sm text-gray-600 leading-relaxed">Đơn xin visa theo mẫu Đại sứ quán (ACC hỗ trợ điền tờ khai
+            chuẩn xác)</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div>
+          <span class="text-sm text-gray-600 leading-relaxed">Hộ chiếu gốc còn thời hạn từ 6 tháng trở lên có trang
+            trống để dán visa</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div>
+          <span class="text-sm text-gray-600 leading-relaxed">02 ảnh chân dung 4x6 cm nền trắng, chụp rõ nét trong vòng
+            6 tháng gần nhất</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div>
+          <span class="text-sm text-gray-600 leading-relaxed">Giấy tờ chứng minh tài chính: Sổ tiết kiệm, xác nhận số dư
+            tài khoản, nhà đất</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div>
+          <span class="text-sm text-gray-600 leading-relaxed">Giấy tờ chứng minh công việc: HĐLĐ, quyết định bổ nhiệm,
+            GPKD (nếu là chủ DN)</span>
+        </div>
+        <div class="check-item">
+          <div class="check-icon"><span class="material-symbols-outlined"
+              style="color:white;font-size:14px;">check</span></div>
+          <span class="text-sm text-gray-600 leading-relaxed">Giấy tờ tùy thân: Căn cước công dân, hộ khẩu, giấy đăng ký
+            kết hôn (nếu có)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COSTS ============ -->
+  <section class="cost-section py-8">
+    <div class="max-w-3xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;">Chi
+          phí</div>
+        <h2 class="section-title text-white">Chi phí dịch vụ <span style="color:var(--accent-light);">minh bạch</span>
+        </h2>
+        <div class="section-line" style="background:linear-gradient(90deg,var(--accent),var(--accent-light));"></div>
+      </div>
+      <div class="cost-card reveal">
+        <div style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div class="flex items-center gap-3">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined"
+                  style="color:var(--accent-light);font-size:18px;">description</span>
+              </div>
+              <span class="text-white/80 text-sm">Phí chuẩn bị hồ sơ &amp; tư vấn</span>
+            </div>
+            <span class="font-bold text-white text-sm">Theo loại visa</span>
+          </div>
+          <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div class="flex items-center gap-3">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">gavel</span>
+              </div>
+              <span class="text-white/80 text-sm">Phí xử lý pháp lý &amp; công chứng</span>
+            </div>
+            <span class="font-bold text-white text-sm">Kê khai rõ</span>
+          </div>
+          <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div class="flex items-center gap-3">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined"
+                  style="color:var(--accent-light);font-size:18px;">translate</span>
+              </div>
+              <span class="text-white/80 text-sm">Phí dịch thuật công chứng</span>
+            </div>
+            <span class="font-bold text-white text-sm">Tùy ngôn ngữ</span>
+          </div>
+          <div class="cost-row" style="padding:16px 0;">
+            <div class="flex items-center gap-3">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined"
+                  style="color:var(--accent-light);font-size:18px;">payments</span>
+              </div>
+              <span class="text-white/80 text-sm">Lệ phí lãnh sự (Thu hộ)</span>
+            </div>
+            <span class="font-bold text-white text-sm">Theo biểu giá SQ</span>
+          </div>
+        </div>
+        <div style="padding:20px 32px;background:rgba(197,160,89,0.06);display:flex;align-items:center;gap:12px;">
+          <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;">info</span>
+          <p class="text-white/50 text-xs italic">ACC cam kết không phát sinh chi phí ngoài hợp đồng đã ký kết.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISA TYPES ============ -->
+  <section class="py-8 bg-mesh-light" id="loai-visa">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Danh mục</div>
+        <h2 class="section-title">Các loại Visa <span>phổ biến</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 reveal">
+        <div class="visa-type-card">
+          <div class="visa-icon-wrap">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">landscape</span>
+          </div>
+          <h4 class="font-bold text-sm">Du lịch</h4>
+        </div>
+        <div class="visa-type-card">
+          <div class="visa-icon-wrap">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">business_center</span>
+          </div>
+          <h4 class="font-bold text-sm">Công tác</h4>
+        </div>
+        <div class="visa-type-card">
+          <div class="visa-icon-wrap">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">school</span>
+          </div>
+          <h4 class="font-bold text-sm">Du học</h4>
+        </div>
+        <div class="visa-type-card">
+          <div class="visa-icon-wrap">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">work</span>
+          </div>
+          <h4 class="font-bold text-sm">Lao động</h4>
+        </div>
+        <div class="visa-type-card">
+          <div class="visa-icon-wrap">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">family_restroom</span>
+          </div>
+          <h4 class="font-bold text-sm">Thăm thân</h4>
+        </div>
+        <div class="visa-type-card">
+          <div class="visa-icon-wrap">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">home_pin</span>
+          </div>
+          <h4 class="font-bold text-sm">Định cư</h4>
+        </div>
+        <div class="visa-type-card">
+          <div class="visa-icon-wrap">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">looks_one</span>
+          </div>
+          <h4 class="font-bold text-sm">Nhập cảnh 1 lần</h4>
+        </div>
+        <div class="visa-type-card">
+          <div class="visa-icon-wrap">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">repeat</span>
+          </div>
+          <h4 class="font-bold text-sm">Nhiều lần</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISA-FREE COUNTRIES ============ -->
+  <section class="py-8" style="background:white;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Thông tin</div>
+        <h2 class="section-title">Quốc gia <span>miễn Visa</span> cho Việt Nam</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="country-card reveal" style="transition-delay:0s;">
+          <div class="country-card-header">
+            <div class="country-icon">
+              <span class="material-symbols-outlined" style="color:white;font-size:22px;">south_east</span>
+            </div>
+            <h3 class="font-bold text-lg">Đông Nam Á</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-500 text-sm leading-relaxed">Thái Lan, Singapore, Lào, Campuchia, Philippines, Myanmar,
+              Indonesia, Brunei, Malaysia...</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs px-3 py-1 rounded-full"
+                style="background:rgba(139,28,28,0.07);color:var(--primary);font-weight:500;">🇹🇭 Thái Lan</span>
+              <span class="text-xs px-3 py-1 rounded-full"
+                style="background:rgba(139,28,28,0.07);color:var(--primary);font-weight:500;">🇸🇬 Singapore</span>
+              <span class="text-xs px-3 py-1 rounded-full"
+                style="background:rgba(139,28,28,0.07);color:var(--primary);font-weight:500;">🇲🇾 Malaysia</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-card reveal" style="transition-delay:0.15s;">
+          <div class="country-card-header">
+            <div class="country-icon">
+              <span class="material-symbols-outlined" style="color:white;font-size:22px;">public</span>
+            </div>
+            <h3 class="font-bold text-lg">Châu Á / Trung Đông</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-500 text-sm leading-relaxed">Kyrgyzstan, Maldives, Kazakhstan, Timor-Leste, Sri Lanka
+              (e-visa)...</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs px-3 py-1 rounded-full"
+                style="background:rgba(139,28,28,0.07);color:var(--primary);font-weight:500;">🇲🇻 Maldives</span>
+              <span class="text-xs px-3 py-1 rounded-full"
+                style="background:rgba(139,28,28,0.07);color:var(--primary);font-weight:500;">🇰🇿 Kazakhstan</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-card reveal" style="transition-delay:0.3s;">
+          <div class="country-card-header">
+            <div class="country-icon">
+              <span class="material-symbols-outlined" style="color:white;font-size:22px;">map</span>
+            </div>
+            <h3 class="font-bold text-lg">Mỹ Latinh</h3>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-500 text-sm leading-relaxed">Panama, Ecuador, Chile, Haiti, Saint Lucia, Barbados,
+              Dominica...</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="text-xs px-3 py-1 rounded-full"
+                style="background:rgba(139,28,28,0.07);color:var(--primary);font-weight:500;">🇵🇦 Panama</span>
+              <span class="text-xs px-3 py-1 rounded-full"
+                style="background:rgba(139,28,28,0.07);color:var(--primary);font-weight:500;">🇨🇱 Chile</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REJECTION REASONS ============ -->
+  <section class="py-8 bg-mesh-light">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="reveal-left">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-hivavczfeIOFewmLQPXp18__QYbVGah6kI-fdwuAwAZci_NCpnhC4GPhP9A84PSLVQZK0eOQhAhKmulANc2pcwwKcPEi9nEdRbFTFAihGfjGD4QqKeDhbnrlnCK20oBsTfPfxQ9z4bzN06YXb7q0EKS7ORpasGuUL9DLOPpFuZAVSChvXbIwH6WVR83dMaLN8o7QoVY-P_cfEmo2ryEmSnPoI3k3o4GUBD3KXHoQRpAZigy-dnIbNbtbHIvnQBwmzr8gHzFL8-Lf"
+            alt="Tại sao visa bị từ chối" class="w-full rounded-3xl shadow-2xl object-cover h-[280px] md:h-[480px]" />
+        </div>
+        <div class="reveal-right space-y-6">
+          <div>
+            <div class="section-label">Cẩn thận</div>
+            <h2 class="section-title">Tại sao Visa của bạn <span>bị từ chối?</span></h2>
+            <div class="section-line" style="margin-left:0;"></div>
+          </div>
+          <div class="space-y-1">
+            <div class="rejection-item">
+              <span class="rejection-number">01</span>
+              <div>
+                <h4 class="font-bold text-base mb-1">Mục đích chuyến đi không rõ ràng</h4>
+                <p class="text-gray-500 text-sm">Thiếu lịch trình chi tiết hoặc các giấy tờ chứng minh sự ràng buộc chặt
+                  chẽ tại quê nhà.</p>
+              </div>
+            </div>
+            <div class="rejection-item">
+              <span class="rejection-number">02</span>
+              <div>
+                <h4 class="font-bold text-base mb-1">Vấn đề chứng minh tài chính yếu</h4>
+                <p class="text-gray-500 text-sm">Số dư tài khoản không đủ hoặc nguồn gốc thu nhập không rõ ràng để chi
+                  trả toàn bộ chuyến đi.</p>
+              </div>
+            </div>
+            <div class="rejection-item">
+              <span class="rejection-number">03</span>
+              <div>
+                <h4 class="font-bold text-base mb-1">Lịch sử du lịch quá ít (Hộ chiếu trắng)</h4>
+                <p class="text-gray-500 text-sm">Chưa từng đi nước ngoài hoặc từng có lịch sử vi phạm thời hạn cư trú
+                  trước đó.</p>
+              </div>
+            </div>
+            <div class="rejection-item">
+              <span class="rejection-number">04</span>
+              <div>
+                <h4 class="font-bold text-base mb-1">Sai sót hoặc thiếu sót trong giấy tờ</h4>
+                <p class="text-gray-500 text-sm">Thông tin khai báo mâu thuẫn, thiếu tính nhất quán giữa tờ khai và hồ
+                  sơ thực tế.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENEFITS ============ -->
+  <section class="py-8" style="background:white;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Tại sao chọn chúng tôi</div>
+        <h2 class="section-title">Lợi ích vượt trội khi chọn <span>Công ty Luật ACC</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="benefit-card reveal" style="transition-delay:0s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">assignment_turned_in</span></div>
+          <h5 class="font-bold text-sm">Tỷ lệ đậu cao</h5>
+        </div>
+        <div class="benefit-card reveal" style="transition-delay:0.05s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">verified</span></div>
+          <h5 class="font-bold text-sm">Đội ngũ luật sư</h5>
+        </div>
+        <div class="benefit-card reveal" style="transition-delay:0.1s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">payments</span></div>
+          <h5 class="font-bold text-sm">Giá cả minh bạch</h5>
+        </div>
+        <div class="benefit-card reveal" style="transition-delay:0.15s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">speed</span></div>
+          <h5 class="font-bold text-sm">Xử lý nhanh</h5>
+        </div>
+        <div class="benefit-card reveal" style="transition-delay:0.2s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">lock</span></div>
+          <h5 class="font-bold text-sm">Bảo mật dữ liệu</h5>
+        </div>
+        <div class="benefit-card reveal" style="transition-delay:0.25s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">support_agent</span></div>
+          <h5 class="font-bold text-sm">Hỗ trợ 24/7</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="py-8 bg-mesh-light" id="faq">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Giải đáp</div>
+        <h2 class="section-title">Câu hỏi <span>thường gặp</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="space-y-3 reveal">
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Làm visa mất thời gian bao lâu?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            Thời gian trung bình từ <strong>7 - 15 ngày làm việc</strong> tùy quốc gia và diện hồ sơ. Các trường hợp
+            khẩn có thể xử lý nhanh hơn theo biểu phí bổ sung.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Bị trượt visa có được hoàn lại phí dịch vụ không?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            Lệ phí nộp Lãnh sự sẽ không được hoàn. Tuy nhiên, phí dịch vụ của ACC sẽ được cam kết hoàn trả một phần hoặc
+            toàn bộ tùy theo thỏa thuận hợp đồng đã ký.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Tôi có bắt buộc phải đi phỏng vấn trực tiếp không?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            Tùy quốc gia (như Mỹ, Thụy Sĩ...) yêu cầu phỏng vấn trực tiếp. ACC sẽ hỗ trợ luyện phỏng vấn thử 1-1 giúp
+            bạn chuẩn bị câu trả lời tối ưu nhất.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Hộ chiếu còn hạn bao lâu thì nộp xin visa được?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            Hộ chiếu của bạn bắt buộc phải còn hạn **tối thiểu 6 tháng** tính từ ngày dự kiến xuất cảnh khỏi quốc gia
+            điểm đến.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section py-12 text-center">
+    <div class="cta-orb" style="width:400px;height:400px;background:rgba(197,160,89,0.08);top:-100px;left:-100px;">
+    </div>
+    <div class="cta-orb" style="width:350px;height:350px;background:rgba(139,28,28,0.15);bottom:-80px;right:-80px;">
+    </div>
+    <div class="max-w-3xl mx-auto px-6 relative z-10">
+      <div class="reveal">
+        <div class="section-label"
+          style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;margin-bottom:24px;">
+          Bắt đầu ngay hôm nay
+        </div>
+        <h2
+          style="font-family:'Roboto',sans-serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;color:white;line-height:1.2;margin-bottom:20px;">
+          Sẵn sàng bắt đầu <br />
+          <span
+            style="background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">hành
+            trình của bạn?</span>
+        </h2>
+        <p class="text-white/60 leading-relaxed mb-6" style="font-size:1rem;max-width:480px;margin:0 auto 40px;">
+          Liên hệ ngay với đội ngũ luật sư của ACC để được thẩm định hồ sơ <strong class="text-white/80">miễn
+            phí</strong>.
+        </p>
+        <div class="flex justify-center flex-wrap gap-4">
+          <a href="tel:19003330" class="btn-primary" style="font-size:1rem;padding:18px 44px;">
+            <span class="material-symbols-outlined" style="font-size:22px;">call</span>
+            Kết nối ngay - 1900 3330
+          </a>
+          <a href="#" class="btn-outline" style="font-size:1rem;padding:18px 44px;">
+            <span class="material-symbols-outlined" style="font-size:22px;">chat</span>
+            Chat Zalo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
-<script>
-  // ===== Navbar scroll effect =====
-  const navbar = document.getElementById('navbar');
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) navbar.classList.add('scrolled');
-      else navbar.classList.remove('scrolled');
-    });
-  }
-
-  // ===== Mobile menu toggle =====
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = document.getElementById('menu-icon');
-
-  function toggleMobileMenu() {
-    if (mobileMenu && menuIcon) {
-      mobileMenu.classList.toggle('hidden');
-      const isHidden = mobileMenu.classList.contains('hidden');
-      menuIcon.textContent = isHidden ? 'menu' : 'close';
+  <script>
+    // ===== Navbar scroll effect =====
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+      });
     }
-  }
 
-  if (menuToggle) {
-    menuToggle.addEventListener('click', toggleMobileMenu);
-  }
+    // ===== Mobile menu toggle =====
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
 
-  // ===== Particle generator =====
-  const container = document.getElementById('particles');
-  const count = 35;
-  if (container) {
-    for (let i = 0; i < count; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle';
-      const size = Math.random() * 18 + 6;
-      const pOpacity = Math.random() * 0.4 + 0.45;
-      const drift = Math.random() * 60 - 30;
-      p.style.cssText = `
+    function toggleMobileMenu() {
+      if (mobileMenu && menuIcon) {
+        mobileMenu.classList.toggle('hidden');
+        const isHidden = mobileMenu.classList.contains('hidden');
+        menuIcon.textContent = isHidden ? 'menu' : 'close';
+      }
+    }
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', toggleMobileMenu);
+    }
+
+    // ===== Particle generator =====
+    const container = document.getElementById('particles');
+    const count = 35;
+    if (container) {
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = Math.random() * 18 + 6;
+        const pOpacity = Math.random() * 0.4 + 0.45;
+        const drift = Math.random() * 60 - 30;
+        p.style.cssText = `
         width:${size}px;height:${size}px;
-        left:${Math.random()*100}%;
-        animation-duration:${Math.random()*15+12}s;
-        animation-delay:${Math.random()*15}s;
+        left:${Math.random() * 100}%;
+        animation-duration:${Math.random() * 15 + 12}s;
+        animation-delay:${Math.random() * 15}s;
         --p-opacity:${pOpacity};
         --drift:${drift}px;
       `;
-      container.appendChild(p);
+        container.appendChild(p);
+      }
     }
-  }
 
-  // ===== Scroll reveal =====
-  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-  if (revealEls.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.style.transitionDelay || '0s';
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, parseFloat(delay) * 1000);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-    revealEls.forEach(el => observer.observe(el));
-  }
+    // ===== Scroll reveal =====
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    if (revealEls.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.style.transitionDelay || '0s';
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, parseFloat(delay) * 1000);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+      revealEls.forEach(el => observer.observe(el));
+    }
 
-  // ===== Counter animation for hero stats =====
-  function animateCounter(el, target, suffix = '') {
-    let current = 0;
-    const step = target / 60;
-    const update = () => {
-      current = Math.min(current + step, target);
-      el.textContent = Math.floor(current) + suffix;
-      if (current < target) requestAnimationFrame(update);
-    };
-    requestAnimationFrame(update);
-  }
-</script>
+    // ===== Counter animation for hero stats =====
+    function animateCounter(el, target, suffix = '') {
+      let current = 0;
+      const step = target / 60;
+      const update = () => {
+        current = Math.min(current + step, target);
+        el.textContent = Math.floor(current) + suffix;
+        if (current < target) requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+    }
+  </script>
 </body>
+
 </html>

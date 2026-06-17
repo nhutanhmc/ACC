@@ -1,1550 +1,1898 @@
 <!DOCTYPE html>
 <html lang="vi" class="scroll-smooth">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Dịch vụ làm Báo Cáo Thuế trọn gói</title>
-<meta name="description" content="Công ty Luật ACC cung cấp dịch vụ làm báo cáo thuế trọn gói uy tín, chuyên nghiệp. Hỗ trợ doanh nghiệp kê khai thuế GTGT, TNCN, TNDN đúng hạn, tối ưu chi phí."/>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          primary: '#8B1C1C',
-          'primary-dark': '#5c1114',
-          'primary-light': '#b44040',
-          accent: '#c5a059',
-          'accent-light': '#ebdcae',
-          surface: '#fafafa',
-          'surface-dark': '#f0f0f0',
-        },
-        fontFamily: {
-          sans: ['Roboto', 'sans-serif'],
-          display: ['Roboto', 'sans-serif'],
-        },
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Dịch vụ làm Báo Cáo Thuế trọn gói</title>
+  <meta name="description"
+    content="Công ty Luật ACC cung cấp dịch vụ làm báo cáo thuế trọn gói uy tín, chuyên nghiệp. Hỗ trợ doanh nghiệp kê khai thuế GTGT, TNCN, TNDN đúng hạn, tối ưu chi phí." />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#8B1C1C',
+            'primary-dark': '#5c1114',
+            'primary-light': '#b44040',
+            accent: '#c5a059',
+            'accent-light': '#ebdcae',
+            surface: '#fafafa',
+            'surface-dark': '#f0f0f0',
+          },
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Roboto', 'sans-serif'],
+          },
+        }
       }
     }
-  }
-</script>
-<style>
-  :root {
-    --primary: #8B1C1C;
-    --primary-dark: #5c1114;
-    --primary-light: #b44040;
-    --accent: #c5a059;
-    --accent-light: #ebdcae;
-  }
+  </script>
+  <style>
+    :root {
+      --primary: #8B1C1C;
+      --primary-dark: #5c1114;
+      --primary-light: #b44040;
+      --accent: #c5a059;
+      --accent-light: #ebdcae;
+    }
 
-  * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: #fafafa;
-    color: #1a1a1a;
-    overflow-x: hidden;
-  }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #fafafa;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
 
-  /* ============ SCROLLBAR ============ */
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #f1f1f1; }
-  ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+    /* ============ SCROLLBAR ============ */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
 
-  /* ============ HERO ============ */
-  .hero-section {
-    min-height: 85vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
-  .hero-gradient {
-    background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 35%, #5c1114 65%, #1a0404 100%);
-  }
-  .hero-particles {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 1;
-    pointer-events: none;
-  }
-  .particle {
-    position: absolute;
-    bottom: -50px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, rgba(235, 220, 174, 0.45) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(197, 160, 89, 0.35) 100%);
-    border: 1px solid rgba(235, 220, 174, 0.45);
-    box-shadow: 0 0 10px rgba(197, 160, 89, 0.25), inset 0 0 6px rgba(255, 255, 255, 0.25);
-    animation: float-particle linear infinite;
-    opacity: 0;
-  }
-  @keyframes float-particle {
-    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
-    15% { opacity: var(--p-opacity, 0.6); }
-    85% { opacity: var(--p-opacity, 0.6); }
-    100% { transform: translateY(-115vh) translateX(var(--drift, 20px)) rotate(360deg); opacity: 0; }
-  }
-  .hero-glow {
-    position: absolute;
-    width: 600px; height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(197,160,89,0.08) 0%, transparent 70%);
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    animation: pulse-glow 4s ease-in-out infinite;
-    z-index: 1;
-  }
-  @keyframes pulse-glow {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
-  }
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    border: 1px solid rgba(197,160,89,0.5);
-    border-radius: 100px;
-    background: rgba(197,160,89,0.1);
-    backdrop-filter: blur(10px);
-    color: var(--accent-light);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    animation: fadeInDown 0.8s ease forwards;
-  }
-  .hero-badge::before {
-    content: '';
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: blink 2s ease-in-out infinite;
-  }
-  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-  @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-30px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(30px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  .hero-title {
-    animation: fadeInUp 0.9s ease 0.2s both;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.1;
-  }
-  .hero-title span {
-    background: linear-gradient(135deg, #ebdcae, #c5a059, #ebdcae);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 200% auto;
-    animation: shimmer 3s linear infinite;
-  }
-  @keyframes shimmer {
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
-  }
-  .hero-desc {
-    animation: fadeInUp 0.9s ease 0.4s both;
-  }
-  .hero-cta {
-    animation: fadeInUp 0.9s ease 0.6s both;
-  }
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 36px;
-    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
-    color: #1a0404;
-    font-weight: 700;
-    font-size: 0.9rem;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 30px rgba(197,160,89,0.4);
-    position: relative;
-    overflow: hidden;
-  }
-  .btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s ease;
-  }
-  .btn-primary:hover::before { left: 100%; }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(197,160,89,0.5); }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
 
-  .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 36px;
-    border: 2px solid rgba(255,255,255,0.3);
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    border-radius: 100px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  .btn-outline:hover {
-    border-color: rgba(255,255,255,0.7);
-    background: rgba(255,255,255,0.15);
-    transform: translateY(-3px);
-  }
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 3px;
+    }
 
-  /* Hero Stats */
-  .hero-stats {
-    animation: fadeInUp 0.9s ease 0.8s both;
-  }
-  .stat-item {
-    border-left: 1px solid rgba(255,255,255,0.15);
-    padding-left: 20px;
-  }
-  .stat-item:first-child { border-left: none; padding-left: 0; }
+    /* ============ HERO ============ */
+    .hero-section {
+      min-height: 85vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
 
-  /* Hero Card */
-  .hero-card {
-    animation: fadeInRight 0.9s ease 0.5s both;
-  }
-  .passport-card {
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(30px);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 24px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.4s ease;
-  }
-  .passport-card:hover { transform: translateY(-8px) rotate(-1deg); }
-  .passport-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(197,160,89,0.05), transparent, rgba(139,28,28,0.05));
-    pointer-events: none;
-  }
+    .hero-gradient {
+      background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 35%, #5c1114 65%, #1a0404 100%);
+    }
 
-  /* Floating badge on hero image */
-  .float-badge {
-    position: absolute;
-    background: rgba(255,255,255,0.95);
-    border-radius: 16px;
-    padding: 12px 18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    animation: float 3s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
 
-  /* ============ SECTION HEADERS ============ */
-  .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 14px;
-    border-radius: 100px;
-    background: rgba(139,28,28,0.08);
-    color: var(--primary);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  .section-title {
-    font-family: 'Roboto', sans-serif;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    font-weight: 700;
-    color: #1a0404;
-    line-height: 1.2;
-  }
-  .section-title span {
-    color: var(--primary);
-  }
-  .section-line {
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    border-radius: 2px;
-    margin: 16px auto 0;
-  }
+    .particle {
+      position: absolute;
+      bottom: -50px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(235, 220, 174, 0.45) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(197, 160, 89, 0.35) 100%);
+      border: 1px solid rgba(235, 220, 174, 0.45);
+      box-shadow: 0 0 10px rgba(197, 160, 89, 0.25), inset 0 0 6px rgba(255, 255, 255, 0.25);
+      animation: float-particle linear infinite;
+      opacity: 0;
+    }
 
-  /* ============ CARDS ============ */
-  .premium-card {
-    background: white;
-    border-radius: 20px;
-    border: 1px solid rgba(139,28,28,0.06);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    position: relative;
-  }
-  .premium-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-  .premium-card:hover::before { transform: scaleX(1); }
-  .premium-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(139,28,28,0.12);
-    border-color: rgba(139,28,28,0.15);
-  }
+    @keyframes float-particle {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
 
-  .icon-circle {
-    width: 64px; height: 64px;
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(139,28,28,0.04));
-    transition: all 0.3s ease;
-  }
-  .premium-card:hover .icon-circle {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    transform: rotate(5deg) scale(1.1);
-  }
-  .premium-card:hover .icon-circle .material-symbols-outlined {
-    color: white !important;
-  }
+      15% {
+        opacity: var(--p-opacity, 0.6);
+      }
 
-  /* ============ PROCESS STEPS ============ */
-  .steps-container {
-    position: relative;
-  }
-  .steps-line {
-    position: absolute;
-    top: 32px; left: 50%;
-    width: calc(100% - 64px);
-    transform: translateX(-50%);
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
-    background-size: 200% auto;
-    animation: shimmer 3s linear infinite;
-    display: none;
-  }
-  @media (min-width: 1024px) {
-    .steps-line { display: block; }
-  }
-  .step-number {
-    width: 64px; height: 64px;
-    border-radius: 50%;
-    background: white;
-    border: 3px solid var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 1.25rem;
-    color: var(--primary);
-    position: relative;
-    z-index: 2;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(139,28,28,0.2);
-  }
-  .step-item:hover .step-number {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: white;
-    transform: scale(1.1);
-    box-shadow: 0 8px 30px rgba(139,28,28,0.35);
-  }
-  .step-item:hover .step-title { color: var(--primary); }
+      85% {
+        opacity: var(--p-opacity, 0.6);
+      }
 
-  /* ============ CHECKLIST ITEMS ============ */
-  .check-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 14px 18px;
-    background: white;
-    border-radius: 14px;
-    border: 1px solid rgba(139,28,28,0.06);
-    transition: all 0.3s ease;
-  }
-  .check-item:hover {
-    border-color: rgba(139,28,28,0.2);
-    transform: translateX(6px);
-    box-shadow: 0 4px 15px rgba(139,28,28,0.08);
-  }
-  .check-icon {
-    width: 28px; height: 28px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
+      100% {
+        transform: translateY(-115vh) translateX(var(--drift, 20px)) rotate(360deg);
+        opacity: 0;
+      }
+    }
 
-  /* ============ COST TABLE ============ */
-  .cost-section {
-    background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 50%, #5c1114 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .cost-section::before {
-    content: '';
-    position: absolute;
-    top: -50%; right: -10%;
-    width: 500px; height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(197,160,89,0.08), transparent 70%);
-    pointer-events: none;
-  }
-  .cost-card {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 24px;
-    overflow: hidden;
-  }
-  .cost-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 24px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    transition: background 0.3s;
-  }
-  .cost-row:hover { background: rgba(255,255,255,0.05); }
-  .cost-row:last-child { border-bottom: none; }
+    .hero-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(197, 160, 89, 0.08) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulse-glow 4s ease-in-out infinite;
+      z-index: 1;
+    }
 
-  /* ============ REJECTION REASONS ============ */
-  .rejection-item {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  .rejection-item::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 50%;
-    transform: translateY(-50%);
-    width: 3px; height: 0;
-    background: var(--primary);
-    border-radius: 0 2px 2px 0;
-    transition: height 0.3s ease;
-  }
-  .rejection-item:hover { background: rgba(139,28,28,0.03); border-color: rgba(139,28,28,0.1); }
-  .rejection-item:hover::before { height: 70%; }
-  .rejection-number {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: rgba(139,28,28,0.15);
-    line-height: 1;
-    flex-shrink: 0;
-    min-width: 48px;
-    transition: color 0.3s;
-  }
-  .rejection-item:hover .rejection-number { color: rgba(139,28,28,0.4); }
+    @keyframes pulse-glow {
 
-  /* ============ BENEFITS ============ */
-  .benefit-card {
-    background: white;
-    border-radius: 18px;
-    padding: 28px 20px;
-    text-align: center;
-    border: 1px solid rgba(139,28,28,0.06);
-    transition: all 0.35s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  .benefit-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 50%;
-    transform: translateX(-50%);
-    width: 0; height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    transition: width 0.4s ease;
-    border-radius: 2px 2px 0 0;
-  }
-  .benefit-card:hover::after { width: 70%; }
-  .benefit-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(139,28,28,0.1);
-    border-color: rgba(139,28,28,0.12);
-  }
-  .benefit-icon {
-    width: 56px; height: 56px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(197,160,89,0.08));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-    transition: all 0.3s ease;
-  }
-  .benefit-card:hover .benefit-icon {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  }
-  .benefit-card:hover .benefit-icon .material-symbols-outlined {
-    color: white !important;
-  }
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+      }
 
-  /* ============ FAQ ============ */
-  .faq-item {
-    border: 1px solid rgba(139,28,28,0.08);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-  .faq-item:hover { border-color: rgba(139,28,28,0.2); }
-  .faq-summary {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 24px;
-    cursor: pointer;
-    font-weight: 600;
-    color: #1a0404;
-    transition: all 0.3s;
-    background: white;
-    gap: 16px;
-  }
-  .faq-item[open] .faq-summary {
-    background: linear-gradient(135deg, rgba(139,28,28,0.04), rgba(139,28,28,0.01));
-    color: var(--primary);
-    border-bottom: 1px solid rgba(139,28,28,0.08);
-  }
-  .faq-summary::-webkit-details-marker { display: none; }
-  .faq-icon {
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-    color: var(--primary);
-  }
-  .faq-item[open] .faq-icon { transform: rotate(180deg); }
-  .faq-body {
-    padding: 20px 24px;
-    background: white;
-    color: #555;
-    line-height: 1.7;
-    font-size: 0.9rem;
-  }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+      }
+    }
 
-  /* ============ CTA SECTION ============ */
-  .cta-section {
-    background: linear-gradient(135deg, #2a0404 0%, #5c1114 40%, #3d0808 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(60px);
-    pointer-events: none;
-  }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border: 1px solid rgba(197, 160, 89, 0.5);
+      border-radius: 100px;
+      background: rgba(197, 160, 89, 0.1);
+      backdrop-filter: blur(10px);
+      color: var(--accent-light);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: fadeInDown 0.8s ease forwards;
+    }
 
-  /* ============ FLOATING BUTTON ============ */
-  .float-zalo {
-    width: 56px; height: 56px;
-    background: linear-gradient(135deg, #0068ff, #004dc0);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    box-shadow: 0 6px 25px rgba(0,104,255,0.45);
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  .float-zalo::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    background: rgba(0,104,255,0.25);
-    animation: pulse-ring 2s ease-in-out infinite;
-  }
-  @keyframes pulse-ring {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(1.6); opacity: 0; }
-  }
-  .float-zalo:hover { transform: scale(1.1); box-shadow: 0 10px 35px rgba(0,104,255,0.55); }
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: blink 2s ease-in-out infinite;
+    }
 
-  .float-phone {
-    width: 56px; height: 56px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    box-shadow: 0 6px 25px rgba(139,28,28,0.45);
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  .float-phone::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    background: rgba(139,28,28,0.25);
-    animation: pulse-ring 2s ease-in-out infinite;
-    animation-delay: 1s;
-  }
-  .float-phone:hover { transform: scale(1.1); box-shadow: 0 10px 35px rgba(139,28,28,0.55); }
+    @keyframes blink {
 
-  /* ============ SCROLL REVEAL ============ */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .reveal-left {
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .reveal-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  .reveal-right {
-    opacity: 0;
-    transform: translateX(30px);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .reveal-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
+      0%,
+      100% {
+        opacity: 1;
+      }
 
-  /* ============ MATERIAL ICONS ============ */
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  }
+      50% {
+        opacity: 0.3;
+      }
+    }
 
-  /* ============ SECTION BACKGROUNDS ============ */
-  .bg-mesh-light {
-    background-color: #fafafa;
-    background-image: radial-gradient(at 20% 30%, rgba(139,28,28,0.03) 0, transparent 50%),
-                      radial-gradient(at 80% 70%, rgba(197,160,89,0.03) 0, transparent 50%);
-  }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
 
-  /* ============ CUSTOM TABLE STYLE ============ */
-  .custom-table-container {
-    background: white;
-    border-radius: 20px;
-    border: 1px solid rgba(139,28,28,0.06);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.02);
-    overflow: hidden;
-  }
-  .custom-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-  }
-  .custom-table th {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: white;
-    padding: 18px 24px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    border: none;
-  }
-  .custom-table td {
-    padding: 16px 24px;
-    border-bottom: 1px solid rgba(139,28,28,0.06);
-    color: #444;
-    font-size: 0.875rem;
-    line-height: 1.6;
-  }
-  .custom-table tr:last-child td {
-    border-bottom: none;
-  }
-  .custom-table tr:nth-child(even) {
-    background: rgba(139,28,28,0.02);
-  }
-  .custom-table tr:hover {
-    background: rgba(197,160,89,0.04);
-  }
-</style>
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .hero-title {
+      animation: fadeInUp 0.9s ease 0.2s both;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.1;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #ebdcae, #c5a059, #ebdcae);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% auto;
+      animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 0% center;
+      }
+
+      100% {
+        background-position: 200% center;
+      }
+    }
+
+    .hero-desc {
+      animation: fadeInUp 0.9s ease 0.4s both;
+    }
+
+    .hero-cta {
+      animation: fadeInUp 0.9s ease 0.6s both;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+      color: #1a0404;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(197, 160, 89, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(197, 160, 89, 0.5);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-3px);
+    }
+
+    /* Hero Stats */
+    .hero-stats {
+      animation: fadeInUp 0.9s ease 0.8s both;
+    }
+
+    .stat-item {
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+      padding-left: 20px;
+    }
+
+    .stat-item:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+
+    /* Hero Card */
+    .hero-card {
+      animation: fadeInRight 0.9s ease 0.5s both;
+    }
+
+    .passport-card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(30px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.4s ease;
+    }
+
+    .passport-card:hover {
+      transform: translateY(-8px) rotate(-1deg);
+    }
+
+    .passport-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.05), transparent, rgba(139, 28, 28, 0.05));
+      pointer-events: none;
+    }
+
+    /* Floating badge on hero image */
+    .float-badge {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 12px 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* ============ SECTION HEADERS ============ */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 14px;
+      border-radius: 100px;
+      background: rgba(139, 28, 28, 0.08);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: #1a0404;
+      line-height: 1.2;
+    }
+
+    .section-title span {
+      color: var(--primary);
+    }
+
+    .section-line {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 2px;
+      margin: 16px auto 0;
+    }
+
+    /* ============ CARDS ============ */
+    .premium-card {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .premium-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .premium-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .premium-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(139, 28, 28, 0.12);
+      border-color: rgba(139, 28, 28, 0.15);
+    }
+
+    .icon-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(139, 28, 28, 0.08), rgba(139, 28, 28, 0.04));
+      transition: all 0.3s ease;
+    }
+
+    .premium-card:hover .icon-circle {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      transform: rotate(5deg) scale(1.1);
+    }
+
+    .premium-card:hover .icon-circle .material-symbols-outlined {
+      color: white !important;
+    }
+
+    /* ============ PROCESS STEPS ============ */
+    .steps-container {
+      position: relative;
+    }
+
+    .steps-line {
+      position: absolute;
+      top: 32px;
+      left: 50%;
+      width: calc(100% - 64px);
+      transform: translateX(-50%);
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+      background-size: 200% auto;
+      animation: shimmer 3s linear infinite;
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .steps-line {
+        display: block;
+      }
+    }
+
+    .step-number {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: white;
+      border: 3px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--primary);
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(139, 28, 28, 0.2);
+    }
+
+    .step-item:hover .step-number {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(139, 28, 28, 0.35);
+    }
+
+    .step-item:hover .step-title {
+      color: var(--primary);
+    }
+
+    /* ============ CHECKLIST ITEMS ============ */
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 18px;
+      background: white;
+      border-radius: 14px;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .check-item:hover {
+      border-color: rgba(139, 28, 28, 0.2);
+      transform: translateX(6px);
+      box-shadow: 0 4px 15px rgba(139, 28, 28, 0.08);
+    }
+
+    .check-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ============ COST TABLE ============ */
+    .cost-section {
+      background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 50%, #5c1114 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cost-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(197, 160, 89, 0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    .cost-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .cost-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: background 0.3s;
+    }
+
+    .cost-row:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .cost-row:last-child {
+      border-bottom: none;
+    }
+
+    /* ============ REJECTION REASONS ============ */
+    .rejection-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .rejection-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 0;
+      background: var(--primary);
+      border-radius: 0 2px 2px 0;
+      transition: height 0.3s ease;
+    }
+
+    .rejection-item:hover {
+      background: rgba(139, 28, 28, 0.03);
+      border-color: rgba(139, 28, 28, 0.1);
+    }
+
+    .rejection-item:hover::before {
+      height: 70%;
+    }
+
+    .rejection-number {
+      font-family: 'Roboto', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: rgba(139, 28, 28, 0.15);
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 48px;
+      transition: color 0.3s;
+    }
+
+    .rejection-item:hover .rejection-number {
+      color: rgba(139, 28, 28, 0.4);
+    }
+
+    /* ============ BENEFITS ============ */
+    .benefit-card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px 20px;
+      text-align: center;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.4s ease;
+      border-radius: 2px 2px 0 0;
+    }
+
+    .benefit-card:hover::after {
+      width: 70%;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(139, 28, 28, 0.1);
+      border-color: rgba(139, 28, 28, 0.12);
+    }
+
+    .benefit-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(139, 28, 28, 0.08), rgba(197, 160, 89, 0.08));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      transition: all 0.3s ease;
+    }
+
+    .benefit-card:hover .benefit-icon {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    }
+
+    .benefit-card:hover .benefit-icon .material-symbols-outlined {
+      color: white !important;
+    }
+
+    /* ============ FAQ ============ */
+    .faq-item {
+      border: 1px solid rgba(139, 28, 28, 0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(139, 28, 28, 0.2);
+    }
+
+    .faq-summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #1a0404;
+      transition: all 0.3s;
+      background: white;
+      gap: 16px;
+    }
+
+    .faq-item[open] .faq-summary {
+      background: linear-gradient(135deg, rgba(139, 28, 28, 0.04), rgba(139, 28, 28, 0.01));
+      color: var(--primary);
+      border-bottom: 1px solid rgba(139, 28, 28, 0.08);
+    }
+
+    .faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+
+    .faq-item[open] .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-body {
+      padding: 20px 24px;
+      background: white;
+      color: #555;
+      line-height: 1.7;
+      font-size: 0.9rem;
+    }
+
+    /* ============ CTA SECTION ============ */
+    .cta-section {
+      background: linear-gradient(135deg, #2a0404 0%, #5c1114 40%, #3d0808 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+    }
+
+    /* ============ FLOATING BUTTON ============ */
+    .float-zalo {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #0068ff, #004dc0);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 6px 25px rgba(0, 104, 255, 0.45);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .float-zalo::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: rgba(0, 104, 255, 0.25);
+      animation: pulse-ring 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1.6);
+        opacity: 0;
+      }
+    }
+
+    .float-zalo:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 35px rgba(0, 104, 255, 0.55);
+    }
+
+    .float-phone {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 6px 25px rgba(139, 28, 28, 0.45);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .float-phone::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: rgba(139, 28, 28, 0.25);
+      animation: pulse-ring 2s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+
+    .float-phone:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 35px rgba(139, 28, 28, 0.55);
+    }
+
+    /* ============ SCROLL REVEAL ============ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ============ MATERIAL ICONS ============ */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* ============ SECTION BACKGROUNDS ============ */
+    .bg-mesh-light {
+      background-color: #fafafa;
+      background-image: radial-gradient(at 20% 30%, rgba(139, 28, 28, 0.03) 0, transparent 50%),
+        radial-gradient(at 80% 70%, rgba(197, 160, 89, 0.03) 0, transparent 50%);
+    }
+
+    /* ============ CUSTOM TABLE STYLE ============ */
+    .custom-table-container {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+      overflow: hidden;
+    }
+
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .custom-table th {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 18px 24px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+    }
+
+    .custom-table td {
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(139, 28, 28, 0.06);
+      color: #444;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .custom-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .custom-table tr:nth-child(even) {
+      background: rgba(139, 28, 28, 0.02);
+    }
+
+    .custom-table tr:hover {
+      background: rgba(197, 160, 89, 0.04);
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ============ HERO ============ -->
-<section class="hero-section hero-gradient" id="hero">
-  <!-- Particles -->
-  <div class="hero-particles" id="particles"></div>
-  <div class="hero-glow"></div>
+  <!-- ============ HERO ============ -->
+  <section class="hero-section hero-gradient" id="hero">
+    <!-- Particles -->
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-glow"></div>
 
-  <!-- Grid overlay -->
-  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;z-index:1;pointer-events:none;"></div>
+    <!-- Grid overlay -->
+    <div
+      style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;z-index:1;pointer-events:none;">
+    </div>
 
-  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-20 w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[60vh]">
-      <!-- Left -->
-      <div class="space-y-6">
-        <div class="hero-badge">
-          Công ty luật ACC &nbsp;·&nbsp; Pháp lý & kế toán chuyên nghiệp
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-20 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[60vh]">
+        <!-- Left -->
+        <div class="space-y-6">
+          <div class="hero-badge">
+            Công ty luật ACC &nbsp;·&nbsp; Pháp lý & kế toán chuyên nghiệp
+          </div>
+
+          <h1 class="hero-title text-white"
+            style="font-size:clamp(1.8rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.15;">
+            Dịch vụ làm <span>Báo cáo thuế</span>
+            <br />Trọn gói - Uy tín
+          </h1>
+
+          <p class="hero-desc text-white/70 leading-relaxed" style="font-size:1.05rem;max-width:540px;">
+            Báo cáo thuế tưởng chừng chỉ là thủ tục định kỳ nhưng lại là “điểm nghẽn” khiến nhiều doanh nghiệp phát sinh
+            chi phí và rủi ro pháp lý. ACC cung cấp giải pháp hạch toán và lập tờ khai <strong
+              class="text-white/90">A-Z</strong>, đảm bảo vận hành an toàn và tối ưu chi phí.
+          </p>
+
+          <div class="hero-cta flex flex-wrap gap-4">
+            <a href="tel:19003330" class="btn-primary">
+              <span class="material-symbols-outlined" style="font-size:20px;">call</span>
+              Gọi 1900 3330
+            </a>
+            <a href="#bao-cao-la-gi" class="btn-outline">
+              <span class="material-symbols-outlined" style="font-size:20px;">arrow_downward</span>
+              Tìm hiểu thêm
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="hero-stats flex flex-wrap gap-x-8 gap-y-4 pt-4">
+            <div class="stat-item">
+              <div
+                style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                2000+</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Doanh nghiệp tin dùng</div>
+            </div>
+            <div class="stat-item">
+              <div
+                style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                100%</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Đúng hạn nộp hồ sơ</div>
+            </div>
+            <div class="stat-item">
+              <div
+                style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                10+</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Năm kinh nghiệm</div>
+            </div>
+          </div>
         </div>
 
-        <h1 class="hero-title text-white" style="font-size:clamp(1.8rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.15;">
-          Dịch vụ làm <span>Báo cáo thuế</span>
-          <br/>Trọn gói - Uy tín
-        </h1>
+        <!-- Right -->
+        <div class="block lg:mt-0 mt-8 hero-card">
+          <div class="relative max-w-md mx-auto lg:max-w-none">
+            <div class="passport-card p-3 shadow-2xl">
+              <img src="./images/tax_hero_workspace.png" alt="Dịch vụ báo cáo thuế Công ty Luật ACC"
+                class="w-full rounded-2xl object-cover h-[280px] sm:h-[380px]" />
+            </div>
+            <!-- Floating badges -->
+            <div class="float-badge sm:flex hidden" style="bottom:-20px;left:20px;z-index:10;">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined" style="color:white;font-size:18px;">verified</span>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Đúng quy định</div>
+                <div style="font-size:0.72rem;color:#888;">Hạn chế tối đa rủi ro thuế</div>
+              </div>
+            </div>
+            <div class="float-badge sm:flex hidden" style="top:20px;right:-20px;z-index:10;animation-delay:1.5s;">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#c5a059,#99732f);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined" style="color:white;font-size:18px;">chat_bubble</span>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Tư vấn 24/7</div>
+                <div style="font-size:0.72rem;color:#888;">Kế toán trưởng hỗ trợ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <p class="hero-desc text-white/70 leading-relaxed" style="font-size:1.05rem;max-width:540px;">
-          Báo cáo thuế tưởng chừng chỉ là thủ tục định kỳ nhưng lại là “điểm nghẽn” khiến nhiều doanh nghiệp phát sinh chi phí và rủi ro pháp lý. ACC cung cấp giải pháp hạch toán và lập tờ khai <strong class="text-white/90">A-Z</strong>, đảm bảo vận hành an toàn và tối ưu chi phí.
-        </p>
+    <!-- Wave bottom -->
+    <div style="position:absolute;bottom:0;left:0;right:0;z-index:5;">
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        style="display:block;width:100%;height:80px;">
+        <path d="M0 80 L0 40 Q360 0 720 40 Q1080 80 1440 40 L1440 80 Z" fill="#fafafa" />
+      </svg>
+    </div>
+  </section>
 
-        <div class="hero-cta flex flex-wrap gap-4">
-          <a href="tel:19003330" class="btn-primary">
-            <span class="material-symbols-outlined" style="font-size:20px;">call</span>
-            Gọi 1900 3330
+  <!-- ============ WHAT IS TAX REPORT ============ -->
+  <section class="py-8 bg-mesh-light" id="bao-cao-la-gi">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- Top row: Text on Left, Image on Right -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-6">
+        <div class="reveal-left space-y-6">
+          <div>
+            <div class="section-label">Kiến thức cơ bản</div>
+            <h2 class="section-title">Báo cáo thuế là gì?</h2>
+            <div class="section-line" style="margin-left:0;"></div>
+          </div>
+          <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+            <strong class="text-gray-900">Báo cáo thuế</strong> là việc doanh nghiệp thực hiện kê khai, tổng hợp và nộp
+            các loại thuế phát sinh trong quá trình hoạt động kinh doanh cho cơ quan thuế theo quy định. Đây là nghĩa vụ
+            bắt buộc nhằm đảm bảo tính minh bạch tài chính và tuân thủ pháp luật.
+          </p>
+          <p class="text-gray-500 leading-relaxed text-sm">
+            Việc thiết lập các tờ khai thuế đúng chuẩn và tối ưu hóa số thuế phải nộp hợp pháp không chỉ giúp doanh
+            nghiệp tránh khỏi các án phạt hành chính nặng nề, mà còn tạo tiền đề vững chắc cho việc quyết toán thuế sau
+            này.
+          </p>
+          <a href="#quy-trinh" class="inline-flex items-center gap-2 text-sm font-semibold hover:underline"
+            style="color:var(--primary);">
+            Xem quy trình thực hiện dịch vụ
+            <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
           </a>
-          <a href="#bao-cao-la-gi" class="btn-outline">
-            <span class="material-symbols-outlined" style="font-size:20px;">arrow_downward</span>
-            Tìm hiểu thêm
-          </a>
         </div>
 
-        <!-- Stats -->
-        <div class="hero-stats flex flex-wrap gap-x-8 gap-y-4 pt-4">
-          <div class="stat-item">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">2000+</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Doanh nghiệp tin dùng</div>
-          </div>
-          <div class="stat-item">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">100%</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Đúng hạn nộp hồ sơ</div>
-          </div>
-          <div class="stat-item">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">10+</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Năm kinh nghiệm</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right -->
-      <div class="block lg:mt-0 mt-8 hero-card">
-        <div class="relative max-w-md mx-auto lg:max-w-none">
-          <div class="passport-card p-3 shadow-2xl">
-            <img
-              src="./images/tax_hero_workspace.png"
-              alt="Dịch vụ báo cáo thuế Công ty Luật ACC"
-              class="w-full rounded-2xl object-cover h-[280px] sm:h-[380px]"
-            />
-          </div>
-          <!-- Floating badges -->
-          <div class="float-badge sm:flex hidden" style="bottom:-20px;left:20px;z-index:10;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:white;font-size:18px;">verified</span>
-            </div>
-            <div>
-              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Đúng quy định</div>
-              <div style="font-size:0.72rem;color:#888;">Hạn chế tối đa rủi ro thuế</div>
-            </div>
-          </div>
-          <div class="float-badge sm:flex hidden" style="top:20px;right:-20px;z-index:10;animation-delay:1.5s;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#c5a059,#99732f);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:white;font-size:18px;">chat_bubble</span>
-            </div>
-            <div>
-              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Tư vấn 24/7</div>
-              <div style="font-size:0.72rem;color:#888;">Kế toán trưởng hỗ trợ</div>
+        <div class="reveal-right">
+          <div class="relative max-w-md mx-auto lg:max-w-none">
+            <div class="passport-card p-3 shadow-2xl">
+              <img src="./images/baocaothueee.png" alt="Luật sư và kế toán ACC tư vấn báo cáo thuế"
+                class="w-full rounded-2xl object-cover h-[240px] sm:h-[320px]" />
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Wave bottom -->
-  <div style="position:absolute;bottom:0;left:0;right:0;z-index:5;">
-    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:80px;">
-      <path d="M0 80 L0 40 Q360 0 720 40 Q1080 80 1440 40 L1440 80 Z" fill="#fafafa"/>
-    </svg>
-  </div>
-</section>
-
-<!-- ============ WHAT IS TAX REPORT ============ -->
-<section class="py-8 bg-mesh-light" id="bao-cao-la-gi">
-  <div class="max-w-6xl mx-auto px-6">
-    <!-- Top row: Text on Left, Image on Right -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-6">
-      <div class="reveal-left space-y-6">
-        <div>
-          <div class="section-label">Kiến thức cơ bản</div>
-          <h2 class="section-title">Báo cáo thuế là gì?</h2>
-          <div class="section-line" style="margin-left:0;"></div>
-        </div>
-        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
-          <strong class="text-gray-900">Báo cáo thuế</strong> là việc doanh nghiệp thực hiện kê khai, tổng hợp và nộp các loại thuế phát sinh trong quá trình hoạt động kinh doanh cho cơ quan thuế theo quy định. Đây là nghĩa vụ bắt buộc nhằm đảm bảo tính minh bạch tài chính và tuân thủ pháp luật.
-        </p>
-        <p class="text-gray-500 leading-relaxed text-sm">
-          Việc thiết lập các tờ khai thuế đúng chuẩn và tối ưu hóa số thuế phải nộp hợp pháp không chỉ giúp doanh nghiệp tránh khỏi các án phạt hành chính nặng nề, mà còn tạo tiền đề vững chắc cho việc quyết toán thuế sau này.
-        </p>
-        <a href="#quy-trinh" class="inline-flex items-center gap-2 text-sm font-semibold hover:underline" style="color:var(--primary);">
-          Xem quy trình thực hiện dịch vụ
-          <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
-        </a>
-      </div>
-      
-      <div class="reveal-right">
-        <div class="relative max-w-md mx-auto lg:max-w-none">
-          <div class="passport-card p-3 shadow-2xl">
-            <img
-              src="./images/tax_consultation.png"
-              alt="Luật sư và kế toán ACC tư vấn báo cáo thuế"
-              class="w-full rounded-2xl object-cover h-[240px] sm:h-[320px]"
-            />
+      <!-- Bottom row: 4 key cards horizontally -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+        <!-- Card 1 -->
+        <div class="premium-card p-8 flex flex-col items-center text-center gap-4">
+          <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">visibility</span>
           </div>
+          <h4 class="font-bold text-base">Minh bạch</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Đảm bảo tính minh bạch tài chính cho doanh nghiệp</p>
         </div>
-      </div>
-    </div>
-    
-    <!-- Bottom row: 4 key cards horizontally -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
-      <!-- Card 1 -->
-      <div class="premium-card p-8 flex flex-col items-center text-center gap-4">
-        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">visibility</span>
-        </div>
-        <h4 class="font-bold text-base">Minh bạch</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Đảm bảo tính minh bạch tài chính cho doanh nghiệp</p>
-      </div>
-      <!-- Card 2 -->
-      <div class="premium-card p-8 flex flex-col items-center text-center gap-4" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));">
-        <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;">
-          <span class="material-symbols-outlined text-2xl" style="color:white;">gavel</span>
-        </div>
-        <h4 class="font-bold text-base text-white">Tuân thủ</h4>
-        <p class="text-xs text-white/70 leading-relaxed">Thực hiện nghĩa vụ bắt buộc theo đúng quy định pháp luật</p>
-      </div>
-      <!-- Card 3 -->
-      <div class="premium-card p-8 flex flex-col items-center text-center gap-4" style="background:linear-gradient(135deg,rgba(197,160,89,0.1),rgba(197,160,89,0.04));border-color:rgba(197,160,89,0.25);">
-        <div style="width:56px;height:56px;border-radius:16px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-          <span class="material-symbols-outlined text-2xl" style="color:#99732f;">task_alt</span>
-        </div>
-        <h4 class="font-bold text-base text-gray-900">Chính xác</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Tránh sai sót số liệu dẫn đến truy thu, xử phạt thuế</p>
-      </div>
-      <!-- Card 4 -->
-      <div class="premium-card p-8 flex flex-col items-center text-center gap-4">
-        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">schedule</span>
-        </div>
-        <h4 class="font-bold text-base">Kịp thời</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Kê khai và nộp đúng hạn báo cáo theo tháng, quý, năm</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TAX TYPES TO FILE ============ -->
-<section class="py-8" id="cac-loai-bao-cao" style="background:white;">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Danh mục</div>
-      <h2 class="section-title">Các loại báo cáo thuế <span>phải nộp</span></h2>
-      <div class="section-line"></div>
-      <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm">Doanh nghiệp cần thực hiện đầy đủ nghĩa vụ nộp tờ khai và báo cáo thuế định kỳ bao gồm:</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 reveal">
-      <!-- Type 1 -->
-      <div class="premium-card p-6 flex flex-col gap-4">
-        <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-          <span class="material-symbols-outlined text-xl" style="color:var(--primary);">percent</span>
-        </div>
-        <h4 class="font-bold text-sm text-gray-900">Thuế GTGT</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Theo quy định tại Điều 8 Nghị định 126/2020/NĐ-CP, thuế GTGT là loại thuế kê khai theo <strong>Tháng</strong> hoặc <strong>Quý</strong> tùy quy mô doanh thu.</p>
-      </div>
-      <!-- Type 2 -->
-      <div class="premium-card p-6 flex flex-col gap-4">
-        <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-          <span class="material-symbols-outlined text-xl" style="color:var(--primary);">badge</span>
-        </div>
-        <h4 class="font-bold text-sm text-gray-900">Thuế TNCN</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Áp dụng đối với các doanh nghiệp có thực hiện chi trả thu nhập chịu thuế cho người lao động.</p>
-      </div>
-      <!-- Type 3 -->
-      <div class="premium-card p-6 flex flex-col gap-4">
-        <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-          <span class="material-symbols-outlined text-xl" style="color:var(--primary);">monetization_on</span>
-        </div>
-        <h4 class="font-bold text-sm text-gray-900">Thuế TNDN</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Doanh nghiệp tự tính toán và nộp số thuế thu nhập doanh nghiệp tạm tính theo <strong>Quý</strong>.</p>
-      </div>
-      <!-- Type 4 -->
-      <div class="premium-card p-6 flex flex-col gap-4">
-        <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-          <span class="material-symbols-outlined text-xl" style="color:var(--primary);">receipt</span>
-        </div>
-        <h4 class="font-bold text-sm text-gray-900">Sử dụng hóa đơn</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Lập báo cáo tình hình sử dụng hóa đơn định kỳ theo <strong>Quý</strong> để gửi lên cơ quan thuế.</p>
-      </div>
-      <!-- Type 5 -->
-      <div class="premium-card p-6 flex flex-col gap-4">
-        <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
-          <span class="material-symbols-outlined text-xl" style="color:var(--primary);">analytics</span>
-        </div>
-        <h4 class="font-bold text-sm text-gray-900">Báo cáo tài chính</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Tổng hợp toàn bộ hoạt động tài chính, kết quả kinh doanh và cân đối phát sinh của <strong>Năm</strong>.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHAT ACC DOES ============ -->
-<section class="py-8 bg-mesh-light" id="cong-viec">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Dịch vụ trọn gói</div>
-      <h2 class="section-title">ACC thực hiện những <span>công việc gì?</span></h2>
-      <div class="section-line"></div>
-      <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm">Dịch vụ làm báo cáo thuế tại ACC được triển khai trọn gói, thay thế vai trò kế toán thuế nội bộ, hạn chế tối đa rủi ro sai sót.</p>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal mb-6">
-      <!-- Job 1 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">folder_open</span>
-        </div>
-        <h4 class="font-bold text-base">Tiếp nhận & xử lý chứng từ</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Thu thập toàn bộ hóa đơn, chứng từ phát sinh; kiểm tra tính hợp lệ, hợp pháp và phân loại dữ liệu trước khi nhập vào hệ thống kế toán.</p>
-      </div>
-      <!-- Job 2 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">calculate</span>
-        </div>
-        <h4 class="font-bold text-base">Hạch toán & tính thuế</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Ghi nhận các nghiệp vụ kinh tế phát sinh, xác định chính xác các khoản thuế phải nộp như thuế GTGT, TNDN, TNCN… và điều chỉnh số liệu phù hợp.</p>
-      </div>
-      <!-- Job 3 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">feed</span>
-        </div>
-        <h4 class="font-bold text-base">Lập & nộp báo cáo thuế</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Soạn thảo tờ khai thuế theo đúng biểu mẫu, rà soát kỹ số liệu trước khi nộp và đại diện doanh nghiệp nộp hồ sơ đúng thời hạn quy định.</p>
-      </div>
-      <!-- Job 4 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">contact_support</span>
-        </div>
-        <h4 class="font-bold text-base">Tư vấn & hỗ trợ về thuế</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Giải đáp các vấn đề liên quan đến chính sách thuế, đồng thời đề xuất giải pháp tối ưu chi phí thuế hợp pháp tốt nhất cho doanh nghiệp.</p>
-      </div>
-      <!-- Job 5 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">shield_lock</span>
-        </div>
-        <h4 class="font-bold text-base">Lưu trữ & bảo mật hồ sơ</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Sắp xếp, lưu giữ chứng từ và báo cáo thuế khoa học, đảm bảo bảo mật tuyệt đối các thông tin tài chính nhạy cảm của doanh nghiệp.</p>
-      </div>
-      <!-- Job 6 -->
-      <div class="premium-card p-8 flex flex-col gap-4">
-        <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">corporate_fare</span>
-        </div>
-        <h4 class="font-bold text-base">Làm việc với cơ quan thuế</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Đồng hành khi có thanh tra, kiểm tra thuế và cập nhật kịp thời các quy định pháp luật mới nhất để áp dụng hiệu quả vào thực tế.</p>
-      </div>
-    </div>
-
-    <!-- Alert callout -->
-    <div class="premium-card p-6 bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-l-primary flex items-start gap-4 reveal">
-      <span class="material-symbols-outlined text-primary text-2xl mt-0.5">info</span>
-      <div>
-        <h5 class="font-bold text-sm text-gray-900 mb-1">Doanh nghiệp đang gặp khó khăn trong kê khai, lập và nộp báo cáo thuế?</h5>
-        <p class="text-xs text-gray-600 leading-relaxed">Liên hệ ngay Công ty Luật ACC để được tư vấn miễn phí và sử dụng dịch vụ báo cáo thuế trọn gói, nhanh chóng - chính xác - đúng hạn.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROCESS ============ -->
-<section class="py-8" id="quy-trinh" style="background:white;">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Quy trình</div>
-      <h2 class="section-title">Quy trình dịch vụ <span>bài bản</span></h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="steps-container">
-      <div class="steps-line hidden lg:block" style="width:calc(100% - 160px);"></div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-        <!-- Steps -->
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0s;">
-          <div class="step-number">1</div>
-          <h4 class="font-bold text-sm step-title">Tiếp nhận</h4>
-          <p class="text-xs text-gray-500 leading-relaxed px-4">ACC khảo sát nhu cầu, quy mô doanh nghiệp và tình trạng sổ sách</p>
-        </div>
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0.1s;">
-          <div class="step-number">2</div>
-          <h4 class="font-bold text-sm step-title">Tư vấn</h4>
-          <p class="text-xs text-gray-500 leading-relaxed px-4">Phân tích chứng từ, đề xuất phương án thuế tối ưu nhất</p>
-        </div>
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0.2s;">
-          <div class="step-number">3</div>
-          <h4 class="font-bold text-sm step-title">Ký hợp đồng</h4>
-          <p class="text-xs text-gray-500 leading-relaxed px-4">Thống nhất và ký hợp đồng dịch vụ để bảo vệ quyền lợi hai bên</p>
-        </div>
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0.3s;">
-          <div class="step-number">4</div>
-          <h4 class="font-bold text-sm step-title">Hoàn thiện</h4>
-          <p class="text-xs text-gray-500 leading-relaxed px-4">Hạch toán dữ liệu, gửi dự thảo tờ khai cho khách duyệt trước khi gửi</p>
-        </div>
-        <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal" style="transition-delay:0.4s;">
-          <div class="step-number">5</div>
-          <h4 class="font-bold text-sm step-title">Nộp & Giải trình</h4>
-          <p class="text-xs text-gray-500 leading-relaxed px-4">Đại diện nộp báo cáo đúng hạn, hỗ trợ làm việc giải trình khi cần</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ DOCUMENTS TO PROVIDE ============ -->
-<section class="py-8 bg-mesh-light" id="ho-so">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Chuẩn bị</div>
-      <h2 class="section-title">Hồ sơ khách hàng cần <span>cung cấp</span></h2>
-      <div class="section-line"></div>
-      <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm">Để đảm bảo tiến độ kê khai nhanh chóng và chính xác, khách hàng chỉ cần cung cấp các tài liệu cơ bản sau:</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
-      <!-- Item 1 -->
-      <div class="check-item flex-col items-start gap-3 p-6">
-        <div class="flex items-center gap-3">
-          <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-          <h4 class="font-bold text-sm text-gray-900">Hóa đơn đầu vào, đầu ra</h4>
-        </div>
-        <p class="text-xs text-gray-500 leading-relaxed">Bao gồm toàn bộ hóa đơn mua hàng, bán hàng, cung cấp dịch vụ phát sinh trong kỳ để xác định doanh thu và chi phí.</p>
-      </div>
-      <!-- Item 2 -->
-      <div class="check-item flex-col items-start gap-3 p-6">
-        <div class="flex items-center gap-3">
-          <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-          <h4 class="font-bold text-sm text-gray-900">Sổ sách & dữ liệu kế toán</h4>
-        </div>
-        <p class="text-xs text-gray-500 leading-relaxed">Cung cấp sổ cái, sổ chi tiết, bảng cân đối phát sinh. Nếu chưa có sổ sách, ACC sẽ hỗ trợ kiểm tra và xây dựng lại từ đầu.</p>
-      </div>
-      <!-- Item 3 -->
-      <div class="check-item flex-col items-start gap-3 p-6">
-        <div class="flex items-center gap-3">
-          <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-          <h4 class="font-bold text-sm text-gray-900">Tờ khai & bảng kê thuế cũ</h4>
-        </div>
-        <p class="text-xs text-gray-500 leading-relaxed">Tờ khai thuế GTGT, TNDN, TNCN đã nộp kỳ trước nhằm giúp đối chiếu số liệu chuyển kỳ và đảm bảo tính liên tục của hồ sơ.</p>
-      </div>
-      <!-- Item 4 -->
-      <div class="check-item flex-col items-start gap-3 p-6">
-        <div class="flex items-center gap-3">
-          <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-          <h4 class="font-bold text-sm text-gray-900">Hợp đồng & chứng từ thanh toán</h4>
-        </div>
-        <p class="text-xs text-gray-500 leading-relaxed">Hợp đồng kinh tế, biên bản nghiệm thu, phiếu thu/chi, sao kê ngân hàng nhằm chứng minh tính hợp pháp của nghiệp vụ.</p>
-      </div>
-      <!-- Item 5 -->
-      <div class="check-item flex-col items-start gap-3 p-6">
-        <div class="flex items-center gap-3">
-          <div class="check-icon"><span class="material-symbols-outlined" style="color:white;font-size:14px;">check</span></div>
-          <h4 class="font-bold text-sm text-gray-900">Tài liệu thu nhập & chi phí khác</h4>
-        </div>
-        <p class="text-xs text-gray-500 leading-relaxed">Bảng lương, chi phí vận hành thường nhật, chứng từ giảm trừ thuế giúp tối ưu hóa nghĩa vụ thuế hợp lệ và đúng quy định.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ COSTS ============ -->
-<section class="cost-section py-8">
-  <div class="max-w-4xl mx-auto px-6 relative z-10">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;">Chi phí</div>
-      <h2 class="section-title text-white">Yếu tố quyết định <span style="color:var(--accent-light);">chi phí dịch vụ</span></h2>
-      <div class="section-line" style="background:linear-gradient(90deg,var(--accent),var(--accent-light));"></div>
-      <p class="text-white/60 text-sm mt-4">Phí dịch vụ làm báo cáo thuế không cố định mà được thiết lập linh hoạt dựa trên đặc điểm của từng doanh nghiệp:</p>
-    </div>
-    
-    <div class="cost-card reveal mb-6">
-      <div style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08);">
-        <!-- Item 1 -->
-        <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">business</span>
-            </div>
-            <span class="text-white/80 text-sm">Quy mô doanh nghiệp</span>
+        <!-- Card 2 -->
+        <div class="premium-card p-8 flex flex-col items-center text-center gap-4"
+          style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));">
+          <div
+            style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined text-2xl" style="color:white;">gavel</span>
           </div>
-          <span class="font-bold text-white text-sm">Khối lượng nghiệp vụ tỷ lệ thuận</span>
+          <h4 class="font-bold text-base text-white">Tuân thủ</h4>
+          <p class="text-xs text-white/70 leading-relaxed">Thực hiện nghĩa vụ bắt buộc theo đúng quy định pháp luật</p>
         </div>
-        <!-- Item 2 -->
-        <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">receipt_long</span>
-            </div>
-            <span class="text-white/80 text-sm">Số lượng hóa đơn, chứng từ phát sinh</span>
+        <!-- Card 3 -->
+        <div class="premium-card p-8 flex flex-col items-center text-center gap-4"
+          style="background:linear-gradient(135deg,rgba(197,160,89,0.1),rgba(197,160,89,0.04));border-color:rgba(197,160,89,0.25);">
+          <div
+            style="width:56px;height:56px;border-radius:16px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+            <span class="material-symbols-outlined text-2xl" style="color:#99732f;">task_alt</span>
           </div>
-          <span class="font-bold text-white text-sm">Quyết định thời gian xử lý dữ liệu</span>
+          <h4 class="font-bold text-base text-gray-900">Chính xác</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Tránh sai sót số liệu dẫn đến truy thu, xử phạt thuế</p>
         </div>
-        <!-- Item 3 -->
-        <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">work_outline</span>
-            </div>
-            <span class="text-white/80 text-sm">Lĩnh vực, ngành nghề kinh doanh</span>
+        <!-- Card 4 -->
+        <div class="premium-card p-8 flex flex-col items-center text-center gap-4">
+          <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">schedule</span>
           </div>
-          <span class="font-bold text-white text-sm">Đặc thù xây dựng, sản xuất phức tạp hơn</span>
+          <h4 class="font-bold text-base">Kịp thời</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Kê khai và nộp đúng hạn báo cáo theo tháng, quý, năm</p>
         </div>
-        <!-- Item 4 -->
-        <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">history_edu</span>
-            </div>
-            <span class="text-white/80 text-sm">Tình trạng sổ sách hiện tại</span>
-          </div>
-          <span class="font-bold text-white text-sm">Tính thêm phí nếu cần dọn dẹp, xử lý lại</span>
-        </div>
-        <!-- Item 5 -->
-        <div class="cost-row" style="padding:16px 0;">
-          <div class="flex items-center gap-3">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:18px;">room_service</span>
-            </div>
-            <span class="text-white/80 text-sm">Phạm vi dịch vụ lựa chọn</span>
-          </div>
-          <span class="font-bold text-white text-sm">Chỉ nộp báo cáo vs Trọn gói quyết toán</span>
-        </div>
-      </div>
-      <div style="padding:20px 32px;background:rgba(197,160,89,0.06);display:flex;align-items:center;gap:12px;">
-        <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;">info</span>
-        <p class="text-white/50 text-xs italic">ACC cam kết báo giá nhanh trong 5 phút - chi phí minh bạch rõ ràng, hoàn toàn không phát sinh chi phí ẩn.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ WHO NEEDS TAX FILING ============ -->
-<section class="py-8" id="doanh-nghiep-can-nop" style="background:white;">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Đối tượng áp dụng</div>
-      <h2 class="section-title">Doanh nghiệp nào <span>cần làm báo cáo thuế?</span></h2>
-      <div class="section-line"></div>
-      <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm">Theo quy định tại Điều 2 Luật Quản lý thuế năm 2019, các tổ chức, cá nhân sau bắt buộc phải thực hiện nghĩa vụ thuế:</p>
-    </div>
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
-      <!-- Card 1 -->
-      <div class="premium-card p-6 flex flex-col gap-3 text-center items-center">
-        <div class="icon-circle mb-2" style="width:48px;height:48px;border-radius:12px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">new_releases</span>
+  <!-- ============ TAX TYPES TO FILE ============ -->
+  <section class="py-8" id="cac-loai-bao-cao" style="background:white;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Danh mục</div>
+        <h2 class="section-title">Các loại báo cáo thuế <span>phải nộp</span></h2>
+        <div class="section-line"></div>
+        <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm">Doanh nghiệp cần thực hiện đầy đủ nghĩa vụ nộp tờ khai và
+          báo cáo thuế định kỳ bao gồm:</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 reveal">
+        <!-- Type 1 -->
+        <div class="premium-card p-6 flex flex-col gap-4">
+          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+            <span class="material-symbols-outlined text-xl" style="color:var(--primary);">percent</span>
+          </div>
+          <h4 class="font-bold text-sm text-gray-900">Thuế GTGT</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Theo quy định tại Điều 8 Nghị định 126/2020/NĐ-CP, thuế GTGT
+            là loại thuế kê khai theo <strong>Tháng</strong> hoặc <strong>Quý</strong> tùy quy mô doanh thu.</p>
         </div>
-        <h4 class="font-bold text-sm text-gray-900">Mới thành lập</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Dù chưa phát sinh doanh thu hay hóa đơn vẫn phải thực hiện kê khai thuế định kỳ đầy đủ.</p>
-      </div>
-      <!-- Card 2 -->
-      <div class="premium-card p-6 flex flex-col gap-3 text-center items-center">
-        <div class="icon-circle mb-2" style="width:48px;height:48px;border-radius:12px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">run_circle</span>
+        <!-- Type 2 -->
+        <div class="premium-card p-6 flex flex-col gap-4">
+          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+            <span class="material-symbols-outlined text-xl" style="color:var(--primary);">badge</span>
+          </div>
+          <h4 class="font-bold text-sm text-gray-900">Thuế TNCN</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Áp dụng đối với các doanh nghiệp có thực hiện chi trả thu
+            nhập chịu thuế cho người lao động.</p>
         </div>
-        <h4 class="font-bold text-sm text-gray-900">Đang hoạt động</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Bắt buộc phải lập và nộp đầy đủ các tờ khai và báo cáo tài chính theo tháng, quý và năm.</p>
-      </div>
-      <!-- Card 3 -->
-      <div class="premium-card p-6 flex flex-col gap-3 text-center items-center">
-        <div class="icon-circle mb-2" style="width:48px;height:48px;border-radius:12px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">storefront</span>
+        <!-- Type 3 -->
+        <div class="premium-card p-6 flex flex-col gap-4">
+          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+            <span class="material-symbols-outlined text-xl" style="color:var(--primary);">monetization_on</span>
+          </div>
+          <h4 class="font-bold text-sm text-gray-900">Thuế TNDN</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Doanh nghiệp tự tính toán và nộp số thuế thu nhập doanh
+            nghiệp tạm tính theo <strong>Quý</strong>.</p>
         </div>
-        <h4 class="font-bold text-sm text-gray-900">Hộ kinh doanh</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Theo Nghị định 68/2026/NĐ-CP, hộ kinh doanh có doanh thu trên 1 tỷ đồng/năm thuộc diện phải kê khai thuế GTGT và TNCN.</p>
-      </div>
-      <!-- Card 4 -->
-      <div class="premium-card p-6 flex flex-col gap-3 text-center items-center">
-        <div class="icon-circle mb-2" style="width:48px;height:48px;border-radius:12px;">
-          <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">pause_circle</span>
-        </div>
-        <h4 class="font-bold text-sm text-gray-900">Tạm ngừng hoạt động</h4>
-        <p class="text-xs text-gray-500 leading-relaxed">Vẫn phải gửi thông báo và hoàn tất nghĩa vụ thuế tồn đọng theo đúng luật định.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FILING DEADLINES TABLE ============ -->
-<section class="py-8 bg-mesh-light" id="thoi-han-nop">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Thời hạn pháp lý</div>
-      <h2 class="section-title">Thời hạn nộp <span>báo cáo thuế</span></h2>
-      <div class="section-line"></div>
-      <p class="text-gray-500 mt-4 text-sm max-w-xl mx-auto">Căn cứ theo quy định tại Điều 44 Luật Quản lý thuế năm 2019, thời hạn nộp hồ sơ khai thuế được quy định chi tiết:</p>
-    </div>
-    
-    <div class="reveal">
-      <div class="custom-table-container overflow-x-auto">
-        <table class="custom-table min-w-[650px]">
-          <thead>
-            <tr>
-              <th class="w-1/3">Loại kê khai thuế</th>
-              <th class="w-2/3">Thời hạn nộp hồ sơ chi tiết</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="font-bold text-gray-900 text-sm">Khai thuế theo tháng</td>
-              <td class="text-sm">Chậm nhất là <strong>ngày 20</strong> của tháng tiếp theo. <span class="text-gray-500 text-xs">(Ví dụ: Thuế phát sinh tháng 1 phải nộp trước 20/2)</span></td>
-            </tr>
-            <tr>
-              <td class="font-bold text-gray-900 text-sm">Khai thuế theo quý</td>
-              <td class="text-sm">Chậm nhất là <strong>ngày cuối cùng</strong> của tháng đầu quý sau. <span class="text-gray-500 text-xs">(Ví dụ: Báo cáo quý 1 phải nộp trước 30/4)</span></td>
-            </tr>
-            <tr>
-              <td class="font-bold text-gray-900 text-sm">Quyết toán năm (DN)</td>
-              <td class="text-sm">Chậm nhất là <strong>ngày cuối cùng của tháng thứ 3</strong> kể từ khi kết thúc năm tài chính <span class="text-gray-500 text-xs">(tức ngày 31/3 đối với năm tài chính dương lịch)</span>.</td>
-            </tr>
-            <tr>
-              <td class="font-bold text-gray-900 text-sm">Khai thuế năm</td>
-              <td class="text-sm">Chậm nhất là <strong>ngày cuối cùng</strong> của tháng đầu tiên của năm.</td>
-            </tr>
-            <tr>
-              <td class="font-bold text-gray-900 text-sm">Quyết toán TNCN (cá nhân)</td>
-              <td class="text-sm">Chậm nhất là <strong>ngày cuối cùng của tháng thứ 4</strong> kể từ khi kết thúc năm dương lịch.</td>
-            </tr>
-            <tr>
-              <td class="font-bold text-gray-900 text-sm">Thuế khoán (hộ kinh doanh)</td>
-              <td class="text-sm">Chậm nhất ngày 15/12 của năm trước. Hộ mới ra kinh doanh: Nộp chậm nhất 10 ngày kể từ khi bắt đầu.</td>
-            </tr>
-            <tr>
-              <td class="font-bold text-gray-900 text-sm">Khai theo từng lần phát sinh</td>
-              <td class="text-sm">Chậm nhất là <strong>ngày thứ 10</strong> kể từ ngày phát sinh nghĩa vụ thuế.</td>
-            </tr>
-            <tr>
-              <td class="font-bold text-gray-900 text-sm">Chấm dứt hoạt động/giải thể</td>
-              <td class="text-sm">Chậm nhất là <strong>ngày thứ 45</strong> kể từ ngày phát sinh sự kiện.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PENALTIES SECTION WITH TABLE & IMAGE ============ -->
-<section class="py-8" id="muc-xu-phat" style="background:white;">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <!-- Left Column: Title & Table -->
-      <div class="lg:col-span-8 space-y-6 reveal-left">
-        <div>
-          <div class="section-label">Rủi ro pháp lý</div>
-          <h2 class="section-title">Chậm nộp báo cáo thuế <span>bị xử phạt thế nào?</span></h2>
-          <div class="section-line" style="margin-left:0;"></div>
-          <p class="text-gray-500 mt-4 text-xs md:text-sm leading-relaxed">
-            Căn cứ theo Điều 13 Nghị định 125/2020/NĐ-CP (sửa đổi bởi Nghị định 310/2025/NĐ-CP), mức phạt tiền đối với hành vi chậm nộp tờ khai được quy định cụ thể:
+        <!-- Type 4 -->
+        <div class="premium-card p-6 flex flex-col gap-4">
+          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+            <span class="material-symbols-outlined text-xl" style="color:var(--primary);">receipt</span>
+          </div>
+          <h4 class="font-bold text-sm text-gray-900">Sử dụng hóa đơn</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Lập báo cáo tình hình sử dụng hóa đơn định kỳ theo
+            <strong>Quý</strong> để gửi lên cơ quan thuế.
           </p>
         </div>
-        
+        <!-- Type 5 -->
+        <div class="premium-card p-6 flex flex-col gap-4">
+          <div class="icon-circle" style="width:48px;height:48px;border-radius:12px;">
+            <span class="material-symbols-outlined text-xl" style="color:var(--primary);">analytics</span>
+          </div>
+          <h4 class="font-bold text-sm text-gray-900">Báo cáo tài chính</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Tổng hợp toàn bộ hoạt động tài chính, kết quả kinh doanh và
+            cân đối phát sinh của <strong>Năm</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT ACC DOES ============ -->
+  <section class="py-8 bg-mesh-light" id="cong-viec">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Dịch vụ trọn gói</div>
+        <h2 class="section-title">ACC thực hiện những <span>công việc gì?</span></h2>
+        <div class="section-line"></div>
+        <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm">Dịch vụ làm báo cáo thuế tại ACC được triển khai trọn
+          gói, thay thế vai trò kế toán thuế nội bộ, hạn chế tối đa rủi ro sai sót.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal mb-6">
+        <!-- Job 1 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">folder_open</span>
+          </div>
+          <h4 class="font-bold text-base">Tiếp nhận & xử lý chứng từ</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Thu thập toàn bộ hóa đơn, chứng từ phát sinh; kiểm tra tính
+            hợp lệ, hợp pháp và phân loại dữ liệu trước khi nhập vào hệ thống kế toán.</p>
+        </div>
+        <!-- Job 2 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">calculate</span>
+          </div>
+          <h4 class="font-bold text-base">Hạch toán & tính thuế</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Ghi nhận các nghiệp vụ kinh tế phát sinh, xác định chính xác
+            các khoản thuế phải nộp như thuế GTGT, TNDN, TNCN… và điều chỉnh số liệu phù hợp.</p>
+        </div>
+        <!-- Job 3 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">feed</span>
+          </div>
+          <h4 class="font-bold text-base">Lập & nộp báo cáo thuế</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Soạn thảo tờ khai thuế theo đúng biểu mẫu, rà soát kỹ số liệu
+            trước khi nộp và đại diện doanh nghiệp nộp hồ sơ đúng thời hạn quy định.</p>
+        </div>
+        <!-- Job 4 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">contact_support</span>
+          </div>
+          <h4 class="font-bold text-base">Tư vấn & hỗ trợ về thuế</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Giải đáp các vấn đề liên quan đến chính sách thuế, đồng thời
+            đề xuất giải pháp tối ưu chi phí thuế hợp pháp tốt nhất cho doanh nghiệp.</p>
+        </div>
+        <!-- Job 5 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">shield_lock</span>
+          </div>
+          <h4 class="font-bold text-base">Lưu trữ & bảo mật hồ sơ</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Sắp xếp, lưu giữ chứng từ và báo cáo thuế khoa học, đảm bảo
+            bảo mật tuyệt đối các thông tin tài chính nhạy cảm của doanh nghiệp.</p>
+        </div>
+        <!-- Job 6 -->
+        <div class="premium-card p-8 flex flex-col gap-4">
+          <div class="icon-circle" style="width:56px;height:56px;border-radius:16px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">corporate_fare</span>
+          </div>
+          <h4 class="font-bold text-base">Làm việc với cơ quan thuế</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Đồng hành khi có thanh tra, kiểm tra thuế và cập nhật kịp
+            thời các quy định pháp luật mới nhất để áp dụng hiệu quả vào thực tế.</p>
+        </div>
+      </div>
+
+      <!-- Alert callout -->
+      <div
+        class="premium-card p-6 bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-l-primary flex items-start gap-4 reveal">
+        <span class="material-symbols-outlined text-primary text-2xl mt-0.5">info</span>
+        <div>
+          <h5 class="font-bold text-sm text-gray-900 mb-1">Doanh nghiệp đang gặp khó khăn trong kê khai, lập và nộp báo
+            cáo thuế?</h5>
+          <p class="text-xs text-gray-600 leading-relaxed">Liên hệ ngay Công ty Luật ACC để được tư vấn miễn phí và sử
+            dụng dịch vụ báo cáo thuế trọn gói, nhanh chóng - chính xác - đúng hạn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="py-8" id="quy-trinh" style="background:white;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Quy trình</div>
+        <h2 class="section-title">Quy trình dịch vụ <span>bài bản</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="steps-container">
+        <div class="steps-line hidden lg:block" style="width:calc(100% - 160px);"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+          <!-- Steps -->
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0s;">
+            <div class="step-number">1</div>
+            <h4 class="font-bold text-sm step-title">Tiếp nhận</h4>
+            <p class="text-xs text-gray-500 leading-relaxed px-4">ACC khảo sát nhu cầu, quy mô doanh nghiệp và tình
+              trạng sổ sách</p>
+          </div>
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0.1s;">
+            <div class="step-number">2</div>
+            <h4 class="font-bold text-sm step-title">Tư vấn</h4>
+            <p class="text-xs text-gray-500 leading-relaxed px-4">Phân tích chứng từ, đề xuất phương án thuế tối ưu nhất
+            </p>
+          </div>
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0.2s;">
+            <div class="step-number">3</div>
+            <h4 class="font-bold text-sm step-title">Ký hợp đồng</h4>
+            <p class="text-xs text-gray-500 leading-relaxed px-4">Thống nhất và ký hợp đồng dịch vụ để bảo vệ quyền lợi
+              hai bên</p>
+          </div>
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0.3s;">
+            <div class="step-number">4</div>
+            <h4 class="font-bold text-sm step-title">Hoàn thiện</h4>
+            <p class="text-xs text-gray-500 leading-relaxed px-4">Hạch toán dữ liệu, gửi dự thảo tờ khai cho khách duyệt
+              trước khi gửi</p>
+          </div>
+          <div class="step-item flex flex-col items-center text-center gap-4 cursor-default reveal"
+            style="transition-delay:0.4s;">
+            <div class="step-number">5</div>
+            <h4 class="font-bold text-sm step-title">Nộp & Giải trình</h4>
+            <p class="text-xs text-gray-500 leading-relaxed px-4">Đại diện nộp báo cáo đúng hạn, hỗ trợ làm việc giải
+              trình khi cần</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOCUMENTS TO PROVIDE ============ -->
+  <section class="py-8 bg-mesh-light" id="ho-so">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Chuẩn bị</div>
+        <h2 class="section-title">Hồ sơ khách hàng cần <span>cung cấp</span></h2>
+        <div class="section-line"></div>
+        <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm">Để đảm bảo tiến độ kê khai nhanh chóng và chính xác,
+          khách hàng chỉ cần cung cấp các tài liệu cơ bản sau:</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
+        <!-- Item 1 -->
+        <div class="check-item flex-col items-start gap-3 p-6">
+          <div class="flex items-center gap-3">
+            <div class="check-icon"><span class="material-symbols-outlined"
+                style="color:white;font-size:14px;">check</span></div>
+            <h4 class="font-bold text-sm text-gray-900">Hóa đơn đầu vào, đầu ra</h4>
+          </div>
+          <p class="text-xs text-gray-500 leading-relaxed">Bao gồm toàn bộ hóa đơn mua hàng, bán hàng, cung cấp dịch vụ
+            phát sinh trong kỳ để xác định doanh thu và chi phí.</p>
+        </div>
+        <!-- Item 2 -->
+        <div class="check-item flex-col items-start gap-3 p-6">
+          <div class="flex items-center gap-3">
+            <div class="check-icon"><span class="material-symbols-outlined"
+                style="color:white;font-size:14px;">check</span></div>
+            <h4 class="font-bold text-sm text-gray-900">Sổ sách & dữ liệu kế toán</h4>
+          </div>
+          <p class="text-xs text-gray-500 leading-relaxed">Cung cấp sổ cái, sổ chi tiết, bảng cân đối phát sinh. Nếu
+            chưa có sổ sách, ACC sẽ hỗ trợ kiểm tra và xây dựng lại từ đầu.</p>
+        </div>
+        <!-- Item 3 -->
+        <div class="check-item flex-col items-start gap-3 p-6">
+          <div class="flex items-center gap-3">
+            <div class="check-icon"><span class="material-symbols-outlined"
+                style="color:white;font-size:14px;">check</span></div>
+            <h4 class="font-bold text-sm text-gray-900">Tờ khai & bảng kê thuế cũ</h4>
+          </div>
+          <p class="text-xs text-gray-500 leading-relaxed">Tờ khai thuế GTGT, TNDN, TNCN đã nộp kỳ trước nhằm giúp đối
+            chiếu số liệu chuyển kỳ và đảm bảo tính liên tục của hồ sơ.</p>
+        </div>
+        <!-- Item 4 -->
+        <div class="check-item flex-col items-start gap-3 p-6">
+          <div class="flex items-center gap-3">
+            <div class="check-icon"><span class="material-symbols-outlined"
+                style="color:white;font-size:14px;">check</span></div>
+            <h4 class="font-bold text-sm text-gray-900">Hợp đồng & chứng từ thanh toán</h4>
+          </div>
+          <p class="text-xs text-gray-500 leading-relaxed">Hợp đồng kinh tế, biên bản nghiệm thu, phiếu thu/chi, sao kê
+            ngân hàng nhằm chứng minh tính hợp pháp của nghiệp vụ.</p>
+        </div>
+        <!-- Item 5 -->
+        <div class="check-item flex-col items-start gap-3 p-6">
+          <div class="flex items-center gap-3">
+            <div class="check-icon"><span class="material-symbols-outlined"
+                style="color:white;font-size:14px;">check</span></div>
+            <h4 class="font-bold text-sm text-gray-900">Tài liệu thu nhập & chi phí khác</h4>
+          </div>
+          <p class="text-xs text-gray-500 leading-relaxed">Bảng lương, chi phí vận hành thường nhật, chứng từ giảm trừ
+            thuế giúp tối ưu hóa nghĩa vụ thuế hợp lệ và đúng quy định.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COSTS ============ -->
+  <section class="cost-section py-8">
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;">Chi
+          phí</div>
+        <h2 class="section-title text-white">Yếu tố quyết định <span style="color:var(--accent-light);">chi phí dịch
+            vụ</span></h2>
+        <div class="section-line" style="background:linear-gradient(90deg,var(--accent),var(--accent-light));"></div>
+        <p class="text-white/60 text-sm mt-4">Phí dịch vụ làm báo cáo thuế không cố định mà được thiết lập linh hoạt dựa
+          trên đặc điểm của từng doanh nghiệp:</p>
+      </div>
+
+      <div class="cost-card reveal mb-6">
+        <div style="padding:28px 32px;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <!-- Item 1 -->
+          <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div class="flex items-center gap-3">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined"
+                  style="color:var(--accent-light);font-size:18px;">business</span>
+              </div>
+              <span class="text-white/80 text-sm">Quy mô doanh nghiệp</span>
+            </div>
+            <span class="font-bold text-white text-sm">Khối lượng nghiệp vụ tỷ lệ thuận</span>
+          </div>
+          <!-- Item 2 -->
+          <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div class="flex items-center gap-3">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined"
+                  style="color:var(--accent-light);font-size:18px;">receipt_long</span>
+              </div>
+              <span class="text-white/80 text-sm">Số lượng hóa đơn, chứng từ phát sinh</span>
+            </div>
+            <span class="font-bold text-white text-sm">Quyết định thời gian xử lý dữ liệu</span>
+          </div>
+          <!-- Item 3 -->
+          <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div class="flex items-center gap-3">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined"
+                  style="color:var(--accent-light);font-size:18px;">work_outline</span>
+              </div>
+              <span class="text-white/80 text-sm">Lĩnh vực, ngành nghề kinh doanh</span>
+            </div>
+            <span class="font-bold text-white text-sm">Đặc thù xây dựng, sản xuất phức tạp hơn</span>
+          </div>
+          <!-- Item 4 -->
+          <div class="cost-row" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <div class="flex items-center gap-3">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined"
+                  style="color:var(--accent-light);font-size:18px;">history_edu</span>
+              </div>
+              <span class="text-white/80 text-sm">Tình trạng sổ sách hiện tại</span>
+            </div>
+            <span class="font-bold text-white text-sm">Tính thêm phí nếu cần dọn dẹp, xử lý lại</span>
+          </div>
+          <!-- Item 5 -->
+          <div class="cost-row" style="padding:16px 0;">
+            <div class="flex items-center gap-3">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined"
+                  style="color:var(--accent-light);font-size:18px;">room_service</span>
+              </div>
+              <span class="text-white/80 text-sm">Phạm vi dịch vụ lựa chọn</span>
+            </div>
+            <span class="font-bold text-white text-sm">Chỉ nộp báo cáo vs Trọn gói quyết toán</span>
+          </div>
+        </div>
+        <div style="padding:20px 32px;background:rgba(197,160,89,0.06);display:flex;align-items:center;gap:12px;">
+          <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:20px;">info</span>
+          <p class="text-white/50 text-xs italic">ACC cam kết báo giá nhanh trong 5 phút - chi phí minh bạch rõ ràng,
+            hoàn toàn không phát sinh chi phí ẩn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHO NEEDS TAX FILING ============ -->
+  <section class="py-8" id="doanh-nghiep-can-nop" style="background:white;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Đối tượng áp dụng</div>
+        <h2 class="section-title">Doanh nghiệp nào <span>cần làm báo cáo thuế?</span></h2>
+        <div class="section-line"></div>
+        <p class="text-gray-500 mt-6 max-w-xl mx-auto text-sm">Theo quy định tại Điều 2 Luật Quản lý thuế năm 2019, các
+          tổ chức, cá nhân sau bắt buộc phải thực hiện nghĩa vụ thuế:</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+        <!-- Card 1 -->
+        <div class="premium-card p-6 flex flex-col gap-3 text-center items-center">
+          <div class="icon-circle mb-2" style="width:48px;height:48px;border-radius:12px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">new_releases</span>
+          </div>
+          <h4 class="font-bold text-sm text-gray-900">Mới thành lập</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Dù chưa phát sinh doanh thu hay hóa đơn vẫn phải thực hiện kê
+            khai thuế định kỳ đầy đủ.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="premium-card p-6 flex flex-col gap-3 text-center items-center">
+          <div class="icon-circle mb-2" style="width:48px;height:48px;border-radius:12px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">run_circle</span>
+          </div>
+          <h4 class="font-bold text-sm text-gray-900">Đang hoạt động</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Bắt buộc phải lập và nộp đầy đủ các tờ khai và báo cáo tài
+            chính theo tháng, quý và năm.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="premium-card p-6 flex flex-col gap-3 text-center items-center">
+          <div class="icon-circle mb-2" style="width:48px;height:48px;border-radius:12px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">storefront</span>
+          </div>
+          <h4 class="font-bold text-sm text-gray-900">Hộ kinh doanh</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Theo Nghị định 68/2026/NĐ-CP, hộ kinh doanh có doanh thu trên
+            1 tỷ đồng/năm thuộc diện phải kê khai thuế GTGT và TNCN.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="premium-card p-6 flex flex-col gap-3 text-center items-center">
+          <div class="icon-circle mb-2" style="width:48px;height:48px;border-radius:12px;">
+            <span class="material-symbols-outlined text-2xl" style="color:var(--primary);">pause_circle</span>
+          </div>
+          <h4 class="font-bold text-sm text-gray-900">Tạm ngừng hoạt động</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Vẫn phải gửi thông báo và hoàn tất nghĩa vụ thuế tồn đọng
+            theo đúng luật định.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FILING DEADLINES TABLE ============ -->
+  <section class="py-8 bg-mesh-light" id="thoi-han-nop">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Thời hạn pháp lý</div>
+        <h2 class="section-title">Thời hạn nộp <span>báo cáo thuế</span></h2>
+        <div class="section-line"></div>
+        <p class="text-gray-500 mt-4 text-sm max-w-xl mx-auto">Căn cứ theo quy định tại Điều 44 Luật Quản lý thuế năm
+          2019, thời hạn nộp hồ sơ khai thuế được quy định chi tiết:</p>
+      </div>
+
+      <div class="reveal">
         <div class="custom-table-container overflow-x-auto">
-          <table class="custom-table min-w-[500px]">
+          <table class="custom-table min-w-[650px]">
             <thead>
               <tr>
-                <th>Thời gian chậm nộp</th>
-                <th>Mức phạt (Tổ chức)</th>
-                <th>Mức phạt (Cá nhân)</th>
+                <th class="w-1/3">Loại kê khai thuế</th>
+                <th class="w-2/3">Thời hạn nộp hồ sơ chi tiết</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="font-semibold text-gray-900 text-xs">Từ 01 – 05 ngày <span class="text-gray-400 font-normal">(có tình tiết giảm nhẹ)</span></td>
-                <td class="text-orange-600 font-bold text-xs">Cảnh cáo</td>
-                <td class="text-orange-600 font-bold text-xs">Cảnh cáo</td>
+                <td class="font-bold text-gray-900 text-sm">Khai thuế theo tháng</td>
+                <td class="text-sm">Chậm nhất là <strong>ngày 20</strong> của tháng tiếp theo. <span
+                    class="text-gray-500 text-xs">(Ví dụ: Thuế phát sinh tháng 1 phải nộp trước 20/2)</span></td>
               </tr>
               <tr>
-                <td class="font-semibold text-gray-900 text-xs">Từ 01 – 30 ngày <span class="text-gray-400 font-normal">(trừ cảnh cáo)</span></td>
-                <td class="text-red-600 font-bold text-xs">2.000.000 – 5.000.000đ</td>
-                <td class="text-red-600 font-bold text-xs">1.000.000 – 2.500.000đ</td>
+                <td class="font-bold text-gray-900 text-sm">Khai thuế theo quý</td>
+                <td class="text-sm">Chậm nhất là <strong>ngày cuối cùng</strong> của tháng đầu quý sau. <span
+                    class="text-gray-500 text-xs">(Ví dụ: Báo cáo quý 1 phải nộp trước 30/4)</span></td>
               </tr>
               <tr>
-                <td class="font-semibold text-gray-900 text-xs">Từ 31 – 60 ngày</td>
-                <td class="text-red-600 font-bold text-xs">5.000.000 – 8.000.000đ</td>
-                <td class="text-red-600 font-bold text-xs">2.500.000 – 4.000.000đ</td>
+                <td class="font-bold text-gray-900 text-sm">Quyết toán năm (DN)</td>
+                <td class="text-sm">Chậm nhất là <strong>ngày cuối cùng của tháng thứ 3</strong> kể từ khi kết thúc năm
+                  tài chính <span class="text-gray-500 text-xs">(tức ngày 31/3 đối với năm tài chính dương lịch)</span>.
+                </td>
               </tr>
               <tr>
-                <td class="font-semibold text-gray-900 text-xs">Từ 61 – 90 ngày</td>
-                <td class="text-red-600 font-bold text-xs">8.000.000 – 15.000.000đ</td>
-                <td class="text-red-600 font-bold text-xs">4.000.000 – 7.500.000đ</td>
+                <td class="font-bold text-gray-900 text-sm">Khai thuế năm</td>
+                <td class="text-sm">Chậm nhất là <strong>ngày cuối cùng</strong> của tháng đầu tiên của năm.</td>
               </tr>
               <tr>
-                <td class="font-semibold text-gray-900 text-xs">Trên 90 ngày <span class="text-gray-400 font-normal">(đã nộp đủ trước khi kiểm tra)</span></td>
-                <td class="text-red-700 font-bold text-xs">15.000.000 – 25.000.000đ</td>
-                <td class="text-red-700 font-bold text-xs">7.500.000 – 12.500.000đ</td>
+                <td class="font-bold text-gray-900 text-sm">Quyết toán TNCN (cá nhân)</td>
+                <td class="text-sm">Chậm nhất là <strong>ngày cuối cùng của tháng thứ 4</strong> kể từ khi kết thúc năm
+                  dương lịch.</td>
+              </tr>
+              <tr>
+                <td class="font-bold text-gray-900 text-sm">Thuế khoán (hộ kinh doanh)</td>
+                <td class="text-sm">Chậm nhất ngày 15/12 của năm trước. Hộ mới ra kinh doanh: Nộp chậm nhất 10 ngày kể
+                  từ khi bắt đầu.</td>
+              </tr>
+              <tr>
+                <td class="font-bold text-gray-900 text-sm">Khai theo từng lần phát sinh</td>
+                <td class="text-sm">Chậm nhất là <strong>ngày thứ 10</strong> kể từ ngày phát sinh nghĩa vụ thuế.</td>
+              </tr>
+              <tr>
+                <td class="font-bold text-gray-900 text-sm">Chấm dứt hoạt động/giải thể</td>
+                <td class="text-sm">Chậm nhất là <strong>ngày thứ 45</strong> kể từ ngày phát sinh sự kiện.</td>
               </tr>
             </tbody>
           </table>
         </div>
-        
-        <!-- Remedial note -->
-        <div class="p-4 bg-red-50 border-l-4 border-l-primary rounded-r-xl flex gap-3">
-          <span class="material-symbols-outlined text-primary text-xl flex-shrink-0 mt-0.5">warning</span>
-          <p class="text-xs text-red-900 leading-relaxed">
-            <strong>Biện pháp khắc phục hậu quả:</strong> Buộc nộp hồ sơ khai thuế, các phụ lục kèm theo và nộp đủ số tiền chậm nộp thuế vào ngân sách nhà nước theo quy định.
-          </p>
-        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Right Column: Image -->
-      <div class="lg:col-span-4 reveal-right">
-        <div class="relative max-w-sm mx-auto">
-          <div class="passport-card p-3 shadow-2xl">
-            <img
-              src="./images/tax_rejection_audit.png"
-              alt="Hạn chế rủi ro thanh tra thuế cùng ACC"
-              class="w-full rounded-2xl object-cover h-[320px] sm:h-[400px]"
-            />
+  <!-- ============ PENALTIES SECTION WITH TABLE & IMAGE ============ -->
+  <section class="py-8" id="muc-xu-phat" style="background:white;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Column: Title & Table -->
+        <div class="lg:col-span-8 space-y-6 reveal-left">
+          <div>
+            <div class="section-label">Rủi ro pháp lý</div>
+            <h2 class="section-title">Chậm nộp báo cáo thuế <span>bị xử phạt thế nào?</span></h2>
+            <div class="section-line" style="margin-left:0;"></div>
+            <p class="text-gray-500 mt-4 text-xs md:text-sm leading-relaxed">
+              Căn cứ theo Điều 13 Nghị định 125/2020/NĐ-CP (sửa đổi bởi Nghị định 310/2025/NĐ-CP), mức phạt tiền đối với
+              hành vi chậm nộp tờ khai được quy định cụ thể:
+            </p>
+          </div>
+
+          <div class="custom-table-container overflow-x-auto">
+            <table class="custom-table min-w-[500px]">
+              <thead>
+                <tr>
+                  <th>Thời gian chậm nộp</th>
+                  <th>Mức phạt (Tổ chức)</th>
+                  <th>Mức phạt (Cá nhân)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-semibold text-gray-900 text-xs">Từ 01 – 05 ngày <span
+                      class="text-gray-400 font-normal">(có tình tiết giảm nhẹ)</span></td>
+                  <td class="text-orange-600 font-bold text-xs">Cảnh cáo</td>
+                  <td class="text-orange-600 font-bold text-xs">Cảnh cáo</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold text-gray-900 text-xs">Từ 01 – 30 ngày <span
+                      class="text-gray-400 font-normal">(trừ cảnh cáo)</span></td>
+                  <td class="text-red-600 font-bold text-xs">2.000.000 – 5.000.000đ</td>
+                  <td class="text-red-600 font-bold text-xs">1.000.000 – 2.500.000đ</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold text-gray-900 text-xs">Từ 31 – 60 ngày</td>
+                  <td class="text-red-600 font-bold text-xs">5.000.000 – 8.000.000đ</td>
+                  <td class="text-red-600 font-bold text-xs">2.500.000 – 4.000.000đ</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold text-gray-900 text-xs">Từ 61 – 90 ngày</td>
+                  <td class="text-red-600 font-bold text-xs">8.000.000 – 15.000.000đ</td>
+                  <td class="text-red-600 font-bold text-xs">4.000.000 – 7.500.000đ</td>
+                </tr>
+                <tr>
+                  <td class="font-semibold text-gray-900 text-xs">Trên 90 ngày <span
+                      class="text-gray-400 font-normal">(đã nộp đủ trước khi kiểm tra)</span></td>
+                  <td class="text-red-700 font-bold text-xs">15.000.000 – 25.000.000đ</td>
+                  <td class="text-red-700 font-bold text-xs">7.500.000 – 12.500.000đ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Remedial note -->
+          <div class="p-4 bg-red-50 border-l-4 border-l-primary rounded-r-xl flex gap-3">
+            <span class="material-symbols-outlined text-primary text-xl flex-shrink-0 mt-0.5">warning</span>
+            <p class="text-xs text-red-900 leading-relaxed">
+              <strong>Biện pháp khắc phục hậu quả:</strong> Buộc nộp hồ sơ khai thuế, các phụ lục kèm theo và nộp đủ số
+              tiền chậm nộp thuế vào ngân sách nhà nước theo quy định.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column: Image -->
+        <div class="lg:col-span-4 reveal-right">
+          <div class="relative max-w-sm mx-auto">
+            <div class="passport-card p-3 shadow-2xl">
+              <img src="./images/tax_rejection_audit.png" alt="Hạn chế rủi ro thanh tra thuế cùng ACC"
+                class="w-full rounded-2xl object-cover h-[320px] sm:h-[400px]" />
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ SERVICE BENEFITS ============ -->
-<section class="py-8 bg-mesh-light" id="loi-ich-dich-vu">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Tại sao chọn ACC</div>
-      <h2 class="section-title">Lợi ích vượt trội từ dịch vụ của <span>ACC</span></h2>
-      <div class="section-line"></div>
-    </div>
-    
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-4">
-      <!-- Benefit 1 -->
-      <div class="benefit-card col-span-1 reveal" style="transition-delay:0s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">speed</span></div>
-        <h5 class="font-bold text-xs">Xử lý nhanh, đúng hạn</h5>
+  <!-- ============ SERVICE BENEFITS ============ -->
+  <section class="py-8 bg-mesh-light" id="loi-ich-dich-vu">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Tại sao chọn ACC</div>
+        <h2 class="section-title">Lợi ích vượt trội từ dịch vụ của <span>ACC</span></h2>
+        <div class="section-line"></div>
       </div>
-      <!-- Benefit 2 -->
-      <div class="benefit-card col-span-1 reveal" style="transition-delay:0.04s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">payments</span></div>
-        <h5 class="font-bold text-xs">Chi phí minh bạch</h5>
-      </div>
-      <!-- Benefit 3 -->
-      <div class="benefit-card col-span-1 reveal" style="transition-delay:0.08s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">update</span></div>
-        <h5 class="font-bold text-xs">Cập nhật liên tục</h5>
-      </div>
-      <!-- Benefit 4 -->
-      <div class="benefit-card col-span-1 reveal" style="transition-delay:0.12s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">feed</span></div>
-        <h5 class="font-bold text-xs">Hỗ trợ hồ sơ đầy đủ</h5>
-      </div>
-      <!-- Benefit 5 -->
-      <div class="benefit-card col-span-1 reveal" style="transition-delay:0.16s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">lock</span></div>
-        <h5 class="font-bold text-xs">Bảo mật thông tin</h5>
-      </div>
-      <!-- Benefit 6 -->
-      <div class="benefit-card col-span-1 reveal" style="transition-delay:0.2s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">gavel</span></div>
-        <h5 class="font-bold text-xs">Tuân thủ pháp luật</h5>
-      </div>
-      <!-- Benefit 7 -->
-      <div class="benefit-card col-span-1 reveal" style="transition-delay:0.24s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">directions_walk</span></div>
-        <h5 class="font-bold text-xs">Không cần đi lại</h5>
-      </div>
-      <!-- Benefit 8 -->
-      <div class="benefit-card col-span-1 reveal" style="transition-delay:0.28s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">support_agent</span></div>
-        <h5 class="font-bold text-xs">Hỗ trợ 24/7</h5>
-      </div>
-      <!-- Benefit 9 -->
-      <div class="benefit-card col-span-1 reveal" style="transition-delay:0.32s;">
-        <div class="benefit-icon"><span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">handshake</span></div>
-        <h5 class="font-bold text-xs">Đồng hành lâu dài</h5>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============ FAQ ============ -->
-<section class="py-8 bg-white" id="faq">
-  <div class="max-w-3xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Giải đáp</div>
-      <h2 class="section-title">Câu hỏi <span>thường gặp</span></h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="space-y-3 reveal">
-      <!-- FAQ 1 -->
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Doanh nghiệp không phát sinh doanh thu có phải nộp báo cáo thuế không?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          <strong>Có.</strong> Dù không phát sinh bất kỳ doanh thu hay chi phí nào trong kỳ, doanh nghiệp vẫn phải nộp tờ khai thuế đúng kỳ hạn theo quy định, thường là thực hiện kê khai tờ khai trắng (“0 đồng”).
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-4">
+        <!-- Benefit 1 -->
+        <div class="benefit-card col-span-1 reveal" style="transition-delay:0s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">speed</span></div>
+          <h5 class="font-bold text-xs">Xử lý nhanh, đúng hạn</h5>
         </div>
-      </details>
-      <!-- FAQ 2 -->
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Làm sai báo cáo thuế có được điều chỉnh lại không?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          <strong>Có thể.</strong> Doanh nghiệp được phép lập và nộp tờ khai bổ sung để tự điều chỉnh những sai sót số liệu trước đó. Tuy nhiên, doanh nghiệp có thể phải chịu mức phạt chậm nộp hoặc phạt hành chính nếu lỗi sai làm thiếu số tiền thuế phải nộp vào ngân sách nhà nước.
+        <!-- Benefit 2 -->
+        <div class="benefit-card col-span-1 reveal" style="transition-delay:0.04s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">payments</span></div>
+          <h5 class="font-bold text-xs">Chi phí minh bạch</h5>
         </div>
-      </details>
-      <!-- FAQ 3 -->
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Báo cáo thuế và báo cáo tài chính khác nhau như thế nào?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          Báo cáo thuế là các tờ khai kê khai số tiền thuế phát sinh định kỳ nộp theo <strong>Tháng/Quý</strong>. Còn báo cáo tài chính là bộ hồ sơ tổng hợp chi tiết toàn bộ bức tranh tài chính, doanh thu, dòng tiền của doanh nghiệp trong <strong>cả năm</strong> và nộp khi kết thúc kỳ kế toán năm.
+        <!-- Benefit 3 -->
+        <div class="benefit-card col-span-1 reveal" style="transition-delay:0.08s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">update</span></div>
+          <h5 class="font-bold text-xs">Cập nhật liên tục</h5>
         </div>
-      </details>
-      <!-- FAQ 4 -->
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Nếu doanh nghiệp tạm ngừng kinh doanh thì có phải nộp báo cáo thuế không?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          Nếu doanh nghiệp đã hoàn tất thủ tục đăng ký tạm ngừng kinh doanh hợp lệ với cơ quan đăng ký kinh doanh và cơ quan thuế thì sẽ được miễn nộp tờ khai thuế trong thời gian tạm ngừng hoạt động. Tuy nhiên, doanh nghiệp vẫn cần tiếp tục theo dõi và thực hiện các nghĩa vụ thuế còn tồn đọng trước thời gian tạm ngừng.
+        <!-- Benefit 4 -->
+        <div class="benefit-card col-span-1 reveal" style="transition-delay:0.12s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">feed</span></div>
+          <h5 class="font-bold text-xs">Hỗ trợ hồ sơ đầy đủ</h5>
         </div>
-      </details>
-      <!-- FAQ 5 -->
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Có thể nộp báo cáo thuế online không?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          <strong>Có.</strong> Hiện nay 100% doanh nghiệp có thể dễ dàng nộp tờ khai và báo cáo thuế điện tử thông qua cổng dịch vụ Thuế điện tử của Tổng cục Thuế bằng cách sử dụng chữ ký số (Token/Chữ ký số điện tử) được cấp phép.
+        <!-- Benefit 5 -->
+        <div class="benefit-card col-span-1 reveal" style="transition-delay:0.16s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">lock</span></div>
+          <h5 class="font-bold text-xs">Bảo mật thông tin</h5>
         </div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CTA ============ -->
-<section class="cta-section py-12 text-center">
-  <div class="cta-orb" style="width:400px;height:400px;background:rgba(197,160,89,0.08);top:-100px;left:-100px;"></div>
-  <div class="cta-orb" style="width:350px;height:350px;background:rgba(139,28,28,0.15);bottom:-80px;right:-80px;"></div>
-  <div class="max-w-3xl mx-auto px-6 relative z-10">
-    <div class="reveal">
-      <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;margin-bottom:24px;">
-        Hỗ trợ toàn quốc
-      </div>
-      <h2 style="font-family:'Roboto',sans-serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;color:white;line-height:1.2;margin-bottom:20px;">
-        Bảo vệ tài chính doanh nghiệp <br/>
-        <span style="background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">an toàn - tối ưu chi phí</span>
-      </h2>
-      <p class="text-white/60 leading-relaxed mb-10" style="font-size:1rem;max-width:580px;margin:0 auto 40px;">
-        Báo cáo thuế là nghĩa vụ bắt buộc ảnh hưởng trực tiếp tới hoạt động kinh doanh của doanh nghiệp. Liên hệ ngay ACC để được hỗ trợ trọn gói nhanh chóng và chính xác nhất.
-      </p>
-      <div class="flex justify-center flex-wrap gap-4">
-        <a href="tel:19003330" class="btn-primary" style="font-size:1rem;padding:18px 44px;">
-          <span class="material-symbols-outlined" style="font-size:22px;">call</span>
-          Kết nối ngay - 1900 3330
-        </a>
-        <a href="#" class="btn-outline" style="font-size:1rem;padding:18px 44px;">
-          <span class="material-symbols-outlined" style="font-size:22px;">chat</span>
-          Tư vấn Zalo
-        </a>
+        <!-- Benefit 6 -->
+        <div class="benefit-card col-span-1 reveal" style="transition-delay:0.2s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">gavel</span></div>
+          <h5 class="font-bold text-xs">Tuân thủ pháp luật</h5>
+        </div>
+        <!-- Benefit 7 -->
+        <div class="benefit-card col-span-1 reveal" style="transition-delay:0.24s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">directions_walk</span></div>
+          <h5 class="font-bold text-xs">Không cần đi lại</h5>
+        </div>
+        <!-- Benefit 8 -->
+        <div class="benefit-card col-span-1 reveal" style="transition-delay:0.28s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">support_agent</span></div>
+          <h5 class="font-bold text-xs">Hỗ trợ 24/7</h5>
+        </div>
+        <!-- Benefit 9 -->
+        <div class="benefit-card col-span-1 reveal" style="transition-delay:0.32s;">
+          <div class="benefit-icon"><span class="material-symbols-outlined"
+              style="color:var(--primary);font-size:22px;">handshake</span></div>
+          <h5 class="font-bold text-xs">Đồng hành lâu dài</h5>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="py-8 bg-white" id="faq">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Giải đáp</div>
+        <h2 class="section-title">Câu hỏi <span>thường gặp</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="space-y-3 reveal">
+        <!-- FAQ 1 -->
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Doanh nghiệp không phát sinh doanh thu có phải nộp báo cáo thuế không?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            <strong>Có.</strong> Dù không phát sinh bất kỳ doanh thu hay chi phí nào trong kỳ, doanh nghiệp vẫn phải nộp
+            tờ khai thuế đúng kỳ hạn theo quy định, thường là thực hiện kê khai tờ khai trắng (“0 đồng”).
+          </div>
+        </details>
+        <!-- FAQ 2 -->
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Làm sai báo cáo thuế có được điều chỉnh lại không?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            <strong>Có thể.</strong> Doanh nghiệp được phép lập và nộp tờ khai bổ sung để tự điều chỉnh những sai sót số
+            liệu trước đó. Tuy nhiên, doanh nghiệp có thể phải chịu mức phạt chậm nộp hoặc phạt hành chính nếu lỗi sai
+            làm thiếu số tiền thuế phải nộp vào ngân sách nhà nước.
+          </div>
+        </details>
+        <!-- FAQ 3 -->
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Báo cáo thuế và báo cáo tài chính khác nhau như thế nào?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            Báo cáo thuế là các tờ khai kê khai số tiền thuế phát sinh định kỳ nộp theo <strong>Tháng/Quý</strong>. Còn
+            báo cáo tài chính là bộ hồ sơ tổng hợp chi tiết toàn bộ bức tranh tài chính, doanh thu, dòng tiền của doanh
+            nghiệp trong <strong>cả năm</strong> và nộp khi kết thúc kỳ kế toán năm.
+          </div>
+        </details>
+        <!-- FAQ 4 -->
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Nếu doanh nghiệp tạm ngừng kinh doanh thì có phải nộp báo cáo thuế không?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            Nếu doanh nghiệp đã hoàn tất thủ tục đăng ký tạm ngừng kinh doanh hợp lệ với cơ quan đăng ký kinh doanh và
+            cơ quan thuế thì sẽ được miễn nộp tờ khai thuế trong thời gian tạm ngừng hoạt động. Tuy nhiên, doanh nghiệp
+            vẫn cần tiếp tục theo dõi và thực hiện các nghĩa vụ thuế còn tồn đọng trước thời gian tạm ngừng.
+          </div>
+        </details>
+        <!-- FAQ 5 -->
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Có thể nộp báo cáo thuế online không?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            <strong>Có.</strong> Hiện nay 100% doanh nghiệp có thể dễ dàng nộp tờ khai và báo cáo thuế điện tử thông qua
+            cổng dịch vụ Thuế điện tử của Tổng cục Thuế bằng cách sử dụng chữ ký số (Token/Chữ ký số điện tử) được cấp
+            phép.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section py-12 text-center">
+    <div class="cta-orb" style="width:400px;height:400px;background:rgba(197,160,89,0.08);top:-100px;left:-100px;">
+    </div>
+    <div class="cta-orb" style="width:350px;height:350px;background:rgba(139,28,28,0.15);bottom:-80px;right:-80px;">
+    </div>
+    <div class="max-w-3xl mx-auto px-6 relative z-10">
+      <div class="reveal">
+        <div class="section-label"
+          style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;margin-bottom:24px;">
+          Hỗ trợ toàn quốc
+        </div>
+        <h2
+          style="font-family:'Roboto',sans-serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;color:white;line-height:1.2;margin-bottom:20px;">
+          Bảo vệ tài chính doanh nghiệp <br />
+          <span
+            style="background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">an
+            toàn - tối ưu chi phí</span>
+        </h2>
+        <p class="text-white/60 leading-relaxed mb-10" style="font-size:1rem;max-width:580px;margin:0 auto 40px;">
+          Báo cáo thuế là nghĩa vụ bắt buộc ảnh hưởng trực tiếp tới hoạt động kinh doanh của doanh nghiệp. Liên hệ ngay
+          ACC để được hỗ trợ trọn gói nhanh chóng và chính xác nhất.
+        </p>
+        <div class="flex justify-center flex-wrap gap-4">
+          <a href="tel:19003330" class="btn-primary" style="font-size:1rem;padding:18px 44px;">
+            <span class="material-symbols-outlined" style="font-size:22px;">call</span>
+            Kết nối ngay - 1900 3330
+          </a>
+          <a href="#" class="btn-outline" style="font-size:1rem;padding:18px 44px;">
+            <span class="material-symbols-outlined" style="font-size:22px;">chat</span>
+            Tư vấn Zalo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
-<script>
-  // ===== Particle generator =====
-  const container = document.getElementById('particles');
-  const count = 35;
-  if (container) {
-    for (let i = 0; i < count; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle';
-      const size = Math.random() * 18 + 6;
-      const pOpacity = Math.random() * 0.4 + 0.45;
-      const drift = Math.random() * 60 - 30;
-      p.style.cssText = `
+  <script>
+    // ===== Particle generator =====
+    const container = document.getElementById('particles');
+    const count = 35;
+    if (container) {
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = Math.random() * 18 + 6;
+        const pOpacity = Math.random() * 0.4 + 0.45;
+        const drift = Math.random() * 60 - 30;
+        p.style.cssText = `
         width:${size}px;height:${size}px;
-        left:${Math.random()*100}%;
-        animation-duration:${Math.random()*15+12}s;
-        animation-delay:${Math.random()*15}s;
+        left:${Math.random() * 100}%;
+        animation-duration:${Math.random() * 15 + 12}s;
+        animation-delay:${Math.random() * 15}s;
         --p-opacity:${pOpacity};
         --drift:${drift}px;
       `;
-      container.appendChild(p);
+        container.appendChild(p);
+      }
     }
-  }
 
-  // ===== Scroll reveal =====
-  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-  if (revealEls.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.style.transitionDelay || '0s';
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, parseFloat(delay) * 1000);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-    revealEls.forEach(el => observer.observe(el));
-  }
-</script>
+    // ===== Scroll reveal =====
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    if (revealEls.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.style.transitionDelay || '0s';
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, parseFloat(delay) * 1000);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+      revealEls.forEach(el => observer.observe(el));
+    }
+  </script>
 </body>
+
 </html>
