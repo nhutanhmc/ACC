@@ -487,6 +487,35 @@
         color: var(--primary);
     }
 
+    /* Hero Stats (số liệu nổi bật) */
+    .acc-hero-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 28px;
+        margin-bottom: 25px;
+    }
+
+    .acc-hero-stat-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .acc-hero-stat-num {
+        font-size: 2rem;
+        font-weight: 900;
+        line-height: 1;
+        background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .acc-hero-stat-label {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
     .acc-hero-right {
         animation: acc-slide-up 1s ease-out;
     }
@@ -1619,6 +1648,21 @@
                         <span>Email: <a href="mailto:info@congtyluatacc.vn">info@congtyluatacc.vn</a></span>
                     </div>
                 </div>
+
+                <div class="acc-hero-stats">
+                    <div class="acc-hero-stat-item">
+                        <span class="acc-hero-stat-num">15+</span>
+                        <span class="acc-hero-stat-label">Năm kinh nghiệm</span>
+                    </div>
+                    <div class="acc-hero-stat-item">
+                        <span class="acc-hero-stat-num">99%</span>
+                        <span class="acc-hero-stat-label">Tỉ lệ giải quyết nhanh</span>
+                    </div>
+                    <div class="acc-hero-stat-item">
+                        <span class="acc-hero-stat-num">100%</span>
+                        <span class="acc-hero-stat-label">Bảo mật thông tin</span>
+                    </div>
+                </div>
             </div>
 
             <div class="acc-hero-right">
@@ -1662,6 +1706,17 @@
                         <li><strong>Hạn chế quyền:</strong> Chồng không có quyền yêu cầu ly hôn khi vợ đang có thai, sinh con hoặc đang nuôi con dưới 12 tháng tuổi.</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+
+        <div class="acc-legal-grid-row" style="margin-top: 24px;">
+            <div class="acc-rule-box">
+                <h4>Ly hôn thuận tình</h4>
+                <p>Cả hai vợ chồng tự nguyện đồng ý ly hôn, đã thỏa thuận xong về con chung, tài sản và nghĩa vụ cấp dưỡng.</p>
+            </div>
+            <div class="acc-rule-box" style="border-left-color: var(--accent);">
+                <h4>Ly hôn đơn phương</h4>
+                <p>Yêu cầu ly hôn xuất phát từ một phía (vợ hoặc chồng) do mâu thuẫn trầm trọng, bạo lực gia đình hoặc một bên mất tích.</p>
             </div>
         </div>
 
@@ -2080,6 +2135,7 @@
                         <li>Mâu thuẫn trầm trọng, ly thân kéo dài, mục đích hôn nhân hoàn toàn không đạt được.</li>
                         <li>Đã thực hiện hòa giải bắt buộc tại Tòa án nhưng không thành.</li>
                         <li>Vợ hoặc chồng của người bị Tòa án tuyên bố mất tích yêu cầu ly hôn.</li>
+                        <li>Có căn cứ về việc bạo lực gia đình đe dọa nghiêm trọng tính mạng, sức khỏe của đối phương.</li>
                     </ul>
                 </div>
 
@@ -2091,6 +2147,7 @@
                         <li>Đã thỏa thuận thống nhất về việc phân chia tài sản chung hoặc nghĩa vụ tài chính.</li>
                         <li>Đã thỏa thuận thống nhất về quyền nuôi con trực tiếp và mức cấp dưỡng con chung.</li>
                         <li>Các thỏa thuận bảo đảm quyền lợi chính đáng của vợ và con chung.</li>
+                        <li>Quyền lợi chính đáng của con được đảm bảo tốt nhất về mọi mặt (học tập, phát triển).</li>
                     </ul>
                 </div>
             </div>
@@ -2201,6 +2258,22 @@
                         </div>
                         <span>Tài liệu chứng minh thu nhập, khả năng tài chính và các tài liệu cư trú khác theo yêu cầu của Tòa án.</span>
                     </li>
+                    <li class="acc-doc-item">
+                        <div class="acc-doc-icon-wrapper">
+                            <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <span>Chứng cứ chứng minh mâu thuẫn hôn nhân, bạo lực gia đình (đối với ly hôn đơn phương).</span>
+                    </li>
+                    <li class="acc-doc-item">
+                        <div class="acc-doc-icon-wrapper">
+                            <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <span>Văn bản thỏa thuận phân chia tài sản / quyền nuôi con (nếu các bên đã thỏa thuận).</span>
+                    </li>
                 </ul>
             </div>
 
@@ -2224,6 +2297,15 @@
                         <li>Hình thức ly hôn (Thuận tình hoặc Đơn phương).</li>
                         <li>Mức độ tranh chấp về tài sản, con cái, cấp dưỡng.</li>
                         <li>Phạm vi dịch vụ và yêu cầu Luật sư tranh tụng tại Tòa.</li>
+                    </ul>
+                </div>
+
+                <div class="acc-info-block">
+                    <h4>Cam kết của ACC</h4>
+                    <ul>
+                        <li><strong style="color:#fff;">Báo giá 1 lần duy nhất:</strong> Không phát sinh phụ phí ẩn trong suốt quá trình giải quyết.</li>
+                        <li><strong style="color:#fff;">Bảo mật thông tin khách hàng:</strong> Bảo mật tuyệt đối mọi thông tin đời tư cá nhân và gia đình.</li>
+                        <li><strong style="color:#fff;">Tối ưu hóa thời gian:</strong> Hồ sơ chuẩn chỉnh giúp giảm thiểu tối đa thời gian xử lý.</li>
                     </ul>
                 </div>
 
