@@ -1,0 +1,2486 @@
+<!-- Landing Page: Luật Sư Tư Vấn Pháp Luật Lao Động - Công ty Luật ACC -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luật Sư Tư Vấn Pháp Luật Lao Động Toàn Quốc, Trọn Gói</title>
+<meta name="description" content="Dịch vụ luật sư tư vấn pháp luật lao động của Công ty Luật ACC. Hỗ trợ hợp đồng lao động, lương thưởng, BHXH, kỷ luật - sa thải, giấy phép lao động nước ngoài và giải quyết tranh chấp lao động. Bảo vệ quyền lợi cả doanh nghiệp và người lao động.">
+
+<style>
+    /* Nạp Google Fonts Roboto */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
+
+    /* CSS Variables & Scoped Reset */
+    .acc-divorce-container {
+        --primary: #7a2828;          /* Màu đỏ đô thương hiệu ACC */
+        --primary-light: #9c3c3c;    /* Đỏ đô nhạt */
+        --primary-dark: #571a1a;     /* Đỏ đô đậm */
+        --primary-bg: #faf3f3;       /* Nền đỏ cực nhạt */
+        --brand: #7a2828;            /* Đỏ đô thương hiệu ACC gốc */
+        --brand-light: #9c3c3c;      /* Đỏ đô nhạt */
+        --brand-bg: #fdf2f2;         /* Nền đỏ cực nhạt */
+        --accent: #d4af37;           /* Vàng gold thương hiệu ACC */
+        --accent-dark: #b89324;      /* Vàng gold đậm */
+        --accent-bg: #fdfbf3;        /* Nền vàng cực nhạt */
+        --text-dark: #2c2525;        /* Nâu đen tối hiện đại */
+        --text-light: #ffffff;
+        --text-muted: #6b5a5a;       /* Xám đỏ trung tính */
+        --bg-white: #ffffff;
+        --bg-light: #fdfbfb;         /* Nền hồng xám cực nhạt */
+        --bg-gray: #f7f3f3;          /* Nền xám hồng đậm hơn chút */
+        --border-color: #ebdcdc;     /* Viền hồng nhạt hài hòa */
+        --success: #2e7d32;
+        --warning: #e65100;
+        --danger: #c62828;
+        --shadow-sm: 0 4px 6px -1px rgba(122, 40, 40, 0.05);
+        --shadow-md: 0 10px 15px -3px rgba(122, 40, 40, 0.08);
+        --shadow-lg: 0 20px 25px -5px rgba(122, 40, 40, 0.12);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        font-family: 'Roboto', sans-serif;
+        color: var(--text-dark);
+        background-color: var(--bg-light);
+        line-height: 1.6;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        overflow: visible !important;
+    }
+
+    /* Khắc phục triệt để lỗi hai thanh cuộn dọc (double scrollbar) trên WordPress */
+    html,
+    body {
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        height: auto !important;
+    }
+
+    /* Tự động giải phóng overflow/height cho tất cả các thẻ cha/tổ tiên chứa Landing Page trong WordPress */
+    *:has(> .acc-divorce-container),
+    *:has(> *:has(> .acc-divorce-container)),
+    *:has(> *:has(> *:has(> .acc-divorce-container))),
+    *:has(> *:has(> *:has(> *:has(> .acc-divorce-container)))) {
+        overflow: visible !important;
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+    }
+
+    /* Giải phóng các container bọc ngoài thông dụng của WordPress/Elementor/Gutenberg đề phòng trình duyệt cũ không hỗ trợ :has */
+    .site-content,
+    #content,
+    .entry-content,
+    .elementor,
+    .elementor-section-wrap,
+    .elementor-widget-container,
+    .wp-block-html,
+    .wp-block-post-content {
+        overflow: visible !important;
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+    }
+
+    .acc-divorce-container * {
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Animations */
+    @keyframes acc-float {
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-8px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes acc-slide-up {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Common Layout Elements */
+    .acc-divorce-section {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .acc-divorce-section-title-wrap {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .acc-divorce-section-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background-color: var(--primary-bg);
+        color: var(--primary-light);
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 4px 14px;
+        border-radius: 50px;
+        margin-bottom: 10px;
+        border: 1px solid var(--border-color);
+    }
+
+    .acc-divorce-section-title {
+        color: var(--primary);
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 12px;
+        position: relative;
+        text-transform: uppercase;
+    }
+
+    .acc-divorce-section-title::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background-color: var(--accent);
+        margin: 8px auto 0 auto;
+        border-radius: 2px;
+    }
+
+    .acc-divorce-section-desc {
+        color: var(--text-muted);
+        font-size: 1.05rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Section Call-to-Action Wrapper & Button Styles */
+    .acc-section-cta-wrap {
+        text-align: center;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .acc-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 26px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        cursor: pointer;
+        transition: var(--transition);
+        border: none;
+        gap: 8px;
+    }
+
+    .acc-btn-primary {
+        background-color: var(--primary);
+        color: var(--text-light);
+        box-shadow: 0 4px 12px rgba(122, 40, 40, 0.25);
+    }
+
+    .acc-btn-primary:hover {
+        background-color: var(--primary-light);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(122, 40, 40, 0.35);
+    }
+
+    .acc-btn-accent {
+        background-color: var(--accent);
+        color: var(--text-light);
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+    }
+
+    .acc-btn-accent:hover {
+        background-color: var(--accent-dark);
+        color: var(--text-light);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(212, 175, 55, 0.35);
+    }
+
+    .acc-btn-zalo {
+        background-color: #0068ff;
+        color: var(--text-light);
+        box-shadow: 0 4px 12px rgba(0, 104, 255, 0.25);
+    }
+
+    .acc-btn-zalo:hover {
+        background-color: #0056d6;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 104, 255, 0.35);
+    }
+
+    .acc-btn-outline {
+        background-color: transparent;
+        color: var(--text-light);
+        border: 2px solid var(--text-light);
+    }
+
+    .acc-btn-outline:hover {
+        background-color: var(--text-light);
+        color: var(--primary);
+    }
+
+    .acc-btn-outline-dark {
+        background-color: transparent;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+    }
+
+    .acc-btn-outline-dark:hover {
+        background-color: var(--primary);
+        color: var(--text-light);
+    }
+
+    /* Inline SVG Icon General Style */
+    .acc-svg-icon {
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        vertical-align: middle;
+        fill: currentColor;
+        flex-shrink: 0;
+    }
+
+    /* Khung cong nghệ thuật bọc ảnh gốc */
+    .acc-curve-img-wrap {
+        position: relative;
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        box-shadow: 0 20px 25px -5px rgba(122, 40, 40, 0.15), 0 10px 10px -5px rgba(122, 40, 40, 0.1);
+        border: 5px solid var(--bg-white);
+        transition: var(--transition);
+        z-index: 1;
+    }
+
+    .acc-curve-img-wrap::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border: 2px solid var(--accent);
+        border-radius: inherit;
+        pointer-events: none;
+        z-index: 2;
+        opacity: 0.4;
+        transition: var(--transition);
+    }
+
+    .acc-curve-img-wrap:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 25px 30px -5px rgba(122, 40, 40, 0.2), 0 15px 15px -5px rgba(122, 40, 40, 0.15);
+        border-color: var(--primary-light);
+    }
+
+    .acc-curve-img-wrap:hover::before {
+        border-color: var(--primary);
+        opacity: 0.8;
+    }
+
+    .acc-curve-img-wrap img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .acc-curve-hero {
+        border-radius: 40px 140px 40px 140px;
+    }
+
+    .acc-curve-diff {
+        border-radius: 120px 30px 120px 30px;
+    }
+
+    /* Scroll Reveal Helper */
+    .acc-reveal {
+        opacity: 0;
+        transition: opacity 0.6s ease;
+    }
+
+    .acc-reveal.active {
+        opacity: 1;
+    }
+
+    /* 1. HERO SECTION */
+    .acc-hero-container {
+        background-color: #ffffff;
+        color: #1e293b;
+        padding: 60px 0;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    /* Curved Wave Background Shape on the Right */
+    .acc-hero-wave-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .acc-hero-wave-bg svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .acc-hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 30px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .acc-hero-left {
+        animation: acc-slide-up 0.8s ease-out;
+    }
+
+    .acc-hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: rgba(122, 40, 40, 0.05);
+        border: 1px solid rgba(122, 40, 40, 0.18);
+        color: var(--primary);
+        padding: 6px 14px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        margin-bottom: 18px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+
+    .acc-hero-title {
+        font-size: 2.2rem;
+        font-weight: 900;
+        line-height: 1.3;
+        margin-bottom: 15px;
+        color: #1e293b;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .acc-hero-title span {
+        color: var(--primary);
+    }
+
+    .acc-hero-title-highlight {
+        color: var(--primary);
+        display: inline-block;
+        position: relative;
+        background: rgba(122, 40, 40, 0.05);
+        border: 1.5px dashed var(--primary);
+        padding: 4px 15px;
+        border-radius: 8px;
+        font-size: 0.75em;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+    }
+
+    .acc-hero-sub {
+        font-size: 1.12rem;
+        margin-bottom: 22px;
+        color: #475569;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    .acc-hero-benefits {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .acc-hero-benefit-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 1rem;
+        color: #334155;
+    }
+
+    .acc-hero-benefit-icon-wrapper {
+        color: var(--primary);
+        background-color: rgba(122, 40, 40, 0.08);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    .acc-hero-btn-group {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+    }
+
+    .acc-hero-contact-quick {
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+        padding-top: 15px;
+        border-top: 1px solid rgba(122, 40, 40, 0.15);
+    }
+
+    .acc-hero-contact-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 500;
+        font-size: 0.95rem;
+        color: #334155;
+    }
+
+    .acc-hero-contact-item svg {
+        color: var(--primary);
+    }
+
+    .acc-hero-contact-item a {
+        color: #1e293b;
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    .acc-hero-contact-item a:hover {
+        color: var(--primary);
+    }
+
+    .acc-hero-right {
+        animation: acc-slide-up 1s ease-out;
+    }
+
+    .acc-hero-img-box {
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 0;
+        overflow: visible;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        position: relative;
+        z-index: 2;
+        animation: acc-float 6s ease-in-out infinite;
+    }
+
+    .acc-hero-img-box img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: var(--transition);
+    }
+
+    /* 2. LEGAL FRAMEWORK / WHAT IS IT */
+    .acc-legal-section {
+        background-color: var(--bg-white);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .acc-legal-grid-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 20px;
+    }
+
+    .acc-legal-card {
+        background-color: var(--primary-bg);
+        border-left: 5px solid var(--primary);
+        border-radius: 4px 16px 16px 4px;
+        padding: 25px;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        box-shadow: var(--shadow-sm);
+        height: 100%;
+    }
+
+    .acc-legal-icon {
+        background-color: rgba(122, 40, 40, 0.1);
+        padding: 12px;
+        border-radius: 10px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .acc-legal-icon svg {
+        width: 26px;
+        height: 26px;
+        color: var(--primary);
+    }
+
+    .acc-legal-text h3 {
+        color: var(--primary);
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+        font-weight: 700;
+    }
+
+    .acc-legal-text p {
+        font-size: 0.95rem;
+        color: var(--text-dark);
+        line-height: 1.5;
+    }
+
+    .acc-legal-text ul {
+        list-style: none;
+        margin-top: 10px;
+    }
+
+    .acc-legal-text ul li {
+        position: relative;
+        padding-left: 15px;
+        margin-bottom: 6px;
+        font-size: 0.9rem;
+    }
+
+    .acc-legal-text ul li::before {
+        content: "•";
+        color: var(--accent);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+
+    /* 3. PAIN POINTS / DIFFICULTIES */
+    .acc-difficulties-section {
+        background-color: var(--bg-light);
+    }
+
+    .acc-diff-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .acc-diff-left {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .acc-diff-card {
+        background-color: var(--bg-white);
+        border-radius: 12px;
+        padding: 16px 20px;
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        border: 1px solid transparent;
+    }
+
+    .acc-diff-card:hover {
+        transform: translateX(4px);
+        border-color: var(--border-color);
+        box-shadow: var(--shadow-md);
+    }
+
+    .acc-diff-num {
+        background-color: var(--primary-bg);
+        color: var(--primary);
+        font-weight: 800;
+        font-size: 1rem;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border: 1px solid var(--border-color);
+    }
+
+    .acc-diff-body h4 {
+        font-size: 1.02rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        margin-bottom: 4px;
+    }
+
+    .acc-diff-body p {
+        color: var(--text-muted);
+        font-size: 0.88rem;
+    }
+
+    .acc-diff-right {
+        position: relative;
+    }
+
+    .acc-diff-img-wrapper {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        position: relative;
+        border: 3px solid var(--bg-white);
+    }
+
+    .acc-diff-img-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: var(--transition);
+    }
+
+    .acc-diff-info-badge {
+        position: absolute;
+        bottom: -20px;
+        right: 20px;
+        background-color: var(--primary);
+        color: var(--text-light);
+        padding: 15px 20px;
+        border-radius: 12px;
+        box-shadow: var(--shadow-lg);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        max-width: 320px;
+        border-bottom: 4px solid var(--accent);
+    }
+
+    .acc-diff-info-badge svg {
+        flex-shrink: 0;
+        color: var(--accent);
+        width: 28px;
+        height: 28px;
+    }
+
+    .acc-diff-info-text {
+        font-weight: 700;
+        font-size: 0.95rem;
+        line-height: 1.3;
+    }
+
+    .acc-diff-info-sub {
+        font-weight: 400;
+        font-size: 0.75rem;
+        opacity: 0.85;
+    }
+
+    /* 4. ACC SERVICES */
+    .acc-services-section {
+        background-color: var(--bg-gray);
+    }
+
+    .acc-divorce-container .acc-services-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    .acc-service-card {
+        background-color: var(--bg-white);
+        border-radius: 14px;
+        padding: 20px;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        border: 1px solid var(--border-color);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .acc-service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--primary-light);
+    }
+
+    .acc-service-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 4px;
+        background-color: var(--primary);
+        transition: var(--transition);
+    }
+
+    .acc-service-card:hover::after {
+        width: 100%;
+    }
+
+    .acc-service-icon-box {
+        width: 44px;
+        height: 44px;
+        background-color: var(--primary-bg);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        transition: var(--transition);
+        flex-shrink: 0;
+    }
+
+    .acc-service-icon-box svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .acc-service-card:hover .acc-service-icon-box {
+        background-color: var(--primary);
+        color: var(--text-light);
+        transform: scale(1.08);
+    }
+
+    .acc-service-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .acc-service-info h4 {
+        font-size: 1.05rem;
+        font-weight: 800;
+        color: var(--primary-dark);
+        margin-bottom: 6px;
+    }
+
+    .acc-service-info p {
+        color: var(--text-muted);
+        font-size: 0.88rem;
+        line-height: 1.5;
+    }
+
+    /* 5. DYNAMIC HORIZONTAL PROCESS CAROUSEL */
+    .acc-process-section {
+        background-color: var(--bg-white);
+    }
+
+    .acc-process-carousel-wrapper {
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+        padding: 5px 0;
+        overflow: hidden;
+    }
+
+    .acc-process-carousel-wrapper::before,
+    .acc-process-carousel-wrapper::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 80px;
+        height: 100%;
+        z-index: 5;
+        pointer-events: none;
+    }
+
+    .acc-process-carousel-wrapper::before {
+        left: 0;
+        background: linear-gradient(to right, var(--bg-white), transparent);
+    }
+
+    .acc-process-carousel-wrapper::after {
+        right: 0;
+        background: linear-gradient(to left, var(--bg-white), transparent);
+    }
+
+    .acc-process-carousel {
+        display: flex;
+        gap: 25px;
+        overflow-x: scroll;
+        overflow-y: hidden !important;
+        white-space: nowrap;
+        padding: 15px;
+        cursor: grab;
+        user-select: none;
+        scroll-behavior: auto;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+    }
+
+    .acc-process-carousel::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        background: transparent !important;
+    }
+
+    .acc-process-carousel:active {
+        cursor: grabbing;
+    }
+
+    .acc-process-card {
+        flex: 0 0 310px;
+        background-color: var(--bg-light);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 25px;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition);
+        white-space: normal;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .acc-process-card:hover {
+        box-shadow: var(--shadow-md);
+        border-color: var(--accent);
+        transform: translateY(-4px);
+        background-color: var(--bg-white);
+    }
+
+    .acc-process-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .acc-process-icon {
+        width: 44px;
+        height: 44px;
+        background-color: var(--primary-bg);
+        color: var(--primary);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+    }
+
+    .acc-process-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .acc-process-card:hover .acc-process-icon {
+        background-color: var(--primary);
+        color: var(--text-light);
+    }
+
+    .acc-process-num {
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: rgba(122, 40, 40, 0.12);
+        line-height: 1;
+        transition: var(--transition);
+    }
+
+    .acc-process-card:hover .acc-process-num {
+        color: var(--accent);
+    }
+
+    .acc-process-card h4 {
+        font-size: 1.12rem;
+        font-weight: 800;
+        color: var(--primary-dark);
+        margin-bottom: 8px;
+    }
+
+    .acc-process-card p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* 6. CONDITIONS & LEGAL DASHBOARD */
+    .acc-legal-dashboard-section {
+        background-color: var(--bg-light);
+    }
+
+    .acc-dashboard-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .acc-dashboard-card {
+        background-color: var(--bg-white);
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .acc-dashboard-card h3 {
+        color: var(--primary);
+        font-size: 1.25rem;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 2px solid var(--primary-bg);
+        padding-bottom: 12px;
+    }
+
+    .acc-dashboard-card h3 svg {
+        color: var(--accent);
+        width: 22px;
+        height: 22px;
+    }
+
+    .acc-rule-box {
+        background-color: var(--bg-light);
+        border-radius: 10px;
+        padding: 15px;
+        border-left: 4px solid var(--primary);
+    }
+
+    .acc-rule-box h4 {
+        font-size: 1rem;
+        color: var(--primary-dark);
+        margin-bottom: 6px;
+        font-weight: 700;
+    }
+
+    .acc-rule-box p {
+        font-size: 0.88rem;
+        color: var(--text-dark);
+        margin-bottom: 8px;
+        line-height: 1.45;
+    }
+
+    .acc-rule-sublist {
+        list-style: none;
+        padding-left: 5px;
+    }
+
+    .acc-rule-sublist li {
+        position: relative;
+        padding-left: 15px;
+        margin-bottom: 4px;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+    }
+
+    .acc-rule-sublist li::before {
+        content: "–";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+    }
+
+    .acc-highlight-row {
+        background-color: var(--brand-bg) !important;
+        border-left: 4px solid var(--brand) !important;
+    }
+
+    /* Pills nhỏ (danh mục / đối tượng) */
+    .acc-visa-type-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .acc-visa-type-pill {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: var(--bg-light);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        padding: 10px 12px;
+        transition: var(--transition);
+    }
+
+    .acc-visa-type-pill:hover {
+        border-color: var(--primary-light);
+        transform: translateX(3px);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .acc-visa-type-pill svg {
+        width: 18px;
+        height: 18px;
+        color: var(--primary);
+        flex-shrink: 0;
+    }
+
+    .acc-visa-type-pill span {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+
+    /* 7. PREPARATION, FEES & TIMELINE */
+    .acc-cta-section {
+        position: relative;
+        background: linear-gradient(135deg, rgba(15, 14, 48, 0.88) 0%, rgba(122, 40, 40, 0.85) 100%),
+            url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-hivavczfeIOFewmLQPXp18__QYbVGah6kI-fdwuAwAZci_NCpnhC4GPhP9A84PSLVQZK0eOQhAhKmulANc2pcwwKcPEi9nEdRbFTFAihGfjGD4QqKeDhbnrlnCK20oBsTfPfxQ9z4bzN06YXb7q0EKS7ORpasGuUL9DLOPpFuZAVSChvXbIwH6WVR83dMaLN8o7QoVY-P_cfEmo2ryEmSnPoI3k3o4GUBD3KXHoQRpAZigy-dnIbNbtbHIvnQBwmzr8gHzFL8-Lf') center/cover no-repeat;
+        color: var(--text-light);
+        padding: 60px 20px;
+    }
+
+    .acc-cta-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px;
+        align-items: flex-start;
+    }
+
+    .acc-cta-left h2 {
+        font-size: 2.1rem;
+        font-weight: 900;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+
+    .acc-cta-left h2 span {
+        color: var(--accent);
+    }
+
+    .acc-cta-left p {
+        font-size: 1.02rem;
+        margin-bottom: 25px;
+        opacity: 0.9;
+    }
+
+    .acc-doc-checklist {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .acc-doc-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.95rem;
+    }
+
+    .acc-doc-icon-wrapper {
+        color: var(--accent);
+        background-color: rgba(255, 255, 255, 0.1);
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    .acc-cta-right {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 30px;
+        border-radius: 16px;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    .acc-cta-right h3 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+        color: var(--accent);
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .acc-info-block {
+        margin-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 12px;
+    }
+
+    .acc-info-block:last-of-type {
+        border-bottom: none;
+        margin-bottom: 20px;
+    }
+
+    .acc-info-block h4 {
+        font-size: 0.95rem;
+        color: #f1f5f9;
+        font-weight: 700;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .acc-info-block p, .acc-info-block ul {
+        font-size: 0.88rem;
+        color: #cbd5e1;
+        line-height: 1.5;
+    }
+
+    .acc-info-block ul {
+        list-style: none;
+        padding-left: 5px;
+    }
+
+    .acc-info-block ul li {
+        margin-bottom: 4px;
+        position: relative;
+        padding-left: 12px;
+    }
+
+    .acc-info-block ul li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+    }
+
+    .acc-cta-btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .acc-cta-btn-group .acc-btn {
+        width: 100%;
+    }
+
+    /* 8. FAQs ACCORDION & BENEFITS */
+    .acc-faq-section {
+        background-color: var(--bg-white);
+    }
+
+    .acc-faq-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 40px;
+        align-items: flex-start;
+    }
+
+    .acc-benefits-wrap h3 {
+        color: var(--primary);
+        font-size: 1.3rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+        border-left: 4px solid var(--accent);
+        padding-left: 12px;
+    }
+
+    .acc-benefits-wrap p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    .acc-benefits-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .acc-benefit-card-small {
+        background-color: var(--bg-light);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 12px 15px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .acc-benefit-card-small svg {
+        color: var(--success);
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+    }
+
+    .acc-benefit-card-small span {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-dark);
+    }
+
+    .acc-faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .acc-faq-item {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: var(--transition);
+    }
+
+    .acc-faq-item:hover {
+        border-color: var(--primary-light);
+    }
+
+    .acc-faq-header {
+        background-color: var(--bg-light);
+        padding: 16px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+        transition: var(--transition);
+    }
+
+    .acc-faq-header h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        padding-right: 15px;
+        line-height: 1.4;
+    }
+
+    .acc-faq-icon {
+        color: var(--primary);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .acc-faq-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        background-color: var(--bg-white);
+    }
+
+    .acc-faq-content {
+        padding: 18px 20px;
+        font-size: 0.95rem;
+        color: var(--text-dark);
+        border-top: 1px solid var(--border-color);
+        line-height: 1.55;
+    }
+
+    .acc-faq-item.active {
+        border-color: var(--primary);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .acc-faq-item.active .acc-faq-header {
+        background-color: var(--primary-bg);
+    }
+
+    .acc-faq-item.active .acc-faq-icon svg {
+        transform: rotate(180deg);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 1024px) {
+        .acc-hero-container {
+            padding: 50px 0 40px 0 !important;
+        }
+
+        .acc-hero-wave-bg {
+            display: none !important;
+        }
+
+        .acc-hero-right {
+            background-color: #faf3f3 !important;
+            border-radius: 20px !important;
+            padding: 30px 20px !important;
+            width: 100% !important;
+            max-width: 480px !important;
+            margin: 0 auto !important;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.01) !important;
+        }
+
+        .acc-hero-img-box {
+            animation: none !important;
+        }
+
+        .acc-hero-title {
+            font-size: 2rem;
+            justify-content: center;
+        }
+
+        .acc-hero-content {
+            grid-template-columns: 1fr !important;
+            gap: 30px !important;
+            text-align: center !important;
+        }
+
+        .acc-hero-badge {
+            justify-content: center;
+        }
+
+        .acc-hero-benefits {
+            justify-content: center;
+        }
+
+        .acc-hero-btn-group {
+            justify-content: center;
+        }
+
+        .acc-hero-contact-quick {
+            justify-content: center;
+        }
+
+        .acc-divorce-container .acc-services-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 20px !important;
+        }
+
+        .acc-diff-grid {
+            grid-template-columns: 1fr;
+            gap: 35px;
+        }
+
+        .acc-diff-img-wrapper {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .acc-dashboard-grid {
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .acc-cta-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .acc-faq-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .acc-legal-grid-row {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .acc-divorce-section {
+            padding: 35px 20px !important;
+        }
+
+        .acc-divorce-section-title {
+            font-size: 1.65rem;
+        }
+
+        .acc-hero-container {
+            padding: 40px 0 !important;
+        }
+
+        .acc-hero-title {
+            font-size: 1.8rem;
+            justify-content: center;
+        }
+
+        .acc-hero-sub {
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+        }
+
+        .acc-hero-benefits {
+            grid-template-columns: 1fr;
+            gap: 12px;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto 20px auto;
+        }
+
+        .acc-hero-btn-group {
+            flex-direction: column;
+            width: 100%;
+            gap: 10px;
+        }
+
+        .acc-hero-btn-group .acc-btn {
+            width: 100%;
+        }
+
+        .acc-hero-contact-quick {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            border-top: 1px solid rgba(122, 40, 40, 0.15);
+        }
+
+        .acc-legal-card {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px 15px;
+        }
+
+        .acc-legal-icon {
+            margin-bottom: 8px;
+        }
+
+        .acc-process-card {
+            flex: 0 0 270px;
+            padding: 20px;
+        }
+
+        .acc-process-carousel {
+            gap: 15px;
+            padding: 5px;
+        }
+
+        .acc-process-carousel-wrapper::before,
+        .acc-process-carousel-wrapper::after {
+            width: 30px;
+        }
+
+        .acc-diff-left {
+            grid-template-columns: 1fr;
+        }
+
+        .acc-visa-type-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .acc-diff-info-badge {
+            position: relative;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            transform: none;
+            margin: 15px auto 0 auto;
+            width: 100%;
+            max-width: 100%;
+            box-shadow: var(--shadow-md);
+        }
+
+        .acc-dashboard-card {
+            padding: 20px;
+        }
+
+        .acc-cta-right {
+            padding: 25px 15px;
+        }
+
+        .acc-section-cta-wrap {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .acc-section-cta-wrap .acc-btn {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .acc-divorce-container .acc-services-grid {
+            grid-template-columns: 1fr !important;
+            gap: 15px !important;
+        }
+
+        .acc-hero-title {
+            font-size: 1.55rem;
+            justify-content: center;
+        }
+
+        .acc-hero-badge {
+            font-size: 0.72rem;
+            padding: 5px 12px;
+            letter-spacing: 0.5px;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .acc-divorce-section {
+            padding: 25px 12px !important;
+        }
+
+        .acc-hero-container {
+            padding: 35px 0 25px 0 !important;
+        }
+
+        .acc-hero-right {
+            padding: 20px 15px !important;
+            border-radius: 14px !important;
+        }
+    }
+</style>
+
+</head><body><div class="acc-divorce-container">
+
+    <!-- DẢI MÀU THƯƠNG HIỆU ACC -->
+    <div style="width:100%; height:5px; background:linear-gradient(to right, #7a2828 0%, #9c3c3c 50%, #d4af37 100%);"></div>
+
+    <!-- 1. HERO BANNER -->
+    <div class="acc-hero-container">
+        <div class="acc-hero-wave-bg">
+            <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                <path d="M520,0 C580,300 380,700 440,1000 L1000,1000 L1000,0 Z" fill="#faf3f3"></path>
+                <path d="M820,0 C870,150 790,320 840,500 C890,650 950,800 1000,1000 L1000,0 Z" fill="rgba(122,40,40,0.04)"></path>
+            </svg>
+        </div>
+
+        <div class="acc-hero-content">
+            <div class="acc-hero-left">
+                <div class="acc-hero-badge">
+                    <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <span>CÔNG TY LUẬT ACC - LUẬT SƯ LAO ĐỘNG UY TÍN</span>
+                </div>
+                <h1 class="acc-hero-title">
+                    Luật Sư Tư Vấn Pháp Luật Lao Động <span class="acc-hero-title-highlight">Toàn Quốc - Trọn Gói</span>
+                </h1>
+                <p class="acc-hero-sub">
+                    Bảo vệ quyền lợi hợp pháp, tối ưu hóa quy trình nhân sự và giải quyết triệt để mọi tranh chấp lao động với đội ngũ chuyên gia pháp lý hàng đầu từ Công ty Luật ACC.
+                </p>
+
+                <div class="acc-hero-benefits">
+                    <div class="acc-hero-benefit-item">
+                        <div class="acc-hero-benefit-icon-wrapper">
+                            <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Hơn 500 doanh nghiệp đồng hành</strong>
+                            <p style="font-size: 0.8rem; opacity: 0.85; font-weight: 300;">Tin chọn ACC cho pháp lý nhân sự</p>
+                        </div>
+                    </div>
+                    <div class="acc-hero-benefit-item">
+                        <div class="acc-hero-benefit-icon-wrapper">
+                            <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>98% tỷ lệ thành công tranh chấp</strong>
+                            <p style="font-size: 0.8rem; opacity: 0.85; font-weight: 300;">Bảo vệ quyền lợi tối đa cho khách hàng</p>
+                        </div>
+                    </div>
+                    <div class="acc-hero-benefit-item">
+                        <div class="acc-hero-benefit-icon-wrapper">
+                            <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Hơn 15 năm kinh nghiệm</strong>
+                            <p style="font-size: 0.8rem; opacity: 0.85; font-weight: 300;">Am hiểu sâu Bộ luật Lao động</p>
+                        </div>
+                    </div>
+                    <div class="acc-hero-benefit-item">
+                        <div class="acc-hero-benefit-icon-wrapper">
+                            <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Tư vấn 24/7, bảo vệ quyền lợi</strong>
+                            <p style="font-size: 0.8rem; opacity: 0.85; font-weight: 300;">Cho cả doanh nghiệp &amp; người lao động</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-hero-btn-group">
+                    <a href="tel:19003330" class="acc-btn acc-btn-accent">
+                        <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>Hotline: 1900 3330</span>
+                    </a>
+                    <a href="https://zalo.me/2171133625094125529" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-zalo">
+                        <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span>Tư vấn qua Zalo</span>
+                    </a>
+                </div>
+
+                <div class="acc-hero-contact-quick">
+                    <div class="acc-hero-contact-item">
+                        <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>Di động: <a href="tel:0846967979">084.696.7979</a></span>
+                    </div>
+                    <div class="acc-hero-contact-item">
+                        <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>Email: <a href="mailto:info@congtyluatacc.vn">info@congtyluatacc.vn</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-hero-right">
+                <div class="acc-hero-img-box">
+                    <div class="acc-curve-img-wrap acc-curve-hero">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsuS1zF0kQbz5Te4ahId-LAptb7K8oCchGNp3axYje4ygmdaQ2DM8erET7sohM3PKiUrFGgfQo-kat9q6Yqxi57RNnGdOy0SjYTGESe3V_IWSSIl0qL4PS-JUrST2faisbHfqPomAao9M8C8w0p6rusbZvZpX5sIf_vMNyzCf2sSa85jtkgE5KZy2KZzkqFGJb7JzfRZctTwue1hpfeNnn3Bbv9JIcU3IU685aEoebqmYfMqfyv-0qkBTIOi9bgmEwlHfudL1ygd-2" alt="Luật sư tư vấn pháp luật lao động ACC">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. LEGAL FRAMEWORK / LAWYER ROLE -->
+    <div class="acc-divorce-section acc-legal-section acc-reveal active">
+        <div class="acc-legal-grid-row">
+            <div class="acc-legal-card">
+                <div class="acc-legal-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4z"></path>
+                        <polyline points="9 12 11 14 15 10"></polyline>
+                    </svg>
+                </div>
+                <div class="acc-legal-text">
+                    <h3>Vai trò thiết yếu của Luật sư lao động</h3>
+                    <p>
+                        Sự can thiệp và hỗ trợ pháp lý kịp thời từ đội ngũ luật sư kinh nghiệm không chỉ giúp <strong>phòng ngừa rủi ro pháp lý hành chính</strong> mà còn bảo vệ tối đa lợi ích kinh tế cho cả người lao động và doanh nghiệp, xây dựng quan hệ lao động hài hòa, ổn định.
+                    </p>
+                </div>
+            </div>
+            <div class="acc-legal-card">
+                <div class="acc-legal-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 6h18M3 12h18M3 18h18"></path>
+                    </svg>
+                </div>
+                <div class="acc-legal-text">
+                    <h3>Luật sư lao động làm gì?</h3>
+                    <ul>
+                        <li><strong>Giải thích &amp; áp dụng pháp luật:</strong> Phân tích rõ các quy định phức tạp trong Bộ luật Lao động, giúp các bên hiểu đúng quyền và nghĩa vụ.</li>
+                        <li><strong>Rà soát &amp; soạn thảo văn bản:</strong> Thiết lập hệ thống hợp đồng, quy chế lương thưởng, thỏa ước và nội quy lao động chặt chẽ, phòng ngừa tranh chấp từ gốc.</li>
+                        <li><strong>Đại diện đàm phán &amp; tố tụng:</strong> Trực tiếp thương lượng hòa giải hoặc đại diện tranh tụng bảo vệ quyền lợi tại Tòa án các cấp.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="acc-section-cta-wrap">
+            <a href="tel:19003330" class="acc-btn acc-btn-primary">
+                <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>Tư Vấn Pháp Luật Lao Động Miễn Phí: 1900 3330</span>
+            </a>
+            <a href="https://zalo.me/2171133625094125529" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-zalo">
+                <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Liên hệ Luật sư qua Zalo</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 3. COMMON ISSUES (PAIN POINTS / DIFF) -->
+    <div class="acc-divorce-section acc-difficulties-section acc-reveal">
+        <div class="acc-divorce-section-title-wrap">
+            <span class="acc-divorce-section-tag">Vấn đề thường gặp</span>
+            <h2 class="acc-divorce-section-title">Các Vấn Đề Pháp Luật Lao Động Thường Gặp</h2>
+            <p class="acc-divorce-section-desc">Trong quan hệ lao động, doanh nghiệp và người lao động thường vướng phải nhiều vấn đề pháp lý phức tạp cần đến sự hỗ trợ của luật sư chuyên môn.</p>
+        </div>
+
+        <div class="acc-diff-grid">
+            <div class="acc-diff-left">
+                <div class="acc-diff-card">
+                    <div class="acc-diff-num">01</div>
+                    <div class="acc-diff-body">
+                        <h4>Tranh chấp Hợp đồng</h4>
+                        <p>Vi phạm cam kết, điều khoản bảo mật, cạnh tranh không lành mạnh và thỏa thuận bồi thường đào tạo.</p>
+                    </div>
+                </div>
+                <div class="acc-diff-card">
+                    <div class="acc-diff-num">02</div>
+                    <div class="acc-diff-body">
+                        <h4>Kỷ luật &amp; Sa thải</h4>
+                        <p>Xử lý kỷ luật lao động hợp pháp, khiếu nại sa thải trái pháp luật và yêu cầu bồi thường thiệt hại.</p>
+                    </div>
+                </div>
+                <div class="acc-diff-card">
+                    <div class="acc-diff-num">03</div>
+                    <div class="acc-diff-body">
+                        <h4>Lương &amp; Thưởng</h4>
+                        <p>Khiếu nại chậm lương, nợ lương, không trả trợ cấp thôi việc hay mất việc làm theo luật định.</p>
+                    </div>
+                </div>
+                <div class="acc-diff-card">
+                    <div class="acc-diff-num">04</div>
+                    <div class="acc-diff-body">
+                        <h4>Bảo hiểm Xã hội</h4>
+                        <p>Xử lý hành vi trốn đóng, chậm đóng BHXH, BHYT, BHTN và hỗ trợ thủ tục chốt sổ bảo hiểm cho NLĐ.</p>
+                    </div>
+                </div>
+                <div class="acc-diff-card">
+                    <div class="acc-diff-num">05</div>
+                    <div class="acc-diff-body">
+                        <h4>An toàn Lao động</h4>
+                        <p>Thủ tục bồi thường tai nạn lao động, bệnh nghề nghiệp và giải quyết vi phạm về môi trường làm việc.</p>
+                    </div>
+                </div>
+                <div class="acc-diff-card">
+                    <div class="acc-diff-num">06</div>
+                    <div class="acc-diff-body">
+                        <h4>Lao động nước ngoài</h4>
+                        <p>Vướng mắc thủ tục Giấy phép lao động, Thẻ tạm trú, Visa cho chuyên gia nước ngoài làm việc tại Việt Nam.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-diff-right">
+                <div style="position: relative;">
+                    <div class="acc-curve-img-wrap acc-curve-diff">
+                        <img src="./images/doanhngieplaodong.png" alt="Luật sư ACC giải quyết tranh chấp lao động">
+                    </div>
+                    <div class="acc-diff-info-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <div class="acc-diff-info-text">
+                            Tranh chấp lao động ngày càng phức tạp<br>
+                            <span class="acc-diff-info-sub">Luật sư ACC giúp phòng ngừa rủi ro và bảo vệ quyền lợi cho cả hai bên.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="acc-section-cta-wrap">
+            <a href="https://zalo.me/2171133625094125529" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-zalo">
+                <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Liên hệ Zalo để được tư vấn miễn phí</span>
+            </a>
+            <a href="tel:0846967979" class="acc-btn acc-btn-outline-dark">
+                <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>Gọi Di động: 084.696.7979</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 4. COMPREHENSIVE SERVICES -->
+    <div class="acc-divorce-section acc-services-section acc-reveal">
+        <div class="acc-divorce-section-title-wrap">
+            <span class="acc-divorce-section-tag">Dịch vụ pháp lý</span>
+            <h2 class="acc-divorce-section-title">Dịch Vụ Tư Vấn Lao Động Toàn Diện</h2>
+            <p class="acc-divorce-section-desc">ACC cung cấp giải pháp pháp lý lao động trọn gói, đồng hành cùng doanh nghiệp và người lao động trong mọi tình huống.</p>
+        </div>
+
+        <div class="acc-services-grid">
+            <div class="acc-service-card">
+                <div class="acc-service-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 20h9"></path>
+                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                    </svg>
+                </div>
+                <div class="acc-service-info">
+                    <h4>Hợp đồng Lao động</h4>
+                    <p>Soạn thảo, rà soát và đàm phán các loại hợp đồng, thỏa thuận bảo mật, bồi hoàn phí đào tạo.</p>
+                </div>
+            </div>
+
+            <div class="acc-service-card">
+                <div class="acc-service-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                        <line x1="2" y1="10" x2="22" y2="10"></line>
+                    </svg>
+                </div>
+                <div class="acc-service-info">
+                    <h4>Lương &amp; Phúc lợi</h4>
+                    <p>Tư vấn xây dựng thang bảng lương, quy chế khen thưởng, phúc lợi xã hội và phương án đóng BHXH.</p>
+                </div>
+            </div>
+
+            <div class="acc-service-card">
+                <div class="acc-service-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 11l3 3L22 4"></path>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                </div>
+                <div class="acc-service-info">
+                    <h4>Kỷ luật Lao động</h4>
+                    <p>Hướng dẫn trình tự, thủ tục xử lý kỷ luật lao động, sa thải và trách nhiệm vật chất đúng chuẩn luật.</p>
+                </div>
+            </div>
+
+            <div class="acc-service-card">
+                <div class="acc-service-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 11V3H8v6H2v12h20V11z"></path>
+                        <line x1="12" y1="3" x2="12" y2="21"></line>
+                    </svg>
+                </div>
+                <div class="acc-service-info">
+                    <h4>Giải quyết Tranh chấp</h4>
+                    <p>Đại diện đàm phán hòa giải, hỗ trợ xây dựng hồ sơ khởi kiện và trực tiếp tranh tụng tại Tòa án.</p>
+                </div>
+            </div>
+
+            <div class="acc-service-card">
+                <div class="acc-service-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </div>
+                <div class="acc-service-info">
+                    <h4>Lao động Nước ngoài</h4>
+                    <p>Trọn gói thủ tục xin Giấy phép lao động (Work Permit), Thẻ tạm trú, Visa cho người nước ngoài.</p>
+                </div>
+            </div>
+
+            <div class="acc-service-card">
+                <div class="acc-service-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                </div>
+                <div class="acc-service-info">
+                    <h4>Nội quy &amp; Thỏa ước</h4>
+                    <p>Xây dựng nội quy lao động, thỏa ước lao động tập thể và đăng ký với cơ quan quản lý nhà nước đúng quy định.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="acc-section-cta-wrap">
+            <a href="tel:19003330" class="acc-btn acc-btn-accent">
+                <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>Nhận Tư Vấn Dịch Vụ Lao Động: 1900 3330</span>
+            </a>
+            <a href="https://zalo.me/2171133625094125529" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-zalo">
+                <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Trao đổi nhu cầu qua Zalo</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 5. PROCESS CAROUSEL (7 STEPS) -->
+    <div class="acc-divorce-section acc-process-section acc-reveal">
+        <div class="acc-divorce-section-title-wrap">
+            <span class="acc-divorce-section-tag">Quy trình chuyên nghiệp</span>
+            <h2 class="acc-divorce-section-title">Quy Trình Tư Vấn Chuyên Nghiệp Tại ACC</h2>
+            <p class="acc-divorce-section-desc">Minh bạch, chuyên nghiệp và tối ưu thời gian. Rê chuột vào thẻ để tạm dừng xem chi tiết.</p>
+        </div>
+
+        <div class="acc-process-carousel-wrapper">
+            <div class="acc-process-carousel" id="accProcessCarousel">
+                <div class="acc-process-card">
+                    <div class="acc-process-card-header">
+                        <div class="acc-process-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <span class="acc-process-num">01</span>
+                    </div>
+                    <h4>Bước 1: Tiếp nhận</h4>
+                    <p>Thu thập hồ sơ, lắng nghe yêu cầu vụ việc của khách hàng để nắm rõ bối cảnh và mục tiêu cần đạt được.</p>
+                </div>
+
+                <div class="acc-process-card">
+                    <div class="acc-process-card-header">
+                        <div class="acc-process-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </div>
+                        <span class="acc-process-num">02</span>
+                    </div>
+                    <h4>Bước 2: Phân tích</h4>
+                    <p>Luật sư nghiên cứu hồ sơ và đánh giá pháp lý, xác định chính xác vấn đề và các căn cứ pháp luật liên quan.</p>
+                </div>
+
+                <div class="acc-process-card">
+                    <div class="acc-process-card-header">
+                        <div class="acc-process-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1h6c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"></path>
+                            </svg>
+                        </div>
+                        <span class="acc-process-num">03</span>
+                    </div>
+                    <h4>Bước 3: Đề xuất</h4>
+                    <p>Tư vấn các giải pháp tối ưu và dự báo rủi ro, giúp khách hàng lựa chọn phương án phù hợp nhất.</p>
+                </div>
+
+                <div class="acc-process-card">
+                    <div class="acc-process-card-header">
+                        <div class="acc-process-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <path d="m9 15 2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <span class="acc-process-num">04</span>
+                    </div>
+                    <h4>Bước 4: Ký hợp đồng</h4>
+                    <p>Thống nhất phạm vi dịch vụ và phí minh bạch, ký kết hợp đồng dịch vụ pháp lý rõ ràng giữa hai bên.</p>
+                </div>
+
+                <div class="acc-process-card">
+                    <div class="acc-process-card-header">
+                        <div class="acc-process-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 20h9"></path>
+                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                            </svg>
+                        </div>
+                        <span class="acc-process-num">05</span>
+                    </div>
+                    <h4>Bước 5: Triển khai</h4>
+                    <p>Soạn thảo hồ sơ, đàm phán hoặc làm việc với cơ quan nhà nước, Tòa án để giải quyết vụ việc.</p>
+                </div>
+
+                <div class="acc-process-card">
+                    <div class="acc-process-card-header">
+                        <div class="acc-process-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 3v18h18"></path>
+                                <path d="M7 14l4-4 3 3 5-6"></path>
+                            </svg>
+                        </div>
+                        <span class="acc-process-num">06</span>
+                    </div>
+                    <h4>Bước 6: Báo cáo</h4>
+                    <p>Cập nhật tiến trình thường xuyên cho khách hàng, đảm bảo khách hàng luôn nắm rõ diễn biến vụ việc.</p>
+                </div>
+
+                <div class="acc-process-card">
+                    <div class="acc-process-card-header">
+                        <div class="acc-process-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <span class="acc-process-num">07</span>
+                    </div>
+                    <h4>Bước 7: Hỗ trợ sau dịch vụ</h4>
+                    <p>Đồng hành tháo gỡ các vướng mắc phát sinh sau đó, đảm bảo quan hệ lao động ổn định, đúng pháp luật.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="acc-section-cta-wrap">
+            <a href="https://zalo.me/2171133625094125529" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-zalo">
+                <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Bắt Đầu Tư Vấn Cùng ACC Ngay</span>
+            </a>
+            <a href="tel:19003330" class="acc-btn acc-btn-outline-dark">
+                <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>Gọi Hotline: 1900 3330</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 6. MUTUAL BENEFITS DASHBOARD -->
+    <div class="acc-divorce-section acc-legal-dashboard-section acc-reveal">
+        <div class="acc-divorce-section-title-wrap">
+            <span class="acc-divorce-section-tag">Đồng hành</span>
+            <h2 class="acc-divorce-section-title">Cân Bằng Lợi Ích Giữa Doanh Nghiệp &amp; Lao Động</h2>
+            <p class="acc-divorce-section-desc">Chúng tôi hướng tới việc xây dựng môi trường làm việc hài hòa, ổn định, nơi quyền lợi của người sử dụng lao động và người lao động đều được tôn trọng và bảo vệ tối đa.</p>
+        </div>
+
+        <div class="acc-dashboard-grid">
+            <div class="acc-dashboard-card">
+                <h3>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Đối Với Người Lao Động</span>
+                </h3>
+                <div class="acc-rule-box">
+                    <ul class="acc-rule-sublist">
+                        <li>Hiểu rõ quyền lợi về lương, thưởng, bảo hiểm xã hội và các chế độ phúc lợi hợp pháp khác.</li>
+                        <li>Được bảo vệ quyền lợi khi bị sa thải, kỷ luật hoặc chấm dứt hợp đồng lao động vô cớ.</li>
+                        <li>Hỗ trợ đòi lại quyền lợi BHXH, trợ cấp thôi việc, mất việc làm hoặc bồi thường tai nạn lao động.</li>
+                        <li>Được luật sư đại diện thương lượng hòa giải hoặc trực tiếp khởi kiện bảo vệ quyền lợi trước Tòa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="acc-dashboard-card">
+                <h3>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 21h18M6 21V7l8-4v18M14 9h4v12"></path>
+                    </svg>
+                    <span>Đối Với Doanh Nghiệp</span>
+                </h3>
+                <div class="acc-rule-box acc-highlight-row">
+                    <ul class="acc-rule-sublist">
+                        <li>Xây dựng hệ thống hợp đồng lao động, nội quy và quy chế lương thưởng đúng chuẩn pháp luật.</li>
+                        <li>Giảm thiểu tối đa rủi ro bị cơ quan chức năng xử phạt hành chính hoặc khởi kiện từ nhân viên.</li>
+                        <li>Hỗ trợ toàn bộ thủ tục cấp Giấy phép lao động và cư trú cho lao động nước ngoài an toàn, nhanh chóng.</li>
+                        <li>Đại diện doanh nghiệp làm việc trực tiếp với thanh tra lao động và cơ quan bảo hiểm xã hội.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="acc-section-cta-wrap">
+            <a href="tel:19003330" class="acc-btn acc-btn-primary">
+                <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>Thẩm Định Hồ Sơ Ban Đầu Miễn Phí: 1900 3330</span>
+            </a>
+            <a href="https://zalo.me/2171133625094125529" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-zalo">
+                <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Tư vấn quyền lợi qua Zalo</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 7. COSTS & TIMELINE -->
+    <div class="acc-cta-section">
+        <div class="acc-cta-grid">
+            <div class="acc-cta-left">
+                <h2>Chi Phí Dịch Vụ <span>Minh Bạch, Rõ Ràng</span></h2>
+                <p>Chi phí được cam kết rõ ràng trong hợp đồng, hoàn toàn không phát sinh phí ẩn. Khách hàng chủ động lựa chọn hình thức dịch vụ phù hợp với nhu cầu:</p>
+
+                <ul class="acc-doc-checklist">
+                    <li class="acc-doc-item">
+                        <div class="acc-doc-icon-wrapper">
+                            <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <span><strong>Tư vấn theo vụ việc lao động:</strong> Trọn gói.</span>
+                    </li>
+                    <li class="acc-doc-item">
+                        <div class="acc-doc-icon-wrapper">
+                            <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <span><strong>Tư vấn thường xuyên doanh nghiệp:</strong> Theo tháng / năm.</span>
+                    </li>
+                    <li class="acc-doc-item">
+                        <div class="acc-doc-icon-wrapper">
+                            <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <span><strong>Đại diện tham gia tranh tụng Tòa án:</strong> Theo thỏa thuận.</span>
+                    </li>
+                    <li class="acc-doc-item">
+                        <div class="acc-doc-icon-wrapper">
+                            <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <span><strong>Tư vấn sơ bộ qua Hotline / Zalo:</strong> Miễn phí.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="acc-cta-right">
+                <h3>Thời Gian Xử Lý</h3>
+
+                <div class="acc-info-block">
+                    <h4>Lộ trình dự kiến</h4>
+                    <ul>
+                        <li><strong style="color:#fff;">Trong ngày:</strong> Tư vấn nhanh, giải đáp thắc mắc.</li>
+                        <li><strong style="color:#fff;">3 – 7 ngày làm việc:</strong> Soạn thảo hợp đồng, nội quy lao động.</li>
+                        <li><strong style="color:#fff;">2 – 4 tuần:</strong> Giải quyết tranh chấp, hòa giải.</li>
+                        <li><strong style="color:#fff;">Theo tiến trình xét xử:</strong> Tranh tụng bảo vệ tại Tòa án.</li>
+                    </ul>
+                </div>
+
+                <div class="acc-info-block">
+                    <h4>Cam kết của ACC</h4>
+                    <p>ACC cam kết bám sát tiến độ vụ việc và báo cáo chi tiết cho khách hàng thường xuyên, đảm bảo minh bạch trong suốt quá trình thực hiện.</p>
+                </div>
+
+                <div class="acc-cta-btn-group">
+                    <a href="tel:19003330" class="acc-btn acc-btn-accent">
+                        <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>Nhận Báo Giá Chi Tiết</span>
+                    </a>
+                    <a href="https://zalo.me/2171133625094125529" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-primary">
+                        <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span>Nhắn tin Zalo tư vấn (084.696.7979)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. TIPS TO CHOOSE LAWYER -->
+    <div class="acc-divorce-section acc-services-section acc-reveal">
+        <div class="acc-divorce-section-title-wrap">
+            <span class="acc-divorce-section-tag">Kinh nghiệm</span>
+            <h2 class="acc-divorce-section-title">Kinh Nghiệm Chọn Luật Sư Lao Động Uy Tín</h2>
+            <p class="acc-divorce-section-desc">Ba tiêu chí quan trọng giúp bạn chọn được đơn vị tư vấn pháp luật lao động đáng tin cậy.</p>
+        </div>
+
+        <div class="acc-services-grid">
+            <div class="acc-service-card">
+                <div class="acc-service-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="6"></circle>
+                        <path d="M8.21 13.89 7 22l5-3 5 3-1.21-8.11"></path>
+                    </svg>
+                </div>
+                <div class="acc-service-info">
+                    <h4>Chuyên môn sâu</h4>
+                    <p>Lựa chọn các luật sư chuyên trách có kinh nghiệm thực tế sâu rộng xử lý tranh chấp, soạn thảo tài liệu nhân sự lao động phức tạp.</p>
+                </div>
+            </div>
+            <div class="acc-service-card">
+                <div class="acc-service-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                </div>
+                <div class="acc-service-info">
+                    <h4>Minh bạch chi phí</h4>
+                    <p>Báo giá dịch vụ chi tiết, trọn gói rõ ràng ngay từ khâu tư vấn đầu tiên, cam kết không phát sinh các loại phụ phí ngầm.</p>
+                </div>
+            </div>
+            <div class="acc-service-card">
+                <div class="acc-service-icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </div>
+                <div class="acc-service-info">
+                    <h4>Bảo mật thông tin</h4>
+                    <p>Có cam kết bảo mật thông tin hồ sơ và bí mật kinh doanh, cập nhật tiến độ công việc minh bạch trong suốt thời gian thực hiện.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. FAQ ACCORDION & BENEFITS -->
+    <div class="acc-divorce-section acc-faq-section acc-reveal">
+        <div class="acc-faq-grid">
+            <div class="acc-benefits-wrap">
+                <h3>Lợi Ích Vượt Trội Tại ACC</h3>
+                <p>Đồng hành cùng ACC, doanh nghiệp và người lao động được hỗ trợ pháp lý nhanh chóng, chuyên nghiệp và an toàn tuyệt đối.</p>
+
+                <div class="acc-benefits-list">
+                    <div class="acc-benefit-card-small">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Hơn 500+ doanh nghiệp tin chọn đồng hành</span>
+                    </div>
+                    <div class="acc-benefit-card-small">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Đội ngũ chuyên sâu, am hiểu Bộ luật Lao động</span>
+                    </div>
+                    <div class="acc-benefit-card-small">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Xử lý nhanh chóng, bám sát tiến độ cam kết</span>
+                    </div>
+                    <div class="acc-benefit-card-small">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Hỗ trợ 24/7, giải đáp mọi thắc mắc kịp thời</span>
+                    </div>
+                    <div class="acc-benefit-card-small">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Bảo mật thông tin, tuyệt đối an toàn dữ liệu</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acc-faq-list">
+                <div class="acc-divorce-section-title-wrap" style="text-align: left; margin-bottom: 20px;">
+                    <span class="acc-divorce-section-tag">Hỏi đáp pháp lý</span>
+                    <h2 class="acc-divorce-section-title" style="font-size: 1.6rem; text-transform: none;">Câu Hỏi Thường Gặp</h2>
+                </div>
+
+                <div class="acc-faq-item active">
+                    <div class="acc-faq-header" onclick="toggleFaq(this)">
+                        <h4>Chi phí thuê luật sư tư vấn lao động được tính như thế nào?</h4>
+                        <div class="acc-faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; transition: var(--transition);"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="acc-faq-body" style="max-height: none;">
+                        <div class="acc-faq-content">
+                            Chi phí được tính căn cứ theo tính chất phức tạp của vụ việc và phạm vi công việc khách hàng yêu cầu (tư vấn theo vụ việc, tư vấn thường xuyên dài hạn theo tháng/năm, hoặc đại diện tranh tụng). ACC luôn báo giá minh bạch trọn gói trong hợp đồng trước khi triển khai công việc.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-faq-item">
+                    <div class="acc-faq-header" onclick="toggleFaq(this)">
+                        <h4>Doanh nghiệp nhỏ có cần ký hợp đồng tư vấn lao động thường xuyên không?</h4>
+                        <div class="acc-faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; transition: var(--transition);"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="acc-faq-body">
+                        <div class="acc-faq-content">
+                            <strong>Có.</strong> Luật sư đồng hành thường xuyên giúp doanh nghiệp thiết lập hệ thống hợp đồng, quy chế, nội quy chặt chẽ đúng luật ngay từ đầu, giảm thiểu tối đa các rủi ro phát sinh tranh chấp hoặc bị thanh tra xử phạt hành chính.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-faq-item">
+                    <div class="acc-faq-header" onclick="toggleFaq(this)">
+                        <h4>Người lao động bị sa thải trái pháp luật cần chuẩn bị những gì?</h4>
+                        <div class="acc-faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; transition: var(--transition);"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="acc-faq-body">
+                        <div class="acc-faq-content">
+                            Người lao động nên thu thập đầy đủ hồ sơ liên quan như: hợp đồng lao động, quyết định kỷ luật/sa thải, bảng lương, chứng từ chứng minh làm việc... để luật sư đánh giá căn cứ pháp lý. ACC sẽ hỗ trợ thương lượng bồi thường hoặc đại diện khởi kiện đòi quyền lợi hợp pháp tại Tòa án.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-faq-item">
+                    <div class="acc-faq-header" onclick="toggleFaq(this)">
+                        <h4>ACC có hỗ trợ làm thủ tục cho người lao động nước ngoài không?</h4>
+                        <div class="acc-faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; transition: var(--transition);"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="acc-faq-body">
+                        <div class="acc-faq-content">
+                            <strong>Có.</strong> ACC cung cấp dịch vụ tư vấn và làm thủ tục xin cấp Giấy phép lao động (Work Permit), gia hạn giấy phép, xin cấp Thẻ tạm trú (TRC) và Visa thương mại cho chuyên gia nước ngoài làm việc tại Việt Nam trọn gói, nhanh chóng.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acc-faq-item">
+                    <div class="acc-faq-header" onclick="toggleFaq(this)">
+                        <h4>Tôi có thể tư vấn online mà không cần đến văn phòng của ACC không?</h4>
+                        <div class="acc-faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; transition: var(--transition);"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                    <div class="acc-faq-body">
+                        <div class="acc-faq-content">
+                            <strong>Hoàn toàn được.</strong> ACC hỗ trợ tư vấn linh hoạt thông qua Zalo, điện thoại, email và các ứng dụng họp trực tuyến. Hồ sơ tài liệu có thể scan gửi online hoặc chuyển phát nhanh, giúp khách hàng ở xa tiết kiệm tối đa thời gian và công sức đi lại.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="acc-section-cta-wrap" style="margin-top: 40px;">
+            <a href="https://zalo.me/2171133625094125529" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-zalo">
+                <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Đặt Câu Hỏi Cho Luật Sư Qua Zalo</span>
+            </a>
+            <a href="tel:19003330" class="acc-btn acc-btn-primary">
+                <svg class="acc-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>Cần Hỗ Trợ Pháp Lý Lao Động: 1900 3330</span>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Logic xử lý Accordion mục FAQs
+    function toggleFaq(headerElement) {
+        const faqItem = headerElement.parentElement;
+        const faqBody = faqItem.querySelector('.acc-faq-body');
+        const isActive = faqItem.classList.contains('active');
+
+        // Đóng toàn bộ FAQ đang mở khác
+        const allItems = document.querySelectorAll('.acc-faq-item');
+        allItems.forEach(item => {
+            item.classList.remove('active');
+            item.querySelector('.acc-faq-body').style.maxHeight = null;
+        });
+
+        // Mở mục hiện tại nếu trước đó đang đóng
+        if (!isActive) {
+            faqItem.classList.add('active');
+            faqBody.style.maxHeight = faqBody.scrollHeight + "px";
+        }
+    }
+
+    // Logic Carousel quy trình chạy nằm ngang vô hạn, dừng khi rê chuột
+    document.addEventListener("DOMContentLoaded", function () {
+        const carousel = document.getElementById('accProcessCarousel');
+        if (carousel) {
+            let scrollSpeed = 0.8; // Tốc độ cuộn (pixel mỗi frame)
+            let isHovered = false;
+            let animationFrameId;
+
+            // Tạo bản sao các thẻ con để tạo hiệu ứng cuộn vô hạn liền mạch
+            const originalCards = Array.from(carousel.children);
+            originalCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                carousel.appendChild(clone);
+            });
+
+            function scrollMarquee() {
+                if (!isHovered) {
+                    carousel.scrollLeft += scrollSpeed;
+
+                    // Khi cuộn hết chiều rộng của các phần tử gốc (1 nửa scrollWidth), trả về 0
+                    const halfWidth = carousel.scrollWidth / 2;
+                    if (carousel.scrollLeft >= halfWidth) {
+                        carousel.scrollLeft = 0;
+                    }
+                }
+                animationFrameId = requestAnimationFrame(scrollMarquee);
+            }
+
+            // Bắt đầu chạy vòng lặp cuộn tự động
+            animationFrameId = requestAnimationFrame(scrollMarquee);
+
+            // Lắng nghe sự kiện di chuột để dừng và chạy tiếp
+            carousel.addEventListener('mouseenter', () => {
+                isHovered = true;
+            });
+
+            carousel.addEventListener('mouseleave', () => {
+                isHovered = false;
+            });
+
+            // Hỗ trợ cuộn thủ công khi kéo (drag) bằng chuột trên máy tính
+            let isDown = false;
+            let startX;
+            let scrollLeftVal;
+
+            carousel.addEventListener('mousedown', (e) => {
+                isDown = true;
+                isHovered = true;
+                startX = e.pageX - carousel.offsetLeft;
+                scrollLeftVal = carousel.scrollLeft;
+            });
+
+            carousel.addEventListener('mouseup', () => {
+                isDown = false;
+                isHovered = false;
+            });
+
+            carousel.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - carousel.offsetLeft;
+                const walk = (x - startX) * 1.5;
+                carousel.scrollLeft = scrollLeftVal - walk;
+            });
+
+            // Hỗ trợ cuộn khi vuốt trên thiết bị di động (touch events)
+            carousel.addEventListener('touchstart', (e) => {
+                isHovered = true;
+                isDown = true;
+                startX = e.touches[0].pageX - carousel.offsetLeft;
+                scrollLeftVal = carousel.scrollLeft;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', () => {
+                isDown = false;
+                isHovered = false;
+            });
+
+            carousel.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                const x = e.touches[0].pageX - carousel.offsetLeft;
+                const walk = (x - startX) * 1.5;
+                carousel.scrollLeft = scrollLeftVal - walk;
+            }, { passive: true });
+        }
+    });
+
+    // Hiệu ứng Fade In Reveal khi cuộn trang (Intersection Observer)
+    document.addEventListener("DOMContentLoaded", function () {
+        const reveals = document.querySelectorAll(".acc-reveal");
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target); // Reveal 1 lần duy nhất
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            reveals.forEach(element => {
+                observer.observe(element);
+            });
+        } else {
+            // Fallback cho trình duyệt cũ
+            reveals.forEach(element => {
+                element.classList.add("active");
+            });
+        }
+    });
+</script>
+</body></html>
