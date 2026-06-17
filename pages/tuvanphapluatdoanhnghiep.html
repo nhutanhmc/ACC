@@ -1,1290 +1,1673 @@
 <!DOCTYPE html>
 <html lang="vi" class="scroll-smooth">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Dịch vụ luật sư tư vấn luật doanh nghiệp nhanh chóng</title>
-<meta name="description" content="Công ty Luật ACC cung cấp dịch vụ tư vấn pháp luật doanh nghiệp toàn diện: thành lập công ty, hợp đồng, tranh chấp, lao động. Tư vấn miễn phí."/>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          primary: '#8B1C1C',
-          'primary-dark': '#5c1114',
-          'primary-light': '#b44040',
-          accent: '#c5a059',
-          'accent-light': '#ebdcae',
-          surface: '#fafafa',
-          'surface-dark': '#f0f0f0',
-        },
-        fontFamily: {
-          sans: ['Roboto', 'sans-serif'],
-          display: ['Roboto', 'sans-serif'],
-        },
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Dịch vụ luật sư tư vấn luật doanh nghiệp nhanh chóng</title>
+  <meta name="description"
+    content="Công ty Luật ACC cung cấp dịch vụ tư vấn pháp luật doanh nghiệp toàn diện: thành lập công ty, hợp đồng, tranh chấp, lao động. Tư vấn miễn phí." />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#8B1C1C',
+            'primary-dark': '#5c1114',
+            'primary-light': '#b44040',
+            accent: '#c5a059',
+            'accent-light': '#ebdcae',
+            surface: '#fafafa',
+            'surface-dark': '#f0f0f0',
+          },
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+            display: ['Roboto', 'sans-serif'],
+          },
+        }
       }
     }
-  }
-</script>
-<style>
-  :root {
-    --primary: #8B1C1C;
-    --primary-dark: #5c1114;
-    --primary-light: #b44040;
-    --accent: #c5a059;
-    --accent-light: #ebdcae;
-    --gold: #c5a059;
-  }
+  </script>
+  <style>
+    :root {
+      --primary: #8B1C1C;
+      --primary-dark: #5c1114;
+      --primary-light: #b44040;
+      --accent: #c5a059;
+      --accent-light: #ebdcae;
+      --gold: #c5a059;
+    }
 
-  * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: #fafafa;
-    color: #1a1a1a;
-    overflow-x: hidden;
-  }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #fafafa;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
 
-  /* ============ SCROLLBAR ============ */
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #f1f1f1; }
-  ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+    /* ============ SCROLLBAR ============ */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
 
-  /* ============ HERO ============ */
-  .hero-section {
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
-  .hero-gradient {
-    background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 35%, #5c1114 65%, #1a0404 100%);
-  }
-  .hero-particles {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 1;
-    pointer-events: none;
-  }
-  .particle {
-    position: absolute;
-    bottom: -50px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, rgba(235, 220, 174, 0.45) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(197, 160, 89, 0.35) 100%);
-    border: 1px solid rgba(235, 220, 174, 0.45);
-    box-shadow: 0 0 10px rgba(197, 160, 89, 0.25), inset 0 0 6px rgba(255, 255, 255, 0.25);
-    animation: float-particle linear infinite;
-    opacity: 0;
-  }
-  @keyframes float-particle {
-    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
-    15% { opacity: var(--p-opacity, 0.6); }
-    85% { opacity: var(--p-opacity, 0.6); }
-    100% { transform: translateY(-115vh) translateX(var(--drift, 20px)) rotate(360deg); opacity: 0; }
-  }
-  .hero-wave {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    z-index: 2;
-    pointer-events: none;
-  }
-  .hero-glow {
-    position: absolute;
-    width: 600px; height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(197,160,89,0.08) 0%, transparent 70%);
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    animation: pulse-glow 4s ease-in-out infinite;
-    z-index: 1;
-  }
-  @keyframes pulse-glow {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
-  }
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    border: 1px solid rgba(197,160,89,0.5);
-    border-radius: 100px;
-    background: rgba(197,160,89,0.1);
-    backdrop-filter: blur(10px);
-    color: var(--accent-light);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    animation: fadeInDown 0.8s ease forwards;
-  }
-  .hero-badge::before {
-    content: '';
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: blink 2s ease-in-out infinite;
-  }
-  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-  @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-30px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(30px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  .hero-title {
-    animation: fadeInUp 0.9s ease 0.2s both;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.1;
-  }
-  .hero-title span {
-    background: linear-gradient(135deg, #ebdcae, #c5a059, #ebdcae);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 200% auto;
-    animation: shimmer 3s linear infinite;
-  }
-  @keyframes shimmer {
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
-  }
-  .hero-desc {
-    animation: fadeInUp 0.9s ease 0.4s both;
-  }
-  .hero-cta {
-    animation: fadeInUp 0.9s ease 0.6s both;
-  }
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 36px;
-    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
-    color: #1a0404;
-    font-weight: 700;
-    font-size: 0.9rem;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 30px rgba(197,160,89,0.4);
-    position: relative;
-    overflow: hidden;
-  }
-  .btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s ease;
-  }
-  .btn-primary:hover::before { left: 100%; }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(197,160,89,0.5); }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
 
-  .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 36px;
-    border: 2px solid rgba(255,255,255,0.3);
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    border-radius: 100px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  .btn-outline:hover {
-    border-color: rgba(255,255,255,0.7);
-    background: rgba(255,255,255,0.15);
-    transform: translateY(-3px);
-  }
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 3px;
+    }
 
-  /* Hero Stats */
-  .hero-stats {
-    animation: fadeInUp 0.9s ease 0.8s both;
-  }
-  .stat-item {
-    border-left: 1px solid rgba(255,255,255,0.15);
-    padding-left: 20px;
-  }
-  .stat-item:first-child { border-left: none; padding-left: 0; }
+    /* ============ HERO ============ */
+    .hero-section {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
 
-  /* Hero Card */
-  .hero-card {
-    animation: fadeInRight 0.9s ease 0.5s both;
-  }
-  .passport-card {
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(30px);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 24px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.4s ease;
-  }
-  .passport-card:hover { transform: translateY(-8px) rotate(-1deg); }
-  .passport-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(197,160,89,0.05), transparent, rgba(139,28,28,0.05));
-    pointer-events: none;
-  }
+    .hero-gradient {
+      background: linear-gradient(135deg, #3d0808 0%, #7a1a1a 35%, #5c1114 65%, #1a0404 100%);
+    }
 
-  /* Floating badge on hero image */
-  .float-badge {
-    position: absolute;
-    background: rgba(255,255,255,0.95);
-    border-radius: 16px;
-    padding: 12px 18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    animation: float 3s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
 
-  /* ============ SECTION HEADERS ============ */
-  .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 14px;
-    border-radius: 100px;
-    background: rgba(139,28,28,0.08);
-    color: var(--primary);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  .section-title {
-    font-family: 'Roboto', sans-serif;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    font-weight: 700;
-    color: #1a0404;
-    line-height: 1.2;
-  }
-  .section-title span {
-    color: var(--primary);
-  }
-  .section-line {
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    border-radius: 2px;
-    margin: 16px auto 0;
-  }
-  .section-line.left {
-    margin: 16px 0 0;
-  }
+    .particle {
+      position: absolute;
+      bottom: -50px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(235, 220, 174, 0.45) 0%, rgba(197, 160, 89, 0.12) 50%, rgba(197, 160, 89, 0.35) 100%);
+      border: 1px solid rgba(235, 220, 174, 0.45);
+      box-shadow: 0 0 10px rgba(197, 160, 89, 0.25), inset 0 0 6px rgba(255, 255, 255, 0.25);
+      animation: float-particle linear infinite;
+      opacity: 0;
+    }
 
-  /* ============ CARDS ============ */
-  .premium-card {
-    background: white;
-    border-radius: 20px;
-    border: 1px solid rgba(139,28,28,0.06);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    padding: 28px;
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-  }
-  .premium-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-  .premium-card:hover::before {
-    transform: scaleX(1);
-  }
-  .premium-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(139,28,28,0.1);
-    border-color: rgba(139,28,28,0.12);
-  }
+    @keyframes float-particle {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
 
-  /* Accent borders for cards */
-  .card-border-primary { border-top: 4px solid var(--primary); }
-  .card-border-accent { border-top: 4px solid var(--accent); }
+      15% {
+        opacity: var(--p-opacity, 0.6);
+      }
 
-  .icon-wrapper {
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
-    background: rgba(139,28,28,0.06);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-  }
-  .icon-box {
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
-    background: rgba(139,28,28,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+      85% {
+        opacity: var(--p-opacity, 0.6);
+      }
 
-  /* ============ BENTO CARDS ============ */
-  .bento-card {
-    background: white;
-    border-radius: 20px;
-    border: 1px solid rgba(139,28,28,0.06);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    padding: 24px;
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .bento-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(139,28,28,0.08);
-    border-color: rgba(139,28,28,0.12);
-  }
-  .premium-card:hover .icon-wrapper {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    transform: rotate(5deg) scale(1.1);
-  }
-  .premium-card:hover .icon-wrapper .material-symbols-outlined {
-    color: white !important;
-  }
+      100% {
+        transform: translateY(-115vh) translateX(var(--drift, 20px)) rotate(360deg);
+        opacity: 0;
+      }
+    }
 
-  /* Check Rows */
-  .check-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(139,28,28,0.05);
-    font-size: 0.9rem;
-    color: #444;
-    line-height: 1.5;
-  }
-  .check-item:last-child { border-bottom: none; }
-  .check-icon-box {
-    width: 20px;
-    height: 20px;
-    border-radius: 6px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
+    .hero-wave {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
 
-  /* ============ TIMELINE ============ */
-  .timeline-line {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0; bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--primary), rgba(139,28,28,0.15));
-  }
-  .timeline-dot {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: white;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    box-shadow: 0 4px 15px rgba(139,28,28,0.25);
-    flex-shrink: 0;
-    position: relative;
-    z-index: 2;
-    transition: transform 0.3s ease;
-  }
-  .timeline-dot:hover { transform: scale(1.15); }
-  .timeline-card {
-    background: white;
-    border-radius: 16px;
-    border: 1px solid rgba(139,28,28,0.06);
-    padding: 20px 24px;
-    flex: 1;
-    transition: all 0.3s ease;
-  }
-  .timeline-card:hover {
-    box-shadow: 0 10px 30px rgba(139,28,28,0.08);
-    border-color: rgba(139,28,28,0.12);
-  }
+    .hero-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(197, 160, 89, 0.08) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulse-glow 4s ease-in-out infinite;
+      z-index: 1;
+    }
 
-  /* ============ TIMING ============ */
-  .timing-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(139,28,28,0.06);
-  }
-  .timing-item:last-child { border-bottom: none; }
-  .timing-badge {
-    min-width: 56px;
-    padding: 8px 10px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, rgba(139,28,28,0.08), rgba(139,28,28,0.03));
-    font-weight: 800;
-    font-size: 0.8rem;
-    color: var(--primary);
-    text-align: center;
-    flex-shrink: 0;
-  }
+    @keyframes pulse-glow {
 
-  /* ============ TARGET ============ */
-  .target-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 16px;
-    border-radius: 14px;
-    border: 1px solid transparent;
-    transition: all 0.3s;
-  }
-  .target-item:hover { background: rgba(139,28,28,0.03); border-color: rgba(139,28,28,0.1); }
-  .target-icon {
-    width: 36px; height: 36px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+      }
 
-  /* ============ BENEFIT TAGS ============ */
-  .benefit-tag {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 16px;
-    background: white;
-    border-radius: 12px;
-    border: 1px solid rgba(139,28,28,0.06);
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition: all 0.3s;
-  }
-  .benefit-tag:hover { border-color: rgba(139,28,28,0.2); transform: translateX(4px); box-shadow: 0 4px 12px rgba(139,28,28,0.07); }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+      }
+    }
 
-  /* ============ PRICING ============ */
-  .price-box, .price-section {
-    background: linear-gradient(135deg, #1a0202 0%, #5c1114 50%, #2d0707 100%);
-    border-radius: 24px;
-    overflow: hidden;
-    position: relative;
-  }
-  .price-box::before, .price-section::before {
-    content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(197,160,89,0.08), transparent 70%);
-    pointer-events: none;
-  }
-  .price-card {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 20px;
-    overflow: hidden;
-  }
-  .price-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 24px;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    gap: 16px;
-    transition: background 0.3s;
-  }
-  .price-row:hover { background: rgba(255,255,255,0.04); }
-  .price-row:last-child { border-bottom: none; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border: 1px solid rgba(197, 160, 89, 0.5);
+      border-radius: 100px;
+      background: rgba(197, 160, 89, 0.1);
+      backdrop-filter: blur(10px);
+      color: var(--accent-light);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: fadeInDown 0.8s ease forwards;
+    }
 
-  /* ============ FAQ ============ */
-  .faq-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .faq-item {
-    background: white;
-    border: 1px solid rgba(139,28,28,0.08);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-  .faq-item:hover {
-    border-color: rgba(139,28,28,0.18);
-  }
-  .faq-summary {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 24px;
-    cursor: pointer;
-    font-weight: 600;
-    color: #1a0404;
-    gap: 16px;
-    transition: all 0.3s ease;
-  }
-  .faq-item[open] .faq-summary {
-    background: rgba(139,28,28,0.03);
-    color: var(--primary);
-    border-bottom: 1px solid rgba(139,28,28,0.07);
-  }
-  .faq-summary::-webkit-details-marker { display: none; }
-  .faq-icon {
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-    color: var(--primary);
-  }
-  .faq-item[open] .faq-icon {
-    transform: rotate(180deg);
-  }
-  .faq-body {
-    padding: 20px 24px;
-    color: #555;
-    line-height: 1.8;
-    font-size: 0.92rem;
-  }
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: blink 2s ease-in-out infinite;
+    }
 
-  /* ============ CTA ============ */
-  .cta-section {
-    background: linear-gradient(155deg, #1a0202 0%, #5c1114 45%, #2d0505 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(75px);
-    pointer-events: none;
-  }
+    @keyframes blink {
 
-  /* Floating Zalo/Phone buttons */
-  .float-zalo, .float-phone {
-    width: 54px; height: 54px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-  }
-  .float-zalo { background: #0068ff; }
-  .float-zalo:hover { transform: scale(1.1); background: #0056d6; }
-  .float-phone { background: var(--accent); }
-  .float-phone:hover { transform: scale(1.1); background: #b08d4a; }
+      0%,
+      100% {
+        opacity: 1;
+      }
 
-  /* ============ SCROLL REVEAL ============ */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .reveal-left {
-    opacity: 0;
-    transform: translateX(-40px);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .reveal-right {
-    opacity: 0;
-    transform: translateX(40px);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .reveal.visible, .reveal-left.visible, .reveal-right.visible {
-    opacity: 1;
-    transform: translate(0);
-  }
+      50% {
+        opacity: 0.3;
+      }
+    }
 
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  }
-</style>
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .hero-title {
+      animation: fadeInUp 0.9s ease 0.2s both;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.1;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #ebdcae, #c5a059, #ebdcae);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% auto;
+      animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 0% center;
+      }
+
+      100% {
+        background-position: 200% center;
+      }
+    }
+
+    .hero-desc {
+      animation: fadeInUp 0.9s ease 0.4s both;
+    }
+
+    .hero-cta {
+      animation: fadeInUp 0.9s ease 0.6s both;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+      color: #1a0404;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(197, 160, 89, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(197, 160, 89, 0.5);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-3px);
+    }
+
+    /* Hero Stats */
+    .hero-stats {
+      animation: fadeInUp 0.9s ease 0.8s both;
+    }
+
+    .stat-item {
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+      padding-left: 20px;
+    }
+
+    .stat-item:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+
+    /* Hero Card */
+    .hero-card {
+      animation: fadeInRight 0.9s ease 0.5s both;
+    }
+
+    .passport-card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(30px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.4s ease;
+    }
+
+    .passport-card:hover {
+      transform: translateY(-8px) rotate(-1deg);
+    }
+
+    .passport-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.05), transparent, rgba(139, 28, 28, 0.05));
+      pointer-events: none;
+    }
+
+    /* Floating badge on hero image */
+    .float-badge {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 12px 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* ============ SECTION HEADERS ============ */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 14px;
+      border-radius: 100px;
+      background: rgba(139, 28, 28, 0.08);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: #1a0404;
+      line-height: 1.2;
+    }
+
+    .section-title span {
+      color: var(--primary);
+    }
+
+    .section-line {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 2px;
+      margin: 16px auto 0;
+    }
+
+    .section-line.left {
+      margin: 16px 0 0;
+    }
+
+    /* ============ CARDS ============ */
+    .premium-card {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      padding: 28px;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .premium-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .premium-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .premium-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(139, 28, 28, 0.1);
+      border-color: rgba(139, 28, 28, 0.12);
+    }
+
+    /* Accent borders for cards */
+    .card-border-primary {
+      border-top: 4px solid var(--primary);
+    }
+
+    .card-border-accent {
+      border-top: 4px solid var(--accent);
+    }
+
+    .icon-wrapper {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: rgba(139, 28, 28, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: rgba(139, 28, 28, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ============ BENTO CARDS ============ */
+    .bento-card {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      padding: 24px;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .bento-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(139, 28, 28, 0.08);
+      border-color: rgba(139, 28, 28, 0.12);
+    }
+
+    .premium-card:hover .icon-wrapper {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      transform: rotate(5deg) scale(1.1);
+    }
+
+    .premium-card:hover .icon-wrapper .material-symbols-outlined {
+      color: white !important;
+    }
+
+    /* Check Rows */
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(139, 28, 28, 0.05);
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .check-item:last-child {
+      border-bottom: none;
+    }
+
+    .check-icon-box {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ============ TIMELINE ============ */
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--primary), rgba(139, 28, 28, 0.15));
+    }
+
+    .timeline-dot {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      box-shadow: 0 4px 15px rgba(139, 28, 28, 0.25);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-dot:hover {
+      transform: scale(1.15);
+    }
+
+    .timeline-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      padding: 20px 24px;
+      flex: 1;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-card:hover {
+      box-shadow: 0 10px 30px rgba(139, 28, 28, 0.08);
+      border-color: rgba(139, 28, 28, 0.12);
+    }
+
+    /* ============ TIMING ============ */
+    .timing-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(139, 28, 28, 0.06);
+    }
+
+    .timing-item:last-child {
+      border-bottom: none;
+    }
+
+    .timing-badge {
+      min-width: 56px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(139, 28, 28, 0.08), rgba(139, 28, 28, 0.03));
+      font-weight: 800;
+      font-size: 0.8rem;
+      color: var(--primary);
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    /* ============ TARGET ============ */
+    .target-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .target-item:hover {
+      background: rgba(139, 28, 28, 0.03);
+      border-color: rgba(139, 28, 28, 0.1);
+    }
+
+    .target-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ============ BENEFIT TAGS ============ */
+    .benefit-tag {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid rgba(139, 28, 28, 0.06);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .benefit-tag:hover {
+      border-color: rgba(139, 28, 28, 0.2);
+      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(139, 28, 28, 0.07);
+    }
+
+    /* ============ PRICING ============ */
+    .price-box,
+    .price-section {
+      background: linear-gradient(135deg, #1a0202 0%, #5c1114 50%, #2d0707 100%);
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .price-box::before,
+    .price-section::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(197, 160, 89, 0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    .price-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      gap: 16px;
+      transition: background 0.3s;
+    }
+
+    .price-row:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .price-row:last-child {
+      border-bottom: none;
+    }
+
+    /* ============ FAQ ============ */
+    .faq-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background: white;
+      border: 1px solid rgba(139, 28, 28, 0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(139, 28, 28, 0.18);
+    }
+
+    .faq-summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #1a0404;
+      gap: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item[open] .faq-summary {
+      background: rgba(139, 28, 28, 0.03);
+      color: var(--primary);
+      border-bottom: 1px solid rgba(139, 28, 28, 0.07);
+    }
+
+    .faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+
+    .faq-item[open] .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-body {
+      padding: 20px 24px;
+      color: #555;
+      line-height: 1.8;
+      font-size: 0.92rem;
+    }
+
+    /* ============ CTA ============ */
+    .cta-section {
+      background: linear-gradient(155deg, #1a0202 0%, #5c1114 45%, #2d0505 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(75px);
+      pointer-events: none;
+    }
+
+    /* Floating Zalo/Phone buttons */
+    .float-zalo,
+    .float-phone {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .float-zalo {
+      background: #0068ff;
+    }
+
+    .float-zalo:hover {
+      transform: scale(1.1);
+      background: #0056d6;
+    }
+
+    .float-phone {
+      background: var(--accent);
+    }
+
+    .float-phone:hover {
+      transform: scale(1.1);
+      background: #b08d4a;
+    }
+
+    /* ============ SCROLL REVEAL ============ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.visible,
+    .reveal-left.visible,
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translate(0);
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ============ HERO ============ -->
-<section class="hero-section hero-gradient" id="hero">
-  <!-- Particles -->
-  <div class="hero-particles" id="particles"></div>
-  <div class="hero-glow"></div>
+  <!-- ============ HERO ============ -->
+  <section class="hero-section hero-gradient" id="hero">
+    <!-- Particles -->
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-glow"></div>
 
-  <!-- Grid overlay -->
-  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;z-index:1;pointer-events:none;"></div>
+    <!-- Grid overlay -->
+    <div
+      style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;z-index:1;pointer-events:none;">
+    </div>
 
-  <div class="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-20 w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[60vh]">
-      <!-- Left -->
-      <div class="space-y-6 text-left">
-        <div class="hero-badge">
-          Công ty luật ACC &nbsp;·&nbsp; Pháp lý doanh nghiệp
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-20 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[60vh]">
+        <!-- Left -->
+        <div class="space-y-6 text-left">
+          <div class="hero-badge">
+            Công ty luật ACC &nbsp;·&nbsp; Pháp lý doanh nghiệp
+          </div>
+
+          <h1 class="hero-title text-white"
+            style="font-size:clamp(1.8rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.15;">
+            Tư Vấn <span>Pháp Luật</span>
+            <br />Doanh Nghiệp
+          </h1>
+
+          <p class="hero-desc text-white/70 leading-relaxed" style="font-size:1.05rem;max-width:540px;">
+            Từ thành lập công ty, xây dựng điều lệ đến xử lý tranh chấp và thay đổi đăng ký kinh doanh — mỗi quyết định
+            pháp lý đều ảnh hưởng trực tiếp đến tương lai doanh nghiệp. ACC giúp bạn <strong class="text-white/90">đúng
+              ngay từ đầu</strong>.
+          </p>
+
+          <div class="hero-cta flex flex-wrap gap-4">
+            <a href="#contact" class="btn-primary">
+              <span class="material-symbols-outlined" style="font-size:20px;">support_agent</span>
+              Nhận tư vấn ngay
+            </a>
+            <a href="#services" class="btn-outline">
+              <span class="material-symbols-outlined" style="font-size:20px;">arrow_downward</span>
+              Xem dịch vụ
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="hero-stats flex flex-wrap gap-x-8 gap-y-4 pt-4">
+            <div class="stat-item">
+              <div
+                style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                10+</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Năm kinh nghiệm</div>
+            </div>
+            <div class="stat-item">
+              <div
+                style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                3000+</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Doanh nghiệp hỗ trợ</div>
+            </div>
+            <div class="stat-item">
+              <div
+                style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                98%</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Khách hàng hài lòng</div>
+            </div>
+          </div>
         </div>
 
-        <h1 class="hero-title text-white" style="font-size:clamp(1.8rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.15;">
-          Tư Vấn <span>Pháp Luật</span>
-          <br/>Doanh Nghiệp
-        </h1>
+        <!-- Right -->
+        <div class="block lg:mt-0 mt-8 hero-card">
+          <div class="relative max-w-md mx-auto lg:max-w-none">
+            <div class="passport-card p-3 shadow-2xl">
+              <img src="./images/luatdanhnghiep.webp" alt="Luật sư tư vấn doanh nghiệp ACC"
+                class="w-full rounded-2xl object-cover h-[280px] sm:h-[380px]" />
+            </div>
+            <!-- Floating badges -->
+            <div class="float-badge sm:flex hidden" style="bottom:-20px;left:20px;z-index:10;">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined" style="color:white;font-size:18px;">gavel</span>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Đúng pháp luật</div>
+                <div style="font-size:0.72rem;color:#888;">Cam kết minh bạch</div>
+              </div>
+            </div>
+            <div class="float-badge sm:flex hidden" style="top:20px;right:-20px;z-index:10;animation-delay:1.5s;">
+              <div
+                style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#c5a059,#99732f);display:flex;align-items:center;justify-content:center;">
+                <span class="material-symbols-outlined" style="color:white;font-size:18px;">verified</span>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Uy tín hàng đầu</div>
+                <div style="font-size:0.72rem;color:#888;">Được kiểm chứng</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <p class="hero-desc text-white/70 leading-relaxed" style="font-size:1.05rem;max-width:540px;">
-          Từ thành lập công ty, xây dựng điều lệ đến xử lý tranh chấp và thay đổi đăng ký kinh doanh — mỗi quyết định pháp lý đều ảnh hưởng trực tiếp đến tương lai doanh nghiệp. ACC giúp bạn <strong class="text-white/90">đúng ngay từ đầu</strong>.
-        </p>
+    <!-- Wave divider -->
+    <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,56 C240,0 480,0 720,40 C960,80 1200,120 1440,72 L1440,120 L0,120 Z" fill="#fafafa" />
+    </svg>
+  </section>
 
-        <div class="hero-cta flex flex-wrap gap-4">
-          <a href="#contact" class="btn-primary">
-            <span class="material-symbols-outlined" style="font-size:20px;">support_agent</span>
-            Nhận tư vấn ngay
+  <!-- ===== 1. WHO ===== -->
+  <section class="py-8 bg-mesh" id="who">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div class="reveal-l">
+          <div class="section-label">Giới thiệu</div>
+          <h2 class="section-title">Luật sư tư vấn<br /><span>doanh nghiệp</span> là ai?</h2>
+          <div class="section-line"></div>
+          <p class="text-gray-600 leading-relaxed mt-6">
+            Luật sư tư vấn luật doanh nghiệp là người có chuyên môn pháp lý, hỗ trợ doanh nghiệp trong việc hiểu và áp
+            dụng đúng các quy định pháp luật liên quan đến hoạt động kinh doanh.
+          </p>
+          <p class="text-gray-500 leading-relaxed mt-4 text-sm">
+            Công việc của luật sư không chỉ dừng lại ở việc giải thích luật mà còn bao gồm việc đưa ra giải pháp pháp lý
+            phù hợp trong từng tình huống cụ thể — từ thành lập công ty, cơ cấu tổ chức, ký kết hợp đồng, nghĩa vụ thuế,
+            lao động đến xử lý tranh chấp.
+          </p>
+          <a href="#services"
+            style="display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-weight:600;font-size:0.875rem;margin-top:20px;text-decoration:none;">
+            Xem chi tiết dịch vụ
+            <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
           </a>
-          <a href="#services" class="btn-outline">
-            <span class="material-symbols-outlined" style="font-size:20px;">arrow_downward</span>
-            Xem dịch vụ
+        </div>
+
+        <!-- 4-square feature grid -->
+        <div class="reveal-r grid grid-cols-2 gap-4">
+          <div class="premium-card p-7 flex flex-col gap-4">
+            <div class="icon-box">
+              <span class="material-symbols-outlined" style="color:var(--primary);font-size:24px;">balance</span>
+            </div>
+            <h4 class="font-bold text-base">Giải thích luật</h4>
+            <p class="text-xs text-gray-500">Diễn giải quy định pháp luật rõ ràng, dễ áp dụng</p>
+          </div>
+          <div class="premium-card p-7 flex flex-col gap-4"
+            style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));border:none;">
+            <div
+              style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:white;font-size:24px;">shield</span>
+            </div>
+            <h4 class="font-bold text-base text-white">Hạn chế rủi ro</h4>
+            <p class="text-xs text-white/70">Phòng ngừa sai phạm pháp lý từ sớm</p>
+          </div>
+          <div class="premium-card p-7 flex flex-col gap-4"
+            style="background:linear-gradient(135deg,rgba(197,160,89,0.08),rgba(197,160,89,0.03));border-color:rgba(197,160,89,0.15);">
+            <div
+              style="width:56px;height:56px;border-radius:16px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:#B8960A;font-size:24px;">handshake</span>
+            </div>
+            <h4 class="font-bold text-base">Đại diện ký kết</h4>
+            <p class="text-xs text-gray-500">Tham gia đàm phán và ký hợp đồng</p>
+          </div>
+          <div class="premium-card p-7 flex flex-col gap-4">
+            <div class="icon-box">
+              <span class="material-symbols-outlined" style="color:var(--primary);font-size:24px;">trending_up</span>
+            </div>
+            <h4 class="font-bold text-base">Phát triển bền vững</h4>
+            <p class="text-xs text-gray-500">Đồng hành cùng doanh nghiệp dài hạn</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. ROLES ===== -->
+  <section class="py-8" style="background:white;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Chức năng</div>
+        <h2 class="section-title">Vai trò của <span>luật sư doanh nghiệp</span></h2>
+        <div class="section-line center"></div>
+        <p class="text-gray-500 mt-5 max-w-xl mx-auto text-sm leading-relaxed">Đồng hành cùng doanh nghiệp trong suốt
+          quá trình hoạt động, đảm bảo tuân thủ pháp luật và bảo vệ quyền lợi hợp pháp.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="premium-card reveal" style="transition-delay:0s;">
+          <div
+            style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(139,28,28,0.08),rgba(139,28,28,0.03));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">library_books</span>
+          </div>
+          <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Tư vấn toàn diện pháp lý</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">Hỗ trợ thành lập công ty, đầu tư, thuế, lao động và giải
+            quyết tranh chấp. Giúp doanh nghiệp hiểu rõ quyền và nghĩa vụ pháp lý.</p>
+        </div>
+        <div class="premium-card reveal" style="transition-delay:0.08s;">
+          <div
+            style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(139,28,28,0.08),rgba(139,28,28,0.03));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">edit_document</span>
+          </div>
+          <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Soạn thảo &amp; rà soát văn bản
+          </h4>
+          <p class="text-gray-500 text-sm leading-relaxed">Soạn hợp đồng, nội quy, quy chế nội bộ và văn bản gửi cơ quan
+            nhà nước. Kiểm tra tính pháp lý tài liệu đối tác cung cấp.</p>
+        </div>
+        <div class="premium-card reveal" style="transition-delay:0.16s;">
+          <div
+            style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(139,28,28,0.08),rgba(139,28,28,0.03));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">handshake</span>
+          </div>
+          <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Đại diện trong giao dịch</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">Tham gia đàm phán hợp đồng, thương lượng với đối tác, có thể
+            đại diện doanh nghiệp tham gia tố tụng khi cần.</p>
+        </div>
+        <div class="premium-card reveal" style="transition-delay:0.24s;">
+          <div
+            style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(139,28,28,0.08),rgba(139,28,28,0.03));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+            <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">gavel</span>
+          </div>
+          <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Giải quyết tranh chấp</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">Xử lý tranh chấp nội bộ hoặc với đối tác bên ngoài, bảo vệ
+            quyền lợi tối đa, giảm thiểu thiệt hại về thời gian và chi phí.</p>
+        </div>
+        <div class="premium-card md:col-span-2 reveal" style="transition-delay:0.32s;">
+          <div
+            style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(197,160,89,0.12),rgba(197,160,89,0.04));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+            <span class="material-symbols-outlined" style="color:var(--gold);font-size:22px;">psychology</span>
+          </div>
+          <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Tư vấn pháp lý chuyên sâu</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">Bao gồm sở hữu trí tuệ, bảo vệ thương hiệu, thuế quốc tế, môi
+            trường và các lĩnh vực pháp lý đặc thù khác theo nhu cầu hoạt động của doanh nghiệp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. SERVICES ===== -->
+  <section class="py-8 bg-mesh" id="services">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-6 reveal">
+        <div class="section-label">Dịch vụ ACC</div>
+        <h2 class="section-title" style="max-width:760px;">Dịch vụ luật sư <span>tư vấn luật doanh nghiệp</span> của
+          Công ty Luật ACC thực hiện những công việc gì?</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+        <!-- Image -->
+        <div class="md:col-span-5 md:row-span-2 rounded-2xl overflow-hidden relative reveal-l"
+          style="min-height:380px;">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhrXxrq-o06qTrBq3x18-KNP30Kq4wDCu2qRM6Hrk-KxzZhmZAfo7ry3i-h7ES8GDHEldi2Ylx8me6eLWnPNZyNqdJLyXfYMhY99wRRZFz0dPB9HKwGXZmIqAJadwYGgflM3O4676-1hfokyI7oW8LzRrUaFCAnnjrB6mkTJ9BsrU9wB4M4aIoqBEA5W0Hr2FPj34Wku_kREhcfAT4hG7Bh4AznBbntfWz_XE-3YoBaKLEDZCJKR005G5XQU4EkNuhcSRk5UbsaSI1"
+            alt="Dịch vụ pháp lý doanh nghiệp" class="absolute inset-0 w-full h-full object-cover"
+            style="border-radius:20px;" />
+          <div
+            style="position:absolute;inset:0;background:linear-gradient(to top,rgba(92,17,20,0.85) 0%,transparent 55%);border-radius:20px;display:flex;align-items:flex-end;padding:28px;">
+            <div>
+              <div
+                style="font-family:'Roboto',sans-serif;font-size:1.4rem;font-weight:700;color:white;line-height:1.2;">
+                Giải pháp pháp lý<br />toàn diện</div>
+              <div style="font-size:0.8rem;color:rgba(255,255,255,0.65);margin-top:6px;">Dành riêng cho doanh nghiệp
+                Việt</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 1 -->
+        <div class="md:col-span-7 bento-card reveal"
+          style="transition-delay:0.05s;border-top:3px solid var(--primary);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div
+              style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:white;font-size:18px;">account_tree</span>
+            </div>
+            <h3 style="font-weight:700;font-size:1rem;color:var(--primary);">Cơ cấu tổ chức &amp; hệ thống nội bộ</h3>
+          </div>
+          <div>
+            <div class="check-item">
+              <div class="check-icon-box"><span class="material-symbols-outlined"
+                  style="color:white;font-size:11px;">check</span></div>Lựa chọn loại hình doanh nghiệp phù hợp
+            </div>
+            <div class="check-item">
+              <div class="check-icon-box"><span class="material-symbols-outlined"
+                  style="color:white;font-size:11px;">check</span></div>Hướng dẫn thủ tục thành lập
+            </div>
+            <div class="check-item">
+              <div class="check-icon-box"><span class="material-symbols-outlined"
+                  style="color:white;font-size:11px;">check</span></div>Xây dựng cơ cấu quản lý
+            </div>
+            <div class="check-item">
+              <div class="check-icon-box"><span class="material-symbols-outlined"
+                  style="color:white;font-size:11px;">check</span></div>Hỗ trợ thiết lập hệ thống quy chế nội bộ
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2 & 3 side by side -->
+        <div class="md:col-span-4 bento-card reveal" style="transition-delay:0.1s;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div
+              style="width:36px;height:36px;border-radius:10px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">assignment</span>
+            </div>
+            <h3 style="font-weight:700;font-size:0.875rem;color:var(--primary);">Thủ tục pháp lý doanh nghiệp</h3>
+          </div>
+          <div class="check-item">
+            <div class="check-icon-box"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Đăng ký thành lập
+          </div>
+          <div class="check-item">
+            <div class="check-icon-box"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Thay đổi nội dung đăng ký
+          </div>
+          <div class="check-item">
+            <div class="check-icon-box"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Tạm ngừng / chấm dứt
+          </div>
+          <div class="check-item">
+            <div class="check-icon-box"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Giải thể / phá sản
+          </div>
+        </div>
+
+        <div class="md:col-span-3 bento-card reveal" style="transition-delay:0.15s;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div
+              style="width:36px;height:36px;border-radius:10px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">policy</span>
+            </div>
+            <h3 style="font-weight:700;font-size:0.875rem;color:var(--primary);">Quy định hoạt động</h3>
+          </div>
+          <div class="check-item">
+            <div class="check-icon-box"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Vốn điều lệ
+          </div>
+          <div class="check-item">
+            <div class="check-icon-box"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Tài sản doanh nghiệp
+          </div>
+          <div class="check-item">
+            <div class="check-icon-box"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Lao động / Nhân sự
+          </div>
+          <div class="check-item">
+            <div class="check-icon-box"><span class="material-symbols-outlined"
+                style="color:white;font-size:11px;">check</span></div>Nghĩa vụ thuế
+          </div>
+        </div>
+
+        <!-- Service 4 full width -->
+        <div class="md:col-span-7 bento-card reveal" style="transition-delay:0.2s;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div
+              style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.12);display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:var(--gold);font-size:18px;">description</span>
+            </div>
+            <h3 style="font-weight:700;font-size:0.875rem;color:var(--primary);">Soạn thảo văn bản doanh nghiệp</h3>
+          </div>
+          <div class="grid grid-cols-3 gap-3">
+            <div
+              style="background:rgba(139,28,28,0.04);padding:10px 14px;border-radius:10px;font-size:0.8rem;font-weight:500;color:#444;">
+              Điều lệ công ty</div>
+            <div
+              style="background:rgba(139,28,28,0.04);padding:10px 14px;border-radius:10px;font-size:0.8rem;font-weight:500;color:#444;">
+              Hợp đồng kinh doanh</div>
+            <div
+              style="background:rgba(139,28,28,0.04);padding:10px 14px;border-radius:10px;font-size:0.8rem;font-weight:500;color:#444;">
+              Quy chế hoạt động</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. PROCESS ===== -->
+  <section class="py-8" style="background:white;" id="process">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Quy trình</div>
+        <h2 class="section-title">Quy trình dịch vụ <span>chuyên nghiệp</span></h2>
+        <div class="section-line center"></div>
+      </div>
+      <div class="space-y-6">
+        <!-- Step 1 -->
+        <div class="flex gap-5 items-start reveal" style="transition-delay:0s;">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-card">
+            <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:8px;">Tiếp nhận yêu cầu tư vấn
+            </h4>
+            <p class="text-sm text-gray-500 leading-relaxed">ACC tiếp nhận thông tin từ doanh nghiệp liên quan đến cơ
+              cấu tổ chức, thủ tục đăng ký, hợp đồng, lao động hoặc tranh chấp. Đội ngũ trao đổi sơ bộ để nắm rõ nhu cầu
+              và mức độ ưu tiên xử lý.</p>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="flex gap-5 items-start reveal" style="transition-delay:0.08s;">
+          <div class="timeline-dot" style="background:linear-gradient(135deg,var(--gold),#B8960A);">2</div>
+          <div class="timeline-card">
+            <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:8px;">Trao đổi cùng luật sư phụ
+              trách</h4>
+            <p class="text-sm text-gray-500 leading-relaxed">Luật sư phù hợp được phân công. Tiến hành xem xét hồ sơ
+              doanh nghiệp như giấy phép kinh doanh, điều lệ, hợp đồng để xác định chính xác vấn đề pháp lý và đánh giá
+              rủi ro.</p>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="flex gap-5 items-start reveal" style="transition-delay:0.16s;">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-card">
+            <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:8px;">Tư vấn &amp; đề xuất
+              phương án</h4>
+            <p class="text-sm text-gray-500 leading-relaxed">Luật sư đưa ra giải pháp cụ thể: điều chỉnh cơ cấu công ty,
+              xử lý thủ tục thay đổi đăng ký, rà soát hợp đồng hoặc hướng giải quyết tranh chấp — rõ ràng, dễ hiểu và
+              phù hợp mục tiêu doanh nghiệp.</p>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="flex gap-5 items-start reveal" style="transition-delay:0.24s;">
+          <div class="timeline-dot" style="background:linear-gradient(135deg,var(--gold),#B8960A);">4</div>
+          <div class="timeline-card">
+            <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:8px;">Ký kết dịch vụ &amp;
+              triển khai</h4>
+            <p class="text-sm text-gray-500 leading-relaxed">Sau khi thống nhất phương án, hai bên ký hợp đồng dịch vụ
+              pháp lý. Luật sư bắt đầu soạn thảo hồ sơ, làm việc với cơ quan nhà nước hoặc đối tác liên quan.</p>
+          </div>
+        </div>
+        <!-- Step 5 -->
+        <div class="flex gap-5 items-start reveal" style="transition-delay:0.32s;">
+          <div class="timeline-dot">5</div>
+          <div class="timeline-card">
+            <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:8px;">Thực hiện &amp; theo dõi
+              tiến độ</h4>
+            <p class="text-sm text-gray-500 leading-relaxed">ACC đại diện hoặc hỗ trợ doanh nghiệp trong các thủ tục
+              pháp lý. Doanh nghiệp được cập nhật tiến độ thường xuyên trong suốt quá trình thực hiện.</p>
+          </div>
+        </div>
+        <!-- Step 6 -->
+        <div class="flex gap-5 items-start reveal" style="transition-delay:0.4s;">
+          <div class="timeline-dot" style="background:linear-gradient(135deg,var(--gold),#B8960A);">6</div>
+          <div class="timeline-card" style="border-color:rgba(197,160,89,0.2);">
+            <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:8px;">Bàn giao kết quả &amp; hỗ
+              trợ sau dịch vụ</h4>
+            <p class="text-sm text-gray-500 leading-relaxed">Bàn giao đầy đủ hồ sơ, kết quả xử lý và tài liệu pháp lý.
+              Luật sư tiếp tục hỗ trợ giải đáp các vấn đề phát sinh sau dịch vụ để đảm bảo hoạt động doanh nghiệp ổn
+              định, đúng pháp luật.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5 & 6. PRICING + TIMING ===== -->
+  <section class="py-8 bg-mesh" id="pricing">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Chi phí &amp; Thời gian</div>
+        <h2 class="section-title">Minh bạch từ <span>đầu đến cuối</span></h2>
+        <div class="section-line center"></div>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Pricing -->
+        <div class="price-section rounded-2xl py-10 px-8 reveal-l">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
+            <div
+              style="width:48px;height:48px;border-radius:14px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:24px;">payments</span>
+            </div>
+            <div>
+              <div style="font-family:'Roboto',sans-serif;font-size:1.4rem;font-weight:700;color:white;">Chi phí dịch vụ
+              </div>
+              <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);">Linh hoạt theo nhu cầu thực tế</div>
+            </div>
+          </div>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.875rem;line-height:1.7;margin-bottom:20px;">
+            Chi phí tư vấn được xây dựng linh hoạt, phụ thuộc vào từng nhu cầu thực tế của doanh nghiệp thay vì áp dụng
+            một mức giá cố định.
+          </p>
+          <div class="price-card">
+            <div class="price-row">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div
+                  style="width:32px;height:32px;border-radius:9px;background:rgba(197,160,89,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:15px;">info</span>
+                </div>
+                <span style="color:rgba(255,255,255,0.78);font-size:0.85rem;">Tư vấn pháp lý đơn giản</span>
+              </div>
+              <span style="color:var(--accent-light);font-weight:700;font-size:0.8rem;white-space:nowrap;">Chi phí
+                thấp</span>
+            </div>
+            <div class="price-row">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div
+                  style="width:32px;height:32px;border-radius:9px;background:rgba(197,160,89,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <span class="material-symbols-outlined"
+                    style="color:var(--accent-light);font-size:15px;">manage_search</span>
+                </div>
+                <span style="color:rgba(255,255,255,0.78);font-size:0.85rem;">Tư vấn &amp; rà soát chuyên sâu</span>
+              </div>
+              <span style="color:var(--accent-light);font-weight:700;font-size:0.8rem;white-space:nowrap;">Theo độ phức
+                tạp</span>
+            </div>
+            <div class="price-row">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div
+                  style="width:32px;height:32px;border-radius:9px;background:rgba(197,160,89,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:15px;">gavel</span>
+                </div>
+                <span style="color:rgba(255,255,255,0.78);font-size:0.85rem;">Hỗ trợ tranh chấp / đại diện</span>
+              </div>
+              <span style="color:var(--accent-light);font-weight:700;font-size:0.8rem;white-space:nowrap;">Theo phạm
+                vi</span>
+            </div>
+            <div class="price-row" style="background:rgba(197,160,89,0.06);">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div
+                  style="width:32px;height:32px;border-radius:9px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <span class="material-symbols-outlined"
+                    style="color:var(--accent-light);font-size:15px;">verified</span>
+                </div>
+                <span style="color:white;font-weight:600;font-size:0.85rem;">Báo giá trước khi thực hiện</span>
+              </div>
+              <span style="color:var(--accent-light);font-weight:700;font-size:0.8rem;">Cam kết</span>
+            </div>
+          </div>
+          <p style="color:rgba(255,255,255,0.4);font-size:0.75rem;font-style:italic;margin-top:16px;text-align:center;">
+            * ACC luôn trao đổi rõ ràng chi phí ngay từ đầu để doanh nghiệp chủ động ngân sách.
+          </p>
+        </div>
+
+        <!-- Timing -->
+        <div class="reveal-r"
+          style="background:white;border-radius:20px;border:1px solid rgba(139,28,28,0.07);padding:36px;">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
+            <div
+              style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(139,28,28,0.08),rgba(139,28,28,0.03));display:flex;align-items:center;justify-content:center;">
+              <span class="material-symbols-outlined" style="color:var(--primary);font-size:24px;">schedule</span>
+            </div>
+            <div>
+              <div style="font-family:'Roboto',sans-serif;font-size:1.4rem;font-weight:700;color:#1a0404;">Thời gian
+                thực hiện</div>
+              <div style="font-size:0.75rem;color:#999;">Cam kết tiến độ rõ ràng</div>
+            </div>
+          </div>
+          <div>
+            <div class="timing-item">
+              <div class="timing-badge">24h</div>
+              <div>
+                <div style="font-weight:600;font-size:0.9rem;margin-bottom:4px;">Tư vấn thông tin cơ bản</div>
+                <div
+                  style="background:rgba(139,28,28,0.08);border-radius:100px;height:6px;overflow:hidden;margin-top:6px;">
+                  <div
+                    style="width:20%;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:100px;">
+                  </div>
+                </div>
+                <div style="font-size:0.75rem;color:#999;margin-top:4px;">Phản hồi trong ngày</div>
+              </div>
+            </div>
+            <div class="timing-item">
+              <div class="timing-badge">1–3N</div>
+              <div>
+                <div style="font-weight:600;font-size:0.9rem;margin-bottom:4px;">Rà soát hồ sơ doanh nghiệp</div>
+                <div
+                  style="background:rgba(139,28,28,0.08);border-radius:100px;height:6px;overflow:hidden;margin-top:6px;">
+                  <div
+                    style="width:50%;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:100px;">
+                  </div>
+                </div>
+                <div style="font-size:0.75rem;color:#999;margin-top:4px;">1–3 ngày làm việc</div>
+              </div>
+            </div>
+            <div class="timing-item">
+              <div class="timing-badge">Thỏa<br />thuận</div>
+              <div>
+                <div style="font-weight:600;font-size:0.9rem;margin-bottom:4px;">Tư vấn chuyên sâu &amp; phức tạp</div>
+                <div
+                  style="background:rgba(139,28,28,0.08);border-radius:100px;height:6px;overflow:hidden;margin-top:6px;">
+                  <div
+                    style="width:70%;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:100px;">
+                  </div>
+                </div>
+                <div style="font-size:0.75rem;color:#999;margin-top:4px;">Cần thêm thời gian phân tích</div>
+              </div>
+            </div>
+            <div class="timing-item">
+              <div class="timing-badge">Thực<br />tế</div>
+              <div>
+                <div style="font-weight:600;font-size:0.9rem;margin-bottom:4px;">Giải quyết tranh chấp tố tụng</div>
+                <div
+                  style="background:rgba(139,28,28,0.08);border-radius:100px;height:6px;overflow:hidden;margin-top:6px;">
+                  <div
+                    style="width:90%;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:100px;">
+                  </div>
+                </div>
+                <div style="font-size:0.75rem;color:#999;margin-top:4px;">Theo tiến trình thực tế</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7 & 8. TARGET + BENEFITS ===== -->
+  <section class="py-8" style="background:white;">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Target -->
+        <div class="reveal-l">
+          <div class="section-label">Đối tượng</div>
+          <h2 class="section-title">Ai cần sử dụng <span>dịch vụ này?</span></h2>
+          <div class="section-line"></div>
+          <div class="mt-6 space-y-2">
+            <div class="target-item">
+              <div class="target-icon"><span class="material-symbols-outlined"
+                  style="color:white;font-size:16px;">business</span></div>
+              <div>
+                <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Doanh nghiệp đang hoạt động</div>
+                <p class="text-gray-500 text-sm">Công ty sản xuất, thương mại, dịch vụ hoặc xây dựng cần hỗ trợ pháp lý
+                  trong quá trình vận hành.</p>
+              </div>
+            </div>
+            <div class="target-item">
+              <div class="target-icon"><span class="material-symbols-outlined"
+                  style="color:white;font-size:16px;">apartment</span></div>
+              <div>
+                <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Doanh nghiệp vừa và nhỏ (SMEs)</div>
+                <p class="text-gray-500 text-sm">Đơn vị chưa có bộ phận pháp chế riêng, cần tư vấn thường xuyên về hợp
+                  đồng, lao động và thủ tục pháp lý.</p>
+              </div>
+            </div>
+            <div class="target-item">
+              <div class="target-icon"><span class="material-symbols-outlined"
+                  style="color:white;font-size:16px;">rocket_launch</span></div>
+              <div>
+                <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Startup &amp; cá nhân khởi nghiệp
+                </div>
+                <p class="text-gray-500 text-sm">Cần hỗ trợ từ bước thành lập công ty đến xây dựng nền tảng pháp lý ban
+                  đầu vững chắc.</p>
+              </div>
+            </div>
+            <div class="target-item">
+              <div class="target-icon"><span class="material-symbols-outlined"
+                  style="color:white;font-size:16px;">savings</span></div>
+              <div>
+                <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Nhà đầu tư &amp; cá nhân góp vốn
+                </div>
+                <p class="text-gray-500 text-sm">Cần tư vấn về rủi ro pháp lý, cơ cấu vốn và quyền lợi trong doanh
+                  nghiệp.</p>
+              </div>
+            </div>
+            <div class="target-item">
+              <div class="target-icon"><span class="material-symbols-outlined"
+                  style="color:white;font-size:16px;">groups</span></div>
+              <div>
+                <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Tổ chức, hiệp hội kinh doanh</div>
+                <p class="text-gray-500 text-sm">Cần tham vấn pháp lý trong quá trình hoạt động hoặc triển khai dự án
+                  liên quan đến doanh nghiệp.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benefits -->
+        <div class="reveal-r">
+          <div class="section-label">Lợi ích</div>
+          <h2 class="section-title">Lợi ích khi chọn <span>ACC</span></h2>
+          <div class="section-line"></div>
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="benefit-tag"><span class="material-symbols-outlined"
+                style="color:var(--primary);font-size:18px;">bolt</span>Tiếp cận thông tin nhanh</div>
+            <div class="benefit-tag"><span class="material-symbols-outlined"
+                style="color:var(--primary);font-size:18px;">shield</span>Giảm nguy cơ sai sót</div>
+            <div class="benefit-tag"><span class="material-symbols-outlined"
+                style="color:var(--primary);font-size:18px;">timer</span>Rút ngắn thời gian</div>
+            <div class="benefit-tag"><span class="material-symbols-outlined"
+                style="color:var(--primary);font-size:18px;">balance</span>Hạn chế rủi ro tranh chấp</div>
+            <div class="benefit-tag"><span class="material-symbols-outlined"
+                style="color:var(--primary);font-size:18px;">psychology</span>Quyết định chính xác</div>
+            <div class="benefit-tag"><span class="material-symbols-outlined"
+                style="color:var(--primary);font-size:18px;">thumb_up</span>Tăng mức độ tin cậy</div>
+            <div class="benefit-tag sm:col-span-2"><span class="material-symbols-outlined"
+                style="color:var(--primary);font-size:18px;">workspace_premium</span>Hỗ trợ đa lĩnh vực, đa năng</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 9. FAQ ===== -->
+  <section class="py-8 bg-mesh">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-6 reveal">
+        <div class="section-label" style="justify-content:center;">Giải đáp</div>
+        <h2 class="section-title">Câu hỏi <span>thường gặp</span></h2>
+        <div class="section-line center"></div>
+      </div>
+      <div class="space-y-3 reveal">
+        <details class="faq-item" open>
+          <summary class="faq-summary">
+            Doanh nghiệp mới thành lập có cần thuê luật sư tư vấn không?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            Có. Ngay từ giai đoạn thành lập, doanh nghiệp đã cần định hướng pháp lý rõ ràng về loại hình, vốn điều lệ,
+            ngành nghề kinh doanh và cơ cấu tổ chức. Việc có luật sư hỗ trợ giúp <strong>hạn chế sai sót ngay từ
+              đầu</strong> và tránh phải điều chỉnh nhiều lần sau này.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Tôi ở tỉnh khác có sử dụng được dịch vụ tư vấn không?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            Có. Dịch vụ tư vấn luật doanh nghiệp hiện được hỗ trợ <strong>trên toàn quốc</strong> thông qua điện thoại,
+            email hoặc hình thức trực tuyến, giúp doanh nghiệp không bị giới hạn về địa lý nhưng vẫn nhận được tư vấn
+            đầy đủ.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">
+            Doanh nghiệp nhỏ có cần thuê luật sư thường xuyên không?
+            <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
+          </summary>
+          <div class="faq-body">
+            Không bắt buộc, nhưng <strong>rất nên có</strong>. Ngay cả doanh nghiệp nhỏ cũng phát sinh nhiều vấn đề pháp
+            lý trong quá trình hoạt động. Việc có luật sư hỗ trợ giúp giảm rủi ro và tiết kiệm chi phí xử lý sai sót về
+            sau.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section py-12 text-center" id="contact">
+    <div class="cta-orb" style="width:400px;height:400px;background:rgba(197,160,89,0.08);top:-100px;left:-100px;">
+    </div>
+    <div class="cta-orb" style="width:350px;height:350px;background:rgba(139,28,28,0.15);bottom:-80px;right:-80px;">
+    </div>
+    <div class="max-w-3xl mx-auto px-6 relative z-10">
+      <div class="reveal">
+        <div class="section-label"
+          style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;margin-bottom:24px;">
+          Liên hệ tư vấn miễn phí
+        </div>
+        <h2
+          style="font-family:'Roboto',sans-serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;color:white;line-height:1.2;margin-bottom:20px;">
+          Sẵn sàng bảo vệ<br />
+          <span
+            style="background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">doanh
+            nghiệp của bạn?</span>
+        </h2>
+        <p class="text-white/60 leading-relaxed mb-6" style="font-size:1rem;max-width:580px;margin:0 auto 40px;">
+          Liên hệ ngay với Công ty Luật ACC để được đội ngũ chuyên gia tư vấn giải pháp pháp lý tối ưu và nhanh chóng
+          nhất.
+        </p>
+        <div class="flex justify-center flex-wrap gap-4">
+          <a href="tel:19003330" class="btn-primary" style="font-size:1rem;padding:18px 44px;">
+            <span class="material-symbols-outlined" style="font-size:22px;">call</span>
+            Hotline: 1900 3330
+          </a>
+          <a href="https://zalo.me/2171133625094125529" target="_blank" class="btn-outline"
+            style="font-size:1rem;padding:18px 44px;">
+            <span class="material-symbols-outlined" style="font-size:22px;">chat</span>
+            Zalo Tư Vấn
           </a>
         </div>
-
-        <!-- Stats -->
-        <div class="hero-stats flex flex-wrap gap-x-8 gap-y-4 pt-4">
-          <div class="stat-item">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">10+</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Năm kinh nghiệm</div>
-          </div>
-          <div class="stat-item">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">3000+</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Doanh nghiệp hỗ trợ</div>
-          </div>
-          <div class="stat-item">
-            <div style="font-family:'Roboto',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">98%</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:2px;">Khách hàng hài lòng</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right -->
-      <div class="block lg:mt-0 mt-8 hero-card">
-        <div class="relative max-w-md mx-auto lg:max-w-none">
-          <div class="passport-card p-3 shadow-2xl">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdM4lwjOSedsSWBVEq4mgd_Mroxv74qOSzO6PW8_RKysiFPVO75WJQzYra_Mt6fsNza171JDQCwfFJOQpzU_-PuWC3sR_uuW9n2gRgWamQMXXn8vdsuCefhguW8y4PRp8bjWhxGY1akAf8nO8RoMiWGIlljQ-ecqgCLB6lzsptEa4eoYEzvAg-PByoj5LeS7AiVQIZaBn2XlCxiat2ngl5P124e1hlFVD62CTEWir9a4GPiGK6rtyxhDuVErUwJfGeYurDYxiH8sa2"
-              alt="Luật sư tư vấn doanh nghiệp ACC"
-              class="w-full rounded-2xl object-cover h-[280px] sm:h-[380px]"
-            />
-          </div>
-          <!-- Floating badges -->
-          <div class="float-badge sm:flex hidden" style="bottom:-20px;left:20px;z-index:10;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:white;font-size:18px;">gavel</span>
-            </div>
-            <div>
-              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Đúng pháp luật</div>
-              <div style="font-size:0.72rem;color:#888;">Cam kết minh bạch</div>
-            </div>
-          </div>
-          <div class="float-badge sm:flex hidden" style="top:20px;right:-20px;z-index:10;animation-delay:1.5s;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#c5a059,#99732f);display:flex;align-items:center;justify-content:center;">
-              <span class="material-symbols-outlined" style="color:white;font-size:18px;">verified</span>
-            </div>
-            <div>
-              <div style="font-weight:700;font-size:0.85rem;color:#1a0404;">Uy tín hàng đầu</div>
-              <div style="font-size:0.72rem;color:#888;">Được kiểm chứng</div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Wave divider -->
-  <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,56 C240,0 480,0 720,40 C960,80 1200,120 1440,72 L1440,120 L0,120 Z" fill="#fafafa"/>
-  </svg>
-</section>
-
-<!-- ===== 1. WHO ===== -->
-<section class="py-8 bg-mesh" id="who">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-      <div class="reveal-l">
-        <div class="section-label">Giới thiệu</div>
-        <h2 class="section-title">Luật sư tư vấn<br/><span>doanh nghiệp</span> là ai?</h2>
-        <div class="section-line"></div>
-        <p class="text-gray-600 leading-relaxed mt-6">
-          Luật sư tư vấn luật doanh nghiệp là người có chuyên môn pháp lý, hỗ trợ doanh nghiệp trong việc hiểu và áp dụng đúng các quy định pháp luật liên quan đến hoạt động kinh doanh.
-        </p>
-        <p class="text-gray-500 leading-relaxed mt-4 text-sm">
-          Công việc của luật sư không chỉ dừng lại ở việc giải thích luật mà còn bao gồm việc đưa ra giải pháp pháp lý phù hợp trong từng tình huống cụ thể — từ thành lập công ty, cơ cấu tổ chức, ký kết hợp đồng, nghĩa vụ thuế, lao động đến xử lý tranh chấp.
-        </p>
-        <a href="#services" style="display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-weight:600;font-size:0.875rem;margin-top:20px;text-decoration:none;">
-          Xem chi tiết dịch vụ
-          <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
-        </a>
-      </div>
-
-      <!-- 4-square feature grid -->
-      <div class="reveal-r grid grid-cols-2 gap-4">
-        <div class="premium-card p-7 flex flex-col gap-4">
-          <div class="icon-box">
-            <span class="material-symbols-outlined" style="color:var(--primary);font-size:24px;">balance</span>
-          </div>
-          <h4 class="font-bold text-base">Giải thích luật</h4>
-          <p class="text-xs text-gray-500">Diễn giải quy định pháp luật rõ ràng, dễ áp dụng</p>
-        </div>
-        <div class="premium-card p-7 flex flex-col gap-4" style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));border:none;">
-          <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;">
-            <span class="material-symbols-outlined" style="color:white;font-size:24px;">shield</span>
-          </div>
-          <h4 class="font-bold text-base text-white">Hạn chế rủi ro</h4>
-          <p class="text-xs text-white/70">Phòng ngừa sai phạm pháp lý từ sớm</p>
-        </div>
-        <div class="premium-card p-7 flex flex-col gap-4" style="background:linear-gradient(135deg,rgba(197,160,89,0.08),rgba(197,160,89,0.03));border-color:rgba(197,160,89,0.15);">
-          <div style="width:56px;height:56px;border-radius:16px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-            <span class="material-symbols-outlined" style="color:#B8960A;font-size:24px;">handshake</span>
-          </div>
-          <h4 class="font-bold text-base">Đại diện ký kết</h4>
-          <p class="text-xs text-gray-500">Tham gia đàm phán và ký hợp đồng</p>
-        </div>
-        <div class="premium-card p-7 flex flex-col gap-4">
-          <div class="icon-box">
-            <span class="material-symbols-outlined" style="color:var(--primary);font-size:24px;">trending_up</span>
-          </div>
-          <h4 class="font-bold text-base">Phát triển bền vững</h4>
-          <p class="text-xs text-gray-500">Đồng hành cùng doanh nghiệp dài hạn</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 2. ROLES ===== -->
-<section class="py-8" style="background:white;">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Chức năng</div>
-      <h2 class="section-title">Vai trò của <span>luật sư doanh nghiệp</span></h2>
-      <div class="section-line center"></div>
-      <p class="text-gray-500 mt-5 max-w-xl mx-auto text-sm leading-relaxed">Đồng hành cùng doanh nghiệp trong suốt quá trình hoạt động, đảm bảo tuân thủ pháp luật và bảo vệ quyền lợi hợp pháp.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="premium-card reveal" style="transition-delay:0s;">
-        <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(139,28,28,0.08),rgba(139,28,28,0.03));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
-          <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">library_books</span>
-        </div>
-        <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Tư vấn toàn diện pháp lý</h4>
-        <p class="text-gray-500 text-sm leading-relaxed">Hỗ trợ thành lập công ty, đầu tư, thuế, lao động và giải quyết tranh chấp. Giúp doanh nghiệp hiểu rõ quyền và nghĩa vụ pháp lý.</p>
-      </div>
-      <div class="premium-card reveal" style="transition-delay:0.08s;">
-        <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(139,28,28,0.08),rgba(139,28,28,0.03));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
-          <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">edit_document</span>
-        </div>
-        <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Soạn thảo &amp; rà soát văn bản</h4>
-        <p class="text-gray-500 text-sm leading-relaxed">Soạn hợp đồng, nội quy, quy chế nội bộ và văn bản gửi cơ quan nhà nước. Kiểm tra tính pháp lý tài liệu đối tác cung cấp.</p>
-      </div>
-      <div class="premium-card reveal" style="transition-delay:0.16s;">
-        <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(139,28,28,0.08),rgba(139,28,28,0.03));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
-          <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">handshake</span>
-        </div>
-        <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Đại diện trong giao dịch</h4>
-        <p class="text-gray-500 text-sm leading-relaxed">Tham gia đàm phán hợp đồng, thương lượng với đối tác, có thể đại diện doanh nghiệp tham gia tố tụng khi cần.</p>
-      </div>
-      <div class="premium-card reveal" style="transition-delay:0.24s;">
-        <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(139,28,28,0.08),rgba(139,28,28,0.03));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
-          <span class="material-symbols-outlined" style="color:var(--primary);font-size:22px;">gavel</span>
-        </div>
-        <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Giải quyết tranh chấp</h4>
-        <p class="text-gray-500 text-sm leading-relaxed">Xử lý tranh chấp nội bộ hoặc với đối tác bên ngoài, bảo vệ quyền lợi tối đa, giảm thiểu thiệt hại về thời gian và chi phí.</p>
-      </div>
-      <div class="premium-card md:col-span-2 reveal" style="transition-delay:0.32s;">
-        <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(197,160,89,0.12),rgba(197,160,89,0.04));display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
-          <span class="material-symbols-outlined" style="color:var(--gold);font-size:22px;">psychology</span>
-        </div>
-        <h4 style="font-weight:700;font-size:0.95rem;margin-bottom:8px;color:#1a0404;">Tư vấn pháp lý chuyên sâu</h4>
-        <p class="text-gray-500 text-sm leading-relaxed">Bao gồm sở hữu trí tuệ, bảo vệ thương hiệu, thuế quốc tế, môi trường và các lĩnh vực pháp lý đặc thù khác theo nhu cầu hoạt động của doanh nghiệp.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 3. SERVICES ===== -->
-<section class="py-8 bg-mesh" id="services">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="mb-6 reveal">
-      <div class="section-label">Dịch vụ ACC</div>
-      <h2 class="section-title" style="max-width:760px;">Dịch vụ luật sư <span>tư vấn luật doanh nghiệp</span> của Công ty Luật ACC thực hiện những công việc gì?</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
-      <!-- Image -->
-      <div class="md:col-span-5 md:row-span-2 rounded-2xl overflow-hidden relative reveal-l" style="min-height:380px;">
-        <img
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhrXxrq-o06qTrBq3x18-KNP30Kq4wDCu2qRM6Hrk-KxzZhmZAfo7ry3i-h7ES8GDHEldi2Ylx8me6eLWnPNZyNqdJLyXfYMhY99wRRZFz0dPB9HKwGXZmIqAJadwYGgflM3O4676-1hfokyI7oW8LzRrUaFCAnnjrB6mkTJ9BsrU9wB4M4aIoqBEA5W0Hr2FPj34Wku_kREhcfAT4hG7Bh4AznBbntfWz_XE-3YoBaKLEDZCJKR005G5XQU4EkNuhcSRk5UbsaSI1"
-          alt="Dịch vụ pháp lý doanh nghiệp"
-          class="absolute inset-0 w-full h-full object-cover"
-          style="border-radius:20px;"
-        />
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(92,17,20,0.85) 0%,transparent 55%);border-radius:20px;display:flex;align-items:flex-end;padding:28px;">
-          <div>
-            <div style="font-family:'Roboto',sans-serif;font-size:1.4rem;font-weight:700;color:white;line-height:1.2;">Giải pháp pháp lý<br/>toàn diện</div>
-            <div style="font-size:0.8rem;color:rgba(255,255,255,0.65);margin-top:6px;">Dành riêng cho doanh nghiệp Việt</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service 1 -->
-      <div class="md:col-span-7 bento-card reveal" style="transition-delay:0.05s;border-top:3px solid var(--primary);">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-          <div style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;">
-            <span class="material-symbols-outlined" style="color:white;font-size:18px;">account_tree</span>
-          </div>
-          <h3 style="font-weight:700;font-size:1rem;color:var(--primary);">Cơ cấu tổ chức &amp; hệ thống nội bộ</h3>
-        </div>
-        <div>
-          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Lựa chọn loại hình doanh nghiệp phù hợp</div>
-          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hướng dẫn thủ tục thành lập</div>
-          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Xây dựng cơ cấu quản lý</div>
-          <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Hỗ trợ thiết lập hệ thống quy chế nội bộ</div>
-        </div>
-      </div>
-
-      <!-- Service 2 & 3 side by side -->
-      <div class="md:col-span-4 bento-card reveal" style="transition-delay:0.1s;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-          <div style="width:36px;height:36px;border-radius:10px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;">
-            <span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">assignment</span>
-          </div>
-          <h3 style="font-weight:700;font-size:0.875rem;color:var(--primary);">Thủ tục pháp lý doanh nghiệp</h3>
-        </div>
-        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Đăng ký thành lập</div>
-        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Thay đổi nội dung đăng ký</div>
-        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tạm ngừng / chấm dứt</div>
-        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Giải thể / phá sản</div>
-      </div>
-
-      <div class="md:col-span-3 bento-card reveal" style="transition-delay:0.15s;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-          <div style="width:36px;height:36px;border-radius:10px;background:rgba(139,28,28,0.07);display:flex;align-items:center;justify-content:center;">
-            <span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">policy</span>
-          </div>
-          <h3 style="font-weight:700;font-size:0.875rem;color:var(--primary);">Quy định hoạt động</h3>
-        </div>
-        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Vốn điều lệ</div>
-        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Tài sản doanh nghiệp</div>
-        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Lao động / Nhân sự</div>
-        <div class="check-item"><div class="check-icon-box"><span class="material-symbols-outlined" style="color:white;font-size:11px;">check</span></div>Nghĩa vụ thuế</div>
-      </div>
-
-      <!-- Service 4 full width -->
-      <div class="md:col-span-7 bento-card reveal" style="transition-delay:0.2s;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-          <div style="width:36px;height:36px;border-radius:10px;background:rgba(197,160,89,0.12);display:flex;align-items:center;justify-content:center;">
-            <span class="material-symbols-outlined" style="color:var(--gold);font-size:18px;">description</span>
-          </div>
-          <h3 style="font-weight:700;font-size:0.875rem;color:var(--primary);">Soạn thảo văn bản doanh nghiệp</h3>
-        </div>
-        <div class="grid grid-cols-3 gap-3">
-          <div style="background:rgba(139,28,28,0.04);padding:10px 14px;border-radius:10px;font-size:0.8rem;font-weight:500;color:#444;">Điều lệ công ty</div>
-          <div style="background:rgba(139,28,28,0.04);padding:10px 14px;border-radius:10px;font-size:0.8rem;font-weight:500;color:#444;">Hợp đồng kinh doanh</div>
-          <div style="background:rgba(139,28,28,0.04);padding:10px 14px;border-radius:10px;font-size:0.8rem;font-weight:500;color:#444;">Quy chế hoạt động</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 4. PROCESS ===== -->
-<section class="py-8" style="background:white;" id="process">
-  <div class="max-w-4xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Quy trình</div>
-      <h2 class="section-title">Quy trình dịch vụ <span>chuyên nghiệp</span></h2>
-      <div class="section-line center"></div>
-    </div>
-    <div class="space-y-6">
-      <!-- Step 1 -->
-      <div class="flex gap-5 items-start reveal" style="transition-delay:0s;">
-        <div class="timeline-dot">1</div>
-        <div class="timeline-card">
-          <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:8px;">Tiếp nhận yêu cầu tư vấn</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">ACC tiếp nhận thông tin từ doanh nghiệp liên quan đến cơ cấu tổ chức, thủ tục đăng ký, hợp đồng, lao động hoặc tranh chấp. Đội ngũ trao đổi sơ bộ để nắm rõ nhu cầu và mức độ ưu tiên xử lý.</p>
-        </div>
-      </div>
-      <!-- Step 2 -->
-      <div class="flex gap-5 items-start reveal" style="transition-delay:0.08s;">
-        <div class="timeline-dot" style="background:linear-gradient(135deg,var(--gold),#B8960A);">2</div>
-        <div class="timeline-card">
-          <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:8px;">Trao đổi cùng luật sư phụ trách</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Luật sư phù hợp được phân công. Tiến hành xem xét hồ sơ doanh nghiệp như giấy phép kinh doanh, điều lệ, hợp đồng để xác định chính xác vấn đề pháp lý và đánh giá rủi ro.</p>
-        </div>
-      </div>
-      <!-- Step 3 -->
-      <div class="flex gap-5 items-start reveal" style="transition-delay:0.16s;">
-        <div class="timeline-dot">3</div>
-        <div class="timeline-card">
-          <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:8px;">Tư vấn &amp; đề xuất phương án</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Luật sư đưa ra giải pháp cụ thể: điều chỉnh cơ cấu công ty, xử lý thủ tục thay đổi đăng ký, rà soát hợp đồng hoặc hướng giải quyết tranh chấp — rõ ràng, dễ hiểu và phù hợp mục tiêu doanh nghiệp.</p>
-        </div>
-      </div>
-      <!-- Step 4 -->
-      <div class="flex gap-5 items-start reveal" style="transition-delay:0.24s;">
-        <div class="timeline-dot" style="background:linear-gradient(135deg,var(--gold),#B8960A);">4</div>
-        <div class="timeline-card">
-          <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:8px;">Ký kết dịch vụ &amp; triển khai</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Sau khi thống nhất phương án, hai bên ký hợp đồng dịch vụ pháp lý. Luật sư bắt đầu soạn thảo hồ sơ, làm việc với cơ quan nhà nước hoặc đối tác liên quan.</p>
-        </div>
-      </div>
-      <!-- Step 5 -->
-      <div class="flex gap-5 items-start reveal" style="transition-delay:0.32s;">
-        <div class="timeline-dot">5</div>
-        <div class="timeline-card">
-          <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:8px;">Thực hiện &amp; theo dõi tiến độ</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">ACC đại diện hoặc hỗ trợ doanh nghiệp trong các thủ tục pháp lý. Doanh nghiệp được cập nhật tiến độ thường xuyên trong suốt quá trình thực hiện.</p>
-        </div>
-      </div>
-      <!-- Step 6 -->
-      <div class="flex gap-5 items-start reveal" style="transition-delay:0.4s;">
-        <div class="timeline-dot" style="background:linear-gradient(135deg,var(--gold),#B8960A);">6</div>
-        <div class="timeline-card" style="border-color:rgba(197,160,89,0.2);">
-          <h4 style="font-weight:700;font-size:1rem;color:var(--primary);margin-bottom:8px;">Bàn giao kết quả &amp; hỗ trợ sau dịch vụ</h4>
-          <p class="text-sm text-gray-500 leading-relaxed">Bàn giao đầy đủ hồ sơ, kết quả xử lý và tài liệu pháp lý. Luật sư tiếp tục hỗ trợ giải đáp các vấn đề phát sinh sau dịch vụ để đảm bảo hoạt động doanh nghiệp ổn định, đúng pháp luật.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 5 & 6. PRICING + TIMING ===== -->
-<section class="py-8 bg-mesh" id="pricing">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Chi phí &amp; Thời gian</div>
-      <h2 class="section-title">Minh bạch từ <span>đầu đến cuối</span></h2>
-      <div class="section-line center"></div>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <!-- Pricing -->
-      <div class="price-section rounded-2xl py-10 px-8 reveal-l">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
-          <div style="width:48px;height:48px;border-radius:14px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;">
-            <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:24px;">payments</span>
-          </div>
-          <div>
-            <div style="font-family:'Roboto',sans-serif;font-size:1.4rem;font-weight:700;color:white;">Chi phí dịch vụ</div>
-            <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);">Linh hoạt theo nhu cầu thực tế</div>
-          </div>
-        </div>
-        <p style="color:rgba(255,255,255,0.6);font-size:0.875rem;line-height:1.7;margin-bottom:20px;">
-          Chi phí tư vấn được xây dựng linh hoạt, phụ thuộc vào từng nhu cầu thực tế của doanh nghiệp thay vì áp dụng một mức giá cố định.
-        </p>
-        <div class="price-card">
-          <div class="price-row">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:32px;height:32px;border-radius:9px;background:rgba(197,160,89,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:15px;">info</span>
-              </div>
-              <span style="color:rgba(255,255,255,0.78);font-size:0.85rem;">Tư vấn pháp lý đơn giản</span>
-            </div>
-            <span style="color:var(--accent-light);font-weight:700;font-size:0.8rem;white-space:nowrap;">Chi phí thấp</span>
-          </div>
-          <div class="price-row">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:32px;height:32px;border-radius:9px;background:rgba(197,160,89,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:15px;">manage_search</span>
-              </div>
-              <span style="color:rgba(255,255,255,0.78);font-size:0.85rem;">Tư vấn &amp; rà soát chuyên sâu</span>
-            </div>
-            <span style="color:var(--accent-light);font-weight:700;font-size:0.8rem;white-space:nowrap;">Theo độ phức tạp</span>
-          </div>
-          <div class="price-row">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:32px;height:32px;border-radius:9px;background:rgba(197,160,89,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:15px;">gavel</span>
-              </div>
-              <span style="color:rgba(255,255,255,0.78);font-size:0.85rem;">Hỗ trợ tranh chấp / đại diện</span>
-            </div>
-            <span style="color:var(--accent-light);font-weight:700;font-size:0.8rem;white-space:nowrap;">Theo phạm vi</span>
-          </div>
-          <div class="price-row" style="background:rgba(197,160,89,0.06);">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <div style="width:32px;height:32px;border-radius:9px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <span class="material-symbols-outlined" style="color:var(--accent-light);font-size:15px;">verified</span>
-              </div>
-              <span style="color:white;font-weight:600;font-size:0.85rem;">Báo giá trước khi thực hiện</span>
-            </div>
-            <span style="color:var(--accent-light);font-weight:700;font-size:0.8rem;">Cam kết</span>
-          </div>
-        </div>
-        <p style="color:rgba(255,255,255,0.4);font-size:0.75rem;font-style:italic;margin-top:16px;text-align:center;">
-          * ACC luôn trao đổi rõ ràng chi phí ngay từ đầu để doanh nghiệp chủ động ngân sách.
-        </p>
-      </div>
-
-      <!-- Timing -->
-      <div class="reveal-r" style="background:white;border-radius:20px;border:1px solid rgba(139,28,28,0.07);padding:36px;">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
-          <div style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,rgba(139,28,28,0.08),rgba(139,28,28,0.03));display:flex;align-items:center;justify-content:center;">
-            <span class="material-symbols-outlined" style="color:var(--primary);font-size:24px;">schedule</span>
-          </div>
-          <div>
-            <div style="font-family:'Roboto',sans-serif;font-size:1.4rem;font-weight:700;color:#1a0404;">Thời gian thực hiện</div>
-            <div style="font-size:0.75rem;color:#999;">Cam kết tiến độ rõ ràng</div>
-          </div>
-        </div>
-        <div>
-          <div class="timing-item">
-            <div class="timing-badge">24h</div>
-            <div>
-              <div style="font-weight:600;font-size:0.9rem;margin-bottom:4px;">Tư vấn thông tin cơ bản</div>
-              <div style="background:rgba(139,28,28,0.08);border-radius:100px;height:6px;overflow:hidden;margin-top:6px;">
-                <div style="width:20%;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:100px;"></div>
-              </div>
-              <div style="font-size:0.75rem;color:#999;margin-top:4px;">Phản hồi trong ngày</div>
-            </div>
-          </div>
-          <div class="timing-item">
-            <div class="timing-badge">1–3N</div>
-            <div>
-              <div style="font-weight:600;font-size:0.9rem;margin-bottom:4px;">Rà soát hồ sơ doanh nghiệp</div>
-              <div style="background:rgba(139,28,28,0.08);border-radius:100px;height:6px;overflow:hidden;margin-top:6px;">
-                <div style="width:50%;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:100px;"></div>
-              </div>
-              <div style="font-size:0.75rem;color:#999;margin-top:4px;">1–3 ngày làm việc</div>
-            </div>
-          </div>
-          <div class="timing-item">
-            <div class="timing-badge">Thỏa<br/>thuận</div>
-            <div>
-              <div style="font-weight:600;font-size:0.9rem;margin-bottom:4px;">Tư vấn chuyên sâu &amp; phức tạp</div>
-              <div style="background:rgba(139,28,28,0.08);border-radius:100px;height:6px;overflow:hidden;margin-top:6px;">
-                <div style="width:70%;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:100px;"></div>
-              </div>
-              <div style="font-size:0.75rem;color:#999;margin-top:4px;">Cần thêm thời gian phân tích</div>
-            </div>
-          </div>
-          <div class="timing-item">
-            <div class="timing-badge">Thực<br/>tế</div>
-            <div>
-              <div style="font-weight:600;font-size:0.9rem;margin-bottom:4px;">Giải quyết tranh chấp tố tụng</div>
-              <div style="background:rgba(139,28,28,0.08);border-radius:100px;height:6px;overflow:hidden;margin-top:6px;">
-                <div style="width:90%;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:100px;"></div>
-              </div>
-              <div style="font-size:0.75rem;color:#999;margin-top:4px;">Theo tiến trình thực tế</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 7 & 8. TARGET + BENEFITS ===== -->
-<section class="py-8" style="background:white;">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-      <!-- Target -->
-      <div class="reveal-l">
-        <div class="section-label">Đối tượng</div>
-        <h2 class="section-title">Ai cần sử dụng <span>dịch vụ này?</span></h2>
-        <div class="section-line"></div>
-        <div class="mt-6 space-y-2">
-          <div class="target-item">
-            <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">business</span></div>
-            <div>
-              <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Doanh nghiệp đang hoạt động</div>
-              <p class="text-gray-500 text-sm">Công ty sản xuất, thương mại, dịch vụ hoặc xây dựng cần hỗ trợ pháp lý trong quá trình vận hành.</p>
-            </div>
-          </div>
-          <div class="target-item">
-            <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">apartment</span></div>
-            <div>
-              <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Doanh nghiệp vừa và nhỏ (SMEs)</div>
-              <p class="text-gray-500 text-sm">Đơn vị chưa có bộ phận pháp chế riêng, cần tư vấn thường xuyên về hợp đồng, lao động và thủ tục pháp lý.</p>
-            </div>
-          </div>
-          <div class="target-item">
-            <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">rocket_launch</span></div>
-            <div>
-              <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Startup &amp; cá nhân khởi nghiệp</div>
-              <p class="text-gray-500 text-sm">Cần hỗ trợ từ bước thành lập công ty đến xây dựng nền tảng pháp lý ban đầu vững chắc.</p>
-            </div>
-          </div>
-          <div class="target-item">
-            <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">savings</span></div>
-            <div>
-              <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Nhà đầu tư &amp; cá nhân góp vốn</div>
-              <p class="text-gray-500 text-sm">Cần tư vấn về rủi ro pháp lý, cơ cấu vốn và quyền lợi trong doanh nghiệp.</p>
-            </div>
-          </div>
-          <div class="target-item">
-            <div class="target-icon"><span class="material-symbols-outlined" style="color:white;font-size:16px;">groups</span></div>
-            <div>
-              <div style="font-weight:600;font-size:0.875rem;margin-bottom:3px;">Tổ chức, hiệp hội kinh doanh</div>
-              <p class="text-gray-500 text-sm">Cần tham vấn pháp lý trong quá trình hoạt động hoặc triển khai dự án liên quan đến doanh nghiệp.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Benefits -->
-      <div class="reveal-r">
-        <div class="section-label">Lợi ích</div>
-        <h2 class="section-title">Lợi ích khi chọn <span>ACC</span></h2>
-        <div class="section-line"></div>
-        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">bolt</span>Tiếp cận thông tin nhanh</div>
-          <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">shield</span>Giảm nguy cơ sai sót</div>
-          <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">timer</span>Rút ngắn thời gian</div>
-          <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">balance</span>Hạn chế rủi ro tranh chấp</div>
-          <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">psychology</span>Quyết định chính xác</div>
-          <div class="benefit-tag"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">thumb_up</span>Tăng mức độ tin cậy</div>
-          <div class="benefit-tag sm:col-span-2"><span class="material-symbols-outlined" style="color:var(--primary);font-size:18px;">workspace_premium</span>Hỗ trợ đa lĩnh vực, đa năng</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 9. FAQ ===== -->
-<section class="py-8 bg-mesh">
-  <div class="max-w-3xl mx-auto px-6">
-    <div class="text-center mb-6 reveal">
-      <div class="section-label" style="justify-content:center;">Giải đáp</div>
-      <h2 class="section-title">Câu hỏi <span>thường gặp</span></h2>
-      <div class="section-line center"></div>
-    </div>
-    <div class="space-y-3 reveal">
-      <details class="faq-item" open>
-        <summary class="faq-summary">
-          Doanh nghiệp mới thành lập có cần thuê luật sư tư vấn không?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          Có. Ngay từ giai đoạn thành lập, doanh nghiệp đã cần định hướng pháp lý rõ ràng về loại hình, vốn điều lệ, ngành nghề kinh doanh và cơ cấu tổ chức. Việc có luật sư hỗ trợ giúp <strong>hạn chế sai sót ngay từ đầu</strong> và tránh phải điều chỉnh nhiều lần sau này.
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Tôi ở tỉnh khác có sử dụng được dịch vụ tư vấn không?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          Có. Dịch vụ tư vấn luật doanh nghiệp hiện được hỗ trợ <strong>trên toàn quốc</strong> thông qua điện thoại, email hoặc hình thức trực tuyến, giúp doanh nghiệp không bị giới hạn về địa lý nhưng vẫn nhận được tư vấn đầy đủ.
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-summary">
-          Doanh nghiệp nhỏ có cần thuê luật sư thường xuyên không?
-          <span class="material-symbols-outlined faq-icon" style="font-size:20px;">expand_more</span>
-        </summary>
-        <div class="faq-body">
-          Không bắt buộc, nhưng <strong>rất nên có</strong>. Ngay cả doanh nghiệp nhỏ cũng phát sinh nhiều vấn đề pháp lý trong quá trình hoạt động. Việc có luật sư hỗ trợ giúp giảm rủi ro và tiết kiệm chi phí xử lý sai sót về sau.
-        </div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CTA ============ -->
-<section class="cta-section py-12 text-center" id="contact">
-  <div class="cta-orb" style="width:400px;height:400px;background:rgba(197,160,89,0.08);top:-100px;left:-100px;"></div>
-  <div class="cta-orb" style="width:350px;height:350px;background:rgba(139,28,28,0.15);bottom:-80px;right:-80px;"></div>
-  <div class="max-w-3xl mx-auto px-6 relative z-10">
-    <div class="reveal">
-      <div class="section-label" style="justify-content:center;background:rgba(197,160,89,0.15);color:#ebdcae;margin-bottom:24px;">
-        Liên hệ tư vấn miễn phí
-      </div>
-      <h2 style="font-family:'Roboto',sans-serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;color:white;line-height:1.2;margin-bottom:20px;">
-        Sẵn sàng bảo vệ<br/>
-        <span style="background:linear-gradient(135deg,#ebdcae,#c5a059);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">doanh nghiệp của bạn?</span>
-      </h2>
-      <p class="text-white/60 leading-relaxed mb-6" style="font-size:1rem;max-width:580px;margin:0 auto 40px;">
-        Liên hệ ngay với Công ty Luật ACC để được đội ngũ chuyên gia tư vấn giải pháp pháp lý tối ưu và nhanh chóng nhất.
-      </p>
-      <div class="flex justify-center flex-wrap gap-4">
-        <a href="tel:19003330" class="btn-primary" style="font-size:1rem;padding:18px 44px;">
-          <span class="material-symbols-outlined" style="font-size:22px;">call</span>
-          Hotline: 1900 3330
-        </a>
-        <a href="https://zalo.me/2171133625094125529" target="_blank" class="btn-outline" style="font-size:1rem;padding:18px 44px;">
-          <span class="material-symbols-outlined" style="font-size:22px;">chat</span>
-          Zalo Tư Vấn
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 
 
-<script>
-  // ===== Particle generator =====
-  const container = document.getElementById('particles');
-  const count = 35;
-  if (container) {
-    for (let i = 0; i < count; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle';
-      const size = Math.random() * 18 + 6;
-      const pOpacity = Math.random() * 0.4 + 0.45;
-      const drift = Math.random() * 60 - 30;
-      p.style.cssText = 'width:' + size + 'px;height:' + size + 'px;' +
-        'left:' + (Math.random() * 100) + '%;' +
-        'animation-duration:' + (Math.random() * 15 + 12) + 's;' +
-        'animation-delay:' + (Math.random() * 15) + 's;' +
-        '--p-opacity:' + pOpacity + ';' +
-        '--drift:' + drift + 'px;';
-      container.appendChild(p);
+  <script>
+    // ===== Particle generator =====
+    const container = document.getElementById('particles');
+    const count = 35;
+    if (container) {
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = Math.random() * 18 + 6;
+        const pOpacity = Math.random() * 0.4 + 0.45;
+        const drift = Math.random() * 60 - 30;
+        p.style.cssText = 'width:' + size + 'px;height:' + size + 'px;' +
+          'left:' + (Math.random() * 100) + '%;' +
+          'animation-duration:' + (Math.random() * 15 + 12) + 's;' +
+          'animation-delay:' + (Math.random() * 15) + 's;' +
+          '--p-opacity:' + pOpacity + ';' +
+          '--drift:' + drift + 'px;';
+        container.appendChild(p);
+      }
     }
-  }
 
-  // ===== Scroll reveal =====
-  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-  if (revealEls.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.style.transitionDelay || '0s';
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, parseFloat(delay) * 1000);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-    revealEls.forEach(el => observer.observe(el));
-  }
-</script>
+    // ===== Scroll reveal =====
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    if (revealEls.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.style.transitionDelay || '0s';
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, parseFloat(delay) * 1000);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+      revealEls.forEach(el => observer.observe(el));
+    }
+  </script>
 </body>
+
 </html>
