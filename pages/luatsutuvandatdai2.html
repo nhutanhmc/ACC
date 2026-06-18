@@ -589,7 +589,7 @@
         display: grid;
         grid-template-columns: 1.1fr 0.9fr;
         gap: 40px;
-        align-items: center;
+        align-items: stretch;
     }
 
     .acc-diff-left {
@@ -645,6 +645,19 @@
 
     .acc-diff-right {
         position: relative;
+    }
+
+    /* Ảnh kéo cao lấp đầy chiều cao cột (cân bằng với 12 thẻ bên trái) */
+    .acc-diff-right>div {
+        height: 100%;
+    }
+
+    .acc-curve-diff {
+        height: 100%;
+    }
+
+    .acc-curve-diff img {
+        height: 100%;
     }
 
     .acc-diff-img-wrapper {
@@ -1371,6 +1384,13 @@
         .acc-diff-grid {
             grid-template-columns: 1fr;
             gap: 35px;
+        }
+
+        /* ≤1024px: ảnh xuống dưới, trả về chiều cao tự nhiên (không kéo cao) */
+        .acc-diff-right>div,
+        .acc-curve-diff,
+        .acc-curve-diff img {
+            height: auto;
         }
 
         .acc-diff-img-wrapper {
