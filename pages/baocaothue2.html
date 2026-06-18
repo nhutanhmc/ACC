@@ -931,6 +931,64 @@
     .custom-table tr:hover {
       background: rgba(197, 160, 89, 0.04);
     }
+
+    /* ============ MOBILE: bảng xếp dọc cho điện thoại ============ */
+    @media (max-width: 640px) {
+
+      /* Gỡ min-width (650/500px) để bảng không tràn ngang */
+      .custom-table {
+        min-width: 0 !important;
+      }
+
+      /* Ẩn header, mỗi dòng hiển thị như 1 thẻ dọc */
+      .custom-table thead {
+        display: none;
+      }
+
+      .custom-table,
+      .custom-table tbody,
+      .custom-table tr,
+      .custom-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .custom-table tr {
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(139, 28, 28, 0.10);
+      }
+
+      .custom-table tr:last-child {
+        border-bottom: none;
+      }
+
+      .custom-table td {
+        border: none !important;
+        padding: 3px 18px;
+      }
+
+      /* Cột đầu = tiêu đề của dòng */
+      .custom-table td:first-child {
+        font-weight: 700;
+        color: var(--primary);
+        font-size: 0.9rem;
+        padding-top: 8px;
+        padding-bottom: 4px;
+      }
+
+      /* Bảng mức phạt (3 cột): thêm nhãn để biết cột nào là Tổ chức / Cá nhân */
+      #muc-xu-phat .custom-table td:nth-child(2)::before {
+        content: "Tổ chức: ";
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      #muc-xu-phat .custom-table td:nth-child(3)::before {
+        content: "Cá nhân: ";
+        font-weight: 600;
+        color: var(--primary);
+      }
+    }
   </style>
 
   <!-- ============ HERO ============ -->
